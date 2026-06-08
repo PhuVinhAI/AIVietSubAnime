@@ -14,8 +14,8 @@ AIVietSubAnime/
 │   └── <Tên anime>/
 │       ├── Raw/                # Video gốc .mkv (gitignored)
 │       ├── Audio/              # Audio extract .mp3 (gitignored)
-│       ├── Sub/                # Sub gốc tách ra
-│       └── Translate/          # Sub đã dịch sang tiếng Việt (.ass)
+│       ├── Translate/          # Sub đã dịch sang tiếng Việt (.ass)
+│       └── Sub/                # Video đã burn-in (hardsub) phụ đề tiếng Việt (gitignored)
 ├── Scripts/                    # Batch script tự động hoá
 │   ├── TachSubAnime.bat        # Tách track phụ đề từ .mkv
 │   └── XuatAudioAnime.bat      # Xuất audio MP3 từ .mkv
@@ -70,6 +70,15 @@ Chi tiết quy tắc xem [Skills/SKILL.md](Skills/SKILL.md).
 ### 5. Style phụ đề
 
 Copy block `[V4+ Styles]` từ `SubStyles/Style1.txt` đè lên block tương ứng trong `vietsub.ass` để chuẩn hoá font/màu/viền.
+
+### 6. Hardsub (burn-in) ra video cuối
+
+Dùng HandBrake hoặc FFmpeg ghép `vietsub.ass` thẳng vào video, xuất ra `Anime/<Tên anime>/Sub/`. Đây là file thành phẩm để xem hoặc upload.
+
+Ví dụ với FFmpeg:
+```bash
+ffmpeg -i Raw/episode.mkv -vf "ass=Translate/vietsub.ass" -c:v libx264 -crf 20 Sub/episode_vietsub.mp4
+```
 
 ## Quy tắc dịch (tóm tắt)
 
