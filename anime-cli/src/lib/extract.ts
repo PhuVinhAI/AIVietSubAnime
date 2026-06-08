@@ -1,6 +1,7 @@
 import { execa } from 'execa';
 import { join } from 'node:path';
 import { copyFileSafe, ensureDir, isFile } from './fsx.js';
+import { resolvedTools } from './tools.js';
 
 export type ExtractOptions = {
   mkvPath: string;
@@ -11,7 +12,7 @@ export type ExtractOptions = {
 
 export async function extractAudio(mkvPath: string, mp3Path: string): Promise<void> {
   ensureDir(join(mp3Path, '..'));
-  await execa('ffmpeg', [
+  await execa(resolvedTools.ffmpeg, [
     '-y',
     '-i', mkvPath,
     '-vn',
@@ -27,7 +28,7 @@ export async function extractSub(
   outPath: string
 ): Promise<void> {
   ensureDir(join(outPath, '..'));
-  await execa('mkvextract', ['tracks', mkvPath, `${trackId}:${outPath}`]);
+  await execa(resolvedTools.mkvextract, ['tracks', mkvPath, `${trackId}:${outPath}`]);
 }
 
 /**

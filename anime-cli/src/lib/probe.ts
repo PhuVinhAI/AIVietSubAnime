@@ -3,13 +3,14 @@ import { basename } from 'node:path';
 import type { AudioTrack, SubTrack, VideoProbe } from '../types.js';
 import { parseEpisode } from './episode.js';
 import { langName } from './langDict.js';
+import { resolvedTools } from './tools.js';
 
 /**
  * Probe an .mkv file with ffmpeg to extract its subtitle and audio tracks.
  * ffmpeg writes the info to stderr by design.
  */
 export async function probeVideo(filePath: string): Promise<VideoProbe> {
-  const { stderr } = await execa('ffmpeg', ['-i', filePath], { reject: false });
+  const { stderr } = await execa(resolvedTools.ffmpeg, ['-i', filePath], { reject: false });
   const lines = stderr.split(/\r?\n/);
 
   const subTracks: SubTrack[] = [];

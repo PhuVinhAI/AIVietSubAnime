@@ -1,0 +1,366 @@
+﻿[Script Info]
+Title: [Erai-raws] en-us
+ScriptType: v4.00+
+WrapStyle: 0
+PlayResX: 1280
+PlayResY: 720
+Video Zoom Percent: 1
+Scroll Position: 0
+Active Line: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Trebuchet MS,45,&H00FFFFFF,&H000000FF,&H00020713,&H00000000,-1,0,0,0,100,100,0,0,1,1.7,0,2,10,10,15,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:04.08,0:00:05.13,Default,,0,0,0,,Tonbo.
+Dialogue: 0,0:00:05.67,0:00:06.71,Default,,0,0,0,,Tonbo.
+Dialogue: 0,0:00:06.96,0:00:07.92,Default,,0,0,0,,I...
+Dialogue: 0,0:00:08.13,0:00:08.96,Default,,0,0,0,,I...
+Dialogue: 0,0:00:09.63,0:00:12.17,Default,,0,0,0,,I moved my ball!
+Dialogue: 0,0:00:20.47,0:00:22.73,Default,,0,0,0,,I know you did!
+Dialogue: 0,0:00:23.02,0:00:27.61,Default,,0,0,0,,All you need to do is take a penalty\Nstroke and put the ball back where it was!
+Dialogue: 0,0:00:28.23,0:00:29.44,Default,,0,0,0,,Good luck!
+Dialogue: 0,0:00:32.65,0:00:33.74,Default,,0,0,0,,That's not it.
+Dialogue: 0,0:00:34.15,0:00:36.82,Default,,0,0,0,,You don't get it, Tonbo.
+Dialogue: 0,0:00:37.28,0:00:38.45,Default,,0,0,0,,That's not it.
+Dialogue: 0,0:00:38.83,0:00:40.20,Default,,0,0,0,,You moved your ball?
+Dialogue: 0,0:00:41.87,0:00:43.54,Default,,0,0,0,,You mean before your last shot?
+Dialogue: 0,0:00:45.17,0:00:49.50,Default,,0,0,0,,You moved your ball during your swing\Nbut hit it anyway. Was that it?
+Dialogue: 0,0:00:50.42,0:00:51.34,Default,,0,0,0,,Yes.
+Dialogue: 0,0:00:55.51,0:00:58.85,Default,,0,0,0,,In that case, you don't have to put it\Nback where you found it.
+Dialogue: 0,0:00:59.35,0:01:02.18,Default,,0,0,0,,Just take the penalty stroke\Nand play it where it is.
+Dialogue: 0,0:01:02.56,0:01:03.77,Default,,0,0,0,,A penalty stroke?
+Dialogue: 0,0:01:04.31,0:01:06.40,Default,,0,0,0,,That'll put you at four-on.
+Dialogue: 0,0:01:11.57,0:01:15.36,Default,,0,0,0,,{\i1}I... I lied again.{\i0}
+Dialogue: 0,0:01:16.03,0:01:22.45,Default,,0,0,0,,{\i1}But that will mean the mistake I didn't{\i0}\N{\i1}pay for yesterday will be paid for today.{\i0}
+Dialogue: 0,0:01:24.04,0:01:28.38,Default,,0,0,0,,{\i1}I'm just being selfish again. But...{\i0}
+Dialogue: 0,0:01:29.04,0:01:32.50,Default,,0,0,0,,{\i1}I do feel a bit better now.{\i0}
+Dialogue: 0,0:03:05.22,0:03:08.39,Default,,0,0,0,,You're going to have to take things\Nseriously from here on out!
+Dialogue: 0,0:03:08.60,0:03:09.98,Default,,0,0,0,,Take things seriously?
+Dialogue: 0,0:03:10.39,0:03:14.77,Default,,0,0,0,,You're in the middle of a heated\Ncompetition! Don't you want to win?
+Dialogue: 0,0:03:15.98,0:03:18.03,Default,,0,0,0,,You've been searching for others' balls.
+Dialogue: 0,0:03:18.15,0:03:21.32,Default,,0,0,0,,and taking super risky shots\Nthat could cost you the whole game!
+Dialogue: 0,0:03:21.61,0:03:24.03,Default,,0,0,0,,It doesn't seem like\Nyou're trying to win at all!
+Dialogue: 0,0:03:24.99,0:03:27.41,Default,,0,0,0,,The chance is dangling\Nright in front of you!
+Dialogue: 0,0:03:27.74,0:03:30.04,Default,,0,0,0,,You need to give this 100%!
+Dialogue: 0,0:03:30.37,0:03:32.42,Default,,0,0,0,,100%?
+Dialogue: 0,0:03:33.00,0:03:35.04,Default,,0,0,0,,That's right! You need to change it up!
+Dialogue: 0,0:03:36.84,0:03:38.01,Default,,0,0,0,,{\i1}Change it up?{\i0}
+Dialogue: 0,0:03:39.42,0:03:41.59,Default,,0,0,0,,{\i1}What does \Ngiving 100% even mean?{\i0}
+Dialogue: 0,0:03:43.72,0:03:47.64,Default,,0,0,0,,{\i1}This girl was six strokes behind{\i0}\N{\i1}but has somehow tied up for the top spot.{\i0}
+Dialogue: 0,0:03:47.72,0:03:51.06,Default,,0,0,0,,{\i1}Even with the wind and conditions{\i0}\N{\i1}being as awful as they are.{\i0}
+Dialogue: 0,0:03:52.06,0:03:53.60,Default,,0,0,0,,You want me to change it up?
+Dialogue: 0,0:03:54.69,0:03:55.65,Default,,0,0,0,,No.
+Dialogue: 0,0:03:55.94,0:03:56.82,Default,,0,0,0,,I was wrong.
+Dialogue: 0,0:03:57.57,0:03:59.61,Default,,0,0,0,,You don't need to change your game.
+Dialogue: 0,0:04:00.07,0:04:02.11,Default,,0,0,0,,Play the way you always do.
+Dialogue: 0,0:04:03.49,0:04:05.62,Default,,0,0,0,,I want to see more of it.
+Dialogue: 0,0:04:07.45,0:04:10.33,Default,,0,0,0,,I think the answer as to why\N I keep failing the pro test
+Dialogue: 0,0:04:10.70,0:04:14.00,Default,,0,0,0,,lies in your golf game, Tonbo.
+Dialogue: 0,0:04:14.46,0:04:15.88,Default,,0,0,0,,In my game?
+Dialogue: 0,0:04:16.13,0:04:17.04,Default,,0,0,0,,Yeah.
+Dialogue: 0,0:04:17.13,0:04:18.67,Default,,0,0,0,,It's not all about winning.
+Dialogue: 0,0:04:19.21,0:04:20.38,Default,,0,0,0,,It's...
+Dialogue: 0,0:04:20.55,0:04:23.38,Default,,0,0,0,,It's like you're playing\Nfor something else!
+Dialogue: 0,0:04:25.72,0:04:27.39,Default,,0,0,0,,I don't understand a word you're saying.
+Dialogue: 0,0:04:28.72,0:04:31.39,Default,,0,0,0,,Anyway, there's still five holes left!
+Dialogue: 0,0:04:31.48,0:04:34.77,Default,,0,0,0,,What I mean is it'd be a waste\Nif you didn't at least try to win!
+Dialogue: 0,0:04:34.85,0:04:35.90,Default,,0,0,0,,Got it!
+Dialogue: 0,0:04:40.23,0:04:43.61,Default,,0,0,0,,Is beating people really that important?
+Dialogue: 0,0:04:45.24,0:04:47.99,Default,,0,0,0,,I just want to get better at golf!
+Dialogue: 0,0:04:48.70,0:04:52.75,Default,,0,0,0,,{\i1}That's it! That's all that really matters!{\i0}
+Dialogue: 0,0:04:54.41,0:04:57.17,Default,,0,0,0,,{\i1}She's challenging herself{\i0}\N{\i1}to get better at golf.{\i0}
+Dialogue: 0,0:05:00.88,0:05:04.68,Default,,0,0,0,,{\i1}That's the only thing{\i0}\N{\i1}that needs paying attention to.{\i0}
+Dialogue: 0,0:05:10.93,0:05:12.72,Default,,0,0,0,,I got a double bogey.
+Dialogue: 0,0:05:18.23,0:05:21.44,Default,,0,0,0,,{\i1}This is the first time her score{\i0}\N{\i1}has changed in the second half.{\i0}
+Dialogue: 0,0:05:21.73,0:05:25.03,Default,,0,0,0,,{\i1}I just can't let my score fall first.{\i0}
+Dialogue: 0,0:05:25.45,0:05:27.20,Default,,0,0,0,,{\i1}I'm fully determined.{\i0}
+Dialogue: 0,0:05:28.37,0:05:30.28,Default,,0,0,0,,{\i1}Finally. We're tied for the top.{\i0}
+Dialogue: 0,0:05:35.75,0:05:38.33,Default,,0,0,0,,{\i1}The direction of the wind{\i0}\N{\i1}is finally fixed in place.{\i0}
+Dialogue: 0,0:05:39.04,0:05:41.55,Default,,0,0,0,,{\i1}It's a tailwind. This is it.{\i0}
+Dialogue: 0,0:05:41.80,0:05:45.47,Default,,0,0,0,,{\i1}I'll be able to play{\i0}\N{\i1}to my fullest on this hole.{\i0}
+Dialogue: 0,0:05:46.55,0:05:48.34,Default,,0,0,0,,{\i1}The last par 5 of the day.{\i0}
+Dialogue: 0,0:05:48.47,0:05:51.68,Default,,0,0,0,,{\i1}This hole will be the key to victory.{\i0}
+Dialogue: 0,0:05:52.01,0:05:55.77,Default,,0,0,0,,{\i1}Ema's high balls have{\i0}\N{\i1}an incredible amount of backspin.{\i0}
+Dialogue: 0,0:05:56.64,0:05:59.90,Default,,0,0,0,,{\i1}On a windy day like today,{\i0}\N{\i1}that’s become her worst enemy.{\i0}
+Dialogue: 0,0:06:01.48,0:06:05.53,Default,,0,0,0,,{\i1}With the wind like this, a tailwind will{\i0}\N{\i1}get rid of the small turns the ball makes.{\i0}
+Dialogue: 0,0:06:06.15,0:06:09.70,Default,,0,0,0,,{\i1}It will push the ball forward.{\i0}
+Dialogue: 0,0:06:10.41,0:06:14.70,Default,,0,0,0,,{\i1}This is it. This is my chance.{\i0}\N{\i1}This is my only chance!{\i0}
+Dialogue: 0,0:06:19.21,0:06:21.08,Default,,0,0,0,,{\i1}She finally did it!{\i0}
+Dialogue: 0,0:06:23.80,0:06:25.01,Default,,0,0,0,,{\i1}I've got to do it!{\i0}
+Dialogue: 0,0:06:25.76,0:06:26.80,Default,,0,0,0,,{\i1}Now!{\i0}
+Dialogue: 0,0:06:30.01,0:06:32.93,Default,,0,0,0,,{\i1}There's 260 yards{\i0}\N{\i1}to the center of the bunker.{\i0}
+Dialogue: 0,0:06:33.14,0:06:34.81,Default,,0,0,0,,{\i1}Even with this tailwind...{\i0}
+Dialogue: 0,0:06:35.27,0:06:36.23,Default,,0,0,0,,{\i1}Amazing.{\i0}
+Dialogue: 0,0:06:38.73,0:06:40.27,Default,,0,0,0,,-Nice.\N-Thanks.
+Dialogue: 0,0:06:43.44,0:06:44.69,Default,,0,0,0,,{\i1}A creek?{\i0}
+Dialogue: 0,0:06:47.82,0:06:52.41,Default,,0,0,0,,{\i1}Ema's not the only one depending{\i0}\N{\i1}on making this hole the key to victory.{\i0}
+Dialogue: 0,0:06:52.82,0:06:56.04,Default,,0,0,0,,{\i1}I get the feeling that whoever{\i0}\N{\i1}gets a birdie on this whole{\i0}
+Dialogue: 0,0:06:56.20,0:06:58.04,Default,,0,0,0,,{\i1}is going to be the winner.{\i0}
+Dialogue: 0,0:06:59.00,0:07:02.54,Default,,0,0,0,,{\i1}To get the birdie with today's{\i0}\N{\i1}pin position, the ball will{\i0}
+Dialogue: 0,0:07:02.79,0:07:05.13,Default,,0,0,0,,{\i1}the ball will need to stop{\i0}\N{\i1}as soon as it lands.{\i0}
+Dialogue: 0,0:07:05.71,0:07:07.55,Default,,0,0,0,,{\i1}That won't be easy with this tailwind.{\i0}
+Dialogue: 0,0:07:07.71,0:07:10.01,Default,,0,0,0,,{\i1}Rather than approaching{\i0}\N{\i1}the green from close by,{\i0}
+Dialogue: 0,0:07:10.09,0:07:12.64,Default,,0,0,0,,{\i1} a long shot will be easier to spin.{\i0}
+Dialogue: 0,0:07:13.55,0:07:16.35,Default,,0,0,0,,{\i1}In regards to where{\i0}\N{\i1}that long shot should be taken from,{\i0}
+Dialogue: 0,0:07:17.06,0:07:20.60,Default,,0,0,0,,{\i1}I'll have to be wary of the bunker{\i0}\N{\i1}that lies 100 yards from the hole.{\i0}
+Dialogue: 0,0:07:20.81,0:07:25.61,Default,,0,0,0,,{\i1}If it goes in the bunker on my{\i0}\N{\i1}second shot, I won't get the birdie.{\i0}
+Dialogue: 0,0:07:26.19,0:07:29.19,Default,,0,0,0,,{\i1}I've got to find a route that prevents me{\i0}\N{\i1}from going into the bunker.{\i0}
+Dialogue: 0,0:07:29.40,0:07:33.24,Default,,0,0,0,,{\i1}If I plan to stop before the bunker,{\i0}\N{\i1}it’ll be 140 yards.{\i0}
+Dialogue: 0,0:07:33.41,0:07:36.33,Default,,0,0,0,,{\i1}I'll have to hit the ball 220 yards twice.{\i0}
+Dialogue: 0,0:07:36.62,0:07:39.25,Default,,0,0,0,,{\i1}I can hit the ball around {\i0}\N{\i1}200 yards with my creek.{\i0}
+Dialogue: 0,0:07:39.37,0:07:41.75,Default,,0,0,0,,{\i1}Even with a tailwind,{\i0}\N{\i1}it won't reach the bunker.{\i0}
+Dialogue: 0,0:07:42.29,0:07:46.38,Default,,0,0,0,,{\i1}It's like the bunker isn't even there.{\i0}\N{\i1}I can hit this shot free of pressure.{\i0}
+Dialogue: 0,0:07:49.80,0:07:52.68,Default,,0,0,0,,{\i1}This is the best plan to get the birdie.{\i0}
+Dialogue: 0,0:07:53.59,0:07:55.51,Default,,0,0,0,,{\i1}If the ball goes where I want it to,{\i0}
+Dialogue: 0,0:07:55.76,0:07:57.93,Default,,0,0,0,,{\i1}my third shot will be{\i0}\N{\i1}from around 110 yards.{\i0}
+Dialogue: 0,0:07:58.10,0:08:01.35,Default,,0,0,0,,{\i1}It'll be easy for me to land the ball{\i0}\N{\i1}near the pin. More than it will for Ema.{\i0}
+Dialogue: 0,0:08:03.35,0:08:04.77,Default,,0,0,0,,{\i1}I'll keep fighting till the end.{\i0}
+Dialogue: 0,0:08:05.48,0:08:08.40,Default,,0,0,0,,{\i1}My current score and position{\i0}\N{\i1}are the real me.{\i0}
+Dialogue: 0,0:08:09.03,0:08:11.78,Default,,0,0,0,,{\i1}I have to see how far I can really go{\i0}
+Dialogue: 0,0:08:14.82,0:08:19.29,Default,,0,0,0,,{\i1}Tilting the tee like that will create{\i0}\N{\i1}resistance, causing the ball to spin more.{\i0}
+Dialogue: 0,0:08:19.87,0:08:21.50,Default,,0,0,0,,{\i1}She'll be able to utilize the wind.{\i0}
+Dialogue: 0,0:08:27.29,0:08:30.01,Default,,0,0,0,,{\i1}Hinoki hasn't given up just yet.{\i0}
+Dialogue: 0,0:08:32.67,0:08:34.72,Default,,0,0,0,,I can't believe it stopped here.
+Dialogue: 0,0:08:35.55,0:08:38.31,Default,,0,0,0,,It might as well have gone in the bunker.
+Dialogue: 0,0:08:38.68,0:08:40.14,Default,,0,0,0,,What are you talking about?
+Dialogue: 0,0:08:40.22,0:08:43.64,Default,,0,0,0,,If you had done that,\Nthe tree might have gotten in the way.
+Dialogue: 0,0:08:44.44,0:08:46.36,Default,,0,0,0,,From here you won't hit the tree,
+Dialogue: 0,0:08:46.73,0:08:49.36,Default,,0,0,0,,but you'll have to hit the ball\Nfrom inside the bunker.
+Dialogue: 0,0:08:49.98,0:08:52.03,Default,,0,0,0,,You'll have to stand on your tippy toes.
+Dialogue: 0,0:08:52.32,0:08:55.24,Default,,0,0,0,,Even with the tailwind,\Nyour sand wedge won't be enough.
+Dialogue: 0,0:08:55.45,0:08:57.16,Default,,0,0,0,,You'll have to use the nine iron.
+Dialogue: 0,0:08:57.37,0:08:58.99,Default,,0,0,0,,I'll use... this one!
+Dialogue: 0,0:08:59.33,0:09:00.24,Default,,0,0,0,,Your six iron?!
+Dialogue: 0,0:09:00.33,0:09:01.87,Default,,0,0,0,,Th-- What?!
+Dialogue: 0,0:09:02.50,0:09:07.17,Default,,0,0,0,,I'll have to use the nine and hit it thin!
+Dialogue: 0,0:09:08.17,0:09:12.09,Default,,0,0,0,,{\i1}I see. So she can hit it{\i0}\N{\i1}farther with a short iron.{\i0}
+Dialogue: 0,0:09:12.71,0:09:17.09,Default,,0,0,0,,{\i1}If she stands on her toes, it'll be easier{\i0}\N{\i1}to tilt the club face to the left.{\i0}
+Dialogue: 0,0:09:18.18,0:09:21.85,Default,,0,0,0,,{\i1}I usually like to carry{\i0}\N{\i1}one large club like this,{\i0}
+Dialogue: 0,0:09:22.10,0:09:25.02,Default,,0,0,0,,{\i1}but I never thought to carry two or three.{\i0}
+Dialogue: 0,0:09:32.48,0:09:37.41,Default,,0,0,0,,Oh no. I thought it'd hook a bit but it\Nwent totally straight.
+Dialogue: 0,0:09:37.87,0:09:40.53,Default,,0,0,0,,What are you talking about?\NThat was a sick shot!
+Dialogue: 0,0:09:40.66,0:09:41.62,Default,,0,0,0,,Sick?
+Dialogue: 0,0:09:41.70,0:09:43.16,Default,,0,0,0,,It means amazing!
+Dialogue: 0,0:09:47.25,0:09:48.88,Default,,0,0,0,,{\i1}She used the creek again.{\i0}
+Dialogue: 0,0:09:48.96,0:09:52.96,Default,,0,0,0,,{\i1}She's trying to stop the ball{\i0}\N{\i1}in front of the bunker.{\i0}
+Dialogue: 0,0:09:53.80,0:09:57.47,Default,,0,0,0,,{\i1}I see. So her third shot{\i0}\N{\i1}will be a full swing.{\i0}
+Dialogue: 0,0:09:58.89,0:10:04.10,Default,,0,0,0,,{\i1}Tsubura is the only one in this game{\i0}\N{\i1} who truly understands the course.{\i0}
+Dialogue: 0,0:10:10.23,0:10:11.15,Default,,0,0,0,,Only 50 more yards.
+Dialogue: 0,0:10:11.73,0:10:12.69,Default,,0,0,0,,Alright.
+Dialogue: 0,0:10:12.98,0:10:14.15,Default,,0,0,0,,Amazing.
+Dialogue: 0,0:10:14.32,0:10:16.90,Default,,0,0,0,,240 yards to the edge of the green.
+Dialogue: 0,0:10:17.91,0:10:20.66,Default,,0,0,0,,{\i1}Even with the tailwind,{\i0}\N{\i1}to get it there in two shots...{\i0}
+Dialogue: 0,0:10:21.58,0:10:22.87,Default,,0,0,0,,{\i1}Even if she gets it there,{\i0}
+Dialogue: 0,0:10:22.99,0:10:26.46,Default,,0,0,0,,{\i1}she won't be able to get it over the{\i0}\N{\i1}bunker to the pin with a spoon.{\i0}
+Dialogue: 0,0:10:26.79,0:10:29.58,Default,,0,0,0,,{\i1}She'll have to avoid the bunker{\i0}\N{\i1}and aim for the fairway.{\i0}
+Dialogue: 0,0:10:30.25,0:10:35.01,Default,,0,0,0,,{\i1}If she doesn't, it'll roll too far{\i0}\N{\i1}when it hits the green.{\i0}
+Dialogue: 0,0:10:35.34,0:10:38.59,Default,,0,0,0,,{\i1}If it doesn't go far enough, {\i0}\N{\i1}she'll have to hit it over the bunker.{\i0}
+Dialogue: 0,0:10:38.80,0:10:41.76,Default,,0,0,0,,{\i1}Either way, it won't be easy{\i0}\N{\i1}to get the birdie.{\i0}
+Dialogue: 0,0:10:42.85,0:10:43.76,Default,,0,0,0,,{\i1}Tsubura.{\i0}
+Dialogue: 0,0:10:44.26,0:10:47.14,Default,,0,0,0,,{\i1}Your course management is incredible.{\i0}
+Dialogue: 0,0:10:48.19,0:10:49.56,Default,,0,0,0,,{\i1}But I'll also say this.{\i0}
+Dialogue: 0,0:10:50.65,0:10:53.94,Default,,0,0,0,,{\i1}All you do is avoid{\i0}\N{\i1}the dangers of the course.{\i0}
+Dialogue: 0,0:11:00.61,0:11:02.12,Default,,0,0,0,,{\i1}A direct line to the pin?{\i0}
+Dialogue: 0,0:11:05.83,0:11:09.67,Default,,0,0,0,,{\i1}The strain is too much.{\i0}\N{\i1}My left ankle can't take much more.{\i0}
+Dialogue: 0,0:11:12.50,0:11:15.25,Default,,0,0,0,,{\i1}If she hits putting that much{\i0}\N{\i1}weight on her right leg,{\i0}
+Dialogue: 0,0:11:15.38,0:11:17.01,Default,,0,0,0,,{\i1}the club will hit the ground!{\i0}
+Dialogue: 0,0:11:17.30,0:11:19.13,Default,,0,0,0,,{\i1}My spoon has a wide sole.{\i0}
+Dialogue: 0,0:11:19.55,0:11:22.43,Default,,0,0,0,,{\i1}I won't hit the ground{\i0}\N{\i1}no matter how high up I hit it from.{\i0}
+Dialogue: 0,0:11:22.72,0:11:24.72,Default,,0,0,0,,{\i1}It doesn't matter how high it goes.{\i0}
+Dialogue: 0,0:11:25.35,0:11:27.43,Default,,0,0,0,,{\i1}I've just got to hit it the best I can.{\i0}
+Dialogue: 0,0:11:27.77,0:11:30.64,Default,,0,0,0,,{\i1}That's all I have left to do.{\i0}
+Dialogue: 0,0:11:31.31,0:11:35.15,Default,,0,0,0,,{\i1}What matters is direction. I need to{\i0}\N{\i1}drop it within two yards of the pin.{\i0}
+Dialogue: 0,0:11:35.57,0:11:38.15,Default,,0,0,0,,{\i1}The reference shot is a push draw.{\i0}
+Dialogue: 0,0:11:38.65,0:11:41.32,Default,,0,0,0,,{\i1}A push draw is hitting{\i0}\N{\i1}outside your target line.{\i0}
+Dialogue: 0,0:11:41.53,0:11:45.16,Default,,0,0,0,,{\i1}On top of that, I'll swing the club{\i0}\N{\i1}even wider than usual.{\i0}
+Dialogue: 0,0:11:45.91,0:11:48.37,Default,,0,0,0,,{\i1}The more the shaft aims towards the{\i0}\N{\i1}direction you want the ball to go,{\i0}
+Dialogue: 0,0:11:48.66,0:11:51.17,Default,,0,0,0,,{\i1}the easier it is to create{\i0}\N{\i1}an inside-out flight path.{\i0}
+Dialogue: 0,0:11:52.00,0:11:53.79,Default,,0,0,0,,{\i1}This is the perfect set up!{\i0}
+Dialogue: 0,0:11:57.17,0:11:58.05,Default,,0,0,0,,{\i1}She did it!{\i0}
+Dialogue: 0,0:11:58.21,0:11:59.88,Default,,0,0,0,,But it's too far left!
+Dialogue: 0,0:12:02.09,0:12:03.89,Default,,0,0,0,,Come back!
+Dialogue: 0,0:12:04.76,0:12:06.89,Default,,0,0,0,,{\i1}Oh no. If it drops in there...{\i0}
+Dialogue: 0,0:12:11.52,0:12:14.65,Default,,0,0,0,,She hit it from there? She got a two-on?!
+Dialogue: 0,0:12:17.36,0:12:18.48,Default,,0,0,0,,Ema!
+Dialogue: 0,0:12:19.28,0:12:20.36,Default,,0,0,0,,That was great!
+Dialogue: 0,0:12:24.24,0:12:26.03,Default,,0,0,0,,You're this close!
+Dialogue: 0,0:12:26.91,0:12:28.37,Default,,0,0,0,,Yeah!
+Dialogue: 0,0:12:39.46,0:12:40.46,Default,,0,0,0,,{\i1}Tsubura.{\i0}
+Dialogue: 0,0:12:41.26,0:12:43.93,Default,,0,0,0,,{\i1}Golf is a game of chance for you,{\i0}\N{\i1}isn't it?{\i0}
+Dialogue: 0,0:12:44.93,0:12:47.01,Default,,0,0,0,,S{\i1}hots that have a low success rate{\i0}
+Dialogue: 0,0:12:47.39,0:12:49.56,Default,,0,0,0,,{\i1}have a zero percent chance{\i0}\N{\i1}if you don't try.{\i0}
+Dialogue: 0,0:12:50.14,0:12:52.18,Default,,0,0,0,,{\i1}But if you try, anything is possible.{\i0}
+Dialogue: 0,0:12:52.94,0:12:56.23,Default,,0,0,0,,{\i1}You win by going on the offense.{\i0}\N{\i1}Not with logic and reasoning.{\i0}
+Dialogue: 0,0:12:56.36,0:12:58.86,Default,,0,0,0,,{\i1}You have to fight{\i0}\N{\i1}at the crucial moment to win.{\i0}
+Dialogue: 0,0:12:59.07,0:13:02.15,Default,,0,0,0,,{\i1}That's what I learned{\i0}\N{\i1}playing golf in America.{\i0}
+Dialogue: 0,0:13:07.87,0:13:11.25,Default,,0,0,0,,I went to take a look.\NYou've got 116 yards to the pin.
+Dialogue: 0,0:13:11.58,0:13:12.58,Default,,0,0,0,,Thank you.
+Dialogue: 0,0:13:13.83,0:13:15.79,Default,,0,0,0,,{\i1}It looked like 120,{\i0}
+Dialogue: 0,0:13:16.08,0:13:18.04,Default,,0,0,0,,{\i1}but it didn't go quite far enough.{\i0}
+Dialogue: 0,0:13:18.63,0:13:21.17,Default,,0,0,0,,{\i1}Somewhere between a{\i0}\N{\i1}pitching wedge and nine-iron.{\i0}
+Dialogue: 0,0:13:21.46,0:13:24.34,Default,,0,0,0,,{\i1}I can avoid the bunker with a nine-iron.{\i0}
+Dialogue: 0,0:13:25.59,0:13:29.64,Default,,0,0,0,,{\i1}Hitting with the ball softly with a large{\i0}\N{\i1}club will make it lose head speed.{\i0}
+Dialogue: 0,0:13:30.60,0:13:34.69,Default,,0,0,0,,{\i1}If that happens, the impact energy will be{\i0}\N{\i1}reduced, as well as the backspin.{\i0}
+Dialogue: 0,0:13:36.14,0:13:37.81,Default,,0,0,0,,{\i1}It's only five or six yards.{\i0}
+Dialogue: 0,0:13:38.15,0:13:40.11,Default,,0,0,0,,{\i1}Because my calculations were off,{\i0}
+Dialogue: 0,0:13:40.36,0:13:42.94,Default,,0,0,0,,{\i1}my plan to hit a full shot on my third{\i0}\N{\i1}stroke has been foiled.{\i0}
+Dialogue: 0,0:13:44.03,0:13:45.45,Default,,0,0,0,,{\i1}I'll have to hit it gently.{\i0}
+Dialogue: 0,0:13:45.95,0:13:50.28,Default,,0,0,0,,{\i1}If I can make impact without a single{\i0}\N{\i1}blade of grass getting in the way,{\i0}
+Dialogue: 0,0:13:51.20,0:13:52.41,Default,,0,0,0,,{\i1}even with a 9-iron...{\i0}
+Dialogue: 0,0:13:58.67,0:14:00.29,Default,,0,0,0,,{\i1}With an eight-iron or below,{\i0}
+Dialogue: 0,0:14:00.42,0:14:04.63,Default,,0,0,0,,{\i1}I've honed the accuracy of my short irons{\i0}\N{\i1}so that I can aim dead on the pin.{\i0}
+Dialogue: 0,0:14:05.55,0:14:09.55,Default,,0,0,0,,{\i1}Incredible. So this is{\i0}\N{\i1}what it means to carry the ball.{\i0}
+Dialogue: 0,0:14:11.35,0:14:14.02,Default,,0,0,0,,{\i1}Hit it as far as possible{\i0}\N{\i1}with a driver from the tee,{\i0}
+Dialogue: 0,0:14:14.14,0:14:17.48,Default,,0,0,0,,{\i1}and get the ball close to the green{\i0}\N{\i1}with a wood on the second shot.{\i0}
+Dialogue: 0,0:14:17.60,0:14:20.52,Default,,0,0,0,,{\i1}That's how most golfers{\i0}\N{\i1}would play on a par five.{\i0}
+Dialogue: 0,0:14:24.11,0:14:27.15,Default,,0,0,0,,{\i1}Hinoki's shots, approach{\i0}\N{\i1}and putts certainly aren't ordinary,{\i0}
+Dialogue: 0,0:14:27.53,0:14:30.03,Default,,0,0,0,,{\i1}but honestly, it doesn't scare me.{\i0}
+Dialogue: 0,0:14:31.95,0:14:33.79,Default,,0,0,0,,{\i1}The higher the ball goes up,{\i0}
+Dialogue: 0,0:14:34.12,0:14:36.33,Default,,0,0,0,,{\i1}the more the wind affects the spin.{\i0}
+Dialogue: 0,0:14:47.34,0:14:49.68,Default,,0,0,0,,{\i1}We're on the same line.{\i0}
+Dialogue: 0,0:14:50.05,0:14:52.22,Default,,0,0,0,,{\i1}Ema will see my line.{\i0}
+Dialogue: 0,0:14:53.01,0:14:55.35,Default,,0,0,0,,{\i1}This should guarantee an eagle for her.{\i0}
+Dialogue: 0,0:14:58.77,0:15:00.19,Default,,0,0,0,,{\i1}I have to get this.{\i0}
+Dialogue: 0,0:15:01.15,0:15:03.02,Default,,0,0,0,,{\i1}If I miss, \NEma will have a two stroke lead.{\i0}
+Dialogue: 0,0:15:03.27,0:15:05.40,Default,,0,0,0,,{\i1}That's not good for the final four holes.{\i0}
+Dialogue: 0,0:15:06.11,0:15:08.53,Default,,0,0,0,,{\i1}I'm starting to lose my touch{\i0}\N{\i1}from being nervous.{\i0}
+Dialogue: 0,0:15:08.78,0:15:11.70,Default,,0,0,0,,{\i1}It's downhill. I have to{\i0}\N{\i1}be careful with my speed.{\i0}
+Dialogue: 0,0:15:14.08,0:15:15.37,Default,,0,0,0,,{\i1}Just like I thought!{\i0}
+Dialogue: 0,0:15:19.96,0:15:21.46,Default,,0,0,0,,{\i1}She forgot about the wind.{\i0}
+Dialogue: 0,0:15:25.30,0:15:26.34,Default,,0,0,0,,Don't mind if I do.
+Dialogue: 0,0:15:30.97,0:15:31.93,Default,,0,0,0,,{\i1}I saw the line.{\i0}
+Dialogue: 0,0:15:33.10,0:15:35.56,Default,,0,0,0,,{\i1}This is it. I can finally take the lead.{\i0}
+Dialogue: 0,0:15:40.27,0:15:41.19,Default,,0,0,0,,{\i1}She hit it too hard.{\i0}
+Dialogue: 0,0:15:46.40,0:15:48.78,Default,,0,0,0,,{\i1}The person who wins this hole wins it all.{\i0}
+Dialogue: 0,0:15:49.15,0:15:52.16,Default,,0,0,0,,{\i1}Ema and I both knew that.{\i0}
+Dialogue: 0,0:15:52.99,0:15:56.08,Default,,0,0,0,,{\i1}But I was aiming for the birdie.{\i0}
+Dialogue: 0,0:15:56.91,0:15:59.20,Default,,0,0,0,,{\i1}Ema was aiming for an eagle!{\i0}
+Dialogue: 0,0:16:00.21,0:16:01.33,Default,,0,0,0,,{\i1}Ema?{\i0}
+Dialogue: 0,0:16:12.59,0:16:14.60,Default,,0,0,0,,They're on the last three or four holes.
+Dialogue: 0,0:16:15.47,0:16:19.39,Default,,0,0,0,,Now the real fun begins.\NWe could see a chemical reaction.
+Dialogue: 0,0:16:19.60,0:16:21.27,Default,,0,0,0,,A chemical reaction?
+Dialogue: 0,0:16:21.48,0:16:24.15,Default,,0,0,0,,This is Tonbo's first-ever competition.
+Dialogue: 0,0:16:25.15,0:16:28.94,Default,,0,0,0,,On the last day, she may have been\Nable to have fun on the first fourteen,
+Dialogue: 0,0:16:29.48,0:16:31.15,Default,,0,0,0,,But after that,
+Dialogue: 0,0:16:31.49,0:16:35.37,Default,,0,0,0,,caught up in a heated battle,\Nthis could be her first real game of golf.
+Dialogue: 0,0:16:35.78,0:16:37.49,Default,,0,0,0,,Oh no.
+Dialogue: 0,0:16:38.12,0:16:38.99,Default,,0,0,0,,"Real golf?"
+Dialogue: 0,0:16:39.62,0:16:42.04,Default,,0,0,0,,The heart sways between\Nwanting and not wanting.
+Dialogue: 0,0:16:42.87,0:16:44.67,Default,,0,0,0,,In competitive golf, that is.
+Dialogue: 0,0:16:45.67,0:16:47.96,Default,,0,0,0,,I'm excited to see what she decides.
+Dialogue: 0,0:16:49.00,0:16:51.22,Default,,0,0,0,,{\i1}She went in the right side{\i0}\N{\i1}woods on eleven,{\i0}
+Dialogue: 0,0:16:51.30,0:16:53.26,Default,,0,0,0,,{\i1}and the right side bunker on fourteen.{\i0}
+Dialogue: 0,0:16:53.47,0:16:56.43,Default,,0,0,0,,{\i1}Of the five courses she{\i0}\N{\i1}used her driver in the second half,{\i0}
+Dialogue: 0,0:16:56.51,0:16:58.93,Default,,0,0,0,,{\i1}she didn't land on the fairway{\i0}\N{\i1}for three of them.{\i0}
+Dialogue: 0,0:16:59.14,0:17:00.35,Default,,0,0,0,,{\i1}Could it be...?{\i0}
+Dialogue: 0,0:17:00.81,0:17:02.56,Default,,0,0,0,,{\i1}That I was missing something?{\i0}
+Dialogue: 0,0:17:03.27,0:17:04.98,Default,,0,0,0,,Is it farther in here?
+Dialogue: 0,0:17:05.44,0:17:09.15,Default,,0,0,0,,Ema got right next to the pin on her\Nsecond shot on hole fourteen.
+Dialogue: 0,0:17:09.32,0:17:11.24,Default,,0,0,0,,She probably got an eagle.
+Dialogue: 0,0:17:12.11,0:17:14.28,Default,,0,0,0,,That puts her at three under.
+Dialogue: 0,0:17:14.66,0:17:15.57,Default,,0,0,0,,I see.
+Dialogue: 0,0:17:15.82,0:17:17.32,Default,,0,0,0,,So I'm three strokes behind.
+Dialogue: 0,0:17:18.28,0:17:19.83,Default,,0,0,0,,Don't sound so relaxed.
+Dialogue: 0,0:17:20.87,0:17:24.00,Default,,0,0,0,,If you make a mistake on this hole,\Nyou'll be down by four.
+Dialogue: 0,0:17:24.29,0:17:26.33,Default,,0,0,0,,Down by four with three holes left.
+Dialogue: 0,0:17:26.54,0:17:27.88,Default,,0,0,0,,You won't be able to win.
+Dialogue: 0,0:17:28.54,0:17:31.88,Default,,0,0,0,,In other words, don't hit a bogey\Nif you still want to win.
+Dialogue: 0,0:17:35.84,0:17:37.76,Default,,0,0,0,,If I still want to win...
+Dialogue: 0,0:17:38.30,0:17:40.18,Default,,0,0,0,,Don't act like you don't know it!
+Dialogue: 0,0:17:41.31,0:17:42.47,Default,,0,0,0,,You know it's true.
+Dialogue: 0,0:17:42.85,0:17:44.35,Default,,0,0,0,,You're feeling pressure!
+Dialogue: 0,0:17:45.06,0:17:47.86,Default,,0,0,0,,You're just pretending you don't realize\Nit!
+Dialogue: 0,0:17:49.69,0:17:53.03,Default,,0,0,0,,You want to win right?\NDon't you imagine what that's like?
+Dialogue: 0,0:17:54.11,0:17:55.07,Default,,0,0,0,,Tonbo.
+Dialogue: 0,0:17:55.15,0:17:57.07,Default,,0,0,0,,You're from an island\Ncalled Tokara, right?
+Dialogue: 0,0:17:57.36,0:17:58.41,Default,,0,0,0,,Yes.
+Dialogue: 0,0:17:58.70,0:18:01.87,Default,,0,0,0,,Think about how happy\Neveryone would be if you won.
+Dialogue: 0,0:18:02.87,0:18:06.71,Default,,0,0,0,,You want to make them happy.\NYou don't want to let them down.
+Dialogue: 0,0:18:07.71,0:18:09.13,Default,,0,0,0,,That's only normal.
+Dialogue: 0,0:18:09.50,0:18:11.30,Default,,0,0,0,,Don't act like you don't get it!
+Dialogue: 0,0:18:12.59,0:18:14.38,Default,,0,0,0,,Acting like I don't get it...
+Dialogue: 0,0:18:15.47,0:18:20.05,Default,,0,0,0,,Ignoring the pressure is\Nthe worst thing you can do under pressure.
+Dialogue: 0,0:18:20.97,0:18:23.60,Default,,0,0,0,,I know it's hard acknowledging\Nthat you're scared.
+Dialogue: 0,0:18:24.35,0:18:25.60,Default,,0,0,0,,I know it's not cool.
+Dialogue: 0,0:18:26.23,0:18:30.65,Default,,0,0,0,,I know I'm talking down to you, but it's\Nwhy I failed the pro test four times.
+Dialogue: 0,0:18:31.52,0:18:36.49,Default,,0,0,0,,Tonbo! You need to acknowledge that\Npressure and face it head on!
+Dialogue: 0,0:18:36.78,0:18:39.70,Default,,0,0,0,,Only those who can do that\Nmake it to the top.
+Dialogue: 0,0:18:39.99,0:18:41.24,Default,,0,0,0,,That's golf!
+Dialogue: 0,0:18:42.16,0:18:43.54,Default,,0,0,0,,Acknowledge the pressure.
+Dialogue: 0,0:18:44.33,0:18:45.66,Default,,0,0,0,,Face it head on.
+Dialogue: 0,0:18:49.92,0:18:51.50,Default,,0,0,0,,A divot mark...
+Dialogue: 0,0:18:51.63,0:18:54.21,Default,,0,0,0,,As long as the club\Ndoesn't go into the back edge,
+Dialogue: 0,0:18:54.34,0:18:56.55,Default,,0,0,0,,there's enough space\Nto hit the ball, but...
+Dialogue: 0,0:18:58.76,0:19:00.68,Default,,0,0,0,,What kind of divot mark is this?
+Dialogue: 0,0:19:01.09,0:19:04.77,Default,,0,0,0,,It's probably from someone\Non the eighteenth hole
+Dialogue: 0,0:19:04.97,0:19:07.43,Default,,0,0,0,,trying to get the ball\Nback onto the fairway.
+Dialogue: 0,0:19:08.27,0:19:10.44,Default,,0,0,0,,What a terrible shot!
+Dialogue: 0,0:19:10.73,0:19:12.81,Default,,0,0,0,,The turf is all messed up!
+Dialogue: 0,0:19:13.82,0:19:15.53,Default,,0,0,0,,I've got an open shot to the green.
+Dialogue: 0,0:19:16.03,0:19:17.11,Default,,0,0,0,,Yeah.
+Dialogue: 0,0:19:17.19,0:19:18.82,Default,,0,0,0,,It's not far away, either.
+Dialogue: 0,0:19:19.40,0:19:20.57,Default,,0,0,0,,Around ninety, I bet.
+Dialogue: 0,0:19:21.16,0:19:22.16,Default,,0,0,0,,But...
+Dialogue: 0,0:19:22.41,0:19:23.58,Default,,0,0,0,,With this divot mark
+Dialogue: 0,0:19:23.83,0:19:25.49,Default,,0,0,0,,you can't aim it to the green.
+Dialogue: 0,0:19:26.16,0:19:28.29,Default,,0,0,0,,No matter what angle you use to hit,
+Dialogue: 0,0:19:28.46,0:19:31.00,Default,,0,0,0,,the ground will get between\Nthe ball and club.
+Dialogue: 0,0:19:31.88,0:19:34.46,Default,,0,0,0,,Getting it over the bunker won't be easy,\Neither.
+Dialogue: 0,0:19:35.55,0:19:38.55,Default,,0,0,0,,{\i1}I can hit it the same{\i0}\N{\i1}direction as the divot.{\i0}
+Dialogue: 0,0:19:43.22,0:19:44.72,Default,,0,0,0,,{\i1}But at this rate...{\i0}
+Dialogue: 0,0:19:45.81,0:19:48.31,Default,,0,0,0,,{\i1}my score will go down.{\i0}
+Dialogue: 0,0:19:49.52,0:19:51.14,Default,,0,0,0,,{\i1}I won't be able to win.{\i0}
+Dialogue: 0,0:19:54.69,0:19:55.65,Default,,0,0,0,,{\i1}Huh?{\i0}
+Dialogue: 0,0:19:56.44,0:19:58.49,Default,,0,0,0,,W{\i1}hat is this? I want to win.{\i0}
+Dialogue: 0,0:19:58.90,0:20:01.91,Default,,0,0,0,,{\i1}Everyone on the island{\i0}\N{\i1}will be so happy if I win.{\i0}
+Dialogue: 0,0:20:02.24,0:20:04.78,Default,,0,0,0,,I{\i1} want to make them happy. I want to win.{\i0}
+Dialogue: 0,0:20:06.33,0:20:09.08,Default,,0,0,0,,{\i1}Golf is a game of pressure.{\i0}
+Dialogue: 0,0:20:09.58,0:20:10.71,Default,,0,0,0,,{\i1}The reason being,{\i0}
+Dialogue: 0,0:20:10.91,0:20:12.08,Default,,0,0,0,,{\i1}You "want" to get par.{\i0}
+Dialogue: 0,0:20:12.17,0:20:13.25,Default,,0,0,0,,{\i1}"Want" to get on the green.{\i0}
+Dialogue: 0,0:20:13.33,0:20:15.34,Default,,0,0,0,,{\i1}"Want" to hit it. There are many wants.{\i0}
+Dialogue: 0,0:20:15.63,0:20:17.67,Default,,0,0,0,,{\i1}You "don't want" to hit it out of bounds.{\i0}
+Dialogue: 0,0:20:17.75,0:20:19.26,Default,,0,0,0,,{\i1}You "don't want" three putts.{\i0}
+Dialogue: 0,0:20:19.55,0:20:20.84,Default,,0,0,0,,{\i1}You "don't want" to duff.{\i0}
+Dialogue: 0,0:20:21.34,0:20:24.60,Default,,0,0,0,,{\i1}You have to focus on the "wants" and{\i0}\N{\i1}"don't wants" to hit the ball.{\i0}
+Dialogue: 0,0:20:25.85,0:20:29.06,Default,,0,0,0,,In other words, the things\Nyou get from success,
+Dialogue: 0,0:20:29.43,0:20:32.64,Default,,0,0,0,,and the things you lose from failure.
+Dialogue: 0,0:20:34.06,0:20:36.61,Default,,0,0,0,,The bigger each of those things become,
+Dialogue: 0,0:20:37.07,0:20:39.11,Default,,0,0,0,,the more nervous people get.
+Dialogue: 0,0:20:39.82,0:20:41.36,Default,,0,0,0,,That's what we call pressure.
+Dialogue: 0,0:20:42.40,0:20:44.20,Default,,0,0,0,,{\i1}I get it now.{\i0}
+Dialogue: 0,0:20:44.74,0:20:47.62,Default,,0,0,0,,{\i1}I'm nervous.{\i0}
+Dialogue: 0,0:20:48.20,0:20:49.54,Default,,0,0,0,,{\i1}I'm under pressure.{\i0}
+Dialogue: 0,0:20:56.21,0:20:57.75,Default,,0,0,0,,That's the only way.
+Dialogue: 0,0:20:58.38,0:20:59.76,Default,,0,0,0,,Don't hit it too hard.
+Dialogue: 0,0:21:00.38,0:21:02.01,Default,,0,0,0,,Stop it before the bunker.
+Dialogue: 0,0:21:02.84,0:21:05.39,Default,,0,0,0,,{\i1}This isn't the only way. However...{\i0}
+Dialogue: 0,0:21:08.14,0:21:11.02,Default,,0,0,0,,{\i1}However, this is my best chance.{\i0}
+Dialogue: 0,0:21:16.23,0:21:17.23,Default,,0,0,0,,What's wrong?
+Dialogue: 0,0:21:17.98,0:21:19.73,Default,,0,0,0,,I don't care about chance.
+Dialogue: 0,0:21:21.99,0:21:24.91,Default,,0,0,0,,By acknowledging the pressure I'm under,
+Dialogue: 0,0:21:26.49,0:21:28.58,Default,,0,0,0,,I'm ready to face it head on.
+Dialogue: 0,0:21:29.99,0:21:31.66,Default,,0,0,0,,Don't hit it that way!
+Dialogue: 0,0:21:31.95,0:21:33.58,Default,,0,0,0,,{\i1}I may fail.{\i0}
+Dialogue: 0,0:21:35.75,0:21:37.25,Default,,0,0,0,,{\i1}This is a scary shot.{\i0}
+Dialogue: 0,0:21:39.63,0:21:41.76,Default,,0,0,0,,{\i1}This is the first time{\i0}\N{\i1}I've ever felt this.{\i0}
+Dialogue: 0,0:21:43.30,0:21:44.38,Default,,0,0,0,,{\i1}I get it now.{\i0}
+Dialogue: 0,0:21:44.51,0:21:46.01,Default,,0,0,0,,{\i1}So this is real golf.{\i0}
+Dialogue: 0,0:21:46.34,0:21:48.26,Default,,0,0,0,,{\i1}Don't swing it that hard!{\i0}
+Dialogue: 0,0:21:51.85,0:21:53.18,Default,,0,0,0,,{\i1}Come on. Crab ball!{\i0}
+Dialogue: 0,0:21:55.64,0:21:57.65,Default,,0,0,0,,{\i1}An intentional shank?!{\i0}
+Dialogue: 0,0:21:58.98,0:22:02.48,Default,,0,0,0,,Please! Get there!
+Dialogue: 0,0:22:07.45,0:22:08.32,Default,,0,0,0,,No way.
+Dialogue: 0,0:22:15.37,0:22:18.00,Default,,0,0,0,,Alright!
+Dialogue: 0,0:23:49.01,0:23:50.55,Default,,0,0,0,,We're almost at the last hole.
+Dialogue: 0,0:23:50.72,0:23:53.55,Default,,0,0,0,,That's right. Just be yourself.
+Dialogue: 0,0:23:53.72,0:23:55.76,Default,,0,0,0,,I will! Watch me, Igaiga!
+Dialogue: 0,0:23:56.64,0:23:58.14,Default,,0,0,0,,On the next episode of Tonbo.
+Dialogue: 0,0:23:58.39,0:23:59.89,Default,,0,0,0,,{\i1}Tonbo, Hole Out{\i0}
+Dialogue: 0,0:24:00.06,0:24:02.23,Default,,0,0,0,,Don't take your eyes off\Nfor even a second.
+Dialogue: 0,0:24:03.81,0:24:05.98,Default,,0,0,0,,Your face is so scary I can't concentrate!
+Dialogue: 0,0:24:06.11,0:24:07.11,Default,,0,0,0,,Tonbo!

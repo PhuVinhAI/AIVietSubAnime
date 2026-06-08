@@ -1,0 +1,367 @@
+﻿[Script Info]
+Title: [Erai-raws] English
+ScriptType: v4.00+
+
+PlayResX: 1280
+PlayResY: 720
+
+
+
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Trebuchet MS,45,&H00FFFFFF,&H000000FF,&H00020713,&H00000000,-1,0,0,0,100,100,0,0,1,1.7,0,2,10,10,15,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:04.79,0:00:06.00,Default,,0,0,0,,Hey! Tonbo!
+Dialogue: 0,0:00:06.71,0:00:07.54,Default,,0,0,0,,Yeah?
+Dialogue: 0,0:00:07.63,0:00:08.80,Default,,0,0,0,,It's Hinoki's turn.
+Dialogue: 0,0:00:09.00,0:00:12.42,Default,,0,0,0,,Never stand in front of the next player.\NIt's a basic rule of golf.
+Dialogue: 0,0:00:13.09,0:00:13.97,Default,,0,0,0,,Right!
+Dialogue: 0,0:00:17.89,0:00:18.81,Default,,0,0,0,,Off the deck?
+Dialogue: 0,0:00:19.72,0:00:21.18,Default,,0,0,0,,There's a strong headwind.
+Dialogue: 0,0:00:21.27,0:00:23.98,Default,,0,0,0,,The left side is out of bounds.\NA smart choice.
+Dialogue: 0,0:00:26.81,0:00:27.73,Default,,0,0,0,,What a shot!
+Dialogue: 0,0:00:27.81,0:00:28.98,Default,,0,0,0,,Hinoki is incredible.
+Dialogue: 0,0:00:32.90,0:00:33.82,Default,,0,0,0,,Nice shot!
+Dialogue: 0,0:02:12.00,0:02:13.55,Default,,0,0,0,,Sorry about before.
+Dialogue: 0,0:02:15.01,0:02:17.72,Default,,0,0,0,,It's fine. You need to focus on\Nwhat you'll do next.
+Dialogue: 0,0:02:18.26,0:02:20.26,Default,,0,0,0,,There are 140 yards left.
+Dialogue: 0,0:02:20.51,0:02:22.43,Default,,0,0,0,,The pin is just beyond the bunker.
+Dialogue: 0,0:02:22.72,0:02:24.72,Default,,0,0,0,,And you only have four clubs!
+Dialogue: 0,0:02:26.27,0:02:27.60,Default,,0,0,0,,Thank you very much.
+Dialogue: 0,0:02:29.48,0:02:31.40,Default,,0,0,0,,Wait till you see this, Tonbo!
+Dialogue: 0,0:02:34.69,0:02:36.03,Default,,0,0,0,,A three iron?
+Dialogue: 0,0:02:36.74,0:02:41.03,Default,,0,0,0,,I think she's going to hit it low\Nand roll it onto the green.
+Dialogue: 0,0:02:41.20,0:02:42.74,Default,,0,0,0,,That's what I'd do, too.
+Dialogue: 0,0:02:43.33,0:02:45.49,Default,,0,0,0,,That's the only way\Nto get it on the green.
+Dialogue: 0,0:02:48.75,0:02:49.62,Default,,0,0,0,,Huh?
+Dialogue: 0,0:02:49.71,0:02:51.00,Default,,0,0,0,,Where is she aiming?
+Dialogue: 0,0:02:53.46,0:02:54.50,Default,,0,0,0,,What's she doing?
+Dialogue: 0,0:02:54.59,0:02:56.63,Default,,0,0,0,,That's a bunker shot stance.
+Dialogue: 0,0:02:56.84,0:02:57.88,Default,,0,0,0,,She's crazy.
+Dialogue: 0,0:02:58.34,0:03:01.01,Default,,0,0,0,,Nothing she's done today makes any sense.
+Dialogue: 0,0:03:05.35,0:03:06.31,Default,,0,0,0,,That's it!
+Dialogue: 0,0:03:06.52,0:03:07.43,Default,,0,0,0,,A thin shot!
+Dialogue: 0,0:03:07.56,0:03:09.31,Default,,0,0,0,,It'll go out of bounds!
+Dialogue: 0,0:03:11.31,0:03:13.15,Default,,0,0,0,,Whoa! It's heading towards the pin!
+Dialogue: 0,0:03:13.31,0:03:14.69,Default,,0,0,0,,But she used a three iron!
+Dialogue: 0,0:03:14.90,0:03:16.15,Default,,0,0,0,,It's not going to stop!
+Dialogue: 0,0:03:20.99,0:03:22.16,Default,,0,0,0,,Alright!
+Dialogue: 0,0:03:23.57,0:03:25.70,Default,,0,0,0,,She laid back the face of the three iron.
+Dialogue: 0,0:03:25.83,0:03:27.83,Default,,0,0,0,,By pointing the face toward the fairway,
+Dialogue: 0,0:03:27.91,0:03:30.75,Default,,0,0,0,,she avoided getting any grass\Nbetween the club and ball.
+Dialogue: 0,0:03:30.83,0:03:33.00,Default,,0,0,0,,By making clear contact with the ball,
+Dialogue: 0,0:03:33.25,0:03:37.50,Default,,0,0,0,,the amount of backspin was increased\Nfurther by the headwind.
+Dialogue: 0,0:03:38.17,0:03:39.63,Default,,0,0,0,,That's why the ball stopped.
+Dialogue: 0,0:03:40.38,0:03:41.38,Default,,0,0,0,,{\i1}I won't lose.{\i0}
+Dialogue: 0,0:03:44.47,0:03:46.39,Default,,0,0,0,,{\i1}Hinoki seems to be getting nervous.{\i0}
+Dialogue: 0,0:03:51.35,0:03:52.44,Default,,0,0,0,,Got it?
+Dialogue: 0,0:03:52.52,0:03:55.69,Default,,0,0,0,,You must not lose\Nto a first time opponent.
+Dialogue: 0,0:03:56.36,0:03:59.36,Default,,0,0,0,,By winning, your opponents\Nwill learn to fear you.
+Dialogue: 0,0:03:59.65,0:04:03.24,Default,,0,0,0,,Only those who are feared succeed in life.
+Dialogue: 0,0:04:04.57,0:04:06.70,Default,,0,0,0,,{\i1}I can't lose. If I do...{\i0}
+Dialogue: 0,0:04:16.38,0:04:17.29,Default,,0,0,0,,So close.
+Dialogue: 0,0:04:17.38,0:04:19.46,Default,,0,0,0,,If it had gone just a little farther...
+Dialogue: 0,0:04:19.63,0:04:22.55,Default,,0,0,0,,A buried lie.\NThat'll be a bogey at the least.
+Dialogue: 0,0:04:29.81,0:04:34.23,Default,,0,0,0,,I wish this wind would stop.\NIt's making things really hard.
+Dialogue: 0,0:04:41.24,0:04:42.28,Default,,0,0,0,,Nice birdie!
+Dialogue: 0,0:04:42.90,0:04:46.82,Default,,0,0,0,,{\i1}With a bogey on one and three,{\i0}\N{\i1}this puts her at one over.{\i0}
+Dialogue: 0,0:04:47.87,0:04:49.49,Default,,0,0,0,,{\i1}I have to maintain my score.{\i0}
+Dialogue: 0,0:04:53.33,0:04:57.58,Default,,0,0,0,,{\i1}The wind on the island is consistent.{\i0}
+Dialogue: 0,0:04:57.71,0:05:01.67,Default,,0,0,0,,{\i1}But here it comes in and out,{\i0}\N{\i1}getting stronger, then weaker.{\i0}
+Dialogue: 0,0:05:04.72,0:05:05.97,Default,,0,0,0,,{\i1}Here we go.{\i0}
+Dialogue: 0,0:05:07.34,0:05:10.76,Default,,0,0,0,,It's like the wind calms down\Nevery time Tonbo hits!
+Dialogue: 0,0:05:11.27,0:05:12.18,Default,,0,0,0,,Yeah.
+Dialogue: 0,0:05:16.10,0:05:17.27,Default,,0,0,0,,So close.
+Dialogue: 0,0:05:17.81,0:05:19.44,Default,,0,0,0,,That puts her at two over.
+Dialogue: 0,0:05:19.65,0:05:23.82,Default,,0,0,0,,{\i1}Even with only four clubs,{\i0}\N{\i1}she's playing just as well as Hinoki.{\i0}
+Dialogue: 0,0:05:24.90,0:05:27.87,Default,,0,0,0,,-We'll be blown away!\N-Oh no!
+Dialogue: 0,0:05:29.99,0:05:32.29,Default,,0,0,0,,This is the most difficult hole.
+Dialogue: 0,0:05:32.45,0:05:34.79,Default,,0,0,0,,It's over 400 yards.
+Dialogue: 0,0:05:35.00,0:05:38.46,Default,,0,0,0,,{\i1}This strong wind makes it even harder.{\i0}
+Dialogue: 0,0:05:48.97,0:05:49.85,Default,,0,0,0,,Oh?
+Dialogue: 0,0:05:49.93,0:05:50.93,Default,,0,0,0,,-Igaiga?\N-Mr. Igaiga?
+Dialogue: 0,0:05:51.01,0:05:51.89,Default,,0,0,0,,She's good.
+Dialogue: 0,0:05:51.97,0:05:54.64,Default,,0,0,0,,She's got a soft swing\Nto control backspin.
+Dialogue: 0,0:05:54.73,0:05:55.68,Default,,0,0,0,,That's right.
+Dialogue: 0,0:05:56.14,0:05:58.23,Default,,0,0,0,,But she's still only at the right bunker.
+Dialogue: 0,0:05:58.35,0:06:00.65,Default,,0,0,0,,The wind is stronger than I thought.
+Dialogue: 0,0:06:01.57,0:06:04.57,Default,,0,0,0,,Just beyond those trees is a steep cliff.
+Dialogue: 0,0:06:04.78,0:06:07.20,Default,,0,0,0,,I could end up with\Na double bogey if I missed.
+Dialogue: 0,0:06:07.36,0:06:09.20,Default,,0,0,0,,Even worse than going out of bounds.
+Dialogue: 0,0:06:09.70,0:06:10.82,Default,,0,0,0,,{\i1}That's what I'll do.{\i0}
+Dialogue: 0,0:06:10.91,0:06:12.49,Default,,0,0,0,,Tonbo.
+Dialogue: 0,0:06:13.08,0:06:14.37,Default,,0,0,0,,A driver?
+Dialogue: 0,0:06:14.49,0:06:15.87,Default,,0,0,0,,It's my parting gift to you.
+Dialogue: 0,0:06:16.33,0:06:17.87,Default,,0,0,0,,Parting gift?
+Dialogue: 0,0:06:21.59,0:06:22.84,Default,,0,0,0,,What? Is there a problem?
+Dialogue: 0,0:06:23.59,0:06:25.80,Default,,0,0,0,,It's 15,309 yen!
+Dialogue: 0,0:06:26.55,0:06:28.51,Default,,0,0,0,,Golf clubs sure are expensive.
+Dialogue: 0,0:06:29.18,0:06:31.26,Default,,0,0,0,,Mr. Igaiga, are you sure about this?
+Dialogue: 0,0:06:31.43,0:06:32.35,Default,,0,0,0,,Thank you!
+Dialogue: 0,0:06:34.35,0:06:36.02,Default,,0,0,0,,Um. That's pretty cheap.
+Dialogue: 0,0:06:36.18,0:06:37.35,Default,,0,0,0,,It's a used club, too.
+Dialogue: 0,0:06:43.19,0:06:44.40,Default,,0,0,0,,Can you use it?
+Dialogue: 0,0:06:45.03,0:06:46.36,Default,,0,0,0,,I'll try!
+Dialogue: 0,0:06:48.53,0:06:51.70,Default,,0,0,0,,She's teeing up that high,\Neven with a headwind like this?
+Dialogue: 0,0:06:51.91,0:06:53.87,Default,,0,0,0,,I just don't understand her.
+Dialogue: 0,0:06:54.41,0:06:55.79,Default,,0,0,0,,It's almost like a circus,
+Dialogue: 0,0:06:56.29,0:06:57.75,Default,,0,0,0,,the way Tonbo plays golf.
+Dialogue: 0,0:07:02.21,0:07:05.00,Default,,0,0,0,,She's set the ball\Nto the top edge of the club face.
+Dialogue: 0,0:07:05.59,0:07:07.71,Default,,0,0,0,,Is she planning to hit with a low spin?
+Dialogue: 0,0:07:08.22,0:07:10.26,Default,,0,0,0,,And with a totally unfamiliar driver?
+Dialogue: 0,0:07:10.47,0:07:12.14,Default,,0,0,0,,She's got some serious guts.
+Dialogue: 0,0:07:16.81,0:07:20.23,Default,,0,0,0,,{\i1}She's deepened her 'K' shape.{\i0}\N{\i1}She's got the ball between her abs.{\i0}
+Dialogue: 0,0:07:24.73,0:07:26.15,Default,,0,0,0,,Don't slice it there!
+Dialogue: 0,0:07:26.28,0:07:27.65,Default,,0,0,0,,It'll go off the cliff!
+Dialogue: 0,0:07:27.90,0:07:30.45,Default,,0,0,0,,{\i1}C'mon! I hope I chose the right driver!{\i0}
+Dialogue: 0,0:07:30.95,0:07:32.11,Default,,0,0,0,,The swallow maneuver!
+Dialogue: 0,0:07:36.74,0:07:37.66,Default,,0,0,0,,Alright!
+Dialogue: 0,0:07:37.95,0:07:39.16,Default,,0,0,0,,I did it!
+Dialogue: 0,0:07:45.46,0:07:48.01,Default,,0,0,0,,She hit the ball even farther than me.
+Dialogue: 0,0:07:48.21,0:07:49.17,Default,,0,0,0,,How?
+Dialogue: 0,0:07:49.34,0:07:51.76,Default,,0,0,0,,When she used a driver during practice,
+Dialogue: 0,0:07:51.84,0:07:53.76,Default,,0,0,0,,she was only hitting slices.
+Dialogue: 0,0:07:54.85,0:07:57.39,Default,,0,0,0,,Looks like I chose\Nthe right driver after all.
+Dialogue: 0,0:07:57.85,0:07:58.85,Default,,0,0,0,,I see.
+Dialogue: 0,0:07:58.97,0:08:01.23,Default,,0,0,0,,If it's just a low-spin shot you're after,
+Dialogue: 0,0:08:01.85,0:08:04.02,Default,,0,0,0,,there's no need to tee up so high.
+Dialogue: 0,0:08:05.27,0:08:08.23,Default,,0,0,0,,In order to control\Nthe ball with a steep downswing angle,
+Dialogue: 0,0:08:08.32,0:08:11.82,Default,,0,0,0,,she created space for the club head\Nto pass through after impact.
+Dialogue: 0,0:08:17.37,0:08:19.41,Default,,0,0,0,,Aren't you bothered by the wind?
+Dialogue: 0,0:08:19.49,0:08:22.29,Default,,0,0,0,,The island is always windy like this!
+Dialogue: 0,0:08:22.37,0:08:27.50,Default,,0,0,0,,{\i1}Let the rain soak you,{\i0}\N{\i1}and let the sunshine burn your skin.{\i0}
+Dialogue: 0,0:08:28.34,0:08:31.67,Default,,0,0,0,,{\i1}There's no need to worry{\i0}\N{\i1}about trivial things like that.{\i0}
+Dialogue: 0,0:08:32.26,0:08:35.51,Default,,0,0,0,,{\i1}That way your heart{\i0}\N{\i1}and mind will stay clear.{\i0}
+Dialogue: 0,0:08:35.72,0:08:39.35,Default,,0,0,0,,{\i1}That's what fisherman like us{\i0}\N{\i1}keep in mind when we head out to sea.{\i0}
+Dialogue: 0,0:08:42.14,0:08:44.31,Default,,0,0,0,,They still have about 220 yards left.
+Dialogue: 0,0:08:44.65,0:08:46.06,Default,,0,0,0,,Right.
+Dialogue: 0,0:08:46.48,0:08:50.48,Default,,0,0,0,,She might be able to make it over\Nthe first hump of the green.
+Dialogue: 0,0:08:52.11,0:08:54.11,Default,,0,0,0,,I have two choices.
+Dialogue: 0,0:08:54.24,0:08:58.74,Default,,0,0,0,,Lay it up and try for three strokes,\Nor try using my wood.
+Dialogue: 0,0:08:59.12,0:09:02.04,Default,,0,0,0,,{\i1}I've got 180 yards to the front edge.{\i0}
+Dialogue: 0,0:09:02.29,0:09:06.83,Default,,0,0,0,,{\i1}I can get the ball there,{\i0}\N{\i1}but I have to watch out for the bunkers.{\i0}
+Dialogue: 0,0:09:07.46,0:09:10.92,Default,,0,0,0,,{\i1}I'm ahead by one in the last two holes.{\i0}
+Dialogue: 0,0:09:11.13,0:09:15.38,Default,,0,0,0,,If I get a bogey now, Tonbo might tie me.
+Dialogue: 0,0:09:15.68,0:09:18.22,Default,,0,0,0,,I have to get a par.
+Dialogue: 0,0:09:20.93,0:09:22.35,Default,,0,0,0,,A three wood.
+Dialogue: 0,0:09:22.85,0:09:24.77,Default,,0,0,0,,Bringing her spoon to the fight, I see.
+Dialogue: 0,0:09:28.86,0:09:30.44,Default,,0,0,0,,That's the right direction!
+Dialogue: 0,0:09:32.48,0:09:33.86,Default,,0,0,0,,Did it drop?
+Dialogue: 0,0:09:35.70,0:09:39.70,Default,,0,0,0,,Less backspin is stronger\Nagainst a headwind.
+Dialogue: 0,0:09:39.78,0:09:44.45,Default,,0,0,0,,But if there isn't enough spin\Nto generate lift,
+Dialogue: 0,0:09:44.71,0:09:46.25,Default,,0,0,0,,the ball won't travel far.
+Dialogue: 0,0:09:50.21,0:09:51.30,Default,,0,0,0,,Hinoki!
+Dialogue: 0,0:09:51.42,0:09:52.71,Default,,0,0,0,,Don't strike the course!
+Dialogue: 0,0:09:52.80,0:09:54.88,Default,,0,0,0,,There are two things all golfers must do.
+Dialogue: 0,0:09:55.30,0:09:58.47,Default,,0,0,0,,Mind their manners and respect the course!
+Dialogue: 0,0:10:00.30,0:10:01.81,Default,,0,0,0,,I'm sorry.
+Dialogue: 0,0:10:04.89,0:10:06.98,Default,,0,0,0,,There's another huge tree over there!
+Dialogue: 0,0:10:08.44,0:10:10.11,Default,,0,0,0,,She did have a good tee shot...
+Dialogue: 0,0:10:10.56,0:10:13.90,Default,,0,0,0,,But that tree might get in the way\Nof her next shot.
+Dialogue: 0,0:10:14.82,0:10:16.15,Default,,0,0,0,,This course...
+Dialogue: 0,0:10:17.24,0:10:19.91,Default,,0,0,0,,It's just so much fun!
+Dialogue: 0,0:10:20.12,0:10:24.49,Default,,0,0,0,,{\i1}That camphor tree is blocking the line{\i0}\N{\i1}between the ball and the pin.{\i0}
+Dialogue: 0,0:10:24.70,0:10:29.79,Default,,0,0,0,,{\i1}She'll need to aim directly over the tree{\i0}\N{\i1}to avoid the headwind from the right.{\i0}
+Dialogue: 0,0:10:30.71,0:10:35.01,Default,,0,0,0,,{\i1}But by hitting it above the tree,{\i0}\N{\i1}she might hit an even stronger gust.{\i0}
+Dialogue: 0,0:10:36.42,0:10:39.09,Default,,0,0,0,,{\i1}Don't worry. Tonbo won't make the par.{\i0}
+Dialogue: 0,0:10:39.93,0:10:41.55,Default,,0,0,0,,I'm going to do it Hinoki-style!
+Dialogue: 0,0:10:43.51,0:10:44.64,Default,,0,0,0,,Off the deck?
+Dialogue: 0,0:10:45.35,0:10:48.02,Default,,0,0,0,,She's about to try something crazy again.
+Dialogue: 0,0:10:48.48,0:10:50.94,Default,,0,0,0,,I wish she'd just play normally for once.
+Dialogue: 0,0:10:51.69,0:10:55.61,Default,,0,0,0,,Getting the ball over that tree\Nwith an off the deck shot won't be easy.
+Dialogue: 0,0:10:57.36,0:10:59.99,Default,,0,0,0,,What is that lazy stance?
+Dialogue: 0,0:11:00.11,0:11:02.78,Default,,0,0,0,,It's like she's attempting\Na running approach.
+Dialogue: 0,0:11:02.95,0:11:05.62,Default,,0,0,0,,That's exactly what she's doing.
+Dialogue: 0,0:11:07.62,0:11:09.71,Default,,0,0,0,,{\i1}She opened up her left shoulder early.{\i0}
+Dialogue: 0,0:11:12.00,0:11:13.13,Default,,0,0,0,,Is it too high?
+Dialogue: 0,0:11:27.89,0:11:29.85,Default,,0,0,0,,Come on! Make it through!
+Dialogue: 0,0:11:32.15,0:11:33.31,Default,,0,0,0,,It went through!
+Dialogue: 0,0:11:33.40,0:11:35.73,Default,,0,0,0,,Go! Flying fish ball!
+Dialogue: 0,0:11:39.15,0:11:41.61,Default,,0,0,0,,It's going further\Nto the right with each bounce!
+Dialogue: 0,0:11:47.74,0:11:48.91,Default,,0,0,0,,Alright!
+Dialogue: 0,0:11:49.16,0:11:51.33,Default,,0,0,0,,That was no normal running approach.
+Dialogue: 0,0:11:51.87,0:11:54.17,Default,,0,0,0,,That's right. She put a slight cut on it.
+Dialogue: 0,0:11:54.63,0:11:57.84,Default,,0,0,0,,By doing that,\Nit went higher than she expected.
+Dialogue: 0,0:11:58.67,0:12:03.01,Default,,0,0,0,,She has a chance for the birdie.\NThis is no normal skill.
+Dialogue: 0,0:12:03.89,0:12:04.80,Default,,0,0,0,,She's a monster.
+Dialogue: 0,0:12:06.10,0:12:08.47,Default,,0,0,0,,She won't be able\Nto hit an explosion shot.
+Dialogue: 0,0:12:08.68,0:12:11.19,Default,,0,0,0,,That's right. It won't get to the pin,
+Dialogue: 0,0:12:11.35,0:12:16.11,Default,,0,0,0,,and even if she's able to graze the sand,\Nthe backspin will send the ball back.
+Dialogue: 0,0:12:17.27,0:12:18.69,Default,,0,0,0,,This is a difficult shot.
+Dialogue: 0,0:12:18.98,0:12:20.32,Default,,0,0,0,,It is.
+Dialogue: 0,0:12:20.40,0:12:22.36,Default,,0,0,0,,She's fallen right into the trap.
+Dialogue: 0,0:12:22.78,0:12:23.70,Default,,0,0,0,,The trap?
+Dialogue: 0,0:12:23.78,0:12:27.58,Default,,0,0,0,,Why are there only bunkers\N50 yards from the green?
+Dialogue: 0,0:12:27.78,0:12:30.04,Default,,0,0,0,,What's the reason\Nfor the three-tier green?
+Dialogue: 0,0:12:30.20,0:12:32.75,Default,,0,0,0,,Every element is designed with purpose.
+Dialogue: 0,0:12:32.83,0:12:38.30,Default,,0,0,0,,When the pin is in the frontmost tier,\Nfalling in the bunker isn't a big deal.
+Dialogue: 0,0:12:38.46,0:12:42.84,Default,,0,0,0,,When the pin is in the middle tier,\Nyou want to avoid the bunker.
+Dialogue: 0,0:12:43.01,0:12:45.64,Default,,0,0,0,,And when the pin is in the furthest tier,
+Dialogue: 0,0:12:46.39,0:12:49.01,Default,,0,0,0,,the bunker must be avoided at all costs.
+Dialogue: 0,0:12:49.81,0:12:51.27,Default,,0,0,0,,So that means...
+Dialogue: 0,0:12:51.81,0:12:57.40,Default,,0,0,0,,Hinoki made a mistake by attempting\Nto get on the green with her second shot.
+Dialogue: 0,0:12:58.94,0:13:01.78,Default,,0,0,0,,I didn't know so much thought\Nwent into designing a course.
+Dialogue: 0,0:13:01.90,0:13:03.65,Default,,0,0,0,,They must be so smart!
+Dialogue: 0,0:13:05.82,0:13:06.87,Default,,0,0,0,,A fifty-eight.
+Dialogue: 0,0:13:07.45,0:13:09.49,Default,,0,0,0,,She's going to try for the back tier.
+Dialogue: 0,0:13:09.91,0:13:13.87,Default,,0,0,0,,This headwind will increase backspin.
+Dialogue: 0,0:13:13.96,0:13:18.04,Default,,0,0,0,,{\i1}It should stop if I hit it low.{\i0}\N{\i1}I hope I'm right.{\i0}
+Dialogue: 0,0:13:18.67,0:13:22.59,Default,,0,0,0,,{\i1}What is this feeling?{\i0}\N{\i1}I cannot lose to that girl.{\i0}
+Dialogue: 0,0:13:23.67,0:13:27.51,Default,,0,0,0,,{\i1}The way she plays is completely different{\i0}\N{\i1}from the golf I learned to play.{\i0}
+Dialogue: 0,0:13:31.31,0:13:36.02,Default,,0,0,0,,{\i1}Watching her play makes me feel{\i0}\N{\i1}like she's refuting the game I know.{\i0}
+Dialogue: 0,0:13:39.98,0:13:41.98,Default,,0,0,0,,{\i1}She's suspending the club with her back.{\i0}
+Dialogue: 0,0:13:42.99,0:13:45.53,Default,,0,0,0,,{\i1}The angle between her{\i0}\N{\i1}forearm and shaft is gone.{\i0}
+Dialogue: 0,0:13:45.65,0:13:47.99,Default,,0,0,0,,{\i1}With an angle,{\i0}\N{\i1}there'd be room for extension.{\i0}
+Dialogue: 0,0:13:48.07,0:13:51.29,Default,,0,0,0,,{\i1}Extending the angle{\i0}\N{\i1}would naturally lower the club head,{\i0}
+Dialogue: 0,0:13:51.37,0:13:53.33,Default,,0,0,0,,{\i1}increasing the chance of a fat shot.{\i0}
+Dialogue: 0,0:13:53.45,0:13:55.21,Default,,0,0,0,,{\i1}She's avoiding that.{\i0}
+Dialogue: 0,0:13:56.08,0:13:58.00,Default,,0,0,0,,{\i1}Alright. My setup is ready.{\i0}
+Dialogue: 0,0:14:02.88,0:14:03.88,Default,,0,0,0,,That sounded great!
+Dialogue: 0,0:14:04.17,0:14:05.17,Default,,0,0,0,,Stop! Spin!
+Dialogue: 0,0:14:07.22,0:14:08.39,Default,,0,0,0,,It went off the green.
+Dialogue: 0,0:14:10.18,0:14:14.10,Default,,0,0,0,,{\i1}Got it?{\i0}\N{\i1}You mustn't lose to a first time opponent.{\i0}
+Dialogue: 0,0:14:24.40,0:14:25.82,Default,,0,0,0,,It was a good shot.
+Dialogue: 0,0:14:26.03,0:14:27.07,Default,,0,0,0,,It was.
+Dialogue: 0,0:14:27.15,0:14:30.70,Default,,0,0,0,,But it got caught in the tailwind\Nand lost its backspin.
+Dialogue: 0,0:14:31.41,0:14:34.08,Default,,0,0,0,,Hinoki hasn't hit a single bad shot.
+Dialogue: 0,0:14:34.16,0:14:35.50,Default,,0,0,0,,In fact,
+Dialogue: 0,0:14:35.58,0:14:37.75,Default,,0,0,0,,all of her shots have been incredible.
+Dialogue: 0,0:14:38.04,0:14:39.50,Default,,0,0,0,,Even so...
+Dialogue: 0,0:14:40.08,0:14:42.13,Default,,0,0,0,,{\i1}There is a flow to the game of golf.{\i0}
+Dialogue: 0,0:14:43.71,0:14:48.13,Default,,0,0,0,,{\i1}Tonbo is using Hinoki's approach{\i0}\N{\i1}as reference for her spin and line.{\i0}
+Dialogue: 0,0:14:51.97,0:14:53.14,Default,,0,0,0,,Alright!
+Dialogue: 0,0:14:54.10,0:14:55.39,Default,,0,0,0,,-Nice birdie.\N-Nice birdie.
+Dialogue: 0,0:14:57.73,0:14:59.35,Default,,0,0,0,,{\i1}That puts Tonbo at one over.{\i0}
+Dialogue: 0,0:15:00.06,0:15:02.40,Default,,0,0,0,,{\i1}This bogey put will put me at two over.{\i0}
+Dialogue: 0,0:15:03.44,0:15:07.07,Default,,0,0,0,,{\i1}Unlike Tonbo,{\i0}\N{\i1}she's taking the wind on her back.{\i0}
+Dialogue: 0,0:15:07.19,0:15:10.07,Default,,0,0,0,,{\i1}An incredibly difficult position{\i0}\N{\i1}for any golfer.{\i0}
+Dialogue: 0,0:15:18.21,0:15:19.37,Default,,0,0,0,,Tonbo took the lead.
+Dialogue: 0,0:15:20.08,0:15:23.00,Default,,0,0,0,,She's two ahead of Hinoki\Nat the last hole.
+Dialogue: 0,0:15:32.93,0:15:34.47,Default,,0,0,0,,The wind is getting stronger.
+Dialogue: 0,0:15:34.56,0:15:37.14,Default,,0,0,0,,The ball won't turn in these conditions.
+Dialogue: 0,0:15:37.98,0:15:41.81,Default,,0,0,0,,I'll have to aim to the right\Nof that bunker on the left.
+Dialogue: 0,0:15:42.56,0:15:45.27,Default,,0,0,0,,Why are you so concerned\Nwith the ball turning?
+Dialogue: 0,0:15:46.44,0:15:47.36,Default,,0,0,0,,Aren't you scared?
+Dialogue: 0,0:15:48.07,0:15:48.90,Default,,0,0,0,,Scared?
+Dialogue: 0,0:15:49.19,0:15:50.20,Default,,0,0,0,,Not at all?
+Dialogue: 0,0:15:50.32,0:15:51.86,Default,,0,0,0,,Going out of bounds, bunkers...
+Dialogue: 0,0:15:51.95,0:15:53.49,Default,,0,0,0,,You're aiming right for them!
+Dialogue: 0,0:15:54.07,0:15:55.74,Default,,0,0,0,,If the ball were to not turn...
+Dialogue: 0,0:15:55.83,0:15:56.99,Default,,0,0,0,,Aren't you worried?
+Dialogue: 0,0:15:57.37,0:15:59.20,Default,,0,0,0,,I'm sorry, but I don't understand.
+Dialogue: 0,0:16:00.75,0:16:03.92,Default,,0,0,0,,I've thought the ocean\Nat night is pretty scary,
+Dialogue: 0,0:16:04.08,0:16:06.75,Default,,0,0,0,,but I've never thought\Nof golf as being scary.
+Dialogue: 0,0:16:18.93,0:16:20.35,Default,,0,0,0,,Well, that was unexpected.
+Dialogue: 0,0:16:22.98,0:16:24.40,Default,,0,0,0,,My bad!
+Dialogue: 0,0:16:25.02,0:16:28.11,Default,,0,0,0,,{\i1}A miss like that. Why is she laughing?{\i0}
+Dialogue: 0,0:16:28.82,0:16:31.82,Default,,0,0,0,,{\i1}How does she enjoy golf so much?{\i0}
+Dialogue: 0,0:16:33.70,0:16:36.95,Default,,0,0,0,,{\i1}I can't... I won't... I won't lose!{\i0}
+Dialogue: 0,0:16:43.04,0:16:44.71,Default,,0,0,0,,Right next to the left bunker!
+Dialogue: 0,0:16:44.96,0:16:46.13,Default,,0,0,0,,What a drive!
+Dialogue: 0,0:16:46.42,0:16:48.38,Default,,0,0,0,,I've got to get the birdie.
+Dialogue: 0,0:16:48.55,0:16:51.01,Default,,0,0,0,,{\i1}If Tonbo gets a bogey,{\i0}\N{\i1}we'll be tied up again.{\i0}
+Dialogue: 0,0:16:53.80,0:16:55.72,Default,,0,0,0,,This will be one tricky downhill shot.
+Dialogue: 0,0:16:56.39,0:16:59.52,Default,,0,0,0,,The ball is stopped just beyond\Nthe teeing ground.
+Dialogue: 0,0:16:59.68,0:17:02.85,Default,,0,0,0,,To make it all the way\Nto the green on the third shot,
+Dialogue: 0,0:17:03.06,0:17:04.73,Default,,0,0,0,,she'll need to focus on distance.
+Dialogue: 0,0:17:06.27,0:17:07.65,Default,,0,0,0,,A five wood?
+Dialogue: 0,0:17:08.15,0:17:10.82,Default,,0,0,0,,A five wood on a slope like that?
+Dialogue: 0,0:17:11.40,0:17:12.53,Default,,0,0,0,,I could never do that.
+Dialogue: 0,0:17:13.03,0:17:14.70,Default,,0,0,0,,I wouldn't stand a chance.
+Dialogue: 0,0:17:15.03,0:17:16.66,Default,,0,0,0,,But maybe Tonbo can do it?
+Dialogue: 0,0:17:29.55,0:17:31.21,Default,,0,0,0,,I can't even stand up in here!
+Dialogue: 0,0:17:31.92,0:17:33.59,Default,,0,0,0,,She's in trouble now.
+Dialogue: 0,0:17:34.17,0:17:36.34,Default,,0,0,0,,You never know what Tonbo will do next.
+Dialogue: 0,0:17:38.01,0:17:39.81,Default,,0,0,0,,What? She's shooting on her knees?
+Dialogue: 0,0:17:43.85,0:17:45.85,Default,,0,0,0,,I knew she couldn't do it.
+Dialogue: 0,0:17:46.73,0:17:49.57,Default,,0,0,0,,I've never actually tried this before.
+Dialogue: 0,0:17:49.73,0:17:51.40,Default,,0,0,0,,She's already on her fourth shot.
+Dialogue: 0,0:17:52.61,0:17:55.61,Default,,0,0,0,,{\i1}Trying out a new technique{\i0}\N{\i1}right on the course?{\i0}
+Dialogue: 0,0:17:55.86,0:17:58.57,Default,,0,0,0,,{\i1}What on earth is she thinking?{\i0}
+Dialogue: 0,0:17:58.74,0:18:01.08,Default,,0,0,0,,I've got it this time.
+Dialogue: 0,0:18:03.87,0:18:05.08,Default,,0,0,0,,Come on!
+Dialogue: 0,0:18:07.37,0:18:08.42,Default,,0,0,0,,Oh no.
+Dialogue: 0,0:18:09.25,0:18:10.59,Default,,0,0,0,,It's in the bunker.
+Dialogue: 0,0:18:11.59,0:18:13.63,Default,,0,0,0,,And inside a foot print, too.
+Dialogue: 0,0:18:14.30,0:18:15.26,Default,,0,0,0,,Alright.
+Dialogue: 0,0:18:15.72,0:18:17.93,Default,,0,0,0,,She really can enjoy any situation.
+Dialogue: 0,0:18:18.97,0:18:21.97,Default,,0,0,0,,Most people would crumble\Nunder the pressure.
+Dialogue: 0,0:18:22.72,0:18:25.89,Default,,0,0,0,,The wind is always blowing on Hinoshima.
+Dialogue: 0,0:18:26.06,0:18:28.73,Default,,0,0,0,,Even on a sunny day, it can rain any time.
+Dialogue: 0,0:18:28.90,0:18:32.07,Default,,0,0,0,,Because the ground is hard,\Nthe ball rolls easily.
+Dialogue: 0,0:18:32.15,0:18:34.90,Default,,0,0,0,,The more it rolls, the lower it goes.
+Dialogue: 0,0:18:35.07,0:18:38.45,Default,,0,0,0,,That's why the ball stops on a bad line.
+Dialogue: 0,0:18:38.82,0:18:42.16,Default,,0,0,0,,For Tonbo, that's just the way things are.
+Dialogue: 0,0:18:45.00,0:18:47.79,Default,,0,0,0,,{\i1}I've never thought of it that way before.{\i0}
+Dialogue: 0,0:18:59.55,0:19:02.01,Default,,0,0,0,,I opened the club face too much.
+Dialogue: 0,0:19:02.30,0:19:03.47,Default,,0,0,0,,Tonbo's play style
+Dialogue: 0,0:19:03.68,0:19:06.85,Default,,0,0,0,,is all about riding the edge\Nof disrupting her score.
+Dialogue: 0,0:19:07.81,0:19:09.98,Default,,0,0,0,,That's not only her greatest strength,
+Dialogue: 0,0:19:10.19,0:19:12.86,Default,,0,0,0,,it's also her biggest weakness\Nin competitive golf.
+Dialogue: 0,0:19:13.65,0:19:17.69,Default,,0,0,0,,She doesn't care about her score,\Nand she's not afraid of ruining it.
+Dialogue: 0,0:19:19.11,0:19:22.87,Default,,0,0,0,,Her only focus\Nis the excitement of hitting the ball.
+Dialogue: 0,0:19:29.58,0:19:31.42,Default,,0,0,0,,Nice shot!
+Dialogue: 0,0:19:31.88,0:19:34.75,Default,,0,0,0,,Be careful not to disturb\Nthe other golfers!
+Dialogue: 0,0:19:40.43,0:19:42.76,Default,,0,0,0,,This ought to be interesting.
+Dialogue: 0,0:19:42.97,0:19:45.39,Default,,0,0,0,,{\i1}There it is again.{\i0}\N{\i1}She's not worried at all.{\i0}
+Dialogue: 0,0:19:46.06,0:19:47.47,Default,,0,0,0,,Look at that slope!
+Dialogue: 0,0:19:47.98,0:19:50.23,Default,,0,0,0,,And she's right on the edge of the bunker!
+Dialogue: 0,0:19:50.31,0:19:52.48,Default,,0,0,0,,There's hardly any space to put her club!
+Dialogue: 0,0:19:53.69,0:19:55.48,Default,,0,0,0,,This is a pretty steep slope.
+Dialogue: 0,0:19:57.19,0:19:59.74,Default,,0,0,0,,She does have the option\Nof moving the ball back.
+Dialogue: 0,0:19:59.82,0:20:02.99,Default,,0,0,0,,That is if she was worried\Nabout saving her score.
+Dialogue: 0,0:20:04.37,0:20:09.54,Default,,0,0,0,,{\i1}The score means nothing to Tonbo.{\i0}\N{\i1}She's in it for the thrill of the shot.{\i0}
+Dialogue: 0,0:20:11.08,0:20:15.50,Default,,0,0,0,,{\i1}With that stance, her right knee{\i0}\N{\i1}will block any chance of a backswing!{\i0}
+Dialogue: 0,0:20:16.21,0:20:17.34,Default,,0,0,0,,Alright.
+Dialogue: 0,0:20:17.80,0:20:20.34,Default,,0,0,0,,{\i1}No way. There's no way she can do it!{\i0}
+Dialogue: 0,0:20:23.18,0:20:25.68,Default,,0,0,0,,She might be able to hit it that way.
+Dialogue: 0,0:20:28.47,0:20:29.39,Default,,0,0,0,,No way!
+Dialogue: 0,0:20:29.52,0:20:30.60,Default,,0,0,0,,She did it!
+Dialogue: 0,0:20:32.64,0:20:33.48,Default,,0,0,0,,Go!
+Dialogue: 0,0:20:33.56,0:20:34.77,Default,,0,0,0,,Make it over!
+Dialogue: 0,0:20:39.40,0:20:40.49,Default,,0,0,0,,Nice!
+Dialogue: 0,0:20:41.20,0:20:42.36,Default,,0,0,0,,Thank you very much!
+Dialogue: 0,0:20:45.24,0:20:46.49,Default,,0,0,0,,A thirty-eight?
+Dialogue: 0,0:20:47.20,0:20:49.79,Default,,0,0,0,,I said no more than one over!
+Dialogue: 0,0:20:50.54,0:20:56.00,Default,,0,0,0,,You thought you could get off\Neasy due to a little breeze?
+Dialogue: 0,0:20:56.21,0:20:57.67,Default,,0,0,0,,I don't think so!
+Dialogue: 0,0:20:57.96,0:20:59.30,Default,,0,0,0,,Otoha...
+Dialogue: 0,0:21:00.13,0:21:02.84,Default,,0,0,0,,And what makes you think\Nit was just a little breeze?
+Dialogue: 0,0:21:04.47,0:21:06.14,Default,,0,0,0,,Igaiga.
+Dialogue: 0,0:21:06.22,0:21:09.01,Default,,0,0,0,,You were indoors weren't you?\NHow could you know?
+Dialogue: 0,0:21:10.97,0:21:12.27,Default,,0,0,0,,We're going.
+Dialogue: 0,0:21:17.98,0:21:20.57,Default,,0,0,0,,I see there was a fresh face there today.
+Dialogue: 0,0:21:20.69,0:21:22.78,Default,,0,0,0,,Don't tell me you lost to her, did you?
+Dialogue: 0,0:21:23.65,0:21:24.66,Default,,0,0,0,,I lost.
+Dialogue: 0,0:21:24.74,0:21:25.57,Default,,0,0,0,,What?
+Dialogue: 0,0:21:26.62,0:21:28.66,Default,,0,0,0,,She beat me at everything, Dad.
+Dialogue: 0,0:21:29.49,0:21:30.58,Default,,0,0,0,,What was her score?
+Dialogue: 0,0:21:31.12,0:21:32.29,Default,,0,0,0,,Was she under par?
+Dialogue: 0,0:21:33.41,0:21:34.46,Default,,0,0,0,,Forty-one.
+Dialogue: 0,0:21:34.62,0:21:35.67,Default,,0,0,0,,Forty-one?
+Dialogue: 0,0:21:36.00,0:21:38.42,Default,,0,0,0,,What kind of score is that?
+Dialogue: 0,0:21:38.75,0:21:41.09,Default,,0,0,0,,Your thirty-eight is much better.
+Dialogue: 0,0:21:44.30,0:21:46.05,Default,,0,0,0,,She doesn't care about her swing?
+Dialogue: 0,0:21:46.76,0:21:49.81,Default,,0,0,0,,For Tonbo, working on her swing\Nis the last thing on her mind.
+Dialogue: 0,0:21:50.64,0:21:53.06,Default,,0,0,0,,She's only concerned\Nabout where the ball goes.
+Dialogue: 0,0:21:53.43,0:21:54.89,Default,,0,0,0,,Where the ball goes?
+Dialogue: 0,0:21:55.81,0:21:59.48,Default,,0,0,0,,Unlike other players\Nconcerned about how to swing the club,
+Dialogue: 0,0:21:59.73,0:22:02.11,Default,,0,0,0,,Tonbo only cares about the outcome.
+Dialogue: 0,0:22:03.61,0:22:05.03,Default,,0,0,0,,So? What do you think?
+Dialogue: 0,0:22:05.28,0:22:06.70,Default,,0,0,0,,Will we be able to use her?
+Dialogue: 0,0:22:11.62,0:22:16.00,Default,,0,0,0,,We've got a real special one\Non our hands, Mr. Igarashi.
+Dialogue: 0,0:23:47.97,0:23:48.80,Default,,0,0,0,,PREVIEW
+Dialogue: 0,0:23:48.88,0:23:49.84,Default,,0,0,0,,Hinoki!
+Dialogue: 0,0:23:49.93,0:23:50.93,Default,,0,0,0,,What's the matter, Tonbo?
+Dialogue: 0,0:23:51.01,0:23:55.01,Default,,0,0,0,,That was my first time on the course.\NWhat am I supposed to do next?
+Dialogue: 0,0:23:55.43,0:23:57.22,Default,,0,0,0,,Well, going straight to the Kyushu--
+Dialogue: 0,0:23:57.31,0:23:58.64,Default,,0,0,0,,Take a bath or eat dinner, right?
+Dialogue: 0,0:23:58.73,0:23:59.56,Default,,0,0,0,,What?
+Dialogue: 0,0:23:59.64,0:24:01.27,Default,,0,0,0,,{\i1}On the next episode of{\i0} Tonbo!
+Dialogue: 0,0:24:01.35,0:24:03.65,Default,,0,0,0,,{\i1}It Begins!{\i0}\N{\i1}The Kyushu Women's Championship!{\i0}
+Dialogue: 0,0:24:03.77,0:24:06.07,Default,,0,0,0,,I've got to write a letter to Grandpa Gon!
+Dialogue: 0,0:24:06.15,0:24:07.94,Default,,0,0,0,,That's important too, I guess.

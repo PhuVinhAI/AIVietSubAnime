@@ -165,17 +165,25 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
   useEffect(() => {
     if (step.kind !== 'processing') return;
     let cancelled = false;
+
+    // Prepare: ffmpeg mp3 + mkvextract đều nhẹ → spawn TẤT CẢ song song.
+    // (HardsubMode đối lập — x264 ăn 100% CPU/process nên giữ serial.)
     const run = async () => {
       const statuses = [...step.statuses];
-      for (let i = 0; i < step.jobs.length; i++) {
-        if (cancelled) return;
-        const job = step.jobs[i];
-        if (!job) continue;
+      let doneCount = 0;
 
-        statuses[i] = { ...statuses[i]!, status: 'running' };
+      const flush = () => {
         setStep((s) =>
-          s.kind === 'processing' ? { ...s, statuses: [...statuses], current: i } : s
+          s.kind === 'processing'
+            ? { ...s, statuses: [...statuses], current: doneCount }
+            : s
         );
+      };
+
+      const processOne = async (job: PrepareJob, i: number) => {
+        if (cancelled) return;
+        statuses[i] = { ...statuses[i]!, status: 'running' };
+        flush();
 
         try {
           const newMkv = join(job.epFolder, job.probe.fileName);
@@ -200,13 +208,16 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
             detail: e instanceof Error ? e.message : String(e),
           };
         }
-        setStep((s) =>
-          s.kind === 'processing' ? { ...s, statuses: [...statuses], current: i } : s
-        );
-      }
+        doneCount++;
+        flush();
+      };
+
+      await Promise.all(step.jobs.map((job, i) => processOne(job, i)));
+
       if (cancelled) return;
       setStep({ kind: 'done', statuses });
     };
+
     run();
     return () => {
       cancelled = true;
@@ -337,7 +348,7 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
           <StepHeader
             step={5}
             total={5}
-            title={`Đang xử lý ${step.current + 1}/${step.jobs.length}`}
+            title={`Song song toàn bộ · ${step.current}/${step.jobs.length} hoàn thành`}
           />
           <StatusList items={step.statuses} />
         </Box>

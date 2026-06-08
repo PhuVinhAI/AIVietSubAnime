@@ -1,0 +1,411 @@
+﻿[Script Info]
+Title: [Erai-raws] en-us
+ScriptType: v4.00+
+WrapStyle: 0
+PlayResX: 1280
+PlayResY: 720
+Video Zoom Percent: 1
+Scroll Position: 0
+Active Line: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Trebuchet MS,45,&H00FFFFFF,&H000000FF,&H00020713,&H00000000,-1,0,0,0,100,100,0,0,1,1.7,0,2,10,10,15,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:03.97,0:00:06.30,Default,,0,0,0,,I didn't think we'd end up\Nat the same school.
+Dialogue: 0,0:00:06.40,0:00:07.37,Default,,0,0,0,,I'm relieved!
+Dialogue: 0,0:00:07.64,0:00:10.31,Default,,0,0,0,,I was nervous about\Ngoing to school on my own.
+Dialogue: 0,0:00:11.71,0:00:14.11,Default,,0,0,0,,{\i1}It's already been a week since I left the island{\i0}
+Dialogue: 0,0:00:14.24,0:00:16.31,Default,,0,0,0,,{\i1}and high school started today. {\i0}
+Dialogue: 0,0:00:16.95,0:00:18.78,Default,,0,0,0,,{\i1}How have you all been?{\i0}
+Dialogue: 0,0:00:18.85,0:00:22.25,Default,,0,0,0,,{\i1}I've cried a few times{\i0}\N{\i1}thinking about the island.{\i0}
+Dialogue: 0,0:00:22.75,0:00:24.92,Default,,0,0,0,,{\i1}It can get lonely at night.{\i0}
+Dialogue: 0,0:00:25.09,0:00:27.32,Default,,0,0,0,,{\i1}Especially without Grandpa Gon's snoring!{\i0}
+Dialogue: 0,0:00:28.02,0:00:29.12,Default,,0,0,0,,Hey,
+Dialogue: 0,0:00:29.26,0:00:30.69,Default,,0,0,0,,how about we exchange phone numbers?
+Dialogue: 0,0:00:30.76,0:00:31.63,Default,,0,0,0,,Sure!
+Dialogue: 0,0:00:31.73,0:00:33.90,Default,,0,0,0,,THANK YOU!
+Dialogue: 0,0:00:34.43,0:00:37.87,Default,,0,0,0,,{\i1}Kumamoto doesn't have{\i0}\N{\i1}banyan trees like the island does.{\i0}
+Dialogue: 0,0:00:38.30,0:00:41.80,Default,,0,0,0,,{\i1}But there are lots of big{\i0}\N{\i1}camphor trees all over the place.{\i0}
+Dialogue: 0,0:00:41.94,0:00:43.61,Default,,0,0,0,,{\i1}There's even one at my school.{\i0}
+Dialogue: 0,0:00:44.11,0:00:46.61,Default,,0,0,0,,{\i1}Somehow, \Nthey still remind me of the island{\i0}
+Dialogue: 0,0:00:47.51,0:00:49.91,Default,,0,0,0,,{\i1}and I'm really taking a liking to them!{\i0}
+Dialogue: 0,0:00:53.05,0:00:54.62,Default,,0,0,0,,It's 480 yen?!
+Dialogue: 0,0:00:55.02,0:00:56.79,Default,,0,0,0,,Would you like to try that one?
+Dialogue: 0,0:00:57.99,0:00:59.49,Default,,0,0,0,,That's OK.
+Dialogue: 0,0:01:00.36,0:01:04.19,Default,,0,0,0,,{\i1}I bet you would make lots of money{\i0}\N{\i1}if you moved here, Grandpa Gon.{\i0}
+Dialogue: 0,0:01:05.69,0:01:08.43,Default,,0,0,0,,{\i1}Even at night, there are lights all over.{\i0}
+Dialogue: 0,0:01:09.20,0:01:10.47,Default,,0,0,0,,{\i1}Everything feels new.{\i0}
+Dialogue: 0,0:01:11.50,0:01:12.47,Default,,0,0,0,,{\i1}Even so...{\i0}
+Dialogue: 0,0:01:15.04,0:01:16.24,Default,,0,0,0,,{\i1}I'm doing great.{\i0}
+Dialogue: 0,0:02:58.04,0:02:59.04,Default,,0,0,0,,A competition?
+Dialogue: 0,0:02:59.24,0:03:00.18,Default,,0,0,0,,That's right.
+Dialogue: 0,0:03:00.28,0:03:02.34,Default,,0,0,0,,The Kyushu Women's Open is next month.
+Dialogue: 0,0:03:02.68,0:03:04.98,Default,,0,0,0,,They're holding it at Chuo Country Club!
+Dialogue: 0,0:03:05.55,0:03:06.75,Default,,0,0,0,,What are you going to do, Tonbo?
+Dialogue: 0,0:03:07.75,0:03:09.05,Default,,0,0,0,,What do you mean?
+Dialogue: 0,0:03:09.59,0:03:10.42,Default,,0,0,0,,Dad!
+Dialogue: 0,0:03:10.69,0:03:12.89,Default,,0,0,0,,Please, \Ngive me your Chuo Country Club membership!
+Dialogue: 0,0:03:13.36,0:03:14.66,Default,,0,0,0,,What do you want that for?
+Dialogue: 0,0:03:15.12,0:03:17.39,Default,,0,0,0,,You have multiple memberships, don't you?
+Dialogue: 0,0:03:17.59,0:03:18.99,Default,,0,0,0,,I do, but...
+Dialogue: 0,0:03:19.33,0:03:20.33,Default,,0,0,0,,Thank you!
+Dialogue: 0,0:03:20.56,0:03:22.40,Default,,0,0,0,,Make the membership in Tonbo's name.
+Dialogue: 0,0:03:23.30,0:03:25.77,Default,,0,0,0,,You mean it's not for you, but for Tonbo?
+Dialogue: 0,0:03:26.17,0:03:27.14,Default,,0,0,0,,That's right.
+Dialogue: 0,0:03:27.20,0:03:29.54,Default,,0,0,0,,I'm putting Tonbo\Nin the Kyushu Women's Open!
+Dialogue: 0,0:03:30.11,0:03:33.64,Default,,0,0,0,,Contenders must be\Npart of the Kyushu Golf Federation
+Dialogue: 0,0:03:33.74,0:03:36.41,Default,,0,0,0,,and have a handicap up to 13.4.
+Dialogue: 0,0:03:37.68,0:03:39.78,Default,,0,0,0,,The tournament is in one month.
+Dialogue: 0,0:03:39.88,0:03:44.22,Default,,0,0,0,,We'll need to submit\Nfive score cards to get the handicap.
+Dialogue: 0,0:03:44.55,0:03:48.59,Default,,0,0,0,,There's not a lot of time\Nto play after school, is there?
+Dialogue: 0,0:03:49.42,0:03:51.86,Default,,0,0,0,,Tonbo, what time does school end?
+Dialogue: 0,0:03:52.26,0:03:54.36,Default,,0,0,0,,Around four, I think.
+Dialogue: 0,0:03:54.76,0:03:56.50,Default,,0,0,0,,Even if we drive fast,
+Dialogue: 0,0:03:56.77,0:03:58.93,Default,,0,0,0,,we couldn't start until nearly five.
+Dialogue: 0,0:03:59.47,0:04:02.27,Default,,0,0,0,,It'll be dark by 6:30.
+Dialogue: 0,0:04:02.64,0:04:05.91,Default,,0,0,0,,"So that means we would only have\Nninety minutes for one round?"
+Dialogue: 0,0:04:06.04,0:04:08.48,Default,,0,0,0,,We have to think about\Nthe other players, too.
+Dialogue: 0,0:04:08.94,0:04:10.68,Default,,0,0,0,,It's the only choice we have.
+Dialogue: 0,0:04:11.38,0:04:13.32,Default,,0,0,0,,We can't waste a single day.
+Dialogue: 0,0:04:17.92,0:04:19.22,Default,,0,0,0,,I'm counting on you, Fumi.
+Dialogue: 0,0:04:19.29,0:04:20.16,Default,,0,0,0,,Right!
+Dialogue: 0,0:04:21.42,0:04:23.16,Default,,0,0,0,,I'm done with school!
+Dialogue: 0,0:04:25.43,0:04:28.16,Default,,0,0,0,,Superintendent Nakase told me everything!\NGet out there!
+Dialogue: 0,0:04:28.93,0:04:29.83,Default,,0,0,0,,Start on the in course!
+Dialogue: 0,0:04:30.47,0:04:31.17,Default,,0,0,0,,In course?
+Dialogue: 0,0:04:31.23,0:04:32.10,Default,,0,0,0,,Don't you know?
+Dialogue: 0,0:04:32.94,0:04:35.34,Default,,0,0,0,,The first nine holes\Nare called the {\i1}out course{\i0}.
+Dialogue: 0,0:04:35.44,0:04:38.24,Default,,0,0,0,,Holes 10 through 18\Nare called the {\i1}in course{\i0}.
+Dialogue: 0,0:04:38.81,0:04:42.41,Default,,0,0,0,,Cool! I've never played\Na round from the {\i1}in course{\i0} before!
+Dialogue: 0,0:04:43.41,0:04:44.45,Default,,0,0,0,,Here I go!
+Dialogue: 0,0:04:45.15,0:04:46.75,Default,,0,0,0,,No practice swing?
+Dialogue: 0,0:04:49.75,0:04:50.79,Default,,0,0,0,,Oops.
+Dialogue: 0,0:04:51.22,0:04:52.99,Default,,0,0,0,,Out of bounds on the first hit.
+Dialogue: 0,0:04:54.66,0:04:57.26,Default,,0,0,0,,The ideal handicap is 13.4.
+Dialogue: 0,0:04:58.03,0:05:00.66,Default,,0,0,0,,That's an average score of eighty-five.
+Dialogue: 0,0:05:00.93,0:05:03.43,Default,,0,0,0,,Can she really finish\Nwith a score like that?
+Dialogue: 0,0:05:03.60,0:05:06.40,Default,,0,0,0,,Hajime says that's no problem for Tonbo.
+Dialogue: 0,0:05:10.81,0:05:11.71,Default,,0,0,0,,How did it go?
+Dialogue: 0,0:05:13.81,0:05:14.84,Default,,0,0,0,,I got a ninety.
+Dialogue: 0,0:05:15.44,0:05:17.41,Default,,0,0,0,,I thought you said there's no problem!
+Dialogue: 0,0:05:17.68,0:05:20.25,Default,,0,0,0,,I ran out of energy halfway through.
+Dialogue: 0,0:05:20.82,0:05:22.72,Default,,0,0,0,,The last three holes were pitch black!
+Dialogue: 0,0:05:22.95,0:05:24.49,Default,,0,0,0,,It was so much fun!
+Dialogue: 0,0:05:27.86,0:05:28.89,Default,,0,0,0,,Don't worry.
+Dialogue: 0,0:05:28.99,0:05:30.43,Default,,0,0,0,,She can recover from this.
+Dialogue: 0,0:05:34.50,0:05:35.83,Default,,0,0,0,,Go, Taiga!
+Dialogue: 0,0:05:35.96,0:05:37.73,Default,,0,0,0,,You're still kids!
+Dialogue: 0,0:05:37.80,0:05:40.20,Default,,0,0,0,,Running 18 holes\Nshould be no problem for you!
+Dialogue: 0,0:05:40.50,0:05:41.34,Default,,0,0,0,,Right!
+Dialogue: 0,0:05:41.84,0:05:43.34,Default,,0,0,0,,Eighty four?!
+Dialogue: 0,0:05:43.64,0:05:44.47,Default,,0,0,0,,Yeah.
+Dialogue: 0,0:05:44.61,0:05:46.91,Default,,0,0,0,,The last hole was pitch black again.
+Dialogue: 0,0:05:47.51,0:05:49.31,Default,,0,0,0,,Come on, Taiga.
+Dialogue: 0,0:05:49.65,0:05:52.98,Default,,0,0,0,,Tonbo only has five clubs!
+Dialogue: 0,0:05:53.55,0:05:56.29,Default,,0,0,0,,I had to run with a caddy bag\Nthe whole time!
+Dialogue: 0,0:05:56.75,0:05:58.55,Default,,0,0,0,,That was torture!
+Dialogue: 0,0:06:01.19,0:06:03.33,Default,,0,0,0,,How about I go with her next time?
+Dialogue: 0,0:06:03.99,0:06:05.46,Default,,0,0,0,,Hinoki!
+Dialogue: 0,0:06:05.89,0:06:08.33,Default,,0,0,0,,Finish up before the sun goes down!
+Dialogue: 0,0:06:09.00,0:06:10.00,Default,,0,0,0,,Right!
+Dialogue: 0,0:06:10.90,0:06:12.40,Default,,0,0,0,,Hinoki, what are you carrying?
+Dialogue: 0,0:06:12.63,0:06:14.54,Default,,0,0,0,,I'm going to try playing with five clubs too!
+Dialogue: 0,0:06:15.10,0:06:16.24,Default,,0,0,0,,Thank you, sir!
+Dialogue: 0,0:06:17.57,0:06:18.91,Default,,0,0,0,,Good luck, girls!
+Dialogue: 0,0:06:19.58,0:06:20.51,Default,,0,0,0,,Oh?
+Dialogue: 0,0:06:21.11,0:06:22.51,Default,,0,0,0,,Is that her?
+Dialogue: 0,0:06:23.01,0:06:24.18,Default,,0,0,0,,Oh, superintendent!
+Dialogue: 0,0:06:24.75,0:06:26.78,Default,,0,0,0,,Yes. That's the girl from Udo's place.
+Dialogue: 0,0:06:27.38,0:06:29.65,Default,,0,0,0,,The girl from Tokara, right?
+Dialogue: 0,0:06:31.59,0:06:32.79,Default,,0,0,0,,You're up, Hinoki!
+Dialogue: 0,0:06:35.39,0:06:36.43,Default,,0,0,0,,Nice shot!
+Dialogue: 0,0:06:38.49,0:06:39.70,Default,,0,0,0,,Seventy-eight!
+Dialogue: 0,0:06:40.50,0:06:42.53,Default,,0,0,0,,And we even finished before it got dark!
+Dialogue: 0,0:06:42.87,0:06:44.90,Default,,0,0,0,,Alright! That's more like it!
+Dialogue: 0,0:06:45.10,0:06:46.54,Default,,0,0,0,,Way to go, Hinoki!
+Dialogue: 0,0:06:46.94,0:06:50.67,Default,,0,0,0,,I should have had\NHinoki play with you all along!
+Dialogue: 0,0:06:51.11,0:06:52.74,Default,,0,0,0,,Sorry about before.
+Dialogue: 0,0:06:53.44,0:06:54.28,Default,,0,0,0,,To be honest,
+Dialogue: 0,0:06:54.44,0:06:56.38,Default,,0,0,0,,I couldn't break ninety today.
+Dialogue: 0,0:06:58.71,0:07:01.85,Default,,0,0,0,,I can't play with only five clubs.
+Dialogue: 0,0:07:02.85,0:07:04.45,Default,,0,0,0,,I was no match for Tonbo.
+Dialogue: 0,0:07:06.05,0:07:08.16,Default,,0,0,0,,A FEW DAYS LATER
+Dialogue: 0,0:07:08.62,0:07:09.63,Default,,0,0,0,,Eleven?
+Dialogue: 0,0:07:10.29,0:07:13.40,Default,,0,0,0,,This notice says I have a handicap of 11.
+Dialogue: 0,0:07:13.73,0:07:16.73,Default,,0,0,0,,That means you can\Nparticipate in the Kyushu Women's Open!
+Dialogue: 0,0:07:17.17,0:07:18.20,Default,,0,0,0,,Congratulations!
+Dialogue: 0,0:07:18.47,0:07:19.43,Default,,0,0,0,,It's my first time.
+Dialogue: 0,0:07:21.07,0:07:22.00,Default,,0,0,0,,You see,
+Dialogue: 0,0:07:22.30,0:07:24.47,Default,,0,0,0,,this will be my first ever competition.
+Dialogue: 0,0:07:25.07,0:07:26.24,Default,,0,0,0,,And not only for golf.
+Dialogue: 0,0:07:26.58,0:07:29.18,Default,,0,0,0,,I've never been\Nin any kind of competition.
+Dialogue: 0,0:07:29.95,0:07:31.21,Default,,0,0,0,,I wonder what it'll be like?
+Dialogue: 0,0:07:31.55,0:07:33.55,Default,,0,0,0,,Lots of people will be there, right?
+Dialogue: 0,0:07:34.32,0:07:36.05,Default,,0,0,0,,Maybe even ten!
+Dialogue: 0,0:07:38.32,0:07:41.32,Default,,0,0,0,,You're going to\Nhave to think bigger than that!
+Dialogue: 0,0:07:42.96,0:07:44.93,Default,,0,0,0,,A real competition.
+Dialogue: 0,0:07:45.46,0:07:47.00,Default,,0,0,0,,I sure am excited.
+Dialogue: 0,0:07:54.74,0:07:55.77,Default,,0,0,0,,Who's there?
+Dialogue: 0,0:07:55.97,0:07:59.21,Default,,0,0,0,,-Stay away from me!\N-Calm down!
+Dialogue: 0,0:07:59.74,0:08:01.01,Default,,0,0,0,,So sorry to scare you.
+Dialogue: 0,0:08:01.74,0:08:04.15,Default,,0,0,0,,This is my bedroom, actually.
+Dialogue: 0,0:08:18.46,0:08:20.46,Default,,0,0,0,,So you finally met Tonbo.
+Dialogue: 0,0:08:20.76,0:08:22.03,Default,,0,0,0,,This is my daughter.
+Dialogue: 0,0:08:22.23,0:08:24.30,Default,,0,0,0,,I'm Nikome Udo. Nice to meet you!
+Dialogue: 0,0:08:24.50,0:08:26.54,Default,,0,0,0,,Can you believe she's a pro?
+Dialogue: 0,0:08:26.64,0:08:28.44,Default,,0,0,0,,You don't have to put it like that!
+Dialogue: 0,0:08:29.47,0:08:31.01,Default,,0,0,0,,Give that back!
+Dialogue: 0,0:08:31.64,0:08:33.94,Default,,0,0,0,,She was supposed to be\Noff at the women's tour.
+Dialogue: 0,0:08:34.24,0:08:37.68,Default,,0,0,0,,But she didn't make the cut\Nand came home earlier than expected.
+Dialogue: 0,0:08:38.38,0:08:42.42,Default,,0,0,0,,You were so down in the dumps earlier.\NYou sure bounce back quickly!
+Dialogue: 0,0:08:43.02,0:08:44.49,Default,,0,0,0,,She's just like her mother, you know.
+Dialogue: 0,0:08:44.79,0:08:46.26,Default,,0,0,0,,Don't point the finger at me!
+Dialogue: 0,0:08:46.66,0:08:48.12,Default,,0,0,0,,Don't compare me to Mom!
+Dialogue: 0,0:08:48.49,0:08:51.46,Default,,0,0,0,,And will you stop\Nwearing those lame clothes?
+Dialogue: 0,0:08:51.56,0:08:54.16,Default,,0,0,0,,Buy him some with your prize money!
+Dialogue: 0,0:08:54.26,0:08:55.33,Default,,0,0,0,,That's not happening.
+Dialogue: 0,0:08:55.53,0:08:56.67,Default,,0,0,0,,You stay out of this!
+Dialogue: 0,0:08:57.90,0:09:00.57,Default,,0,0,0,,You guys sure to get along well!
+Dialogue: 0,0:09:00.74,0:09:02.40,Default,,0,0,0,,Yeah, right!
+Dialogue: 0,0:09:08.88,0:09:10.75,Default,,0,0,0,,Your ball height is all over the place.
+Dialogue: 0,0:09:12.51,0:09:14.68,Default,,0,0,0,,That means your contact is inconsistent.
+Dialogue: 0,0:09:15.25,0:09:16.82,Default,,0,0,0,,There's no softness to your swing either.
+Dialogue: 0,0:09:17.52,0:09:19.49,Default,,0,0,0,,You'll never make the finals at this rate.
+Dialogue: 0,0:09:21.62,0:09:23.29,Default,,0,0,0,,Before you fall into a rut,
+Dialogue: 0,0:09:23.39,0:09:25.13,Default,,0,0,0,,you should review the basics.
+Dialogue: 0,0:09:26.76,0:09:28.23,Default,,0,0,0,,You want me to start from there?
+Dialogue: 0,0:09:29.00,0:09:30.30,Default,,0,0,0,,I'm beat.
+Dialogue: 0,0:09:32.67,0:09:33.94,Default,,0,0,0,,Back to basics?
+Dialogue: 0,0:09:57.43,0:09:58.46,Default,,0,0,0,,The shaft!
+Dialogue: 0,0:09:59.56,0:10:01.33,Default,,0,0,0,,My brother taught me that one.
+Dialogue: 0,0:10:01.83,0:10:05.63,Default,,0,0,0,,He may be underestimated\Nas a professional teacher
+Dialogue: 0,0:10:05.70,0:10:08.97,Default,,0,0,0,,but as a player, \Nhis skills are still no match for me!
+Dialogue: 0,0:10:09.94,0:10:11.67,Default,,0,0,0,,Why are you hitting ground balls?
+Dialogue: 0,0:10:11.94,0:10:13.58,Default,,0,0,0,,Didn't you hear what he told me?
+Dialogue: 0,0:10:13.81,0:10:16.11,Default,,0,0,0,,My contact point is inconsistent.
+Dialogue: 0,0:10:17.08,0:10:19.78,Default,,0,0,0,,Hitting ground balls helps\Ncontact consistency
+Dialogue: 0,0:10:19.85,0:10:22.25,Default,,0,0,0,,and also improves the angle of impact.
+Dialogue: 0,0:10:23.62,0:10:29.89,Default,,0,0,0,,Try to hit the center of the ball with\Nthe leading edge parallel to the ground.
+Dialogue: 0,0:10:31.16,0:10:32.56,Default,,0,0,0,,As you become more advanced,
+Dialogue: 0,0:10:32.69,0:10:34.73,Default,,0,0,0,,you try to control the ball from above.
+Dialogue: 0,0:10:34.96,0:10:38.20,Default,,0,0,0,,But when your form starts to break down,\Nthat can be dangerous.
+Dialogue: 0,0:10:38.73,0:10:42.27,Default,,0,0,0,,If you sweep the ball from the side,\Nyou can make a decent shot.
+Dialogue: 0,0:10:42.37,0:10:44.34,Default,,0,0,0,,There's no need to hit down on it.
+Dialogue: 0,0:10:44.81,0:10:48.31,Default,,0,0,0,,That's why I practice sweeping the ball\Nwith precision and accuracy.
+Dialogue: 0,0:10:48.71,0:10:50.81,Default,,0,0,0,,So says my brother!
+Dialogue: 0,0:10:51.95,0:10:52.92,Default,,0,0,0,,If you can do that,
+Dialogue: 0,0:10:53.18,0:10:55.48,Default,,0,0,0,,you can practice distance\Nwith ground balls.
+Dialogue: 0,0:10:56.12,0:10:58.52,Default,,0,0,0,,Next, you need to add flex to the shaft.
+Dialogue: 0,0:10:58.72,0:10:59.72,Default,,0,0,0,,Flex?
+Dialogue: 0,0:11:00.32,0:11:02.02,Default,,0,0,0,,By handling it softly.
+Dialogue: 0,0:11:03.13,0:11:05.16,Default,,0,0,0,,Like the old wobbly pencil trick.
+Dialogue: 0,0:11:05.46,0:11:07.80,Default,,0,0,0,,The one that looks like\Nan octopus' tentacles!
+Dialogue: 0,0:11:09.60,0:11:12.50,Default,,0,0,0,,Then, once you've got\Nyour contact and flex down,
+Dialogue: 0,0:11:13.54,0:11:16.61,Default,,0,0,0,,slightly lower the position\Nwhere you place the leading edge.
+Dialogue: 0,0:11:17.74,0:11:21.84,Default,,0,0,0,,Align the leading edge with the center\Nof the ball and the ground.
+Dialogue: 0,0:11:26.48,0:11:29.65,Default,,0,0,0,,If you can remember\Nthis soft, side approach,
+Dialogue: 0,0:11:30.12,0:11:35.96,Default,,0,0,0,,wet lies, depressed lies and even\Nsand lies will become much easier.
+Dialogue: 0,0:11:37.13,0:11:38.89,Default,,0,0,0,,I want to try it, too!
+Dialogue: 0,0:11:42.50,0:11:46.70,Default,,0,0,0,,Hajime, what will you do about\Nher clothes and clubs for the competition?
+Dialogue: 0,0:11:47.14,0:11:51.71,Default,,0,0,0,,That jersey won't do.\NI'll have to find her some shoes, too.
+Dialogue: 0,0:11:53.01,0:11:55.04,Default,,0,0,0,,Don't you have any golf shoes, Tonbo?
+Dialogue: 0,0:11:55.51,0:11:57.15,Default,,0,0,0,,No, I don't.
+Dialogue: 0,0:11:58.15,0:11:58.98,Default,,0,0,0,,What's your size?
+Dialogue: 0,0:12:00.42,0:12:01.78,Default,,0,0,0,,I'm a twenty-six.
+Dialogue: 0,0:12:02.62,0:12:03.92,Default,,0,0,0,,Really? That's perfect!
+Dialogue: 0,0:12:04.25,0:12:06.92,Default,,0,0,0,,I'm not very tall, by I have big feet!
+Dialogue: 0,0:12:07.39,0:12:08.86,Default,,0,0,0,,I'll give you a pair of mine!
+Dialogue: 0,0:12:09.22,0:12:10.63,Default,,0,0,0,,You'd do that for me?
+Dialogue: 0,0:12:12.26,0:12:14.26,Default,,0,0,0,,They're so sparkly!
+Dialogue: 0,0:12:14.73,0:12:16.53,Default,,0,0,0,,I've got plenty of extras.
+Dialogue: 0,0:12:17.60,0:12:18.93,Default,,0,0,0,,Thank you!
+Dialogue: 0,0:12:19.47,0:12:22.04,Default,,0,0,0,,I guess that takes care\Nof the shoe problem.
+Dialogue: 0,0:12:24.24,0:12:25.47,Default,,0,0,0,,You take the bed.
+Dialogue: 0,0:12:26.01,0:12:27.78,Default,,0,0,0,,This is your bedroom, after all.
+Dialogue: 0,0:12:28.11,0:12:29.04,Default,,0,0,0,,It's OK.
+Dialogue: 0,0:12:29.11,0:12:32.21,Default,,0,0,0,,I'm the one who dropped out\Nof the finals and came home early.
+Dialogue: 0,0:12:32.51,0:12:33.55,Default,,0,0,0,,But...
+Dialogue: 0,0:12:33.62,0:12:37.49,Default,,0,0,0,,I'm off to another tour tomorrow.\NIt's just for one night.
+Dialogue: 0,0:12:41.26,0:12:44.29,Default,,0,0,0,,Do you want to be a pro someday, Tonbo?
+Dialogue: 0,0:12:45.39,0:12:46.73,Default,,0,0,0,,I'm not sure.
+Dialogue: 0,0:12:47.00,0:12:48.00,Default,,0,0,0,,I understand.
+Dialogue: 0,0:12:48.13,0:12:50.67,Default,,0,0,0,,You still haven't been\Nin a competition yet.
+Dialogue: 0,0:12:51.67,0:12:53.54,Default,,0,0,0,,That's OK.
+Dialogue: 0,0:12:53.67,0:12:56.71,Default,,0,0,0,,First, you have to fall in love\Nwith the game of golf.
+Dialogue: 0,0:12:56.87,0:12:57.81,Default,,0,0,0,,That comes first.
+Dialogue: 0,0:12:59.14,0:13:00.74,Default,,0,0,0,,Fall in love with golf.
+Dialogue: 0,0:13:01.14,0:13:02.78,Default,,0,0,0,,When you really love something,
+Dialogue: 0,0:13:03.15,0:13:05.25,Default,,0,0,0,,you can't help but do your best.
+Dialogue: 0,0:13:05.48,0:13:06.58,Default,,0,0,0,,Good night.
+Dialogue: 0,0:13:07.78,0:13:08.82,Default,,0,0,0,,Good night.
+Dialogue: 0,0:13:12.39,0:13:13.76,Default,,0,0,0,,{\i1}Grandpa Gon.{\i0}
+Dialogue: 0,0:13:14.12,0:13:16.26,Default,,0,0,0,,{\i1}I'm so lucky.{\i0}
+Dialogue: 0,0:13:16.89,0:13:19.56,Default,,0,0,0,,{\i1}I was so scared to leave the island,{\i0}
+Dialogue: 0,0:13:19.66,0:13:22.30,Default,,0,0,0,,{\i1}but here I'm surrounded{\i0}\N{\i1}by truly lovely people.{\i0}
+Dialogue: 0,0:13:30.51,0:13:32.61,Default,,0,0,0,,Her practice is really paying off.
+Dialogue: 0,0:13:33.51,0:13:36.11,Default,,0,0,0,,The shaft is starting to show some flex.
+Dialogue: 0,0:13:38.88,0:13:42.32,Default,,0,0,0,,I got you a new bag\Nfor the Kyushu Women's Open.
+Dialogue: 0,0:13:42.55,0:13:43.75,Default,,0,0,0,,Toss that old one.
+Dialogue: 0,0:13:44.29,0:13:45.25,Default,,0,0,0,,Father?
+Dialogue: 0,0:13:45.85,0:13:49.32,Default,,0,0,0,,I'll put her new clubs in it.\NThrow away those old ones for me.
+Dialogue: 0,0:13:49.63,0:13:51.83,Default,,0,0,0,,That's a big ask, Mr. Otoha.
+Dialogue: 0,0:13:52.13,0:13:54.90,Default,,0,0,0,,I'll pay any disposal fees later.
+Dialogue: 0,0:13:55.30,0:13:57.57,Default,,0,0,0,,Why are you always doing things like this?
+Dialogue: 0,0:13:58.27,0:14:00.67,Default,,0,0,0,,Why don't you ask me about it first?
+Dialogue: 0,0:14:01.04,0:14:02.80,Default,,0,0,0,,It's my caddy bag, after all!
+Dialogue: 0,0:14:03.34,0:14:05.91,Default,,0,0,0,,I've never seen Hinoki fight back before.
+Dialogue: 0,0:14:08.61,0:14:10.85,Default,,0,0,0,,If you want to talk back to me,
+Dialogue: 0,0:14:10.95,0:14:13.82,Default,,0,0,0,,do it after you've bought something\Nwith your own money.
+Dialogue: 0,0:14:16.49,0:14:17.89,Default,,0,0,0,,It's not fair, Dad.
+Dialogue: 0,0:14:18.35,0:14:19.76,Default,,0,0,0,,You don't care about anything.
+Dialogue: 0,0:14:28.00,0:14:30.20,Default,,0,0,0,,Are you sure, Hinoki?
+Dialogue: 0,0:14:30.53,0:14:32.77,Default,,0,0,0,,Yes. I know it's just a hand-me-down,
+Dialogue: 0,0:14:33.24,0:14:35.07,Default,,0,0,0,,but I'd be happy for you to have it.
+Dialogue: 0,0:14:35.37,0:14:36.54,Default,,0,0,0,,Thank you so much.
+Dialogue: 0,0:14:38.01,0:14:39.68,Default,,0,0,0,,I feel like a professional!
+Dialogue: 0,0:14:40.38,0:14:41.91,Default,,0,0,0,,She's so easily impressed.
+Dialogue: 0,0:14:43.35,0:14:45.18,Default,,0,0,0,,That takes care of the bag, too.
+Dialogue: 0,0:14:46.75,0:14:48.55,Default,,0,0,0,,The problem is those clubs of hers.
+Dialogue: 0,0:14:49.12,0:14:49.95,Default,,0,0,0,,Right.
+Dialogue: 0,0:14:50.02,0:14:51.05,Default,,0,0,0,,With what she has now,
+Dialogue: 0,0:14:51.25,0:14:53.79,Default,,0,0,0,,the entire iron set is completely missing.
+Dialogue: 0,0:14:54.89,0:14:58.49,Default,,0,0,0,,Maybe I'll secretly slip in\Na few more and make it a full set.
+Dialogue: 0,0:14:58.76,0:15:04.00,Default,,0,0,0,,She's going to notice\Nif you put nice clubs in there.
+Dialogue: 0,0:15:12.27,0:15:13.81,Default,,0,0,0,,I've never seen this club before.
+Dialogue: 0,0:15:14.28,0:15:16.58,Default,,0,0,0,,I didn't realize this was in my bag.
+Dialogue: 0,0:15:16.91,0:15:17.95,Default,,0,0,0,,I wonder if it was Hajime?
+Dialogue: 0,0:15:18.41,0:15:19.85,Default,,0,0,0,,That's a six iron.
+Dialogue: 0,0:15:20.05,0:15:21.02,Default,,0,0,0,,Give it a try!
+Dialogue: 0,0:15:21.15,0:15:22.95,Default,,0,0,0,,You're at the right distance, too.
+Dialogue: 0,0:15:23.29,0:15:24.72,Default,,0,0,0,,Hit it nice and straight!
+Dialogue: 0,0:15:26.79,0:15:30.23,Default,,0,0,0,,I'm not exactly sure\Nhow to hit it straight.
+Dialogue: 0,0:15:30.96,0:15:33.46,Default,,0,0,0,,I know. I'll try the wobbly pencil trick!
+Dialogue: 0,0:15:34.06,0:15:35.60,Default,,0,0,0,,The wobbly pencil trick?
+Dialogue: 0,0:15:42.70,0:15:44.34,Default,,0,0,0,,It's like the shaft is alive!
+Dialogue: 0,0:15:46.07,0:15:47.34,Default,,0,0,0,,This club is great!
+Dialogue: 0,0:15:47.81,0:15:48.68,Default,,0,0,0,,Alright!
+Dialogue: 0,0:15:56.45,0:15:59.09,Default,,0,0,0,,The ground shook!
+Dialogue: 0,0:15:59.92,0:16:01.89,Default,,0,0,0,,It's heading straight for the sun!
+Dialogue: 0,0:16:02.49,0:16:03.56,Default,,0,0,0,,Nice shot!
+Dialogue: 0,0:16:09.90,0:16:12.17,Default,,0,0,0,,Superintendent Nakase! What a surprise.
+Dialogue: 0,0:16:12.77,0:16:14.30,Default,,0,0,0,,Are you practicing today?
+Dialogue: 0,0:16:14.90,0:16:15.74,Default,,0,0,0,,Yes.
+Dialogue: 0,0:16:15.97,0:16:18.81,Default,,0,0,0,,Actually, this is something\Na customer left behind.
+Dialogue: 0,0:16:19.34,0:16:22.88,Default,,0,0,0,,I've been holding onto it for five years\Nand should throw it away,
+Dialogue: 0,0:16:22.98,0:16:25.18,Default,,0,0,0,,but it's a pretty nice club.
+Dialogue: 0,0:16:26.35,0:16:29.38,Default,,0,0,0,,It must be a bit too high level\Nfor someone like me.
+Dialogue: 0,0:16:38.86,0:16:41.06,Default,,0,0,0,,What a great sound!
+Dialogue: 0,0:16:42.40,0:16:43.40,Default,,0,0,0,,Good evening.
+Dialogue: 0,0:16:43.50,0:16:44.53,Default,,0,0,0,,Good evening.
+Dialogue: 0,0:16:46.67,0:16:48.44,Default,,0,0,0,,Would you mind giving this a try?
+Dialogue: 0,0:16:49.00,0:16:50.34,Default,,0,0,0,,A nine iron?
+Dialogue: 0,0:16:50.87,0:16:55.41,Default,,0,0,0,,I just can't get the hang of it.\NI wondered if something was wrong with it.
+Dialogue: 0,0:16:55.84,0:16:57.61,Default,,0,0,0,,This is amazing!
+Dialogue: 0,0:16:58.68,0:17:00.88,Default,,0,0,0,,The middle of the face is perfect shape!
+Dialogue: 0,0:17:16.06,0:17:17.87,Default,,0,0,0,,This club feels great!
+Dialogue: 0,0:17:18.40,0:17:19.33,Default,,0,0,0,,You can have it.
+Dialogue: 0,0:17:20.07,0:17:21.87,Default,,0,0,0,,No! You don't have to do that!
+Dialogue: 0,0:17:22.70,0:17:25.31,Default,,0,0,0,,I think the club would be\Nhappier with you anyway.
+Dialogue: 0,0:17:26.81,0:17:28.81,Default,,0,0,0,,That makes it half a set!
+Dialogue: 0,0:17:30.08,0:17:31.01,Default,,0,0,0,,A half set.
+Dialogue: 0,0:17:31.58,0:17:34.12,Default,,0,0,0,,That's so cool. I feel like a pro!
+Dialogue: 0,0:17:40.39,0:17:43.83,Default,,0,0,0,,FIRST DAY, KYUSHU WOMEN'S OPEN
+Dialogue: 0,0:17:44.26,0:17:45.63,Default,,0,0,0,,There's so many people!
+Dialogue: 0,0:17:45.73,0:17:47.56,Default,,0,0,0,,And they're all around my age too!
+Dialogue: 0,0:17:47.96,0:17:49.90,Default,,0,0,0,,The Kyushu Women's Open
+Dialogue: 0,0:17:50.00,0:17:52.57,Default,,0,0,0,,hosts participants mainly in their teens.
+Dialogue: 0,0:17:53.30,0:17:56.71,Default,,0,0,0,,You could call this a competition\Nfor the generation of dreamers.
+Dialogue: 0,0:17:58.94,0:18:01.08,Default,,0,0,0,,Ichika Matsuda. Fourteen clubs.
+Dialogue: 0,0:18:01.31,0:18:02.04,Default,,0,0,0,,Right.
+Dialogue: 0,0:18:02.44,0:18:04.88,Default,,0,0,0,,Shoko Ikeuchi. Fourteen clubs as well.
+Dialogue: 0,0:18:05.31,0:18:06.11,Default,,0,0,0,,Yes.
+Dialogue: 0,0:18:06.38,0:18:08.28,Default,,0,0,0,,And Tonbo Oi. Let's see here.
+Dialogue: 0,0:18:08.35,0:18:09.02,Default,,0,0,0,,What?
+Dialogue: 0,0:18:11.45,0:18:13.49,Default,,0,0,0,,Only seven clubs?
+Dialogue: 0,0:18:13.76,0:18:14.69,Default,,0,0,0,,Yep!
+Dialogue: 0,0:18:15.32,0:18:16.16,Default,,0,0,0,,No way.
+Dialogue: 0,0:18:16.23,0:18:17.73,Default,,0,0,0,,Playing with a half set?
+Dialogue: 0,0:18:17.79,0:18:20.50,Default,,0,0,0,,Look at that three iron!\NIt's so worn out!
+Dialogue: 0,0:18:21.33,0:18:22.76,Default,,0,0,0,,We've never had a participant like this.
+Dialogue: 0,0:18:23.60,0:18:24.77,Default,,0,0,0,,And one more person.
+Dialogue: 0,0:18:25.57,0:18:26.77,Default,,0,0,0,,That'd be me.
+Dialogue: 0,0:18:28.10,0:18:29.40,Default,,0,0,0,,I'm Michiko Shima.
+Dialogue: 0,0:18:30.34,0:18:32.64,Default,,0,0,0,,I'm Tonbo Oi. Nice to meet you.
+Dialogue: 0,0:18:33.64,0:18:34.94,Default,,0,0,0,,She's like an old lady.
+Dialogue: 0,0:18:35.68,0:18:38.68,Default,,0,0,0,,A glove on each hand? How amateurish.
+Dialogue: 0,0:18:40.68,0:18:41.65,Default,,0,0,0,,Listen up, Hinoki.
+Dialogue: 0,0:18:43.29,0:18:44.49,Default,,0,0,0,,You have to win.
+Dialogue: 0,0:18:44.59,0:18:48.46,Default,,0,0,0,,Don't let that freshman\NTsubura Adaniya beat you.
+Dialogue: 0,0:18:48.66,0:18:50.46,Default,,0,0,0,,Off the course, please!
+Dialogue: 0,0:18:51.79,0:18:52.63,Default,,0,0,0,,Fine, fine.
+Dialogue: 0,0:18:52.69,0:18:54.00,Default,,0,0,0,,Please get off the green.
+Dialogue: 0,0:18:54.06,0:18:55.36,Default,,0,0,0,,I've said what I needed to.
+Dialogue: 0,0:18:55.63,0:18:56.80,Default,,0,0,0,,Tonbo?
+Dialogue: 0,0:18:57.30,0:18:58.83,Default,,0,0,0,,It really is you!
+Dialogue: 0,0:18:59.54,0:19:00.47,Default,,0,0,0,,Tsubura!
+Dialogue: 0,0:19:03.81,0:19:05.71,Default,,0,0,0,,I'm going to high school here in Kumamoto.
+Dialogue: 0,0:19:06.18,0:19:08.64,Default,,0,0,0,,Seriously? That's great!
+Dialogue: 0,0:19:09.14,0:19:10.18,Default,,0,0,0,,You're so brave.
+Dialogue: 0,0:19:10.38,0:19:11.45,Default,,0,0,0,,I'm so happy!
+Dialogue: 0,0:19:12.01,0:19:12.95,Default,,0,0,0,,Thank you.
+Dialogue: 0,0:19:14.08,0:19:16.08,Default,,0,0,0,,It's the title contender, Tsubura Adaniya.
+Dialogue: 0,0:19:16.52,0:19:17.95,Default,,0,0,0,,Who's that girl with her?
+Dialogue: 0,0:19:18.49,0:19:20.56,Default,,0,0,0,,Tonbo is friends with Tsubura Adaniya?
+Dialogue: 0,0:19:21.66,0:19:23.09,Default,,0,0,0,,How unprofessional.
+Dialogue: 0,0:19:23.99,0:19:25.73,Default,,0,0,0,,What? You have seven clubs?
+Dialogue: 0,0:19:26.09,0:19:27.00,Default,,0,0,0,,Right?
+Dialogue: 0,0:19:27.10,0:19:28.26,Default,,0,0,0,,Can you believe it?
+Dialogue: 0,0:19:28.46,0:19:29.63,Default,,0,0,0,,That's so many more than before!
+Dialogue: 0,0:19:31.10,0:19:33.04,Default,,0,0,0,,I've slowly been getting more cubs
+Dialogue: 0,0:19:33.10,0:19:35.10,Default,,0,0,0,,since you gave me that five wood.
+Dialogue: 0,0:19:35.47,0:19:36.81,Default,,0,0,0,,Seven clubs.
+Dialogue: 0,0:19:37.87,0:19:40.94,Default,,0,0,0,,When we played together\Non Hinoshima, you only had two.
+Dialogue: 0,0:19:41.51,0:19:43.88,Default,,0,0,0,,Even then your game was so impressive.
+Dialogue: 0,0:19:44.51,0:19:45.38,Default,,0,0,0,,And now you have seven!
+Dialogue: 0,0:19:47.98,0:19:48.82,Default,,0,0,0,,Tsubura?
+Dialogue: 0,0:19:49.35,0:19:50.99,Default,,0,0,0,,This could be dangerous.
+Dialogue: 0,0:19:51.12,0:19:53.89,Default,,0,0,0,,You might take the Kyushu Women's\Ntitle from me, Tonbo!
+Dialogue: 0,0:19:56.59,0:19:58.16,Default,,0,0,0,,But I don't plan on losing today.
+Dialogue: 0,0:19:58.36,0:19:59.66,Default,,0,0,0,,I'll just keep on climbing!
+Dialogue: 0,0:20:02.87,0:20:03.90,Default,,0,0,0,,See you later then!
+Dialogue: 0,0:20:05.87,0:20:06.97,Default,,0,0,0,,Nobody knows...
+Dialogue: 0,0:20:08.10,0:20:12.57,Default,,0,0,0,,...an incredible player\Nfrom an unknown island is here.
+Dialogue: 0,0:20:14.24,0:20:18.85,Default,,0,0,0,,Group seven, 8:24 start.\NPlease report to the tee.
+Dialogue: 0,0:20:25.35,0:20:28.32,Default,,0,0,0,,Here we go. My first competition.
+Dialogue: 0,0:20:28.39,0:20:30.63,Default,,0,0,0,,I love new experiences.
+Dialogue: 0,0:20:32.03,0:20:35.26,Default,,0,0,0,,I left the island\Nto learn more about the world.
+Dialogue: 0,0:20:36.23,0:20:41.44,Default,,0,0,0,,I left the island to learn more\Nabout the game of golf I love so much.
+Dialogue: 0,0:20:41.57,0:20:44.04,Default,,0,0,0,,And now I'm competing!
+Dialogue: 0,0:20:45.44,0:20:50.15,Default,,0,0,0,,When hitting their first shot,\Nmost players focus on the landing area.
+Dialogue: 0,0:20:50.28,0:20:54.28,Default,,0,0,0,,Others focus on where\Nthey don't want to hit the ball.
+Dialogue: 0,0:20:55.55,0:20:56.89,Default,,0,0,0,,I wonder where Tonbo will hit it.
+Dialogue: 0,0:20:58.55,0:21:04.09,Default,,0,0,0,,Not a landing spot or out of bounds.\NThe green? No. Even further.
+Dialogue: 0,0:21:05.43,0:21:07.46,Default,,0,0,0,,Athletes, please start!
+Dialogue: 0,0:21:14.60,0:21:17.34,Default,,0,0,0,,It's almost as high as\NMt. Ontake on Hinoshima.
+Dialogue: 0,0:21:18.24,0:21:19.24,Default,,0,0,0,,Ms. Oi, you're up!
+Dialogue: 0,0:21:19.68,0:21:20.68,Default,,0,0,0,,Right!
+Dialogue: 0,0:21:22.31,0:21:25.11,Default,,0,0,0,,Tonbo said she's never felt\Nfear when playing golf.
+Dialogue: 0,0:21:25.98,0:21:28.92,Default,,0,0,0,,But this is her first competition.
+Dialogue: 0,0:21:29.02,0:21:33.62,Default,,0,0,0,,With this many people watching,\Nshe's bound to get nervous.
+Dialogue: 0,0:21:36.09,0:21:37.39,Default,,0,0,0,,She's not using gloves?
+Dialogue: 0,0:21:38.13,0:21:40.90,Default,,0,0,0,,{\i1}Fly, Tonbo. Fly.{\i0}
+Dialogue: 0,0:21:41.26,0:21:44.10,Default,,0,0,0,,{\i1}Everyone gets nervous{\i0}\N{\i1}first thing in the morning.{\i0}
+Dialogue: 0,0:21:44.30,0:21:47.20,Default,,0,0,0,,{\i1}It's not about skill. It's about heart.{\i0}
+Dialogue: 0,0:21:47.30,0:21:51.41,Default,,0,0,0,,{\i1}Show us what you can do, Tonbo.{\i0}
+Dialogue: 0,0:21:52.51,0:21:53.64,Default,,0,0,0,,Igaia.
+Dialogue: 0,0:21:53.81,0:21:59.21,Default,,0,0,0,,{\i1}Grandpa Gon. Setsu. Yoko. Bunpei. Hidaka.{\i0}
+Dialogue: 0,0:22:00.42,0:22:03.85,Default,,0,0,0,,{\i1}I'm aiming this one for the island.{\i0}\N{\i1}For all of you.{\i0}
+Dialogue: 0,0:22:07.12,0:22:09.73,Default,,0,0,0,,Tonbo is heeling up?
+Dialogue: 0,0:23:49.12,0:23:51.73,Default,,0,0,0,,Tsubura, I'm feeling nervous!
+Dialogue: 0,0:23:51.86,0:23:55.13,Default,,0,0,0,,There's no need to get all tense.\NJust play like always!
+Dialogue: 0,0:23:55.23,0:23:56.80,Default,,0,0,0,,You're right.
+Dialogue: 0,0:23:57.23,0:23:58.80,Default,,0,0,0,,I just have to be myself!
+Dialogue: 0,0:23:58.97,0:24:00.47,Default,,0,0,0,,-That's right!\N-Here I go!
+Dialogue: 0,0:24:00.80,0:24:02.14,Default,,0,0,0,,One-legged stance!
+Dialogue: 0,0:24:02.24,0:24:03.61,Default,,0,0,0,,Not that! Wait!
+Dialogue: 0,0:24:03.91,0:24:05.34,Default,,0,0,0,,On the next episode of Tonbo!
+Dialogue: 0,0:24:05.44,0:24:07.41,Default,,0,0,0,,"Career Average Stroke!"

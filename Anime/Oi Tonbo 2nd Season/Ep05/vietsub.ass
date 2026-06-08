@@ -1,0 +1,335 @@
+﻿[Script Info]
+Title: [Erai-raws] en-us
+ScriptType: v4.00+
+WrapStyle: 0
+PlayResX: 1280
+PlayResY: 720
+Video Zoom Percent: 1
+Scroll Position: 0
+Active Line: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Trebuchet MS,45,&H00FFFFFF,&H000000FF,&H00020713,&H00000000,-1,0,0,0,100,100,0,0,1,1.7,0,2,10,10,15,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:11.04,0:00:11.97,Default,,0,0,0,,{\i1}She did it.{\i0}
+Dialogue: 0,0:00:12.07,0:00:13.48,Default,,0,0,0,,{\i1}That was perfect.{\i0}
+Dialogue: 0,0:00:14.14,0:00:15.31,Default,,0,0,0,,{\i1}Everyone on the island.{\i0}
+Dialogue: 0,0:00:15.64,0:00:16.71,Default,,0,0,0,,{\i1}This is for you!{\i0}
+Dialogue: 0,0:00:18.25,0:00:20.18,Default,,0,0,0,,That's a huge draw.
+Dialogue: 0,0:00:25.62,0:00:26.66,Default,,0,0,0,,Nice shot!
+Dialogue: 0,0:00:27.06,0:00:28.09,Default,,0,0,0,,No way.
+Dialogue: 0,0:00:28.82,0:00:30.86,Default,,0,0,0,,This hole is 514 yards.
+Dialogue: 0,0:00:31.19,0:00:32.09,Default,,0,0,0,,At this rate...
+Dialogue: 0,0:00:32.19,0:00:34.16,Default,,0,0,0,,She'll hit the green in two strokes.
+Dialogue: 0,0:00:38.20,0:00:39.33,Default,,0,0,0,,{\i1}I've got to be careful.{\i0}
+Dialogue: 0,0:00:40.10,0:00:41.37,Default,,0,0,0,,{\i1}Tonbo brought her A-game today.{\i0}
+Dialogue: 0,0:00:42.50,0:00:45.91,Default,,0,0,0,,{\i1}This is it. My very first competition!{\i0}
+Dialogue: 0,0:02:21.00,0:02:23.51,Default,,0,0,0,,She's playing in the Open again this year?
+Dialogue: 0,0:02:23.77,0:02:24.67,Default,,0,0,0,,Looks like.
+Dialogue: 0,0:02:24.77,0:02:26.91,Default,,0,0,0,,She's the oldest golfer\Nin the competition.
+Dialogue: 0,0:02:29.81,0:02:34.48,Default,,0,0,0,,{\i1}I did it Shin. I made it{\i0}\N{\i1}to the Open again this year.{\i0}
+Dialogue: 0,0:02:37.69,0:02:39.49,Default,,0,0,0,,Let's do it together, Michiko!
+Dialogue: 0,0:02:39.82,0:02:41.72,Default,,0,0,0,,You know I don't have the time, dear.
+Dialogue: 0,0:02:42.09,0:02:44.63,Default,,0,0,0,,I'm happy as long\Nas you can enjoy yourself.
+Dialogue: 0,0:02:44.96,0:02:47.63,Default,,0,0,0,,I promise I'll work\Neven harder than before.
+Dialogue: 0,0:02:47.96,0:02:49.83,Default,,0,0,0,,That's nice of you to say.
+Dialogue: 0,0:02:50.20,0:02:52.84,Default,,0,0,0,,I want you to understand how fun it is.
+Dialogue: 0,0:02:53.10,0:02:54.97,Default,,0,0,0,,How great the game of golf is.
+Dialogue: 0,0:03:02.04,0:03:03.25,Default,,0,0,0,,{\i1}Shin...{\i0}
+Dialogue: 0,0:03:06.98,0:03:08.35,Default,,0,0,0,,{\i1}Oh no.{\i0}
+Dialogue: 0,0:03:09.28,0:03:10.52,Default,,0,0,0,,Sorry! I'm coming!
+Dialogue: 0,0:03:13.59,0:03:16.59,Default,,0,0,0,,There's no need to hurry.
+Dialogue: 0,0:03:23.23,0:03:24.50,Default,,0,0,0,,Oh, come on.
+Dialogue: 0,0:03:24.73,0:03:26.87,Default,,0,0,0,,She's still way behind us.
+Dialogue: 0,0:03:27.14,0:03:29.37,Default,,0,0,0,,She's going to throw off my rhythm.
+Dialogue: 0,0:03:30.87,0:03:31.77,Default,,0,0,0,,Here I go!
+Dialogue: 0,0:03:33.98,0:03:35.61,Default,,0,0,0,,Unlike a pro tour,
+Dialogue: 0,0:03:35.71,0:03:37.75,Default,,0,0,0,,this is as far as you and I can go.
+Dialogue: 0,0:03:38.51,0:03:39.68,Default,,0,0,0,,I hit it!
+Dialogue: 0,0:03:40.25,0:03:42.18,Default,,0,0,0,,She's happy just to make contact.
+Dialogue: 0,0:03:42.52,0:03:43.79,Default,,0,0,0,,Give me a break.
+Dialogue: 0,0:03:46.76,0:03:47.62,Default,,0,0,0,,Come on!
+Dialogue: 0,0:03:49.02,0:03:51.43,Default,,0,0,0,,It's just cause she threw off my game!
+Dialogue: 0,0:03:54.03,0:03:58.23,Default,,0,0,0,,Wow. You're about 30 yards\Nfrom the wild cherry trees.
+Dialogue: 0,0:03:59.03,0:04:01.97,Default,,0,0,0,,There's probably another\N230 yards to the green.
+Dialogue: 0,0:04:02.07,0:04:03.61,Default,,0,0,0,,You should use a fairway wood.
+Dialogue: 0,0:04:05.34,0:04:06.34,Default,,0,0,0,,Thank you.
+Dialogue: 0,0:04:07.04,0:04:08.04,Default,,0,0,0,,A five wood?
+Dialogue: 0,0:04:08.28,0:04:10.91,Default,,0,0,0,,She might be able to get\Ntwo on with a spoon.
+Dialogue: 0,0:04:11.31,0:04:13.45,Default,,0,0,0,,The pin is on the inside,\Nleft of the green.
+Dialogue: 0,0:04:13.52,0:04:15.78,Default,,0,0,0,,It's probably closer to 260 yards away.
+Dialogue: 0,0:04:17.99,0:04:19.05,Default,,0,0,0,,{\i1}Igaiga.{\i0}
+Dialogue: 0,0:04:19.12,0:04:21.96,Default,,0,0,0,,{\i1}That last tee shot got my heart racing.{\i0}
+Dialogue: 0,0:04:22.66,0:04:24.83,Default,,0,0,0,,{\i1}I've never felt that playing golf before.{\i0}
+Dialogue: 0,0:04:25.46,0:04:27.63,Default,,0,0,0,,{\i1}Use this when you{\i0}\N{\i1}want to hit the ball far.{\i0}
+Dialogue: 0,0:04:32.73,0:04:33.60,Default,,0,0,0,,Alright!
+Dialogue: 0,0:04:33.74,0:04:35.37,Default,,0,0,0,,Swallow ball!
+Dialogue: 0,0:04:37.71,0:04:38.67,Default,,0,0,0,,Again?
+Dialogue: 0,0:04:38.74,0:04:41.28,Default,,0,0,0,,I didn't think\Nsuch a low ball could go that far!
+Dialogue: 0,0:04:45.38,0:04:46.38,Default,,0,0,0,,No way.
+Dialogue: 0,0:04:46.48,0:04:48.75,Default,,0,0,0,,How does she make it roll like that?
+Dialogue: 0,0:04:49.99,0:04:51.79,Default,,0,0,0,,Igaiga would never let me down.
+Dialogue: 0,0:04:55.62,0:04:56.49,Default,,0,0,0,,Alright!
+Dialogue: 0,0:04:56.66,0:04:59.36,Default,,0,0,0,,N-Nice eagle.
+Dialogue: 0,0:05:00.00,0:05:01.00,Default,,0,0,0,,Seriously?
+Dialogue: 0,0:05:05.47,0:05:07.17,Default,,0,0,0,,Phew. I'll take the double bogey.
+Dialogue: 0,0:05:07.80,0:05:10.94,Default,,0,0,0,,Now she's happy about\Na double bogey on par five?
+Dialogue: 0,0:05:11.77,0:05:14.94,Default,,0,0,0,,That was the first time\NI've ever seen an eagle up close!
+Dialogue: 0,0:05:15.28,0:05:17.18,Default,,0,0,0,,I wasn't sure it was even possible!
+Dialogue: 0,0:05:17.51,0:05:19.05,Default,,0,0,0,,That was incredible!
+Dialogue: 0,0:05:19.41,0:05:21.32,Default,,0,0,0,,I even surprised myself!
+Dialogue: 0,0:05:31.16,0:05:34.06,Default,,0,0,0,,She said this was her\Nfirst competition, right?
+Dialogue: 0,0:05:34.50,0:05:36.27,Default,,0,0,0,,And she gets an eagle on the first hole?
+Dialogue: 0,0:05:36.50,0:05:37.67,Default,,0,0,0,,Beginner's luck.
+Dialogue: 0,0:05:40.34,0:05:43.67,Default,,0,0,0,,{\i1}This looks a lot like{\i0}\N{\i1}hole one on the island.{\i0}
+Dialogue: 0,0:05:45.17,0:05:47.51,Default,,0,0,0,,{\i1}On the island, the ocean is on the left.{\i0}
+Dialogue: 0,0:05:48.18,0:05:50.35,Default,,0,0,0,,{\i1}I'll hit it just like I always do.{\i0}
+Dialogue: 0,0:05:52.81,0:05:54.08,Default,,0,0,0,,Aiming for the trees?
+Dialogue: 0,0:05:55.08,0:05:56.72,Default,,0,0,0,,But that's out of bounds!
+Dialogue: 0,0:05:59.92,0:06:00.82,Default,,0,0,0,,It's headed right for the trees!
+Dialogue: 0,0:06:02.82,0:06:04.36,Default,,0,0,0,,Over the out of bounds area.
+Dialogue: 0,0:06:04.56,0:06:05.49,Default,,0,0,0,,A slice?
+Dialogue: 0,0:06:05.69,0:06:08.36,Default,,0,0,0,,Is she hitting\Nhooks and slices on purpose?
+Dialogue: 0,0:06:10.57,0:06:12.10,Default,,0,0,0,,Best parting gift ever!
+Dialogue: 0,0:06:12.47,0:06:13.64,Default,,0,0,0,,Parting gift?
+Dialogue: 0,0:06:13.84,0:06:14.77,Default,,0,0,0,,Yeah.
+Dialogue: 0,0:06:14.84,0:06:18.37,Default,,0,0,0,,It's 1,309 yen!\NA parting gift from Igaiga!
+Dialogue: 0,0:06:18.71,0:06:19.88,Default,,0,0,0,,Igaiga?
+Dialogue: 0,0:06:28.02,0:06:29.75,Default,,0,0,0,,She's trying to calm her nerves.
+Dialogue: 0,0:06:29.85,0:06:31.59,Default,,0,0,0,,Ugh, I smell an amateur.
+Dialogue: 0,0:06:36.66,0:06:38.19,Default,,0,0,0,,I'm going to hit a provisional ball!
+Dialogue: 0,0:06:40.60,0:06:41.96,Default,,0,0,0,,It's safe!
+Dialogue: 0,0:06:43.23,0:06:44.50,Default,,0,0,0,,Thank goodness.
+Dialogue: 0,0:06:49.24,0:06:51.14,Default,,0,0,0,,It's right on the fairway.
+Dialogue: 0,0:06:53.44,0:06:55.08,Default,,0,0,0,,{\i1}I thought I prepared for this.{\i0}
+Dialogue: 0,0:07:10.93,0:07:12.03,Default,,0,0,0,,{\i1}Nice!{\i0}
+Dialogue: 0,0:07:12.46,0:07:14.60,Default,,0,0,0,,It's 140 yards from the edge of the green.
+Dialogue: 0,0:07:14.76,0:07:18.23,Default,,0,0,0,,The pin is near the front.\NAbout five yards in.
+Dialogue: 0,0:07:18.33,0:07:20.07,Default,,0,0,0,,So, 145 yards in total.
+Dialogue: 0,0:07:21.80,0:07:26.94,Default,,0,0,0,,The pin is just at the top of a sloping\Nhump between the two bunkers.
+Dialogue: 0,0:07:27.18,0:07:28.74,Default,,0,0,0,,In front of that, a big slide.
+Dialogue: 0,0:07:29.31,0:07:30.81,Default,,0,0,0,,One hundred forty-five.
+Dialogue: 0,0:07:31.08,0:07:33.88,Default,,0,0,0,,A seven or eight iron\Nwould be a good choice.
+Dialogue: 0,0:07:34.18,0:07:35.62,Default,,0,0,0,,She doesn't have either of those.
+Dialogue: 0,0:07:35.95,0:07:37.12,Default,,0,0,0,,What will she do?
+Dialogue: 0,0:07:37.99,0:07:41.16,Default,,0,0,0,,{\i1}My only choice is to{\i0}\N{\i1}hit it lightly with my six iron.{\i0}
+Dialogue: 0,0:07:42.82,0:07:43.99,Default,,0,0,0,,A three iron?
+Dialogue: 0,0:07:45.33,0:07:47.00,Default,,0,0,0,,Isn't that way too big?
+Dialogue: 0,0:07:49.60,0:07:50.50,Default,,0,0,0,,To the slide.
+Dialogue: 0,0:07:58.74,0:08:00.51,Default,,0,0,0,,Oh, looks like it's maybe a little short.
+Dialogue: 0,0:08:00.84,0:08:02.64,Default,,0,0,0,,It wasn't too big after all.
+Dialogue: 0,0:08:03.35,0:08:08.02,Default,,0,0,0,,She somehow adjusted the distance by\Nhitting a low shot to land on the slope.
+Dialogue: 0,0:08:11.49,0:08:14.36,Default,,0,0,0,,She's using a putter\Nthirty yards from the green?
+Dialogue: 0,0:08:15.19,0:08:20.26,Default,,0,0,0,,The pin is just ahead.\NI'll have to hit it softly with my wedge.
+Dialogue: 0,0:08:20.53,0:08:21.90,Default,,0,0,0,,But my hands...
+Dialogue: 0,0:08:22.46,0:08:24.07,Default,,0,0,0,,They're still shaking.
+Dialogue: 0,0:08:24.63,0:08:27.14,Default,,0,0,0,,I'll have to use a putter\Nand hope for the best.
+Dialogue: 0,0:08:33.01,0:08:33.94,Default,,0,0,0,,Nice!
+Dialogue: 0,0:08:34.01,0:08:34.94,Default,,0,0,0,,Thank you.
+Dialogue: 0,0:08:38.38,0:08:39.25,Default,,0,0,0,,Alright!
+Dialogue: 0,0:08:39.52,0:08:40.52,Default,,0,0,0,,Nice bogey.
+Dialogue: 0,0:08:41.88,0:08:44.05,Default,,0,0,0,,Now she's complimenting herself.
+Dialogue: 0,0:08:44.39,0:08:45.55,Default,,0,0,0,,How about you, Matsuda?
+Dialogue: 0,0:08:46.52,0:08:48.02,Default,,0,0,0,,I got a bogey, too.
+Dialogue: 0,0:08:49.73,0:08:54.06,Default,,0,0,0,,{\i1}I'll have to do my best{\i0}\N{\i1}with the lie that I've got.{\i0}
+Dialogue: 0,0:08:56.40,0:08:58.27,Default,,0,0,0,,There's still a group ahead of us.
+Dialogue: 0,0:08:59.03,0:09:00.70,Default,,0,0,0,,I'm at five over now.
+Dialogue: 0,0:09:01.04,0:09:03.27,Default,,0,0,0,,I'm down a point from my last bogey!
+Dialogue: 0,0:09:03.97,0:09:07.34,Default,,0,0,0,,If she's so happy about all those bogeys,
+Dialogue: 0,0:09:07.48,0:09:09.88,Default,,0,0,0,,what's she doing\Nat the Open in the first place?
+Dialogue: 0,0:09:10.28,0:09:13.08,Default,,0,0,0,,She shouldn't even be\Nparticipating at this level.
+Dialogue: 0,0:09:13.55,0:09:14.58,Default,,0,0,0,,What's the point?
+Dialogue: 0,0:09:14.92,0:09:16.92,Default,,0,0,0,,I'm at three over myself.
+Dialogue: 0,0:09:17.19,0:09:19.99,Default,,0,0,0,,I can't believe I'm doing so poorly!
+Dialogue: 0,0:09:20.39,0:09:24.03,Default,,0,0,0,,I just can't play under these conditions.\NMaybe I should just give up.
+Dialogue: 0,0:09:25.19,0:09:26.30,Default,,0,0,0,,I'm sorry.
+Dialogue: 0,0:09:26.56,0:09:28.36,Default,,0,0,0,,Am I causing trouble?
+Dialogue: 0,0:09:28.43,0:09:30.00,Default,,0,0,0,,No.
+Dialogue: 0,0:09:31.20,0:09:32.90,Default,,0,0,0,,You've really put that one to use.
+Dialogue: 0,0:09:34.07,0:09:35.04,Default,,0,0,0,,It's a keepsake.
+Dialogue: 0,0:09:37.31,0:09:39.01,Default,,0,0,0,,It's my father's club.
+Dialogue: 0,0:09:40.08,0:09:41.08,Default,,0,0,0,,I see.
+Dialogue: 0,0:09:41.14,0:09:42.58,Default,,0,0,0,,A keepsake
+Dialogue: 0,0:09:43.15,0:09:44.08,Default,,0,0,0,,from your father?
+Dialogue: 0,0:09:46.01,0:09:51.39,Default,,0,0,0,,My clubs were also a present\Nfrom my husband. His last present.
+Dialogue: 0,0:09:52.72,0:09:53.99,Default,,0,0,0,,The last?
+Dialogue: 0,0:10:10.24,0:10:11.61,Default,,0,0,0,,Yes? This is Shima.
+Dialogue: 0,0:10:12.74,0:10:15.41,Default,,0,0,0,,Your order has been delivered.
+Dialogue: 0,0:10:18.15,0:10:22.28,Default,,0,0,0,,It's a birthday present for you.\NYou sure do have a great husband!
+Dialogue: 0,0:10:23.89,0:10:25.95,Default,,0,0,0,,{\i1}Let's do it together, Michiko!{\i0}
+Dialogue: 0,0:10:26.12,0:10:29.63,Default,,0,0,0,,{\i1}I want you to understand how fun it is.{\i0}\N{\i1}How great the game of golf is!{\i0}
+Dialogue: 0,0:10:30.56,0:10:34.23,Default,,0,0,0,,I should have played\Nwith him when I had the chance.
+Dialogue: 0,0:10:34.46,0:10:37.93,Default,,0,0,0,,Why didn't I listen to him?
+Dialogue: 0,0:10:39.64,0:10:40.80,Default,,0,0,0,,Don't go in there!
+Dialogue: 0,0:10:42.34,0:10:44.97,Default,,0,0,0,,Oh no, my present!\NIt's covered in dust!
+Dialogue: 0,0:10:46.81,0:10:51.08,Default,,0,0,0,,I couldn't bear\Nto touch it for over a year.
+Dialogue: 0,0:10:51.98,0:10:55.98,Default,,0,0,0,,But I finally built up the courage to\Nvisit my husband's favorite driving range.
+Dialogue: 0,0:10:57.19,0:11:01.86,Default,,0,0,0,,His golf buddies offered me\Nall kinds of good advice.
+Dialogue: 0,0:11:03.26,0:11:05.69,Default,,0,0,0,,Do you finally see how fun golf is?
+Dialogue: 0,0:11:06.40,0:11:08.63,Default,,0,0,0,,I loved it right away.
+Dialogue: 0,0:11:09.70,0:11:13.00,Default,,0,0,0,,Golf doesn't always go\Nthe way you think it will.
+Dialogue: 0,0:11:13.20,0:11:15.97,Default,,0,0,0,,It's like getting\Ndumped by a significant other.
+Dialogue: 0,0:11:16.31,0:11:17.97,Default,,0,0,0,,What kind of comparison is that?
+Dialogue: 0,0:11:18.11,0:11:20.01,Default,,0,0,0,,It'd be easier to just give up.
+Dialogue: 0,0:11:20.54,0:11:27.05,Default,,0,0,0,,But if you keep at it, they'll eventually\Nlook back at you with a smile.
+Dialogue: 0,0:11:27.52,0:11:30.99,Default,,0,0,0,,Those are the moments that keep you going.
+Dialogue: 0,0:11:35.49,0:11:38.66,Default,,0,0,0,,I think I understand\Nwhat he meant by that.
+Dialogue: 0,0:11:40.23,0:11:43.30,Default,,0,0,0,,The pin is just to the right.\NAbout 148 yards.
+Dialogue: 0,0:11:45.37,0:11:46.90,Default,,0,0,0,,A three iron again?
+Dialogue: 0,0:11:47.24,0:11:49.00,Default,,0,0,0,,That club is way too much!
+Dialogue: 0,0:12:00.92,0:12:03.32,Default,,0,0,0,,I hit it just a little too low.
+Dialogue: 0,0:12:04.02,0:12:07.32,Default,,0,0,0,,{\i1}I'm sure Tonbo is able to love her score.{\i0}
+Dialogue: 0,0:12:08.72,0:12:10.16,Default,,0,0,0,,{\i1}No matter what it may be.{\i0}
+Dialogue: 0,0:12:10.59,0:12:14.00,Default,,0,0,0,,{\i1}That's the result{\i0}\N{\i1}of making every shot count.{\i0}
+Dialogue: 0,0:12:14.26,0:12:19.03,Default,,0,0,0,,{\i1}Each shot is precious.{\i0}\N{\i1}That's what you said, Shin.{\i0}
+Dialogue: 0,0:12:19.80,0:12:23.24,Default,,0,0,0,,The old lady is ahead of me\Nin the hitting order!
+Dialogue: 0,0:12:23.57,0:12:25.07,Default,,0,0,0,,This is bad.
+Dialogue: 0,0:12:28.48,0:12:29.81,Default,,0,0,0,,Right to the pin!
+Dialogue: 0,0:12:32.58,0:12:33.62,Default,,0,0,0,,So close!
+Dialogue: 0,0:12:33.75,0:12:34.98,Default,,0,0,0,,That was a close one.
+Dialogue: 0,0:12:39.76,0:12:42.89,Default,,0,0,0,,{\i1}I think Tonbo hit it{\i0}\N{\i1}with the face more open.{\i0}
+Dialogue: 0,0:12:49.23,0:12:52.30,Default,,0,0,0,,{\i1}Hers sounded much better than that.{\i0}
+Dialogue: 0,0:12:55.10,0:12:55.97,Default,,0,0,0,,{\i1}Nice one!{\i0}
+Dialogue: 0,0:12:56.10,0:12:57.37,Default,,0,0,0,,{\i1}Nice birdie!{\i0}
+Dialogue: 0,0:13:00.41,0:13:02.51,Default,,0,0,0,,{\i1}I can't believe I fell asleep in the car!{\i0}
+Dialogue: 0,0:13:02.61,0:13:05.51,Default,,0,0,0,,{\i1}Tonbo will be almost halfway done by now!{\i0}
+Dialogue: 0,0:13:05.65,0:13:07.28,Default,,0,0,0,,{\i1}Oh no!{\i0}
+Dialogue: 0,0:13:07.35,0:13:09.82,Default,,0,0,0,,Hey, excuse me.
+Dialogue: 0,0:13:09.92,0:13:10.92,Default,,0,0,0,,Yes?
+Dialogue: 0,0:13:11.15,0:13:13.22,Default,,0,0,0,,Tonbo, the girl with the half set.
+Dialogue: 0,0:13:13.56,0:13:14.66,Default,,0,0,0,,How did she do?
+Dialogue: 0,0:13:15.16,0:13:17.79,Default,,0,0,0,,She was last to hit each time.
+Dialogue: 0,0:13:18.29,0:13:20.03,Default,,0,0,0,,What?
+Dialogue: 0,0:13:22.03,0:13:24.57,Default,,0,0,0,,She couldn't do it after all!
+Dialogue: 0,0:13:24.80,0:13:27.70,Default,,0,0,0,,No. That might be the case for tee shots,
+Dialogue: 0,0:13:28.04,0:13:32.17,Default,,0,0,0,,but perhaps she meant\NTonbo was last to hit her second shot.
+Dialogue: 0,0:13:32.27,0:13:34.58,Default,,0,0,0,,Which one is it, Tonbo. Tell me!
+Dialogue: 0,0:13:36.78,0:13:38.15,Default,,0,0,0,,Tonbo! How was it?
+Dialogue: 0,0:13:39.18,0:13:43.29,Default,,0,0,0,,I was watching Hinoki the whole time!\NShe nailed it on the ninth hole!
+Dialogue: 0,0:13:43.59,0:13:45.05,Default,,0,0,0,,That's great, but what about you?
+Dialogue: 0,0:13:46.46,0:13:48.69,Default,,0,0,0,,I chipped in on the ninth hole!
+Dialogue: 0,0:13:49.83,0:13:52.63,Default,,0,0,0,,Sorry, I need to use the toilet!
+Dialogue: 0,0:13:52.83,0:13:55.13,Default,,0,0,0,,I hear she got an eagle on the first.
+Dialogue: 0,0:13:55.30,0:13:58.97,Default,,0,0,0,,With an eagle chip-in on the ninth,\Nthat alone puts her at three under.
+Dialogue: 0,0:13:59.20,0:14:00.27,Default,,0,0,0,,Right.
+Dialogue: 0,0:14:00.34,0:14:04.37,Default,,0,0,0,,No matter how she hit on the other\Nseven holes, that's still a great score.
+Dialogue: 0,0:14:18.62,0:14:20.86,Default,,0,0,0,,A tee shot at the very end?
+Dialogue: 0,0:14:21.09,0:14:23.99,Default,,0,0,0,,Didn't you get a chip-in\Non the ninth, Tonbo?
+Dialogue: 0,0:14:25.09,0:14:27.10,Default,,0,0,0,,It was a chip-in bogey!
+Dialogue: 0,0:14:29.83,0:14:32.23,Default,,0,0,0,,So what was your score then?
+Dialogue: 0,0:14:35.90,0:14:36.84,Default,,0,0,0,,Looks like you're having fun.
+Dialogue: 0,0:14:38.04,0:14:39.04,Default,,0,0,0,,Yeah.
+Dialogue: 0,0:14:39.11,0:14:40.78,Default,,0,0,0,,I got forty-one on the first nine.
+Dialogue: 0,0:14:41.11,0:14:43.31,Default,,0,0,0,,I was able to get\Nback to the score I wanted.
+Dialogue: 0,0:14:43.65,0:14:45.31,Default,,0,0,0,,The score you wanted?
+Dialogue: 0,0:14:45.65,0:14:48.92,Default,,0,0,0,,This is actually my third time\Nin this competition.
+Dialogue: 0,0:14:50.52,0:14:52.79,Default,,0,0,0,,I've always aimed for eighty-two,
+Dialogue: 0,0:14:53.12,0:14:55.06,Default,,0,0,0,,and the cutoff score for the finals
+Dialogue: 0,0:14:55.12,0:14:56.99,Default,,0,0,0,,is always around that number.
+Dialogue: 0,0:14:57.13,0:14:58.86,Default,,0,0,0,,Your goal is eighty-two?
+Dialogue: 0,0:15:00.63,0:15:03.00,Default,,0,0,0,,Say you squeeze your way into the finals.
+Dialogue: 0,0:15:03.10,0:15:05.27,Default,,0,0,0,,What do you plan to do then?
+Dialogue: 0,0:15:05.53,0:15:10.34,Default,,0,0,0,,You'll never join the high ranks,\Nand there are no participation prizes.
+Dialogue: 0,0:15:11.07,0:15:12.94,Default,,0,0,0,,So what are you doing here?
+Dialogue: 0,0:15:13.28,0:15:14.21,Default,,0,0,0,,It's meaningless.
+Dialogue: 0,0:15:16.45,0:15:17.58,Default,,0,0,0,,Meaningless?
+Dialogue: 0,0:15:18.81,0:15:23.02,Default,,0,0,0,,I guess for young people like you who\Ndream of winning competitions like this,
+Dialogue: 0,0:15:23.19,0:15:26.72,Default,,0,0,0,,it seems silly for someone like me\Nto be in this competition.
+Dialogue: 0,0:15:27.29,0:15:31.43,Default,,0,0,0,,But not all pros\Nsee their dreams come true.
+Dialogue: 0,0:15:31.69,0:15:35.10,Default,,0,0,0,,In fact, I think more people give up\Nbefore their dreams come true.
+Dialogue: 0,0:15:36.93,0:15:40.34,Default,,0,0,0,,Do you think that's meaningless, too?
+Dialogue: 0,0:15:40.70,0:15:44.87,Default,,0,0,0,,Is it meaningless to try\Nplaying golf in the first place?
+Dialogue: 0,0:15:45.81,0:15:49.48,Default,,0,0,0,,Your goal shouldn't be to become\Nthe self you see in your dreams.
+Dialogue: 0,0:15:49.95,0:15:54.35,Default,,0,0,0,,You need to learn\Nwhat it takes to be that person.
+Dialogue: 0,0:15:54.95,0:15:58.32,Default,,0,0,0,,It depends on\Nif you can be proud of the effort or not.
+Dialogue: 0,0:15:58.82,0:16:00.96,Default,,0,0,0,,It's not about whether you can fly or not.
+Dialogue: 0,0:16:01.12,0:16:04.13,Default,,0,0,0,,It's about having what it takes to try.
+Dialogue: 0,0:16:05.73,0:16:07.63,Default,,0,0,0,,That's what I believe.
+Dialogue: 0,0:16:08.46,0:16:10.73,Default,,0,0,0,,That's how I like to play golf.
+Dialogue: 0,0:16:16.31,0:16:17.91,Default,,0,0,0,,But I...
+Dialogue: 0,0:16:19.21,0:16:21.64,Default,,0,0,0,,I don't want to lose to them.
+Dialogue: 0,0:16:30.39,0:16:34.69,Default,,0,0,0,,The tee is five steps ahead, and the pin\Nis ten steps in from the green.
+Dialogue: 0,0:16:34.82,0:16:36.73,Default,,0,0,0,,It's 147 yards.
+Dialogue: 0,0:16:37.39,0:16:41.76,Default,,0,0,0,,She can't rely on that nine iron forever.\NShe'll have to use the six iron.
+Dialogue: 0,0:16:43.93,0:16:47.40,Default,,0,0,0,,What is this? It doesn't feel right.
+Dialogue: 0,0:16:48.97,0:16:50.37,Default,,0,0,0,,Igaiga.
+Dialogue: 0,0:16:51.37,0:16:55.88,Default,,0,0,0,,Outside of the island,\Npeople may ridicule the way you play.
+Dialogue: 0,0:16:56.18,0:16:59.72,Default,,0,0,0,,Even so, you need to be true to yourself.
+Dialogue: 0,0:16:59.85,0:17:04.49,Default,,0,0,0,,Play the way you want to play,\Njust the way you are.
+Dialogue: 0,0:17:04.62,0:17:06.96,Default,,0,0,0,,You won't lose. I guarantee it.
+Dialogue: 0,0:17:07.86,0:17:08.72,Default,,0,0,0,,{\i1}Believe me.{\i0}
+Dialogue: 0,0:17:11.39,0:17:12.73,Default,,0,0,0,,A nine iron?
+Dialogue: 0,0:17:19.80,0:17:21.24,Default,,0,0,0,,How does she make it roll so far?
+Dialogue: 0,0:17:22.80,0:17:24.44,Default,,0,0,0,,She'll get the birdie for sure.
+Dialogue: 0,0:17:24.81,0:17:26.28,Default,,0,0,0,,Her fifth one today!
+Dialogue: 0,0:17:27.11,0:17:31.38,Default,,0,0,0,,I believe you, Igaiga. Of course I do.
+Dialogue: 0,0:17:41.42,0:17:44.83,Default,,0,0,0,,She hit the six iron again, but this time\Nthe ball came to a complete stop!
+Dialogue: 0,0:17:45.06,0:17:47.56,Default,,0,0,0,,If she makes it,\Nit'll be her sixth birdie!
+Dialogue: 0,0:17:50.03,0:17:51.67,Default,,0,0,0,,I can't take it anymore!
+Dialogue: 0,0:17:54.27,0:17:57.71,Default,,0,0,0,,I could never do that to my father's club.
+Dialogue: 0,0:17:57.84,0:17:58.84,Default,,0,0,0,,Me too.
+Dialogue: 0,0:17:58.91,0:18:02.71,Default,,0,0,0,,I could never allow myself\Nto get that angry during a game.
+Dialogue: 0,0:18:03.98,0:18:08.52,Default,,0,0,0,,I know someone who loves golf and wanted\Nto keep playing more than anyone.
+Dialogue: 0,0:18:08.62,0:18:12.62,Default,,0,0,0,,Just knowing that\Nmakes me happy to play.
+Dialogue: 0,0:18:18.19,0:18:19.19,Default,,0,0,0,,Get over!
+Dialogue: 0,0:18:21.76,0:18:22.60,Default,,0,0,0,,Alright!
+Dialogue: 0,0:18:22.66,0:18:23.57,Default,,0,0,0,,Nice one!
+Dialogue: 0,0:18:23.87,0:18:24.77,Default,,0,0,0,,Thank you.
+Dialogue: 0,0:18:25.10,0:18:27.90,Default,,0,0,0,,If I can get the par in two putts,
+Dialogue: 0,0:18:28.24,0:18:30.74,Default,,0,0,0,,I'll still have a chance\Nto make the finals!
+Dialogue: 0,0:18:31.74,0:18:34.28,Default,,0,0,0,,{\i1}I'm glad I got to play with Ms. Shima.{\i0}
+Dialogue: 0,0:18:39.45,0:18:41.25,Default,,0,0,0,,Looks like three putts after all.
+Dialogue: 0,0:18:42.99,0:18:46.62,Default,,0,0,0,,I can't believe she's cheering\Nafter an awful shot like that.
+Dialogue: 0,0:18:48.12,0:18:53.13,Default,,0,0,0,,{\i1}There it is again.{\i0}\N{\i1}This doesn't feel right. But why?{\i0}
+Dialogue: 0,0:18:55.16,0:18:57.17,Default,,0,0,0,,{\i1}It's just like before.{\i0}
+Dialogue: 0,0:19:04.24,0:19:05.77,Default,,0,0,0,,{\i1}What's with this girl?{\i0}
+Dialogue: 0,0:19:07.11,0:19:09.58,Default,,0,0,0,,{\i1}Did you see how weird her swing is?{\i0}
+Dialogue: 0,0:19:09.68,0:19:12.95,Default,,0,0,0,,{\i1}She's just having beginner's luck.{\i0}
+Dialogue: 0,0:19:17.82,0:19:21.32,Default,,0,0,0,,{\i1}No. They didn't say anything.{\i0}\N{\i1}I'm just imagining things.{\i0}
+Dialogue: 0,0:19:26.16,0:19:26.73,Default,,0,0,0,,Oh no.
+Dialogue: 0,0:19:28.40,0:19:31.40,Default,,0,0,0,,{\i1}It's them. Its people that are scary.{\i0}
+Dialogue: 0,0:19:34.97,0:19:36.31,Default,,0,0,0,,I'll go first then.
+Dialogue: 0,0:19:40.31,0:19:41.21,Default,,0,0,0,,What do you want?
+Dialogue: 0,0:19:42.68,0:19:44.18,Default,,0,0,0,,N-Nothing!
+Dialogue: 0,0:19:46.18,0:19:50.19,Default,,0,0,0,,I don't think you're playing\Nto your full potential today, are you?
+Dialogue: 0,0:19:51.65,0:19:56.56,Default,,0,0,0,,Now that you're frustrated,\Nit may be too late to make a come back.
+Dialogue: 0,0:19:57.43,0:19:59.49,Default,,0,0,0,,That's probably why your game is off.
+Dialogue: 0,0:20:00.96,0:20:02.10,Default,,0,0,0,,But you know,
+Dialogue: 0,0:20:02.20,0:20:05.97,Default,,0,0,0,,there's no use in trying to cover up\Nall your mistakes at once.
+Dialogue: 0,0:20:07.50,0:20:10.31,Default,,0,0,0,,There's a whole 18 holes\Nto set things straight.
+Dialogue: 0,0:20:10.77,0:20:13.91,Default,,0,0,0,,If you're at the end of the game\Nand there's nothing left to do,
+Dialogue: 0,0:20:14.84,0:20:17.51,Default,,0,0,0,,you still have your\Nwhole life ahead of you.
+Dialogue: 0,0:20:17.75,0:20:20.08,Default,,0,0,0,,If you can improve\Nyour lifetime stroke average
+Dialogue: 0,0:20:20.22,0:20:23.32,Default,,0,0,0,,even by one point,\Nthat's something to be proud of!
+Dialogue: 0,0:20:24.85,0:20:27.56,Default,,0,0,0,,My lifetime average?
+Dialogue: 0,0:20:27.89,0:20:30.56,Default,,0,0,0,,When you get to be my age,\Nyou make a lot of mistakes.
+Dialogue: 0,0:20:30.76,0:20:32.86,Default,,0,0,0,,And not only in golf.
+Dialogue: 0,0:20:33.60,0:20:37.40,Default,,0,0,0,,I've made mistakes that fill\Nmy heart with deep regret.
+Dialogue: 0,0:20:38.00,0:20:41.10,Default,,0,0,0,,But at the end of the day,\Nyou can't turn back the clock.
+Dialogue: 0,0:20:41.37,0:20:45.54,Default,,0,0,0,,We have our whole lives\Nto recover from our mistakes.
+Dialogue: 0,0:20:45.87,0:20:49.75,Default,,0,0,0,,Each of us lies in our own unique rough.
+Dialogue: 0,0:20:49.88,0:20:52.11,Default,,0,0,0,,And we can't always change that!
+Dialogue: 0,0:20:52.25,0:20:56.95,Default,,0,0,0,,All we can do\Nis try our best until the very end.
+Dialogue: 0,0:21:03.09,0:21:04.96,Default,,0,0,0,,{\i1}My lifetime stroke average.{\i0}
+Dialogue: 0,0:21:06.76,0:21:08.53,Default,,0,0,0,,{\i1}I'd never thought of it that way before.{\i0}
+Dialogue: 0,0:21:11.60,0:21:13.40,Default,,0,0,0,,{\i1}I'm glad I left the island.{\i0}
+Dialogue: 0,0:21:14.84,0:21:19.91,Default,,0,0,0,,{\i1}Staying on the island would have meant{\i0}\N{\i1}laying in the rough forever.{\i0}
+Dialogue: 0,0:21:21.14,0:21:26.78,Default,,0,0,0,,{\i1}If I hadn't taken a shot and left{\i0}\N{\i1}the island, we never would have met.{\i0}
+Dialogue: 0,0:21:35.89,0:21:38.49,Default,,0,0,0,,{\i1}If I make par, I'll be at eighty-three.{\i0}
+Dialogue: 0,0:21:38.63,0:21:41.00,Default,,0,0,0,,{\i1}I might actually be able{\i0}\N{\i1}to make the finals.{\i0}
+Dialogue: 0,0:21:50.91,0:21:51.94,Default,,0,0,0,,{\i1}You can do this.{\i0}
+Dialogue: 0,0:21:52.24,0:21:53.58,Default,,0,0,0,,Get in the hole!
+Dialogue: 0,0:21:58.98,0:22:00.52,Default,,0,0,0,,Nice par, Ms. Shima.
+Dialogue: 0,0:22:01.98,0:22:02.89,Default,,0,0,0,,Thanks.
+Dialogue: 0,0:22:15.03,0:22:16.23,Default,,0,0,0,,Will you look at that!
+Dialogue: 0,0:22:16.43,0:22:18.10,Default,,0,0,0,,Wow!
+Dialogue: 0,0:23:49.09,0:23:51.59,Default,,0,0,0,,You won the Japan Junior Cup.\NRight, Tsubura?
+Dialogue: 0,0:23:51.76,0:23:56.87,Default,,0,0,0,,I'm going to win the Kyushu Women's Open\Nand keep climbing to the top!
+Dialogue: 0,0:23:58.00,0:24:01.17,Default,,0,0,0,,{\i1}On the next episode of{\i0} Tonbo! {\i1}My Rival is the Title Holder!{\i0}
+Dialogue: 0,0:24:01.70,0:24:04.94,Default,,0,0,0,,I won once before too, you know!\NThe "Tonbo Farewell Cup" on Hinoshima!
+Dialogue: 0,0:24:05.11,0:24:06.98,Default,,0,0,0,,I want to play in that one, too!
+Dialogue: 0,0:24:07.08,0:24:07.94,Default,,0,0,0,,Deal!
