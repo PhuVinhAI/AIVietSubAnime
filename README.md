@@ -32,10 +32,10 @@ Tải các tool sau và cài vào PATH:
 
 | Tool | Mục đích | Link |
 |------|----------|------|
-| FFmpeg | Tách audio, đọc thông tin track | https://ffmpeg.org/download.html |
-| MKVToolNix | `mkvextract` để tách sub | https://mkvtoolnix.download/ |
-| HandBrake | (Tuỳ chọn) re-encode | https://handbrake.fr/ |
-| VLC | (Tuỳ chọn) preview | https://www.videolan.org/ |
+| FFmpeg | Tách audio, đọc thông tin track sub | https://ffmpeg.org/download.html |
+| MKVToolNix | `mkvextract` để tách file phụ đề | https://mkvtoolnix.download/ |
+| HandBrake | Burn-in (hardsub) phụ đề vào video | https://handbrake.fr/ |
+| VLC | (Tuỳ chọn) preview video & sub | https://www.videolan.org/ |
 
 ## Quy trình làm việc
 
@@ -71,14 +71,23 @@ Chi tiết quy tắc xem [Skills/SKILL.md](Skills/SKILL.md).
 
 Copy block `[V4+ Styles]` từ `SubStyles/Style1.txt` đè lên block tương ứng trong `vietsub.ass` để chuẩn hoá font/màu/viền.
 
-### 6. Hardsub (burn-in) ra video cuối
+### 6. Hardsub (burn-in) ra video cuối bằng HandBrake
 
-Dùng HandBrake hoặc FFmpeg ghép `vietsub.ass` thẳng vào video, xuất ra `Anime/<Tên anime>/Sub/`. Đây là file thành phẩm để xem hoặc upload.
+Dùng HandBrake để burn-in `vietsub.ass` thẳng vào video, xuất ra `Anime/<Tên anime>/Sub/`. Đây là file thành phẩm để xem hoặc upload.
 
-Ví dụ với FFmpeg:
-```bash
-ffmpeg -i Raw/episode.mkv -vf "ass=Translate/vietsub.ass" -c:v libx264 -crf 20 Sub/episode_vietsub.mp4
-```
+**Các bước trong HandBrake:**
+
+1. Mở HandBrake → **Open Source** → chọn file `.mkv` trong `Raw/`.
+2. Tab **Subtitles**:
+   - Bấm **Tracks → Import Subtitle** → chọn `Translate/vietsub.ass`.
+   - Tick **Burned In** cho track vừa import (bắt buộc — đây là bước "đóng cứng" sub vào hình).
+   - Bỏ chọn các track sub khác nếu có.
+3. Tab **Video**: chọn codec **H.264 (x264)**, **Quality RF 20** (hoặc 18 nếu muốn chất lượng cao hơn).
+4. Tab **Audio**: giữ track tiếng Nhật, codec **AAC** hoặc **Passthru**.
+5. **Save As** → trỏ đến `Anime/<Tên anime>/Sub/<tên tập>_vietsub.mp4`.
+6. Bấm **Start Encode** → đợi xong.
+
+**Lưu ý font:** nếu sub dùng font tuỳ chỉnh (vd. Roboto trong `Style1.txt`), cài font đó vào Windows (`%WINDIR%\Fonts`) trước khi encode, không HandBrake sẽ thay bằng font mặc định.
 
 ## Quy tắc dịch (tóm tắt)
 
