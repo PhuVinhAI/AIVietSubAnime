@@ -1,0 +1,102 @@
+# =====================================================
+# Video files (raw anime episodes - quá nặng)
+# =====================================================
+*.mkv
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.webm
+*.m4v
+*.ts
+*.mpg
+*.mpeg
+
+# =====================================================
+# Audio files (đã extract từ video)
+# =====================================================
+*.mp3
+*.wav
+*.flac
+*.m4a
+*.aac
+*.ogg
+*.opus
+*.wma
+
+# =====================================================
+# Installer & binary tools (HandBrake, VLC, mkvtoolnix...)
+# Các tool này tải trực tiếp từ trang chính thức
+# =====================================================
+*.exe
+*.msi
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.AppImage
+
+# =====================================================
+# Image files lớn (chỉ ignore khi nằm trong Anime/)
+# Giữ lại screenshot/preview ở root
+# =====================================================
+Anime/**/*.png
+Anime/**/*.jpg
+Anime/**/*.jpeg
+Anime/**/*.bmp
+Anime/**/*.tiff
+Anime/**/*.psd
+
+# =====================================================
+# Font files (thường nặng, license phức tạp)
+# =====================================================
+*.ttf
+*.otf
+*.woff
+*.woff2
+
+# =====================================================
+# OS files
+# =====================================================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# =====================================================
+# Editor / IDE
+# =====================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# =====================================================
+# Log & temp
+# =====================================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.cache
+node_modules/
+__pycache__/
+*.py[cod]
