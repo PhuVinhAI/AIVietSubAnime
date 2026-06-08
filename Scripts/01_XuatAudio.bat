@@ -35,19 +35,16 @@ echo.
 echo Đang tiến hành trích xuất âm thanh, vui lòng đợi...
 echo.
 
-:: Tự động tìm thư mục cha và chuyển hướng từ \01_Raw\ sang \02_Audio\
-for %%A in ("%~dp1..") do set "parent_folder=%%~fA"
-set "output_dir=%parent_folder%\02_Audio"
-
-:: Nếu thư mục \02_Audio\ chưa tồn tại thì tự động tạo mới
-if not exist "%output_dir%" mkdir "%output_dir%"
+:: Xuất .mp3 cùng folder với .mkv input (cấu trúc 1 folder 1 ep)
+set "output_dir=%~dp1"
+set "output_file=%output_dir%%~n1.mp3"
 
 :: Chạy lệnh FFmpeg để xuất audio MP3
-ffmpeg -i "%input%" -vn -c:a libmp3lame -q:a 2 "%output_dir%\%~n1.mp3"
+ffmpeg -i "%input%" -vn -c:a libmp3lame -q:a 2 "%output_file%"
 
 echo.
 echo ===================================================
 echo [OK] Đã xong! File MP3 được lưu tại:
-echo "%output_dir%\%~n1.mp3"
+echo "%output_file%"
 echo ===================================================
 timeout /t 5

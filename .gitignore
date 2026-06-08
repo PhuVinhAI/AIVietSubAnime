@@ -43,6 +43,10 @@
 *.rpm
 *.AppImage
 
+# Folder Tools/ chứa binary + doc của tool ngoài (HandBrake CLI...)
+# User tự setup local, không push
+Tools/
+
 # =====================================================
 # Image files lớn (chỉ ignore khi nằm trong Anime/)
 # Giữ lại screenshot/preview ở root
