@@ -11,9 +11,11 @@ if "%input%"=="" (
 )
 
 for %%A in ("%~dp1..") do set "parent_folder=%%~fA"
-set "output_dir=%parent_folder%\Translate"
+set "subgoc_dir=%parent_folder%\03_SubGoc"
+set "vietsub_dir=%parent_folder%\04_VietSub"
 
-if not exist "%output_dir%" mkdir "%output_dir%"
+if not exist "%subgoc_dir%" mkdir "%subgoc_dir%"
+if not exist "%vietsub_dir%" mkdir "%vietsub_dir%"
 
 cls
 echo =====================================================================
@@ -33,24 +35,24 @@ echo.
 echo Đang tiến hành tách phụ đề bằng mkvextract...
 echo.
 
-:: Định nghĩa đường dẫn file gốc để lát nữa copy cho chuẩn
-set "file_goc=%output_dir%\%~n1_Track%track_id%.%ext%"
+:: Định nghĩa đường dẫn file gốc EN (vào 03_SubGoc)
+set "file_goc=%subgoc_dir%\%~n1_Track%track_id%.%ext%"
 
-:: 1. Lệnh tách file phụ đề gốc (.ass)
+:: 1. Lệnh tách file phụ đề gốc (.ass) vào 03_SubGoc
 mkvextract tracks "%input%" %track_id%:"%file_goc%"
 
-:: 2. Tự động sao chép ra thêm file .txt và file vietsub.ass
+:: 2. Tạo backup .txt trong 03_SubGoc và file vietsub.ass trong 04_VietSub để dịch
 if exist "%file_goc%" (
     copy "%file_goc%" "%file_goc%.txt" > nul
-    copy "%file_goc%" "%output_dir%\vietsub.ass" > nul
+    copy "%file_goc%" "%vietsub_dir%\vietsub.ass" > nul
 )
 
 echo.
 echo =====================================================================
-echo [OK] HOÀN THÀNH! Đã xuất và nhân bản thành công 3 file:
-echo 1. File gốc:   "%~n1_Track%track_id%.ass"
-echo 2. File phụ:   "%~n1_Track%track_id%.ass.txt"
-echo 3. File dịch:  "vietsub.ass"
+echo [OK] HOÀN THÀNH! Đã xuất 3 file:
+echo 1. 03_SubGoc\%~n1_Track%track_id%.ass        (sub gốc EN)
+echo 2. 03_SubGoc\%~n1_Track%track_id%.ass.txt    (backup)
+echo 3. 04_VietSub\vietsub.ass                     (file để dịch)
 echo =====================================================================
 echo.
 pause

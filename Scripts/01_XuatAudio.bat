@@ -35,11 +35,11 @@ echo.
 echo Đang tiến hành trích xuất âm thanh, vui lòng đợi...
 echo.
 
-:: Tự động tìm thư mục cha và chuyển hướng từ \Raw\ sang \Audio\
+:: Tự động tìm thư mục cha và chuyển hướng từ \01_Raw\ sang \02_Audio\
 for %%A in ("%~dp1..") do set "parent_folder=%%~fA"
-set "output_dir=%parent_folder%\Audio"
+set "output_dir=%parent_folder%\02_Audio"
 
-:: Nếu thư mục \Audio\ chưa tồn tại thì tự động tạo mới
+:: Nếu thư mục \02_Audio\ chưa tồn tại thì tự động tạo mới
 if not exist "%output_dir%" mkdir "%output_dir%"
 
 :: Chạy lệnh FFmpeg để xuất audio MP3
