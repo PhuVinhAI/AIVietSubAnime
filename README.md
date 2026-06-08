@@ -23,17 +23,16 @@ AIVietSubAnime/
 │   ├── Ep02/
 │   │   └── ...
 │   └── Ep13/
-├── Scripts/
-│   ├── 00_ChuanBiTatCa.bat # BATCH: tạo Ep01-EpNN + extract audio + sub TOÀN BỘ
-│   ├── 01_XuatAudio.bat    # Single file: extract .mp3 từ 1 .mkv
-│   ├── 02_TachSub.bat      # Single file: tách sub track từ 1 .mkv
-│   └── 03_HardSub.bat      # Burn-in vietsub.ass vào video bằng HandBrake CLI
+├── anime-cli/                # ⭐ CLI TypeScript + Ink (tự động hoá toàn bộ pipeline)
+│   ├── src/                  #    code TypeScript + React (Ink)
+│   ├── package.json
+│   └── README.md
 ├── Styles/
-│   └── Default.ass         # Style mẫu cho .ass (font, màu, viền)
+│   └── Default.ass           # Style mẫu cho .ass (font, màu, viền)
 ├── Skills/
-│   └── SKILL.md            # Quy tắc dịch Safe Fansub Style
-└── Tools/                  # Installer + HandBrakeCLI            [ignored]
-    └── HandBrakeCLI-*-win-*/HandBrakeCLI.exe (script tự detect)
+│   └── SKILL.md              # Quy tắc dịch Safe Fansub Style
+└── Tools/                    # HandBrakeCLI + installer            [ignored]
+    └── HandBrakeCLI-*-win-*/HandBrakeCLI.exe (CLI tự detect)
 ```
 
 **Vì sao 1 folder 1 ep?**
@@ -45,64 +44,75 @@ AIVietSubAnime/
 
 | Tool | Mục đích | Cách cài |
 |------|----------|----------|
+| Node.js 18+ | Chạy `anime-cli` | https://nodejs.org/ |
 | FFmpeg | Tách audio, đọc thông tin track sub | Add vào PATH — https://ffmpeg.org/download.html |
 | MKVToolNix | `mkvextract` tách sub | Add vào PATH — https://mkvtoolnix.download/ |
-| HandBrake CLI | Burn-in (hardsub) | Giải nén vào `Tools/HandBrakeCLI-*-win-*/` — script tự dò |
+| HandBrake CLI | Burn-in (hardsub) | Giải nén vào `Tools/HandBrakeCLI-*-win-*/` — CLI tự dò |
 | VLC | (Tuỳ chọn) preview | https://www.videolan.org/ |
 
-> **HandBrake CLI**: tải tại https://handbrake.fr/downloads2.php (chọn "HandBrakeCLI"), giải nén nguyên folder `HandBrakeCLI-x.x.x-win-x86_64/` vào `Tools/`. Script `03_HardSub.bat` tự tìm đường dẫn — không cần add PATH.
+> **HandBrake CLI**: tải tại https://handbrake.fr/downloads2.php (chọn "HandBrakeCLI"), giải nén nguyên folder `HandBrakeCLI-x.x.x-win-x86_64/` vào `Tools/`. CLI tự tìm — không cần add PATH.
 
-## Quy trình làm việc (Cách 1: Batch toàn bộ — KHUYẾN NGHỊ)
+## Cài CLI lần đầu
 
-### Bước 1 — Để raw vào folder anime
+```bash
+cd anime-cli
+npm install
+```
 
-Tạo folder `Anime/<tên-anime>/`, copy toàn bộ file `.mkv` của series vào.
+## Quy trình làm việc
 
-### Bước 2 — Chạy `00_ChuanBiTatCa.bat`
+### Bước 1 — Prepare: extract audio + sub cho toàn series
 
-Kéo folder anime (hoặc 1 file .mkv bất kỳ trong đó) thả vào `Scripts/00_ChuanBiTatCa.bat`. Script sẽ:
-1. Liệt kê tất cả `.mkv` tìm thấy
-2. Hiển thị danh sách track sub của file đầu tiên (vd. Track 2: Tiếng Anh)
-3. Hỏi chọn Track ID — sẽ áp cho **TẤT CẢ** file (cùng release thường cùng cấu trúc)
-4. Với từng file:
-   - Parse số tập từ tên file (pattern ` - NN `)
-   - Tạo folder `EpNN`
-   - Move `.mkv` vào
-   - Xuất `.mp3` (libmp3lame Q2)
-   - Tách sub track đã chọn → `*_TrackN.ass`
-   - Copy thành `vietsub.ass` (file để dịch)
+```bash
+cd anime-cli
+npm run dev -- prepare "D:\Raw\Oi Tonbo 2nd Season"
+```
 
-Kết quả: 13 tập anime sẽ có 13 folders `Ep01..Ep13`, mỗi folder sẵn sàng để dịch.
+CLI sẽ tự:
+1. Quét folder, liệt kê tất cả `.mkv`
+2. Auto-detect tên anime (cho phép sửa)
+3. Probe tất cả file → phân tích track sub
+4. **Smart grouping**:
+   - Tất cả file có cùng track structure → hỏi 1 lần
+   - Khác nhau → group theo signature, hỏi từng group
+5. Xác nhận → tự move `.mkv` vào `Anime/<tên>/EpNN/` + extract `.mp3` + tách `.ass` + tạo `vietsub.ass`
 
-### Bước 3 — Dịch
+### Bước 2 — Dịch (Claude Code)
 
-Mở Claude Code trong folder dự án, gọi skill `anime-vi-translator-safe-fansub`. Skill đọc `EpXX/<tên>.mp3` + `EpXX/<tên>_TrackN.ass` rồi sửa trực tiếp `EpXX/vietsub.ass`.
+Mở Claude Code trong project root, gọi skill `anime-vi-translator-safe-fansub`. Skill đọc `Anime/<tên>/EpXX/<tên>.mp3` + `..._TrackN.ass` rồi sửa trực tiếp `vietsub.ass`.
 
 Chi tiết quy tắc: [Skills/SKILL.md](Skills/SKILL.md).
 
-### Bước 4 — Áp style chuẩn
+### Bước 3 — Áp style chuẩn
 
 Copy block `[V4+ Styles]` từ `Styles/Default.ass` đè lên block tương ứng trong `EpXX/vietsub.ass`.
 
-### Bước 5 — Hardsub bằng `03_HardSub.bat`
+### Bước 4 — Hardsub queue
 
-Kéo file `.mkv` (trong folder `EpXX/`) thả vào `Scripts/03_HardSub.bat`. Script tự:
-- Dò `HandBrakeCLI.exe` trong `Tools/HandBrakeCLI-*-win-*/`
-- Tìm `vietsub.ass` cùng folder với .mkv
-- Burn-in → xuất `<tên>_vietsub.mp4` cùng folder
-- Cài đặt: H.264 RF 20, AAC 192 kbps, audio track tiếng Nhật
+```bash
+cd anime-cli
+npm run dev -- hardsub "../Anime/Oi Tonbo 2nd Season"
+```
 
-**Lưu ý font:** Cài font ghi trong `Styles/Default.ass` (mặc định Roboto) vào Windows trước khi encode, không HandBrake sẽ thay bằng font hệ thống.
+CLI sẽ:
+1. Quét tất cả `EpNN/`, check ep nào có cả `.mkv` + `vietsub.ass` → "ready"
+2. Liệt kê ready vs skipped, xác nhận
+3. Encode serial qua HandBrake CLI (mỗi ep ~10-40 phút), tự xuất `<tên>_vietsub.mp4` vào folder ep
 
-## Quy trình thủ công (Cách 2: từng file một)
+**Lưu ý font:** Cài font ghi trong `Styles/Default.ass` (mặc định Roboto) vào Windows trước khi encode, nếu không HandBrake sẽ thay bằng font hệ thống.
 
-Khi chỉ muốn xử lý 1 tập riêng lẻ:
+### Mode menu (interactive)
 
-1. Tạo thủ công folder `Anime/<tên-anime>/EpXX/`, để `.mkv` vào.
-2. Kéo `.mkv` vào `Scripts/01_XuatAudio.bat` → xuất `.mp3` cùng folder.
-3. Kéo `.mkv` vào `Scripts/02_TachSub.bat` → chọn track → xuất `.ass` + `vietsub.ass` cùng folder.
-4. Dịch như Cách 1 Bước 3.
-5. Hardsub như Cách 1 Bước 5.
+Nếu không truyền args, CLI hiện menu cho chọn:
+
+```bash
+cd anime-cli
+npm run dev
+```
+
+→ chọn `Prepare` hoặc `Hardsub` rồi nhập path tại prompt.
+
+Chi tiết kiến trúc CLI: [anime-cli/README.md](anime-cli/README.md).
 
 ## Quy tắc dịch (tóm tắt)
 
@@ -120,4 +130,5 @@ Khi chỉ muốn xử lý 1 tập riêng lẻ:
 
 - Video `.mkv`, audio `.mp3`, hardsub `.mp4` **không push** — quá nặng.
 - Sub `.ass` trong từng `EpXX/` **có push** — đây là sản phẩm chính của dự án.
-- Folder `Tools/` (gồm HandBrake CLI, installer các tool) **không push** — tải lại từ trang chính thức.
+- Folder `Tools/` (HandBrake CLI + installer) **không push** — tải lại từ trang chính thức.
+- `anime-cli/node_modules/` và `anime-cli/dist/` **không push** — chỉ giữ source.

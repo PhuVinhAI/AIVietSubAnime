@@ -9,9 +9,10 @@
 *.flv
 *.webm
 *.m4v
-*.ts
 *.mpg
 *.mpeg
+# .ts (MPEG transport stream) chỉ ignore trong Anime/ — để khỏi đụng TypeScript files
+Anime/**/*.ts
 
 # =====================================================
 # Audio files (đã extract từ video)
@@ -104,3 +105,10 @@ $RECYCLE.BIN/
 node_modules/
 __pycache__/
 *.py[cod]
+
+# =====================================================
+# anime-cli build artifacts
+# =====================================================
+anime-cli/node_modules/
+anime-cli/dist/
+anime-cli/*.tsbuildinfo
