@@ -2,9 +2,9 @@
 chcp 65001 > nul
 
 :: ============================================================
-::  anime-cli launcher
+::  anime-cli launcher - ch?y t? thý m?c g?c, truy?n args sang CLI
 ::
-::   anime-cli                       (open menu)
+::   anime-cli                       (m? menu)
 ::   anime-cli prepare "D:\Raw\Foo"
 ::   anime-cli hardsub ".\Anime\Foo"
 ::   anime-cli export  ".\Anime\Foo"
@@ -16,43 +16,44 @@ set "DIST=%CLI%\dist\index.js"
 
 where node > nul 2>&1
 if errorlevel 1 (
-    echo [ERROR] Node.js not found in PATH.
-    echo Install LTS from https://nodejs.org/ then reopen cmd.
+    echo [L?I] Không t?m th?y Node.js trong PATH.
+    echo T?i b?n LTS t?i https://nodejs.org/ r?i m? l?i c?a s? cmd.
     pause
     exit /b 1
 )
 
 where npm > nul 2>&1
 if errorlevel 1 (
-    echo [ERROR] npm not found in PATH. Reinstall Node.js.
+    echo [L?I] Không t?m th?y npm trong PATH.
+    echo Cài l?i Node.js ^(npm ði kèm gói cài ð?t^) r?i th? l?i.
     pause
     exit /b 1
 )
 
 if not exist "%CLI%" (
-    echo [ERROR] Folder not found: "%CLI%"
-    echo anime-cli.bat must sit next to the anime-cli\ folder.
+    echo [L?I] Không t?m th?y thý m?c "%CLI%".
+    echo File anime-cli.bat ph?i n?m cùng c?p v?i thý m?c anime-cli\.
     pause
     exit /b 1
 )
 
 if not exist "%CLI%\node_modules" (
-    echo [anime-cli] Installing dependencies...
+    echo [anime-cli] Chýa có node_modules. Ðang ch?y npm install...
     pushd "%CLI%"
     call npm install
     popd
 )
 
 if not exist "%DIST%" (
-    echo [anime-cli] Building dist...
+    echo [anime-cli] Chýa build dist. Ðang build...
     pushd "%CLI%"
     call npm run build
     popd
 )
 
 if not exist "%DIST%" (
-    echo [ERROR] Build failed or missing "%DIST%".
-    echo Open cmd inside anime-cli\ and run "npm run build" to see the log.
+    echo [L?I] Build th?t b?i ho?c không th?y "%DIST%".
+    echo M? cmd trong anime-cli\ và ch?y "npm run build" th? công ð? xem log.
     pause
     exit /b 1
 )
@@ -63,9 +64,11 @@ set "EXITCODE=%ERRORLEVEL%"
 echo.
 echo ============================================================
 if "%EXITCODE%"=="0" (
-    echo [anime-cli] CLI exited normally.
+    echo [anime-cli] CLI ð? thoát b?nh thý?ng.
 ) else (
-    echo [anime-cli] CLI exited with code %EXITCODE%.
+    echo [anime-cli] CLI thoát v?i exit code %EXITCODE%.
+    echo N?u th?y l?i "Raw mode is not supported": double-click tr?c ti?p
+    echo t? Windows Explorer thay v? ch?y qua git bash / VS Code terminal.
 )
 echo.
 pause
