@@ -339,9 +339,6 @@ export async function downloadYoutube(opts: DownloadOptions): Promise<void> {
   const sp = execa(resolvedTools.ytdlp, args, { reject: true });
 
   let stage: DownloadProgress['stage'] = 'video';
-  let downloadIdx = 0;
-  const hasVideo = !!opts.videoFormatId;
-  const hasAudio = !!opts.audioFormatId;
 
   // yt-dlp xen kẽ in nhiều dạng dòng trong cùng 1 download:
   //   "[download]  12.3% of  100.00MiB at  5.12MiB/s ETA 00:14"  ← đầy đủ
@@ -352,9 +349,22 @@ export async function downloadYoutube(opts: DownloadOptions): Promise<void> {
   let lastSpeed: string | null = null;
   let lastEta: string | null = null;
   const enterStage = (s: DownloadProgress['stage']) => {
+    if (s === stage) return;
     stage = s;
     lastSpeed = null;
     lastEta = null;
+  };
+
+  // yt-dlp đặt tên file output theo template `<baseName>.f<formatId>.<ext>` cho
+  // mỗi stream rời. Đối chiếu với videoFormatId / audioFormatId để biết stage
+  // CHÍNH XÁC, không phụ thuộc thứ tự yt-dlp tải (audio thường xuống trước).
+  const stageForFile = (filename: string): DownloadProgress['stage'] => {
+    if (opts.videoFormatId && filename.includes(`.f${opts.videoFormatId}.`)) return 'video';
+    if (opts.audioFormatId && filename.includes(`.f${opts.audioFormatId}.`)) return 'audio';
+    // Sub files có dạng `<baseName>.<lang>.vtt` hoặc `.ass`
+    if (/\.(vtt|srt|ass)$/i.test(filename)) return 'subs';
+    // Combined format (không có .fXX.) → coi là video (track duy nhất).
+    return 'video';
   };
 
   const handleChunk = (chunk: Buffer | string) => {
@@ -364,11 +374,9 @@ export async function downloadYoutube(opts: DownloadOptions): Promise<void> {
     for (const line of lines) {
       if (!line) continue;
 
-      if (/^\[download\] Destination:/i.test(line)) {
-        if (downloadIdx === 0) enterStage(hasVideo ? 'video' : hasAudio ? 'audio' : 'subs');
-        else if (downloadIdx === 1) enterStage(hasAudio ? 'audio' : 'subs');
-        else enterStage('subs');
-        downloadIdx++;
+      const destMatch = line.match(/^\[download\] Destination:\s*(.+)$/i);
+      if (destMatch && destMatch[1]) {
+        enterStage(stageForFile(destMatch[1].trim()));
         continue;
       }
       if (/\[Merger\]|\[ffmpeg\] Merging/i.test(line)) {

@@ -189,7 +189,7 @@ function stripCodec(c: string): string {
   return c.split('.')[0] ?? c;
 }
 
-function formatLabel(f: YtFormat): string {
+function formatLabel(f: YtFormat, sizeSuffix = ''): string {
   const parts: string[] = [];
   if (f.kind === 'video' || f.kind === 'av') {
     parts.push(f.height ? `${f.height}p` : 'video');
@@ -201,7 +201,7 @@ function formatLabel(f: YtFormat): string {
     if (f.abr) parts.push(`${Math.round(f.abr)}kbps`);
     if (f.acodec) parts.push(stripCodec(f.acodec));
   }
-  parts.push(humanSize(f.filesize));
+  parts.push(`${humanSize(f.filesize)}${sizeSuffix}`);
   return parts.join('  ' + sym.bullet + '  ');
 }
 
@@ -218,21 +218,55 @@ function epHasOutput(epFolder: string): boolean {
   }
 }
 
-/** Gộp format khả dụng theo height — chỉ giữ height có ở MỌI probe (để 1 lựa chọn cho toàn series). */
+/**
+ * Gộp format khả dụng theo height — chỉ giữ height có ở MỌI probe.
+ * `filesize` được thay bằng TỔNG/TRUNG BÌNH của tất cả probe ở cùng height
+ * (probe[0] làm representative cho ext/codec/fps; size lấy đại diện = trung bình).
+ */
 function commonVideoFormats(probes: YoutubeProbe[]): YtFormat[] {
   if (probes.length === 0) return [];
-  const heightSets = probes.map(
-    (p) => new Set(pickVideoFormats(p).map((f) => f.height).filter((h): h is number => !!h))
-  );
-  const first = heightSets[0]!;
-  const common = [...first].filter((h) => heightSets.every((s) => s.has(h)));
-  // Lấy format của probe đầu tiên làm representative — download sẽ map lại theo từng probe.
-  return pickVideoFormats(probes[0]!).filter((f) => f.height && common.includes(f.height));
+  const perProbeByHeight = probes.map((p) => {
+    const map = new Map<number, YtFormat>();
+    for (const f of pickVideoFormats(p)) if (f.height) map.set(f.height, f);
+    return map;
+  });
+  const firstHeights = [...perProbeByHeight[0]!.keys()];
+  const common = firstHeights.filter((h) => perProbeByHeight.every((m) => m.has(h)));
+
+  return common
+    .map((h) => {
+      const all = perProbeByHeight.map((m) => m.get(h)!);
+      const sizes = all.map((f) => f.filesize).filter((n): n is number => !!n);
+      const avgSize =
+        sizes.length > 0 ? Math.round(sizes.reduce((a, b) => a + b, 0) / sizes.length) : null;
+      const head = all[0]!;
+      return { ...head, filesize: avgSize };
+    })
+    .sort((a, b) => (b.height ?? 0) - (a.height ?? 0));
 }
 
 function commonAudioFormats(probes: YoutubeProbe[]): YtFormat[] {
-  // Audio thường giống nhau giữa các video — lấy của probe đầu tiên.
-  return probes.length > 0 ? pickAudioFormats(probes[0]!) : [];
+  if (probes.length === 0) return [];
+  // Group theo (ext + acodec) để khớp track audio giữa các probe.
+  const key = (f: YtFormat) => `${f.ext}|${f.acodec ?? ''}|${Math.round(f.abr ?? 0)}`;
+  const groups = new Map<string, YtFormat[]>();
+  for (const p of probes) {
+    for (const f of pickAudioFormats(p)) {
+      const k = key(f);
+      const arr = groups.get(k) ?? [];
+      arr.push(f);
+      groups.set(k, arr);
+    }
+  }
+  const out: YtFormat[] = [];
+  for (const [, arr] of groups) {
+    if (arr.length < probes.length) continue;
+    const sizes = arr.map((f) => f.filesize).filter((n): n is number => !!n);
+    const avgSize =
+      sizes.length > 0 ? Math.round(sizes.reduce((a, b) => a + b, 0) / sizes.length) : null;
+    out.push({ ...arr[0]!, filesize: avgSize });
+  }
+  return out.sort((a, b) => (b.abr ?? 0) - (a.abr ?? 0));
 }
 
 function commonSubLangs(probes: YoutubeProbe[]): { code: string; name: string; automatic: boolean }[] {
@@ -811,9 +845,10 @@ function PickVideoUI({
       ? [suggested, ...videos.filter((f) => f.formatId !== suggested.formatId)]
       : videos;
 
+  const sizeSuffix = step.probes.length > 1 ? '/ep' : '';
   const options = [
     ...ordered.map((f) => ({
-      label: `${formatLabel(f)}${f.formatId === suggested?.formatId ? '  [đề xuất]' : ''}`,
+      label: `${formatLabel(f, sizeSuffix)}${f.formatId === suggested?.formatId ? '  [đề xuất]' : ''}`,
       value: String(f.height ?? f.formatId),
     })),
     { label: 'Chỉ tải audio (skip video)', value: '__audio_only__' },
@@ -827,7 +862,7 @@ function PickVideoUI({
         title="Chọn độ phân giải video"
         subtitle={
           step.probes.length > 1
-            ? `${videos.length} mức chất lượng có ở MỌI ${step.probes.length} video. Lựa chọn áp dụng cho toàn series.`
+            ? `${videos.length} mức chất lượng có ở MỌI ${step.probes.length} video. Size hiển thị là trung bình mỗi ep.`
             : `${videos.length} mức chất lượng khả dụng.`
         }
       />
@@ -883,9 +918,10 @@ function PickAudioUI({
       ? [suggested, ...audios.filter((f) => f.formatId !== suggested.formatId)]
       : audios;
 
+  const sizeSuffix = step.probes.length > 1 ? '/ep' : '';
   const options = [
     ...ordered.map((f) => ({
-      label: `${formatLabel(f)}${f.formatId === suggested?.formatId ? '  [đề xuất]' : ''}`,
+      label: `${formatLabel(f, sizeSuffix)}${f.formatId === suggested?.formatId ? '  [đề xuất]' : ''}`,
       value: f.formatId,
     })),
     ...(step.videoFormat
