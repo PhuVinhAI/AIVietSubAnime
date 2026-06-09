@@ -34,12 +34,14 @@ const HB_PROGRESS_RE =
  *  - Quality: ICQ 18
  *  - Encoder preset: quality (max right)
  *  - Audio: track 1, EAC3 passthru
- *  - Subtitle: external ssa file (vietsub.ass), burn-in.
- *    KHÔNG include bất kỳ internal subtitle track nào từ MKV gốc —
- *    nếu `-s 1` được pass thì track English nội bộ sẽ bị burn vào video
- *    (HandBrake merge internal trước external), còn vietsub.ass rớt thành
- *    soft sub. Bỏ `-s` để subtitle list chỉ còn SSA → --subtitle-burned=1
- *    burn đúng tiếng Việt.
+ *  - Subtitle: external SSA (vietsub.ass), burn-in qua --ssa-burn.
+ *    HandBrake có 2 hệ flag subtitle riêng biệt:
+ *      • `-s N` + `--subtitle-burned=N` → cho internal track từ MKV
+ *      • `--ssa-file FILE` + `--ssa-burn` → cho external SSA
+ *    Trộn nhầm 2 hệ này = lỗi: `--subtitle-burned=1` không động được tới
+ *    `--ssa-file`, còn `-s 1` thì lôi English nội bộ ra. Đúng cách:
+ *      • `-s none` để chặn HandBrake auto-pick internal sub
+ *      • `--ssa-file + --ssa-burn` để add external SSA và burn nó
  *  - Filters: all off (default)
  *
  * Nếu `onProgress` được cung cấp, parse các dòng "Encoding: ... NN.NN %"
@@ -52,14 +54,15 @@ export async function runHardsub(opts: HardsubOptions): Promise<void> {
   const sp = execa(handbrakeCliPath, [
     '-i', job.mkvPath,
     '-o', job.outputPath,
-    '--ssa-file', job.assPath,
     '-e', 'qsv_h265_10bit',
     '--vfr',
     '-q', String(quality),
     '--encoder-preset', 'quality',
     '-a', '1',
     '-E', 'eac3',
-    '--subtitle-burned=1',
+    '-s', 'none',
+    '--ssa-file', job.assPath,
+    '--ssa-burn',
   ]);
 
   if (onProgress) {

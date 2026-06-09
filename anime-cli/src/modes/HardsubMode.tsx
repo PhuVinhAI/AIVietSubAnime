@@ -723,7 +723,7 @@ function ConfirmUI({
           <Text color={palette.muted}>{`    Framerate   Same as source + VFR`}</Text>
           <Text color={palette.muted}>{`    Quality     ICQ 18  ${sym.bullet}  encoder preset = quality`}</Text>
           <Text color={palette.muted}>{`    Audio       track 1, EAC3`}</Text>
-          <Text color={palette.muted}>{`    Subtitle    burn-in vietsub.ass  ${sym.bullet}  loại bỏ internal sub`}</Text>
+          <Text color={palette.muted}>{`    Subtitle    -s none + --ssa-file vietsub.ass --ssa-burn`}</Text>
         </Box>
       </Box>
       <Select
