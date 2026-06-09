@@ -1,7 +1,10 @@
+import { Select } from '@inkjs/ui';
 import { Box, Text } from 'ink';
-import SelectInput from 'ink-select-input';
 import { useState } from 'react';
 
+import { Brand } from './components/Brand.js';
+import { HintBar } from './components/HintBar.js';
+import { palette, sym } from './lib/theme.js';
 import { HardsubMode } from './modes/HardsubMode.js';
 import { PrepareMode } from './modes/PrepareMode.js';
 
@@ -18,38 +21,42 @@ export function App({ initialMode, initialPath, projectRoot }: Props) {
 
   if (mode === 'menu') {
     return (
-      <Box flexDirection="column">
-        <Box marginBottom={1} flexDirection="column">
-          <Text color="cyan" bold>
-            ╔══════════════════════════════════════════════════════════╗
-          </Text>
-          <Text color="cyan" bold>
-            ║   AIVietSubAnime CLI — Tự động hoá pipeline dịch sub     ║
-          </Text>
-          <Text color="cyan" bold>
-            ╚══════════════════════════════════════════════════════════╝
+      <Box flexDirection="column" paddingX={1} paddingY={1}>
+        <Brand subtitle="Tự động hoá pipeline dịch sub" />
+
+        <Box marginBottom={1}>
+          <Text color={palette.muted} bold>
+            {` ${sym.triangleRight} CHỌN CHẾ ĐỘ`}
           </Text>
         </Box>
-        <Text>Chọn chế độ:</Text>
-        <SelectInput
-          items={[
+
+        <Select
+          options={[
             {
-              label: 'Prepare — Quét raw + tách audio/sub cho toàn series',
+              label: 'Prepare    ·  Quét raw + tách audio/sub cho toàn series',
               value: 'prepare',
             },
             {
-              label: 'Hardsub — Burn-in vietsub.ass vào video qua HandBrake CLI',
+              label: 'Hardsub    ·  Burn-in vietsub.ass vào video qua HandBrake',
               value: 'hardsub',
             },
             { label: 'Thoát', value: 'exit' },
           ]}
-          onSelect={(item) => {
-            if (item.value === 'exit') {
+          onChange={(value) => {
+            if (value === 'exit') {
               process.exit(0);
             } else {
-              setMode(item.value as Mode);
+              setMode(value as Mode);
             }
           }}
+        />
+
+        <HintBar
+          hints={[
+            { key: '↑↓', label: 'điều hướng' },
+            { key: 'Enter', label: 'chọn' },
+            { key: 'Ctrl+C', label: 'thoát' },
+          ]}
         />
       </Box>
     );

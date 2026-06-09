@@ -1,23 +1,26 @@
+import { Alert, Select, Spinner as UiSpinner } from '@inkjs/ui';
 import { Box, Text, useApp, useInput } from 'ink';
-import SelectInput from 'ink-select-input';
-import Spinner from 'ink-spinner';
 import { existsSync, statSync, unlinkSync } from 'node:fs';
 import { basename, join, resolve } from 'node:path';
 import { useEffect, useState } from 'react';
 
+import { Brand } from '../components/Brand.js';
+import { HintBar } from '../components/HintBar.js';
+import { KeyValue } from '../components/KeyValue.js';
 import { MultiSelect } from '../components/MultiSelect.js';
 import { PathInput } from '../components/PathInput.js';
 import { StatusList, type StatusItem } from '../components/StatusList.js';
 import { StepHeader } from '../components/StepHeader.js';
 import { ToolStatus } from '../components/ToolStatus.js';
 import { runHardsub, scanHardsubCandidates } from '../lib/handbrake.js';
-import { formatDuration, renderBar } from '../lib/progress.js';
+import { formatDuration } from '../lib/progress.js';
 import {
   applyStyleToAss,
   readStyleBlock,
   scanStyles,
   type StyleEntry,
 } from '../lib/styles.js';
+import { palette, sym } from '../lib/theme.js';
 import { checkAllTools, type ToolCheck } from '../lib/tools.js';
 import { useStepNav } from '../lib/useStepNav.js';
 import type { HardsubCandidate, HardsubJob } from '../types.js';
@@ -67,30 +70,20 @@ type Step =
     }
   | { kind: 'done'; statuses: StatusItem[] };
 
-type Nav = {
-  go: (next: Step) => void;
-  back: () => boolean;
-};
+type Nav = { go: (next: Step) => void; back: () => boolean };
 
 type Props = {
   initialPath?: string;
   projectRoot: string;
 };
 
-function formatHardsubDetail(
-  percent: number,
-  etaSeconds: number | null,
-  fps: number | null
-): string {
-  const bar = renderBar(percent, 18);
-  const parts = [`${bar} ${percent.toFixed(1)}%`];
-  if (etaSeconds !== null && etaSeconds > 0) {
-    parts.push(`ETA ${formatDuration(etaSeconds)}`);
-  }
-  if (fps !== null && fps > 0) {
-    parts.push(`${fps.toFixed(0)} fps`);
-  }
-  return parts.join(' · ');
+const TOTAL_STEPS = 5;
+
+function metaFor(percent: number, etaSec: number | null, fps: number | null): string {
+  const parts: string[] = [];
+  if (etaSec !== null && etaSec > 0) parts.push(`ETA ${formatDuration(etaSec)}`);
+  if (fps !== null && fps > 0) parts.push(`${fps.toFixed(0)} fps`);
+  return parts.join(`  ${sym.bullet}  `);
 }
 
 export function HardsubMode({ initialPath, projectRoot }: Props) {
@@ -104,8 +97,6 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
   const { step, setStep, go, back, canBack } = nav;
   const [error, setError] = useState<string | null>(null);
 
-  // Esc → quay lại bước trước. Bỏ qua processing/done/auto-transitions và pick-eps
-  // (MultiSelect tự bind onCancel → back).
   const isBackEnabled =
     !error &&
     canBack &&
@@ -172,7 +163,6 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
     const run = async () => {
       const statuses = [...step.statuses];
 
-      // 1. Áp style trước (rất nhanh)
       if (step.style) {
         try {
           const block = readStyleBlock(step.style.filePath);
@@ -186,7 +176,6 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
         }
       }
 
-      // 2. Encode queue serial — QSV cũng ăn 100% GPU/iGPU per instance
       for (let i = 0; i < step.jobs.length; i++) {
         if (cancelled) return;
         const job = step.jobs[i];
@@ -195,33 +184,33 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
         statuses[i] = {
           ...statuses[i]!,
           status: 'running',
-          detail: formatHardsubDetail(0, null, null),
+          progress: 0,
+          meta: 'Đang khởi động HandBrake...',
         };
         setStep((s) =>
           s.kind === 'processing' ? { ...s, statuses: [...statuses], current: i } : s
         );
 
         try {
-          // Nếu output đã có thì xoá trước (overwrite case)
           if (existsSync(job.outputPath)) {
             try {
               unlinkSync(job.outputPath);
             } catch {}
           }
 
-          // Throttle: HandBrake spam stderr nhiều lần/giây → chỉ flush mỗi 250ms
           let lastFlush = 0;
           await runHardsub({
             handbrakeCliPath: handbrakePath,
             job,
             onProgress: ({ percent, etaSeconds, fps }) => {
               const now = performance.now();
-              if (percent < 100 && now - lastFlush < 250) return;
+              if (percent < 100 && now - lastFlush < 200) return;
               lastFlush = now;
               statuses[i] = {
                 ...statuses[i]!,
                 status: 'running',
-                detail: formatHardsubDetail(percent, etaSeconds, fps),
+                progress: percent,
+                meta: metaFor(percent, etaSeconds, fps),
               };
               setStep((s) =>
                 s.kind === 'processing'
@@ -233,12 +222,16 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
           statuses[i] = {
             ...statuses[i]!,
             status: 'done',
-            detail: `→ ${basename(job.outputPath)}`,
+            progress: undefined,
+            meta: undefined,
+            detail: `${sym.arrowRight} ${basename(job.outputPath)}`,
           };
         } catch (e) {
           statuses[i] = {
             ...statuses[i]!,
             status: 'error',
+            progress: undefined,
+            meta: undefined,
             detail: e instanceof Error ? e.message : String(e),
           };
         }
@@ -258,7 +251,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
 
   useEffect(() => {
     if (step.kind === 'done') {
-      const timer = setTimeout(() => exit(), 2000);
+      const timer = setTimeout(() => exit(), 2500);
       return () => clearTimeout(timer);
     }
     return undefined;
@@ -266,37 +259,40 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
 
   if (!tools) {
     return (
-      <Box>
-        <Text color="cyan">
-          <Spinner type="dots" />
-        </Text>
-        <Text> Đang kiểm tra tools...</Text>
+      <Box paddingX={1} paddingY={1}>
+        <UiSpinner label=" Đang kiểm tra tools..." />
       </Box>
     );
   }
 
   if (error) {
     return (
-      <Box flexDirection="column">
-        <Text color="red">[LỖI] {error}</Text>
+      <Box flexDirection="column" paddingX={1} paddingY={1}>
+        <Brand subtitle="Hardsub mode" compact />
+        <Box marginBottom={1}>
+          <Alert variant="error" title="Đã xảy ra lỗi">
+            {error}
+          </Alert>
+        </Box>
         {step.kind === 'path' && (
-          <Box marginTop={1}>
-            <PathInput
-              label="Nhập folder anime:"
-              hint="Vd. C:\Users\you\Anime\Oi Tonbo 2nd Season"
-              onSubmit={(path) => {
-                setError(null);
-                go({ kind: 'scanning', path });
-              }}
-            />
-          </Box>
+          <PathInput
+            label="Nhập folder anime:"
+            hint="Vd. C:\Users\you\Anime\Oi Tonbo 2nd Season"
+            onSubmit={(path) => {
+              setError(null);
+              go({ kind: 'scanning', path });
+            }}
+          />
         )}
       </Box>
     );
   }
 
+  const stepNumber = STEP_NUMBER[step.kind] ?? 1;
+
   return (
-    <Box flexDirection="column">
+    <Box flexDirection="column" paddingX={1} paddingY={1}>
+      <Brand subtitle="Hardsub mode" compact />
       <ToolStatus
         ffmpeg={tools.ffmpeg}
         mkvextract={tools.mkvextract}
@@ -306,82 +302,109 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
 
       {step.kind === 'path' && (
         <Box flexDirection="column">
-          <StepHeader step={1} total={5} title="Folder anime cần hardsub" />
+          <StepHeader
+            step={stepNumber}
+            total={TOTAL_STEPS}
+            title="Folder anime cần hardsub"
+            subtitle="Trỏ tới folder anime có các Ep01/Ep02/... bên trong"
+          />
           <PathInput
-            label="Path:"
-            hint="Folder anime có các Ep01/Ep02/... bên trong"
+            label="Path"
+            hint="Folder chứa nhiều subfolder EpNN/"
             onSubmit={(path) => go({ kind: 'scanning', path })}
           />
         </Box>
       )}
 
       {step.kind === 'scanning' && (
-        <Box>
-          <Text color="cyan">
-            <Spinner type="dots" />
-          </Text>
-          <Text> Đang quét: {step.path}</Text>
+        <Box flexDirection="column">
+          <StepHeader
+            step={stepNumber}
+            total={TOTAL_STEPS}
+            title="Đang quét folder"
+            subtitle={step.path}
+          />
+          <UiSpinner label=" Đang đọc các Ep folder..." />
         </Box>
       )}
 
       {step.kind === 'scan-result' && (
-        <ScanResultUI step={step} nav={{ go, back }} />
+        <ScanResultUI step={step} nav={{ go, back }} stepNumber={stepNumber} />
       )}
 
       {step.kind === 'pick-eps' && (
-        <PickEpsUI step={step} nav={{ go, back }} />
+        <PickEpsUI step={step} nav={{ go, back }} stepNumber={stepNumber} />
       )}
 
       {step.kind === 'ask-style' && (
-        <AskStyleUI step={step} nav={{ go, back }} projectRoot={projectRoot} />
+        <AskStyleUI
+          step={step}
+          nav={{ go, back }}
+          projectRoot={projectRoot}
+          stepNumber={stepNumber}
+        />
       )}
 
       {step.kind === 'pick-style' && (
-        <PickStyleUI step={step} nav={{ go, back }} />
+        <PickStyleUI step={step} nav={{ go, back }} stepNumber={stepNumber} />
       )}
 
       {step.kind === 'confirm' && (
-        <ConfirmUI step={step} nav={{ go, back }} />
+        <ConfirmUI step={step} nav={{ go, back }} stepNumber={stepNumber} />
       )}
 
       {step.kind === 'processing' && (
         <Box flexDirection="column">
           <StepHeader
-            step={5}
-            total={5}
+            step={TOTAL_STEPS}
+            total={TOTAL_STEPS}
             title={`Hardsub ${step.current + 1}/${step.jobs.length} (serial)`}
+            subtitle={
+              step.style
+                ? `Style: ${step.style.fileName}`
+                : 'Không tích hợp style (giữ nguyên)'
+            }
           />
-          {step.style && (
-            <Box marginBottom={1}>
-              <Text color="cyan">Style đã áp: </Text>
-              <Text>{step.style.fileName}</Text>
-            </Box>
-          )}
           <StatusList items={step.statuses} />
         </Box>
       )}
 
       {step.kind === 'done' && (
         <Box flexDirection="column">
-          <StepHeader step={5} total={5} title="HARDSUB HOÀN THÀNH" />
+          <StepHeader step={TOTAL_STEPS} total={TOTAL_STEPS} title="Hardsub hoàn thành" />
           <StatusList items={step.statuses} />
           <Box marginTop={1}>
-            <Text color="green" bold>
-              ✓ {step.statuses.filter((s) => s.status === 'done').length}/
-              {step.statuses.length} ep đã hardsub
-            </Text>
+            <Alert variant="success" title="Tất cả ep đã encode xong">
+              {`${step.statuses.filter((s) => s.status === 'done').length}/${step.statuses.length} ep encode thành công. CLI sẽ thoát sau 2 giây.`}
+            </Alert>
           </Box>
         </Box>
       )}
 
       {isBackEnabled && (
-        <Box marginTop={1}>
-          <Text color="gray">[Esc] quay lại bước trước</Text>
-        </Box>
+        <HintBar
+          hints={[
+            { key: '↑↓', label: 'điều hướng' },
+            { key: 'Enter', label: 'chọn' },
+            { key: 'Esc', label: 'quay lại' },
+          ]}
+        />
       )}
     </Box>
   );
 }
+
+const STEP_NUMBER: Partial<Record<Step['kind'], number>> = {
+  path: 1,
+  scanning: 1,
+  'scan-result': 2,
+  'pick-eps': 2,
+  'ask-style': 3,
+  'pick-style': 3,
+  confirm: 4,
+  processing: 5,
+  done: 5,
+};
 
 function candidateToJob(c: HardsubCandidate): HardsubJob {
   return {
@@ -395,9 +418,11 @@ function candidateToJob(c: HardsubCandidate): HardsubJob {
 function ScanResultUI({
   step,
   nav,
+  stepNumber,
 }: {
   step: Extract<Step, { kind: 'scan-result' }>;
   nav: Nav;
+  stepNumber: number;
 }) {
   const ready = step.candidates.filter((c) => !c.missingAss && !c.hasOutput);
   const overwrite = step.candidates.filter((c) => !c.missingAss && c.hasOutput);
@@ -406,15 +431,21 @@ function ScanResultUI({
   const choices: { label: string; value: string }[] = [];
   if (ready.length > 0 && overwrite.length > 0) {
     choices.push({
-      label: `Encode tất cả (${ready.length} mới + ${overwrite.length} ghi đè)`,
+      label: `Encode tất cả  (${ready.length} mới + ${overwrite.length} ghi đè)`,
       value: 'all-with-overwrite',
     });
-    choices.push({ label: `Chỉ encode mới (${ready.length} file)`, value: 'only-new' });
+    choices.push({
+      label: `Chỉ encode mới  (${ready.length} file)`,
+      value: 'only-new',
+    });
   } else if (ready.length > 0) {
-    choices.push({ label: `Encode tất cả (${ready.length} file)`, value: 'all-new' });
+    choices.push({
+      label: `Encode tất cả  (${ready.length} file)`,
+      value: 'all-new',
+    });
   } else if (overwrite.length > 0) {
     choices.push({
-      label: `Ghi đè tất cả (${overwrite.length} file)`,
+      label: `Ghi đè tất cả  (${overwrite.length} file)`,
       value: 'all-overwrite',
     });
   }
@@ -423,58 +454,55 @@ function ScanResultUI({
 
   return (
     <Box flexDirection="column">
-      <StepHeader step={2} total={5} title="Hàng đợi hardsub" />
+      <StepHeader
+        step={stepNumber}
+        total={TOTAL_STEPS}
+        title="Hàng đợi hardsub"
+        subtitle={step.animeFolder}
+      />
       <Box flexDirection="column" marginBottom={1}>
-        <Text>
-          <Text color="cyan">Folder: </Text>
-          {step.animeFolder}
-        </Text>
-        <Box flexDirection="column" marginTop={1}>
-          {step.candidates.map((c, i) => (
-            <Box key={i}>
-              <Text
-                color={
-                  c.missingAss ? 'red' : c.hasOutput ? 'yellow' : 'green'
-                }
-              >
-                {c.missingAss ? '  ✗ ' : c.hasOutput ? '  ⚠ ' : '  ✓ '}
-                {c.epName}
-              </Text>
-              <Text color="gray">
-                {c.missingAss
-                  ? ' — thiếu vietsub.ass'
-                  : c.hasOutput
-                  ? ' — đã có _vietsub.mp4'
-                  : ' — sẵn sàng'}
-              </Text>
-            </Box>
-          ))}
-          {step.skipped.map((s, i) => (
-            <Text key={`s${i}`} color="gray">
-              {'  ⊘ '}
-              {s.epName} — {s.reason}
+        {step.candidates.map((c, i) => (
+          <Box key={i}>
+            <Text color={c.missingAss ? palette.error : c.hasOutput ? palette.warn : palette.success}>
+              {`  ${c.missingAss ? sym.cross : c.hasOutput ? sym.warning : sym.tick} `}
             </Text>
-          ))}
-        </Box>
+            <Text color={c.missingAss ? palette.error : c.hasOutput ? palette.warn : palette.text}>
+              {c.epName}
+            </Text>
+            <Text color={palette.muted}>
+              {c.missingAss
+                ? `  ${sym.bullet} thiếu vietsub.ass`
+                : c.hasOutput
+                ? `  ${sym.bullet} đã có _vietsub.mp4`
+                : `  ${sym.bullet} sẵn sàng`}
+            </Text>
+          </Box>
+        ))}
+        {step.skipped.map((s, i) => (
+          <Box key={`s${i}`}>
+            <Text color={palette.muted}>{`  ${sym.skip} ${s.epName}  ${sym.bullet} ${s.reason}`}</Text>
+          </Box>
+        ))}
         <Box marginTop={1}>
-          <Text>
-            Tổng: {step.candidates.length} ep ({ready.length} mới, {overwrite.length} đã có
-            output, {missingAss.length} thiếu sub)
+          <Text color={palette.muted}>
+            {`Tổng: ${step.candidates.length} ep  ${sym.bullet}  ${ready.length} mới  ${sym.bullet}  ${overwrite.length} ghi đè  ${sym.bullet}  ${missingAss.length} thiếu sub`}
           </Text>
         </Box>
       </Box>
 
       {ready.length + overwrite.length === 0 ? (
-        <Text color="red">Không có ep nào encode được. Thoát.</Text>
+        <Alert variant="error" title="Không có ep nào encode được">
+          Cần ít nhất 1 ep có đủ .mkv + vietsub.ass.
+        </Alert>
       ) : (
-        <SelectInput
-          items={choices}
-          onSelect={(it) => {
-            if (it.value === 'cancel') {
+        <Select
+          options={choices}
+          onChange={(value) => {
+            if (value === 'cancel') {
               process.exit(0);
               return;
             }
-            if (it.value === 'pick') {
+            if (value === 'pick') {
               nav.go({
                 kind: 'pick-eps',
                 animeFolder: step.animeFolder,
@@ -484,11 +512,11 @@ function ScanResultUI({
               return;
             }
             let chosen: HardsubCandidate[] = [];
-            if (it.value === 'all-with-overwrite' || it.value === 'all-new') {
+            if (value === 'all-with-overwrite' || value === 'all-new') {
               chosen = [...ready, ...overwrite];
-            } else if (it.value === 'only-new') {
+            } else if (value === 'only-new') {
               chosen = ready;
-            } else if (it.value === 'all-overwrite') {
+            } else if (value === 'all-overwrite') {
               chosen = overwrite;
             }
             const jobs = chosen.map(candidateToJob);
@@ -508,9 +536,11 @@ function ScanResultUI({
 function PickEpsUI({
   step,
   nav,
+  stepNumber,
 }: {
   step: Extract<Step, { kind: 'pick-eps' }>;
   nav: Nav;
+  stepNumber: number;
 }) {
   const items = step.candidates.map((c) => ({
     label: c.epName,
@@ -518,20 +548,20 @@ function PickEpsUI({
     disabled: c.missingAss,
     preselected: !c.missingAss && !c.hasOutput,
     tag: c.missingAss
-      ? { text: 'thiếu sub', color: 'red' }
+      ? { text: 'thiếu sub', color: palette.error }
       : c.hasOutput
-      ? { text: 'ghi đè', color: 'yellow' }
-      : { text: 'mới', color: 'green' },
+      ? { text: 'ghi đè', color: palette.warn }
+      : { text: 'mới', color: palette.success },
   }));
 
   return (
     <Box flexDirection="column">
-      <StepHeader step={3} total={5} title="Chọn ep để hardsub" />
-      <Box marginBottom={1}>
-        <Text color="gray">
-          Mặc định tick các ep mới. Tick thêm các ⚠ "ghi đè" nếu muốn encode lại.
-        </Text>
-      </Box>
+      <StepHeader
+        step={stepNumber}
+        total={TOTAL_STEPS}
+        title="Chọn ep để hardsub"
+        subtitle="Mặc định tick các ep mới. Tick thêm các ep ⚠ ghi đè nếu muốn re-encode."
+      />
       <MultiSelect
         items={items}
         onCancel={() => nav.back()}
@@ -558,32 +588,33 @@ function AskStyleUI({
   step,
   nav,
   projectRoot,
+  stepNumber,
 }: {
   step: Extract<Step, { kind: 'ask-style' }>;
   nav: Nav;
   projectRoot: string;
+  stepNumber: number;
 }) {
   return (
     <Box flexDirection="column">
-      <StepHeader step={4} total={5} title="Tích hợp style?" />
-      <Box marginBottom={1} flexDirection="column">
-        <Text color="cyan">
-          Áp style vào {step.jobs.length} vietsub.ass trước khi encode?
-        </Text>
-        <Text color="gray">(Replace block [V4+ Styles] với style đã chọn)</Text>
-      </Box>
-      <SelectInput
-        items={[
-          { label: 'Có — chọn style từ Styles/', value: 'yes' },
-          { label: 'Không — giữ nguyên', value: 'no' },
+      <StepHeader
+        step={stepNumber}
+        total={TOTAL_STEPS}
+        title="Tích hợp style?"
+        subtitle={`Áp style vào ${step.jobs.length} vietsub.ass trước khi encode (replace block [V4+ Styles]).`}
+      />
+      <Select
+        options={[
+          { label: 'Có  ·  chọn style từ Styles/', value: 'yes' },
+          { label: 'Không  ·  giữ nguyên', value: 'no' },
           { label: 'Huỷ', value: 'cancel' },
         ]}
-        onSelect={(it) => {
-          if (it.value === 'cancel') {
+        onChange={(value) => {
+          if (value === 'cancel') {
             process.exit(0);
             return;
           }
-          if (it.value === 'no') {
+          if (value === 'no') {
             nav.go({
               kind: 'confirm',
               animeFolder: step.animeFolder,
@@ -620,25 +651,28 @@ function AskStyleUI({
 function PickStyleUI({
   step,
   nav,
+  stepNumber,
 }: {
   step: Extract<Step, { kind: 'pick-style' }>;
   nav: Nav;
+  stepNumber: number;
 }) {
   return (
     <Box flexDirection="column">
-      <StepHeader step={4} total={5} title="Chọn style" />
-      <Box marginBottom={1}>
-        <Text color="gray">
-          Tìm thấy {step.styles.length} file trong Styles/.
-        </Text>
-      </Box>
-      <SelectInput
-        items={step.styles.map((s) => ({
+      <StepHeader
+        step={stepNumber}
+        total={TOTAL_STEPS}
+        title="Chọn style"
+        subtitle={`Tìm thấy ${step.styles.length} file trong Styles/.`}
+      />
+      <Select
+        visibleOptionCount={Math.min(8, step.styles.length)}
+        options={step.styles.map((s) => ({
           label: s.fileName,
           value: s.filePath,
         }))}
-        onSelect={(it) => {
-          const chosen = step.styles.find((s) => s.filePath === it.value);
+        onChange={(value) => {
+          const chosen = step.styles.find((s) => s.filePath === value);
           if (!chosen) return;
           nav.go({
             kind: 'confirm',
@@ -656,42 +690,47 @@ function PickStyleUI({
 function ConfirmUI({
   step,
   nav,
+  stepNumber,
 }: {
   step: Extract<Step, { kind: 'confirm' }>;
   nav: Nav;
+  stepNumber: number;
 }) {
   return (
     <Box flexDirection="column">
-      <StepHeader step={4} total={5} title="Xác nhận hardsub queue" />
+      <StepHeader
+        step={stepNumber}
+        total={TOTAL_STEPS}
+        title="Xác nhận hardsub queue"
+      />
       <Box flexDirection="column" marginBottom={1}>
-        <Text>
-          <Text color="cyan">Folder: </Text>
-          {step.animeFolder}
-        </Text>
-        <Text>
-          <Text color="cyan">Số ep: </Text>
-          {step.jobs.length}
-        </Text>
-        <Text>
-          <Text color="cyan">Style: </Text>
-          {step.style ? step.style.fileName : 'Không tích hợp (giữ nguyên)'}
-        </Text>
-        <Box flexDirection="column" marginTop={1}>
-          <Text color="gray">HandBrake config:</Text>
-          <Text color="gray"> · Video: H.265 10-bit Intel QuickSync (qsv_h265_10bit)</Text>
-          <Text color="gray"> · Framerate: Same as source + VFR</Text>
-          <Text color="gray"> · Quality: ICQ 18, encoder preset = quality</Text>
-          <Text color="gray"> · Audio: track 1, EAC3</Text>
-          <Text color="gray"> · Sub: track 1 burn-in (từ vietsub.ass)</Text>
+        <KeyValue
+          rows={[
+            { key: 'Folder', value: step.animeFolder },
+            { key: 'Số ep', value: String(step.jobs.length), color: palette.accent, highlight: true },
+            {
+              key: 'Style',
+              value: step.style ? step.style.fileName : 'Không tích hợp (giữ nguyên)',
+              color: step.style ? palette.brand : palette.muted,
+            },
+          ]}
+        />
+        <Box marginTop={1} flexDirection="column">
+          <Text color={palette.muted} bold>{`${sym.triangleRight} HANDBRAKE CONFIG`}</Text>
+          <Text color={palette.muted}>{`    Video       H.265 10-bit Intel QuickSync (qsv_h265_10bit)`}</Text>
+          <Text color={palette.muted}>{`    Framerate   Same as source + VFR`}</Text>
+          <Text color={palette.muted}>{`    Quality     ICQ 18  ${sym.bullet}  encoder preset = quality`}</Text>
+          <Text color={palette.muted}>{`    Audio       track 1, EAC3`}</Text>
+          <Text color={palette.muted}>{`    Subtitle    track 1 burn-in (từ vietsub.ass)`}</Text>
         </Box>
       </Box>
-      <SelectInput
-        items={[
+      <Select
+        options={[
           { label: `Bắt đầu encode ${step.jobs.length} ep (serial)`, value: 'go' },
           { label: 'Huỷ', value: 'cancel' },
         ]}
-        onSelect={(it) => {
-          if (it.value === 'cancel') {
+        onChange={(value) => {
+          if (value === 'cancel') {
             process.exit(0);
             return;
           }

@@ -1,6 +1,8 @@
 import { Box, Text, useInput } from 'ink';
 import { useState } from 'react';
 
+import { palette, sym } from '../lib/theme.js';
+
 export type MultiSelectItem<T> = {
   label: string;
   value: T;
@@ -22,7 +24,11 @@ type Props<T> = {
 
 export function MultiSelect<T>({ items, onSubmit, onCancel, maxVisible = 20 }: Props<T>) {
   const [selected, setSelected] = useState<Set<number>>(
-    new Set(items.map((it, i) => (it.preselected && !it.disabled ? i : -1)).filter((i) => i >= 0))
+    new Set(
+      items
+        .map((it, i) => (it.preselected && !it.disabled ? i : -1))
+        .filter((i) => i >= 0)
+    )
   );
   const [cursor, setCursor] = useState(0);
 
@@ -52,7 +58,6 @@ export function MultiSelect<T>({ items, onSubmit, onCancel, maxVisible = 20 }: P
       return;
     }
     if (input === 'a' || input === 'A') {
-      // select all (non-disabled)
       setSelected(() => {
         const next = new Set<number>();
         items.forEach((it, i) => {
@@ -63,53 +68,74 @@ export function MultiSelect<T>({ items, onSubmit, onCancel, maxVisible = 20 }: P
       return;
     }
     if (input === 'n' || input === 'N') {
-      // none — deselect all
       setSelected(() => new Set<number>());
       return;
     }
     if (key.return) {
-      const values = items.filter((it, i) => !it.disabled && selected.has(i)).map((it) => it.value);
+      const values = items
+        .filter((it, i) => !it.disabled && selected.has(i))
+        .map((it) => it.value);
       onSubmit(values);
     }
   });
 
   const total = items.length;
-  // simple scroll window centered on cursor
   let start = 0;
   if (total > maxVisible) {
     start = Math.max(0, Math.min(cursor - Math.floor(maxVisible / 2), total - maxVisible));
   }
   const end = Math.min(total, start + maxVisible);
   const visible = items.slice(start, end);
+  const enabledCount = items.filter((it) => !it.disabled).length;
 
   return (
     <Box flexDirection="column">
-      {start > 0 && <Text color="gray"> ↑ ({start} item ẩn ở trên)</Text>}
+      {start > 0 && (
+        <Text color={palette.muted}>{`  ↑  ${start} item ẩn ở trên`}</Text>
+      )}
       {visible.map((it, idx) => {
         const i = start + idx;
         const isCursor = cursor === i;
         const isSel = selected.has(i);
         const box = it.disabled ? '[─]' : isSel ? '[✓]' : '[ ]';
-        const color = it.disabled ? 'gray' : isCursor ? 'cyan' : undefined;
+        const labelColor = it.disabled
+          ? palette.muted
+          : isCursor
+          ? palette.accent
+          : isSel
+          ? palette.text
+          : palette.text;
+        const pointer = isCursor ? sym.pointer : ' ';
         return (
           <Box key={i}>
-            <Text color={isCursor ? 'cyan' : undefined}>{isCursor ? '> ' : '  '}</Text>
-            <Text color={color}>
-              {box} {it.label}
+            <Text color={palette.brand} bold>
+              {`${pointer} `}
+            </Text>
+            <Text color={isSel ? palette.success : labelColor} bold={isCursor}>
+              {box}
+            </Text>
+            <Text color={labelColor} bold={isCursor}>
+              {` ${it.label}`}
             </Text>
             {it.tag && (
-              <Text color={it.tag.color}> {it.tag.text}</Text>
+              <Text color={it.tag.color}>{`  ${it.tag.text}`}</Text>
             )}
           </Box>
         );
       })}
-      {end < total && <Text color="gray"> ↓ ({total - end} item ẩn ở dưới)</Text>}
-      <Box marginTop={1}>
-        <Text color="gray">
-          ↑↓ di chuyển · Space chọn · A chọn tất cả · N bỏ tất cả · Enter xác nhận
-          {onCancel ? ' · Esc quay lại' : ''}
+      {end < total && (
+        <Text color={palette.muted}>{`  ↓  ${total - end} item ẩn ở dưới`}</Text>
+      )}
+      <Box marginTop={1} flexDirection="column">
+        <Box>
+          <Text color={palette.accent} bold>
+            {` ${selected.size}/${enabledCount} đã chọn`}
+          </Text>
+        </Box>
+        <Text color={palette.muted}>
+          {`↑↓ điều hướng  ${sym.bullet}  Space chọn  ${sym.bullet}  A chọn tất cả  ${sym.bullet}  N bỏ tất cả  ${sym.bullet}  Enter xác nhận`}
+          {onCancel ? `  ${sym.bullet}  Esc quay lại` : ''}
         </Text>
-        <Text color="cyan"> · đã chọn {selected.size}/{items.filter((it) => !it.disabled).length}</Text>
       </Box>
     </Box>
   );

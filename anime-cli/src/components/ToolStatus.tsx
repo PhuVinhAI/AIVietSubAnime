@@ -1,5 +1,8 @@
+import { Badge } from '@inkjs/ui';
 import { Box, Text } from 'ink';
+
 import type { ToolCheck } from '../lib/tools.js';
+import { palette, sym } from '../lib/theme.js';
 
 type Props = {
   ffmpeg: ToolCheck;
@@ -11,15 +14,25 @@ type Props = {
 function Row({ name, check }: { name: string; check: ToolCheck }) {
   return (
     <Box>
-      <Box width={20}>
-        <Text>{name}</Text>
+      <Box width={18}>
+        <Text color={palette.muted}>
+          {`  ${sym.triangleRight} `}
+        </Text>
+        <Text color={palette.text}>{name}</Text>
       </Box>
-      {check.ok ? (
-        <Text color="green">✓ OK </Text>
-      ) : (
-        <Text color="red">✗ {check.error ?? 'không tìm thấy'}</Text>
+      <Box marginRight={1}>
+        {check.ok ? (
+          <Badge color="green">READY</Badge>
+        ) : (
+          <Badge color="red">MISSING</Badge>
+        )}
+      </Box>
+      {check.ok && check.path && (
+        <Text color={palette.muted}>{check.path}</Text>
       )}
-      {check.ok && check.path && <Text color="gray">({check.path})</Text>}
+      {!check.ok && check.error && (
+        <Text color={palette.error}>{check.error}</Text>
+      )}
     </Box>
   );
 }
@@ -27,12 +40,16 @@ function Row({ name, check }: { name: string; check: ToolCheck }) {
 export function ToolStatus({ ffmpeg, mkvextract, handbrake, showHandbrake }: Props) {
   return (
     <Box flexDirection="column" marginBottom={1}>
-      <Text bold color="yellow">
-        Tools required:
-      </Text>
-      <Row name="  ffmpeg" check={ffmpeg} />
-      <Row name="  mkvextract" check={mkvextract} />
-      {showHandbrake && handbrake && <Row name="  HandBrake CLI" check={handbrake} />}
+      <Box marginBottom={0}>
+        <Text color={palette.muted} bold>
+          SYSTEM CHECK
+        </Text>
+      </Box>
+      <Row name="ffmpeg" check={ffmpeg} />
+      <Row name="mkvextract" check={mkvextract} />
+      {showHandbrake && handbrake && (
+        <Row name="HandBrake CLI" check={handbrake} />
+      )}
     </Box>
   );
 }
