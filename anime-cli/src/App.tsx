@@ -5,13 +5,14 @@ import { useState } from 'react';
 import { Brand } from './components/Brand.js';
 import { HintBar } from './components/HintBar.js';
 import { palette, sym } from './lib/theme.js';
+import { ExportMode } from './modes/ExportMode.js';
 import { HardsubMode } from './modes/HardsubMode.js';
 import { PrepareMode } from './modes/PrepareMode.js';
 
-type Mode = 'menu' | 'prepare' | 'hardsub';
+type Mode = 'menu' | 'prepare' | 'hardsub' | 'export';
 
 type Props = {
-  initialMode?: 'prepare' | 'hardsub';
+  initialMode?: 'prepare' | 'hardsub' | 'export';
   initialPath?: string;
   projectRoot: string;
 };
@@ -40,6 +41,10 @@ export function App({ initialMode, initialPath, projectRoot }: Props) {
               label: 'Hardsub    ·  Burn-in vietsub.ass vào video qua HandBrake',
               value: 'hardsub',
             },
+            {
+              label: 'Export     ·  Copy *_vietsub.mp4 ra USB / điện thoại',
+              value: 'export',
+            },
             { label: 'Thoát', value: 'exit' },
           ]}
           onChange={(value) => {
@@ -64,6 +69,10 @@ export function App({ initialMode, initialPath, projectRoot }: Props) {
 
   if (mode === 'prepare') {
     return <PrepareMode initialPath={initialPath} projectRoot={projectRoot} />;
+  }
+
+  if (mode === 'export') {
+    return <ExportMode initialPath={initialPath} />;
   }
 
   return <HardsubMode initialPath={initialPath} projectRoot={projectRoot} />;

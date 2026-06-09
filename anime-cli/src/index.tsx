@@ -23,10 +23,10 @@ function findProjectRoot(): string {
 const args = process.argv.slice(2);
 const cmd = args[0]?.toLowerCase();
 
-let initialMode: 'prepare' | 'hardsub' | undefined;
+let initialMode: 'prepare' | 'hardsub' | 'export' | undefined;
 let initialPath: string | undefined;
 
-if (cmd === 'prepare' || cmd === 'hardsub') {
+if (cmd === 'prepare' || cmd === 'hardsub' || cmd === 'export') {
   initialMode = cmd;
   initialPath = args[1];
 } else if (cmd === '--help' || cmd === '-h') {
@@ -37,10 +37,12 @@ Usage:
   anime-cli                          # Menu chọn chế độ
   anime-cli prepare [path]           # Quét + extract audio/sub
   anime-cli hardsub [anime-folder]   # Hardsub queue
+  anime-cli export  [anime-folder]   # Copy *_vietsub.mp4 ra USB / điện thoại
 
 Examples:
   anime-cli prepare "D:\\Raw\\Oi Tonbo"
   anime-cli hardsub "./Anime/Oi Tonbo 2nd Season"
+  anime-cli export  "./Anime/Oi Tonbo 2nd Season"
 `);
   process.exit(0);
 }

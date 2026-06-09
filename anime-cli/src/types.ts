@@ -54,3 +54,22 @@ export type HardsubCandidate = HardsubJob & {
   /** Thiếu vietsub.ass → không thể hardsub. */
   missingAss: boolean;
 };
+
+export type ExportCandidate = {
+  /** Folder Ep gốc (vd ".../Anime/Foo/Ep01"). */
+  epFolder: string;
+  /** Tên Ep (vd "Ep01"). */
+  epName: string;
+  /** Full path đến file _vietsub.mp4. */
+  vietsubPath: string;
+  /** Tên file (vd "Foo - 01_vietsub.mp4"). */
+  fileName: string;
+  /** Kích thước file (byte). */
+  sizeBytes: number;
+};
+
+export type ExportJob = {
+  candidate: ExportCandidate;
+  /** Path đích đầy đủ (đã ghép destDir + fileName). */
+  destPath: string;
+};

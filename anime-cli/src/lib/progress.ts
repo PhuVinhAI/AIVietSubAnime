@@ -19,3 +19,16 @@ export function formatDuration(totalSeconds: number): string {
   }
   return `${m}:${String(sec).padStart(2, '0')}`;
 }
+
+/** Format bytes → "1.23 GB" / "456 MB" / "789 KB". */
+export function humanBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  const units = ['KB', 'MB', 'GB', 'TB'];
+  let n = bytes / 1024;
+  let i = 0;
+  while (n >= 1024 && i < units.length - 1) {
+    n /= 1024;
+    i++;
+  }
+  return `${n.toFixed(n >= 100 ? 0 : n >= 10 ? 1 : 2)} ${units[i]}`;
+}
