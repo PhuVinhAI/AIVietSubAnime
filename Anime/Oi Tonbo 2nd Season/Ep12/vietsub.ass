@@ -11,348 +11,348 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Trebuchet MS,45,&H00FFFFFF,&H000000FF,&H00020713,&H00000000,-1,0,0,0,100,100,0,0,1,1.7,0,2,10,10,15,1
+Style: Default,Roboto,45,&H00FFFFFF,&H000000FF,&H00020713,&H00000000,-1,0,0,0,100,100,0,0,1,1.7,0,2,10,10,15,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:14.80,0:00:18.10,Default,,0,0,0,,{\i1}This is the most fun I've ever had.{\i0}
-Dialogue: 0,0:00:32.53,0:00:34.70,Default,,0,0,0,,{\i1}Tonbo finished the hole at one under.{\i0}
-Dialogue: 0,0:00:36.16,0:00:37.57,Default,,0,0,0,,{\i1}The winner will be determined{\i0}
-Dialogue: 0,0:00:38.41,0:00:39.91,Default,,0,0,0,,{\i1}by the results{\i0}
-Dialogue: 0,0:00:40.58,0:00:42.00,Default,,0,0,0,,{\i1}of the last group.{\i0}
+Dialogue: 0,0:00:14.80,0:00:18.10,Default,,0,0,0,,{\i1}Chưa bao giờ thấy vui như thế này.{\i0}
+Dialogue: 0,0:00:32.53,0:00:34.70,Default,,0,0,0,,{\i1}Tonbo đã hoàn thành hố với thành tích âm một.{\i0}
+Dialogue: 0,0:00:36.16,0:00:37.57,Default,,0,0,0,,{\i1}Người chiến thắng sẽ được quyết định{\i0}
+Dialogue: 0,0:00:38.41,0:00:39.91,Default,,0,0,0,,{\i1}bởi kết quả{\i0}
+Dialogue: 0,0:00:40.58,0:00:42.00,Default,,0,0,0,,{\i1}của nhóm cuối cùng.{\i0}
 Dialogue: 0,0:00:43.25,0:00:45.83,Default,,0,0,0,,{\i1}Tsubura. Hinoki. Ema.{\i0}
-Dialogue: 0,0:02:18.05,0:02:19.89,Default,,0,0,0,,{\i1}I'll need to make it in two strokes,{\i0}
-Dialogue: 0,0:02:19.97,0:02:22.68,Default,,0,0,0,,{\i1}but finishing in even three{\i0}\N{\i1}will be difficult.{\i0}
-Dialogue: 0,0:02:22.76,0:02:23.47,Default,,0,0,0,,{\i1}However…{\i0}
-Dialogue: 0,0:02:24.10,0:02:27.27,Default,,0,0,0,,{\i1}Missing the par means{\i0}\N{\i1}losing my spot at the playoffs.{\i0}
-Dialogue: 0,0:02:28.06,0:02:31.86,Default,,0,0,0,,{\i1}I'll have to go through the grove{\i0}\N{\i1}and land on the 18th fairway,{\i0}
-Dialogue: 0,0:02:32.06,0:02:36.82,Default,,0,0,0,,{\i1}or bring it to the right side{\i0}\N{\i1}of the fairway of the fifth hole.{\i0}
-Dialogue: 0,0:02:37.36,0:02:39.36,Default,,0,0,0,,{\i1}If not that…{\i0}
-Dialogue: 0,0:02:39.86,0:02:43.87,Default,,0,0,0,,{\i1}I'll have to hook it onto the green{\i0}\N{\i1}just like Tonbo did.{\i0}
-Dialogue: 0,0:02:45.62,0:02:48.08,Default,,0,0,0,,{\i1}I'll aim for the final hole.{\i0}
-Dialogue: 0,0:02:51.92,0:02:54.21,Default,,0,0,0,,{\i1}Can it really turn that far?{\i0}
-Dialogue: 0,0:02:54.92,0:02:56.88,Default,,0,0,0,,{\i1}I have to do this!{\i0}
-Dialogue: 0,0:03:01.43,0:03:03.18,Default,,0,0,0,,{\i1}Go! Get there!{\i0}
-Dialogue: 0,0:03:04.05,0:03:05.60,Default,,0,0,0,,{\i1}She's going for a two-on?{\i0}
-Dialogue: 0,0:03:12.77,0:03:14.31,Default,,0,0,0,,The wind blew it back.
-Dialogue: 0,0:03:14.77,0:03:17.32,Default,,0,0,0,,This will make it hard to get par.
-Dialogue: 0,0:03:17.99,0:03:21.53,Default,,0,0,0,,{\i1}Tonbo used her secret weapon{\i0}\N{\i1}at the final moment.{\i0}
-Dialogue: 0,0:03:21.91,0:03:23.03,Default,,0,0,0,,{\i1}As for Tsubura,{\i0}
-Dialogue: 0,0:03:23.28,0:03:27.37,Default,,0,0,0,,{\i1}she hit a shot completely different from{\i0}\N{\i1}her secret weapon at the last moment.{\i0}
-Dialogue: 0,0:03:29.41,0:03:33.08,Default,,0,0,0,,{\i1}Why couldn't you get{\i0}\N{\i1}that great one pattern, Tsubura?{\i0}
-Dialogue: 0,0:03:36.09,0:03:38.84,Default,,0,0,0,,{\i1}I'm hanging on by a thread.{\i0}
-Dialogue: 0,0:03:39.34,0:03:41.51,Default,,0,0,0,,{\i1}If I can just finish in two strokes...{\i0}
-Dialogue: 0,0:03:41.80,0:03:43.72,Default,,0,0,0,,You'll need to take relief from here.
-Dialogue: 0,0:03:45.01,0:03:46.60,Default,,0,0,0,,{\i1}The nearest point of relief is…{\i0}
-Dialogue: 0,0:03:50.02,0:03:50.85,Default,,0,0,0,,{\i1}There.{\i0}
-Dialogue: 0,0:03:51.02,0:03:52.60,Default,,0,0,0,,{\i1}The green is blocked.{\i0}
-Dialogue: 0,0:03:54.02,0:03:56.77,Default,,0,0,0,,{\i1}But from here, I can see the pin.{\i0}
-Dialogue: 0,0:03:57.90,0:03:59.57,Default,,0,0,0,,{\i1}I'll go low through the trees,{\i0}
-Dialogue: 0,0:03:59.74,0:04:00.99,Default,,0,0,0,,{\i1}and roll it to the green.{\i0}
-Dialogue: 0,0:04:01.24,0:04:02.28,Default,,0,0,0,,{\i1}No…{\i0}
-Dialogue: 0,0:04:02.53,0:04:03.66,Default,,0,0,0,,{\i1}I can't.{\i0}
-Dialogue: 0,0:04:03.74,0:04:05.49,Default,,0,0,0,,{\i1}There's a bunker in front.{\i0}
-Dialogue: 0,0:04:06.03,0:04:08.04,Default,,0,0,0,,{\i1}If I can't carry it to the green,{\i0}
-Dialogue: 0,0:04:08.45,0:04:10.25,Default,,0,0,0,,{\i1}I can't land it next to the pin.{\i0}
-Dialogue: 0,0:04:12.29,0:04:13.71,Default,,0,0,0,,{\i1}So this is the end?{\i0}
-Dialogue: 0,0:04:20.05,0:04:21.17,Default,,0,0,0,,{\i1}If I go through there,{\i0}
-Dialogue: 0,0:04:21.84,0:04:23.26,Default,,0,0,0,,{\i1}I can carry it to the pin!{\i0}
-Dialogue: 0,0:04:24.34,0:04:26.51,Default,,0,0,0,,{\i1}I can't let the ball hop{\i0}\N{\i1}like it usually does.{\i0}
-Dialogue: 0,0:04:27.18,0:04:29.60,Default,,0,0,0,,{\i1}I'll have to hit it high,{\i0}\N{\i1}starting with my swing.{\i0}
-Dialogue: 0,0:04:30.22,0:04:31.60,Default,,0,0,0,,{\i1}To do that,{\i0}
-Dialogue: 0,0:04:31.77,0:04:34.69,Default,,0,0,0,,{\i1}I'll have to put{\i0}\N{\i1}all my weight on my left leg.{\i0}
-Dialogue: 0,0:04:35.85,0:04:36.81,Default,,0,0,0,,Seven-iron.
-Dialogue: 0,0:04:36.98,0:04:38.94,Default,,0,0,0,,No, I'll take the eight-iron please.
-Dialogue: 0,0:04:39.94,0:04:41.15,Default,,0,0,0,,What about relief?
-Dialogue: 0,0:04:41.28,0:04:42.86,Default,,0,0,0,,No. I'm going to hit from here.
-Dialogue: 0,0:04:55.29,0:04:57.42,Default,,0,0,0,,She's going to hit it off the asphalt.
-Dialogue: 0,0:04:57.75,0:04:59.42,Default,,0,0,0,,She's not taking the relief?
-Dialogue: 0,0:05:00.13,0:05:02.13,Default,,0,0,0,,{\i1}I've got to loft it as high as possible.{\i0}
-Dialogue: 0,0:05:03.34,0:05:05.22,Default,,0,0,0,,{\i1}This isn't enough. I need more!{\i0}
-Dialogue: 0,0:05:06.09,0:05:07.51,Default,,0,0,0,,{\i1}It's only momentary.{\i0}
-Dialogue: 0,0:05:07.59,0:05:09.47,Default,,0,0,0,,{\i1}I've put up with this pain for ten years.{\i0}
-Dialogue: 0,0:05:10.47,0:05:12.10,Default,,0,0,0,,{\i1}Just a little more...{\i0}
-Dialogue: 0,0:05:12.64,0:05:14.60,Default,,0,0,0,,{\i1}Just one more swing!{\i0}
-Dialogue: 0,0:05:19.06,0:05:20.57,Default,,0,0,0,,Make it through!
-Dialogue: 0,0:05:35.46,0:05:37.50,Default,,0,0,0,,The ball dropped straight down.
-Dialogue: 0,0:05:37.96,0:05:38.88,Default,,0,0,0,,Look at that.
-Dialogue: 0,0:05:39.08,0:05:40.42,Default,,0,0,0,,That's not just technique.
-Dialogue: 0,0:05:41.25,0:05:44.42,Default,,0,0,0,,She put her heart and soul into that shot.
-Dialogue: 0,0:05:44.88,0:05:46.59,Default,,0,0,0,,{\i1}Using the soul as your trump card.{\i0}
-Dialogue: 0,0:05:46.97,0:05:50.93,Default,,0,0,0,,{\i1}This is why I love competitive golf!{\i0}
-Dialogue: 0,0:05:51.26,0:05:52.89,Default,,0,0,0,,{\i1}She's got a chance for birdie.{\i0}
-Dialogue: 0,0:05:53.39,0:05:54.39,Default,,0,0,0,,{\i1}This means…{\i0}
-Dialogue: 0,0:05:54.77,0:05:56.94,Default,,0,0,0,,{\i1}Ema can still win.{\i0}
-Dialogue: 0,0:05:57.06,0:05:58.10,Default,,0,0,0,,That was amazing.
-Dialogue: 0,0:05:58.23,0:05:59.94,Default,,0,0,0,,I was really moved!
-Dialogue: 0,0:06:00.36,0:06:01.94,Default,,0,0,0,,Thank you very much.
-Dialogue: 0,0:06:02.98,0:06:04.03,Default,,0,0,0,,{\i1}If I can get it in…{\i0}
-Dialogue: 0,0:06:04.48,0:06:05.65,Default,,0,0,0,,{\i1}I can catch up!{\i0}
-Dialogue: 0,0:06:14.33,0:06:16.75,Default,,0,0,0,,{\i1}The head of Ema's putter snapped clean off!{\i0}
-Dialogue: 0,0:06:17.33,0:06:18.83,Default,,0,0,0,,{\i1}It what?{\i0}
-Dialogue: 0,0:06:19.79,0:06:21.34,Default,,0,0,0,,{\i1}What is this?{\i0}
-Dialogue: 0,0:06:22.34,0:06:23.84,Default,,0,0,0,,{\i1}It's like a sign from the god of golf...{\i0}
-Dialogue: 0,0:06:24.55,0:06:26.47,Default,,0,0,0,,{\i1}Why me?{\i0}
-Dialogue: 0,0:06:28.68,0:06:31.35,Default,,0,0,0,,Golf never goes as planned.
-Dialogue: 0,0:06:32.51,0:06:34.68,Default,,0,0,0,,It never goes the way you want it to.
-Dialogue: 0,0:06:35.72,0:06:37.77,Default,,0,0,0,,It tests you to your core.
-Dialogue: 0,0:06:40.10,0:06:41.65,Default,,0,0,0,,I know it'd be better to give up.
-Dialogue: 0,0:06:41.98,0:06:43.65,Default,,0,0,0,,Life would be so much easier.
-Dialogue: 0,0:06:45.28,0:06:47.11,Default,,0,0,0,,But I just can't quit.
-Dialogue: 0,0:06:48.90,0:06:51.66,Default,,0,0,0,,The last ten years were for this shot.
-Dialogue: 0,0:06:52.62,0:06:55.37,Default,,0,0,0,,This makes it all worth it.
-Dialogue: 0,0:06:58.37,0:07:00.79,Default,,0,0,0,,I hope I can make a shot like that again.
-Dialogue: 0,0:07:01.67,0:07:04.34,Default,,0,0,0,,Though I'm not sure when that may be.
-Dialogue: 0,0:07:05.09,0:07:08.34,Default,,0,0,0,,All I can do is keep playing.
-Dialogue: 0,0:07:08.88,0:07:10.93,Default,,0,0,0,,I have to accept things the way they are
-Dialogue: 0,0:07:11.26,0:07:12.80,Default,,0,0,0,,and keep swinging.
-Dialogue: 0,0:07:18.93,0:07:22.52,Default,,0,0,0,,{\i1}I've never hit a ball like that before.{\i0}
-Dialogue: 0,0:07:25.23,0:07:27.28,Default,,0,0,0,,{\i1}She put so much into that shot.{\i0}
-Dialogue: 0,0:07:27.99,0:07:31.20,Default,,0,0,0,,{\i1}Just one shot carries so much weight.{\i0}
-Dialogue: 0,0:07:32.28,0:07:35.45,Default,,0,0,0,,{\i1}All of my shots seem to be weightless.{\i0}
-Dialogue: 0,0:07:39.00,0:07:40.91,Default,,0,0,0,,Wow! She's close!
-Dialogue: 0,0:07:41.79,0:07:45.21,Default,,0,0,0,,It's Ema's. If she gets it in\Nshe'll be tied with you.
-Dialogue: 0,0:07:45.79,0:07:47.21,Default,,0,0,0,,Hinoki's up.
-Dialogue: 0,0:07:51.63,0:07:52.63,Default,,0,0,0,,{\i1}Never again.{\i0}
-Dialogue: 0,0:07:56.26,0:07:57.81,Default,,0,0,0,,She's a bit left of the pin.
-Dialogue: 0,0:07:59.14,0:08:01.06,Default,,0,0,0,,Ride that left wind!
-Dialogue: 0,0:08:01.39,0:08:02.31,Default,,0,0,0,,Go!
-Dialogue: 0,0:08:06.48,0:08:09.15,Default,,0,0,0,,No! Stop!
-Dialogue: 0,0:08:10.07,0:08:12.15,Default,,0,0,0,,It's still close enough to putt in.
-Dialogue: 0,0:08:12.45,0:08:14.11,Default,,0,0,0,,Why are you so excited?
-Dialogue: 0,0:08:14.45,0:08:16.74,Default,,0,0,0,,You'll lose if it goes in.
-Dialogue: 0,0:08:24.92,0:08:27.34,Default,,0,0,0,,If Ema Kurisu gets the birdie putt,
-Dialogue: 0,0:08:27.71,0:08:29.67,Default,,0,0,0,,she'll tie the top spot at one under.
-Dialogue: 0,0:08:30.17,0:08:33.76,Default,,0,0,0,,If Tsubura Adaniya can\Nsink it in one putt,
-Dialogue: 0,0:08:34.09,0:08:36.01,Default,,0,0,0,,she'll keep her top spot at one under.
-Dialogue: 0,0:08:36.72,0:08:40.14,Default,,0,0,0,,If Hinoki Otoha can sink it in one putt,\Nshe'll win at two under.
-Dialogue: 0,0:08:40.60,0:08:42.68,Default,,0,0,0,,If she misses she'll be at one under.
-Dialogue: 0,0:08:42.98,0:08:44.77,Default,,0,0,0,,A play-off against Tonbo Oi.
-Dialogue: 0,0:08:45.10,0:08:47.69,Default,,0,0,0,,You mean these four\Nhave their own play-off?
-Dialogue: 0,0:08:50.11,0:08:51.03,Default,,0,0,0,,Tsubura's up.
-Dialogue: 0,0:08:52.95,0:08:55.24,Default,,0,0,0,,The conditions are just right\Nfor easily stopping the ball.
-Dialogue: 0,0:09:00.12,0:09:02.20,Default,,0,0,0,,Is she going to chip it in?
-Dialogue: 0,0:09:02.29,0:09:03.25,Default,,0,0,0,,No.
-Dialogue: 0,0:09:03.37,0:09:07.46,Default,,0,0,0,,She’s making sure the ball won't bounce\Noff the pin and roll away.
-Dialogue: 0,0:09:08.13,0:09:10.05,Default,,0,0,0,,She wants the ball to stop.
-Dialogue: 0,0:09:10.42,0:09:11.96,Default,,0,0,0,,If the ball is spinning,
-Dialogue: 0,0:09:12.26,0:09:15.55,Default,,0,0,0,,it would bounce right off\Nif it were to hit the pin.
-Dialogue: 0,0:09:16.13,0:09:17.80,Default,,0,0,0,,If that's what she's thinking,
-Dialogue: 0,0:09:18.14,0:09:21.35,Default,,0,0,0,,that means she's planning on\Ncarrying the ball right to the pin.
-Dialogue: 0,0:09:21.85,0:09:23.48,Default,,0,0,0,,That's right.
-Dialogue: 0,0:09:25.73,0:09:26.85,Default,,0,0,0,,I swung too hard!
-Dialogue: 0,0:09:33.61,0:09:35.03,Default,,0,0,0,,If she hadn't taken it out,
-Dialogue: 0,0:09:35.15,0:09:36.95,Default,,0,0,0,,it really would have hit the pin.
-Dialogue: 0,0:09:37.36,0:09:40.95,Default,,0,0,0,,She knew it would stop within two steps\Non the first or second bounce.
-Dialogue: 0,0:09:41.03,0:09:42.79,Default,,0,0,0,,She's relying on the putt now.
-Dialogue: 0,0:09:43.20,0:09:44.50,Default,,0,0,0,,That was her play.
-Dialogue: 0,0:09:44.91,0:09:46.46,Default,,0,0,0,,It's not only the approach.
-Dialogue: 0,0:09:46.67,0:09:49.42,Default,,0,0,0,,She's thinking about how\Nto keep par with her next putt.
-Dialogue: 0,0:09:49.92,0:09:53.42,Default,,0,0,0,,{\i1}Even in this crucial moment,{\i0}\N{\i1}she's able to think clearly.{\i0}
-Dialogue: 0,0:09:54.30,0:09:57.51,Default,,0,0,0,,{\i1}Tsubura is a fearsome competitor, indeed.{\i0}
-Dialogue: 0,0:10:00.89,0:10:03.93,Default,,0,0,0,,{\i1}It's the exact same distance and line.{\i0}
-Dialogue: 0,0:10:04.02,0:10:07.06,Default,,0,0,0,,{\i1}We'll both finish the hole{\i0}\N{\i1}at one under if we get it in.{\i0}
-Dialogue: 0,0:10:07.77,0:10:10.81,Default,,0,0,0,,{\i1}The person who hits second{\i0}\N{\i1}will have a big advantage.{\i0}
-Dialogue: 0,0:10:11.27,0:10:13.78,Default,,0,0,0,,{\i1}If the first player makes the shot,{\i0}
-Dialogue: 0,0:10:14.07,0:10:16.07,Default,,0,0,0,,{\i1}the second player's line will be exposed.{\i0}
-Dialogue: 0,0:10:16.78,0:10:17.86,Default,,0,0,0,,You can keep it out.
-Dialogue: 0,0:10:20.57,0:10:21.99,Default,,0,0,0,,Unlike Tsubura,
-Dialogue: 0,0:10:22.20,0:10:24.49,Default,,0,0,0,,she's clearly going for the chip-in.
-Dialogue: 0,0:10:25.95,0:10:29.12,Default,,0,0,0,,If she wants to get it in the cup,\Nshe'll have to use a wedge.
-Dialogue: 0,0:10:29.46,0:10:31.84,Default,,0,0,0,,However, under pressure like this,
-Dialogue: 0,0:10:32.09,0:10:33.55,Default,,0,0,0,,she'll want her putter as well.
-Dialogue: 0,0:10:33.63,0:10:35.05,Default,,0,0,0,,If she takes her wedge,
-Dialogue: 0,0:10:35.17,0:10:38.68,Default,,0,0,0,,it's a sign that she's well prepared\Nand is incredibly confident.
-Dialogue: 0,0:10:41.09,0:10:42.39,Default,,0,0,0,,And there you have it.
-Dialogue: 0,0:10:42.72,0:10:44.14,Default,,0,0,0,,I expect great things from her.
-Dialogue: 0,0:10:44.35,0:10:45.89,Default,,0,0,0,,Hinoki practices hard.
-Dialogue: 0,0:10:46.60,0:10:48.81,Default,,0,0,0,,She puts in more time than anyone else.
-Dialogue: 0,0:10:50.06,0:10:52.90,Default,,0,0,0,,No matter how strict\Nher father's coaching may be,
-Dialogue: 0,0:10:53.23,0:10:54.82,Default,,0,0,0,,she never gives up.
-Dialogue: 0,0:10:56.32,0:10:58.53,Default,,0,0,0,,And when things go well…
-Dialogue: 0,0:10:59.45,0:11:01.11,Default,,0,0,0,,I did it, Dad!
-Dialogue: 0,0:11:02.16,0:11:04.79,Default,,0,0,0,,{\i1}Hinoki's father has drilled golf into her.{\i0}
-Dialogue: 0,0:11:04.99,0:11:06.20,Default,,0,0,0,,{\i1}But is that really all?{\i0}
-Dialogue: 0,0:11:07.50,0:11:09.16,Default,,0,0,0,,{\i1}When I saw her smiling back then,{\i0}
-Dialogue: 0,0:11:09.37,0:11:11.46,Default,,0,0,0,,{\i1}I knew a bright future awaited her.{\i0}
-Dialogue: 0,0:11:12.84,0:11:14.80,Default,,0,0,0,,{\i1}I wanted to train her more myself.{\i0}
-Dialogue: 0,0:11:18.34,0:11:19.88,Default,,0,0,0,,{\i1}Over there.{\i0}
-Dialogue: 0,0:11:20.72,0:11:23.93,Default,,0,0,0,,{\i1}I've practiced an approach{\i0}\N{\i1}from this distance thousands of times.{\i0}
-Dialogue: 0,0:11:24.05,0:11:26.06,Default,,0,0,0,,{\i1}No, even more than that.{\i0}
-Dialogue: 0,0:11:26.52,0:11:28.85,Default,,0,0,0,,{\i1}Now it all comes down to this shot.{\i0}
-Dialogue: 0,0:11:29.60,0:11:31.40,Default,,0,0,0,,{\i1}Ema taught me so much.{\i0}
-Dialogue: 0,0:11:31.81,0:11:35.23,Default,,0,0,0,,{\i1}As did Tsubura, and Tonbo too.{\i0}
-Dialogue: 0,0:11:36.61,0:11:38.94,Default,,0,0,0,,{\i1}I want to be a golfer just like them.{\i0}
-Dialogue: 0,0:11:39.15,0:11:42.28,Default,,0,0,0,,{\i1}I want to fight{\i0}\N{\i1}for everything I've worked for.{\i0}
-Dialogue: 0,0:11:47.66,0:11:49.00,Default,,0,0,0,,It went in.
-Dialogue: 0,0:12:02.43,0:12:03.43,Default,,0,0,0,,It's on the line.
-Dialogue: 0,0:12:03.72,0:12:04.89,Default,,0,0,0,,She did it.
-Dialogue: 0,0:12:13.31,0:12:14.35,Default,,0,0,0,,{\i1}I did it.{\i0}
-Dialogue: 0,0:12:15.19,0:12:16.86,Default,,0,0,0,,{\i1}I used everything I've learned.{\i0}
+Dialogue: 0,0:02:18.05,0:02:19.89,Default,,0,0,0,,{\i1}Cần phải đánh vào trong hai gậy,{\i0}
+Dialogue: 0,0:02:19.97,0:02:22.68,Default,,0,0,0,,{\i1}nhưng hoàn thành trong ba gậy{\i0}\N{\i1}cũng đã khó rồi.{\i0}
+Dialogue: 0,0:02:22.76,0:02:23.47,Default,,0,0,0,,{\i1}Tuy nhiên…{\i0}
+Dialogue: 0,0:02:24.10,0:02:27.27,Default,,0,0,0,,{\i1}Nếu không đạt par thì đồng nghĩa với việc{\i0}\N{\i1}mất cơ hội vào vòng loại trực tiếp.{\i0}
+Dialogue: 0,0:02:28.06,0:02:31.86,Default,,0,0,0,,{\i1}Phải đánh xuyên qua lùm cây{\i0}\N{\i1}và đáp xuống fairway hố số 18,{\i0}
+Dialogue: 0,0:02:32.06,0:02:36.82,Default,,0,0,0,,{\i1}hoặc đưa bóng sang phía bên phải{\i0}\N{\i1}của fairway hố số 5.{\i0}
+Dialogue: 0,0:02:37.36,0:02:39.36,Default,,0,0,0,,{\i1}Nếu không được…{\i0}
+Dialogue: 0,0:02:39.86,0:02:43.87,Default,,0,0,0,,{\i1}Phải đánh xoáy bóng lên green{\i0}\N{\i1}giống như Tonbo đã làm.{\i0}
+Dialogue: 0,0:02:45.62,0:02:48.08,Default,,0,0,0,,{\i1}Sẽ nhắm vào hố cuối cùng.{\i0}
+Dialogue: 0,0:02:51.92,0:02:54.21,Default,,0,0,0,,{\i1}Liệu có thể bẻ cong đến mức đó không?{\i0}
+Dialogue: 0,0:02:54.92,0:02:56.88,Default,,0,0,0,,{\i1}Phải làm được!{\i0}
+Dialogue: 0,0:03:01.43,0:03:03.18,Default,,0,0,0,,{\i1}Bay đi! Tới đó đi!{\i0}
+Dialogue: 0,0:03:04.05,0:03:05.60,Default,,0,0,0,,{\i1}Định lên green trong hai gậy sao?{\i0}
+Dialogue: 0,0:03:12.77,0:03:14.31,Default,,0,0,0,,Gió thổi ngược lại rồi.
+Dialogue: 0,0:03:14.77,0:03:17.32,Default,,0,0,0,,Thế này thì khó đạt par rồi.
+Dialogue: 0,0:03:17.99,0:03:21.53,Default,,0,0,0,,{\i1}Tonbo đã dùng vũ khí bí mật{\i0}\N{\i1}vào phút chót.{\i0}
+Dialogue: 0,0:03:21.91,0:03:23.03,Default,,0,0,0,,{\i1}Còn Tsubura thì,{\i0}
+Dialogue: 0,0:03:23.28,0:03:27.37,Default,,0,0,0,,{\i1}lại đánh một cú hoàn toàn khác với{\i0}\N{\i1}vũ khí bí mật của mình vào phút chót.{\i0}
+Dialogue: 0,0:03:29.41,0:03:33.08,Default,,0,0,0,,{\i1}Sao không dùng lối đánh quen thuộc đó đi,{\i0}\N{\i1}Tsubura?{\i0}
+Dialogue: 0,0:03:36.09,0:03:38.84,Default,,0,0,0,,{\i1}Đang ngàn cân treo sợi tóc rồi.{\i0}
+Dialogue: 0,0:03:39.34,0:03:41.51,Default,,0,0,0,,{\i1}Chỉ cần hoàn thành trong hai gậy nữa thôi...{\i0}
+Dialogue: 0,0:03:41.80,0:03:43.72,Default,,0,0,0,,Cần phải giải thoát bóng từ đây.
+Dialogue: 0,0:03:45.01,0:03:46.60,Default,,0,0,0,,{\i1}Điểm giải thoát gần nhất là…{\i0}
+Dialogue: 0,0:03:50.02,0:03:50.85,Default,,0,0,0,,{\i1}Đó.{\i0}
+Dialogue: 0,0:03:51.02,0:03:52.60,Default,,0,0,0,,{\i1}Đường lên green bị chặn rồi.{\i0}
+Dialogue: 0,0:03:54.02,0:03:56.77,Default,,0,0,0,,{\i1}Nhưng từ đây vẫn có thể thấy cờ.{\i0}
+Dialogue: 0,0:03:57.90,0:03:59.57,Default,,0,0,0,,{\i1}Sẽ đánh thấp xuyên qua lùm cây,{\i0}
+Dialogue: 0,0:03:59.74,0:04:00.99,Default,,0,0,0,,{\i1}rồi lăn bóng lên green.{\i0}
+Dialogue: 0,0:04:01.24,0:04:02.28,Default,,0,0,0,,{\i1}Không…{\i0}
+Dialogue: 0,0:04:02.53,0:04:03.66,Default,,0,0,0,,{\i1}Không được.{\i0}
+Dialogue: 0,0:04:03.74,0:04:05.49,Default,,0,0,0,,{\i1}Có bẫy cát ở phía trước.{\i0}
+Dialogue: 0,0:04:06.03,0:04:08.04,Default,,0,0,0,,{\i1}Nếu không thể bay thẳng lên green,{\i0}
+Dialogue: 0,0:04:08.45,0:04:10.25,Default,,0,0,0,,{\i1}thì không thể đáp bóng cạnh cờ được.{\i0}
+Dialogue: 0,0:04:12.29,0:04:13.71,Default,,0,0,0,,{\i1}Vậy là kết thúc ở đây sao?{\i0}
+Dialogue: 0,0:04:20.05,0:04:21.17,Default,,0,0,0,,{\i1}Nếu đánh xuyên qua đó,{\i0}
+Dialogue: 0,0:04:21.84,0:04:23.26,Default,,0,0,0,,{\i1}thì có thể bay thẳng tới cờ!{\i0}
+Dialogue: 0,0:04:24.34,0:04:26.51,Default,,0,0,0,,{\i1}Không thể để bóng nảy lên{\i0}\N{\i1}như bình thường được.{\i0}
+Dialogue: 0,0:04:27.18,0:04:29.60,Default,,0,0,0,,{\i1}Phải đánh bóng bay cao,{\i0}\N{\i1}bắt đầu từ lúc vung gậy.{\i0}
+Dialogue: 0,0:04:30.22,0:04:31.60,Default,,0,0,0,,{\i1}Để làm được vậy,{\i0}
+Dialogue: 0,0:04:31.77,0:04:34.69,Default,,0,0,0,,{\i1}sẽ phải dồn toàn bộ{\i0}\N{\i1}trọng lượng lên chân trái.{\i0}
+Dialogue: 0,0:04:35.85,0:04:36.81,Default,,0,0,0,,Gậy sắt số 7.
+Dialogue: 0,0:04:36.98,0:04:38.94,Default,,0,0,0,,Không, cho xin gậy sắt số 8.
+Dialogue: 0,0:04:39.94,0:04:41.15,Default,,0,0,0,,Còn việc giải thoát bóng thì sao?
+Dialogue: 0,0:04:41.28,0:04:42.86,Default,,0,0,0,,Không. Sẽ đánh từ đây.
+Dialogue: 0,0:04:55.29,0:04:57.42,Default,,0,0,0,,Định đánh từ trên mặt đường nhựa luôn kìa.
+Dialogue: 0,0:04:57.75,0:04:59.42,Default,,0,0,0,,Không nhận giải thoát bóng sao?
+Dialogue: 0,0:05:00.13,0:05:02.13,Default,,0,0,0,,{\i1}Phải đánh lên cao nhất có thể.{\i0}
+Dialogue: 0,0:05:03.34,0:05:05.22,Default,,0,0,0,,{\i1}Thế này chưa đủ. Cần thêm nữa!{\i0}
+Dialogue: 0,0:05:06.09,0:05:07.51,Default,,0,0,0,,{\i1}Chỉ là khoảnh khắc thôi.{\i0}
+Dialogue: 0,0:05:07.59,0:05:09.47,Default,,0,0,0,,{\i1}Đã chịu đựng nỗi đau này suốt mười năm rồi.{\i0}
+Dialogue: 0,0:05:10.47,0:05:12.10,Default,,0,0,0,,{\i1}Chỉ một chút nữa thôi...{\i0}
+Dialogue: 0,0:05:12.64,0:05:14.60,Default,,0,0,0,,{\i1}Chỉ một cú vung gậy nữa thôi!{\i0}
+Dialogue: 0,0:05:19.06,0:05:20.57,Default,,0,0,0,,Xuyên qua đi!
+Dialogue: 0,0:05:35.46,0:05:37.50,Default,,0,0,0,,Bóng rơi thẳng xuống kìa.
+Dialogue: 0,0:05:37.96,0:05:38.88,Default,,0,0,0,,Nhìn kìa.
+Dialogue: 0,0:05:39.08,0:05:40.42,Default,,0,0,0,,Đó không chỉ là kỹ thuật đâu.
+Dialogue: 0,0:05:41.25,0:05:44.42,Default,,0,0,0,,Đã dồn hết tâm huyết vào cú đánh đó đấy.
+Dialogue: 0,0:05:44.88,0:05:46.59,Default,,0,0,0,,{\i1}Dùng cả linh hồn làm con bài tẩy.{\i0}
+Dialogue: 0,0:05:46.97,0:05:50.93,Default,,0,0,0,,{\i1}Đó là lý do thật sự yêu thích thi đấu golf!{\i0}
+Dialogue: 0,0:05:51.26,0:05:52.89,Default,,0,0,0,,{\i1}Đã có cơ hội ghi birdie rồi.{\i0}
+Dialogue: 0,0:05:53.39,0:05:54.39,Default,,0,0,0,,{\i1}Nghĩa là…{\i0}
+Dialogue: 0,0:05:54.77,0:05:56.94,Default,,0,0,0,,{\i1}Ema vẫn có thể thắng.{\i0}
+Dialogue: 0,0:05:57.06,0:05:58.10,Default,,0,0,0,,Tuyệt vời quá.
+Dialogue: 0,0:05:58.23,0:05:59.94,Default,,0,0,0,,Cảm động lắm luôn!
+Dialogue: 0,0:06:00.36,0:06:01.94,Default,,0,0,0,,Cảm ơn rất nhiều.
+Dialogue: 0,0:06:02.98,0:06:04.03,Default,,0,0,0,,{\i1}Nếu đánh vào được…{\i0}
+Dialogue: 0,0:06:04.48,0:06:05.65,Default,,0,0,0,,{\i1}Thì có thể đuổi kịp rồi!{\i0}
+Dialogue: 0,0:06:14.33,0:06:16.75,Default,,0,0,0,,{\i1}Đầu gậy gạt của Ema gãy lìa ra rồi!{\i0}
+Dialogue: 0,0:06:17.33,0:06:18.83,Default,,0,0,0,,{\i1}Cái gì cơ?{\i0}
+Dialogue: 0,0:06:19.79,0:06:21.34,Default,,0,0,0,,{\i1}Thế này là sao?{\i0}
+Dialogue: 0,0:06:22.34,0:06:23.84,Default,,0,0,0,,{\i1}Cứ như là điềm báo từ thần golf vậy...{\i0}
+Dialogue: 0,0:06:24.55,0:06:26.47,Default,,0,0,0,,{\i1}Tại sao lại thành ra thế này?{\i0}
+Dialogue: 0,0:06:28.68,0:06:31.35,Default,,0,0,0,,Golf chẳng bao giờ diễn ra như dự tính.
+Dialogue: 0,0:06:32.51,0:06:34.68,Default,,0,0,0,,Chẳng bao giờ theo ý muốn của bản thân.
+Dialogue: 0,0:06:35.72,0:06:37.77,Default,,0,0,0,,Nó thử thách tận cùng giới hạn.
+Dialogue: 0,0:06:40.10,0:06:41.65,Default,,0,0,0,,Biết là bỏ cuộc thì sẽ tốt hơn.
+Dialogue: 0,0:06:41.98,0:06:43.65,Default,,0,0,0,,Cuộc sống sẽ dễ dàng hơn biết bao.
+Dialogue: 0,0:06:45.28,0:06:47.11,Default,,0,0,0,,Nhưng lại không thể từ bỏ được.
+Dialogue: 0,0:06:48.90,0:06:51.66,Default,,0,0,0,,Mười năm qua là vì cú đánh này.
+Dialogue: 0,0:06:52.62,0:06:55.37,Default,,0,0,0,,Điều này khiến mọi thứ đều trở nên xứng đáng.
+Dialogue: 0,0:06:58.37,0:07:00.79,Default,,0,0,0,,Hy vọng sẽ lại tung ra được một cú đánh như vậy nữa.
+Dialogue: 0,0:07:01.67,0:07:04.34,Default,,0,0,0,,Dù không rõ khi nào mới làm được.
+Dialogue: 0,0:07:05.09,0:07:08.34,Default,,0,0,0,,Tất cả những gì có thể làm là tiếp tục chơi.
+Dialogue: 0,0:07:08.88,0:07:10.93,Default,,0,0,0,,Phải chấp nhận mọi chuyện như nó vốn có
+Dialogue: 0,0:07:11.26,0:07:12.80,Default,,0,0,0,,và tiếp tục vung gậy.
+Dialogue: 0,0:07:18.93,0:07:22.52,Default,,0,0,0,,{\i1}Chưa từng đánh được quả bóng nào như vậy bao giờ.{\i0}
+Dialogue: 0,0:07:25.23,0:07:27.28,Default,,0,0,0,,{\i1}Đã dồn quá nhiều tâm huyết vào cú đánh đó.{\i0}
+Dialogue: 0,0:07:27.99,0:07:31.20,Default,,0,0,0,,{\i1}Chỉ một cú đánh mà mang sức nặng nhường ấy.{\i0}
+Dialogue: 0,0:07:32.28,0:07:35.45,Default,,0,0,0,,{\i1}Mọi cú đánh của mình dường như chẳng có chút sức nặng nào.{\i0}
+Dialogue: 0,0:07:39.00,0:07:40.91,Default,,0,0,0,,Chà! Gần quá kìa!
+Dialogue: 0,0:07:41.79,0:07:45.21,Default,,0,0,0,,Là bóng của Ema. Nếu đánh vào\Nthì sẽ hòa đấy.
+Dialogue: 0,0:07:45.79,0:07:47.21,Default,,0,0,0,,Đến lượt Hinoki.
+Dialogue: 0,0:07:51.63,0:07:52.63,Default,,0,0,0,,{\i1}Sẽ không bao giờ như vậy nữa.{\i0}
+Dialogue: 0,0:07:56.26,0:07:57.81,Default,,0,0,0,,Lệch sang trái cờ một chút rồi.
+Dialogue: 0,0:07:59.14,0:08:01.06,Default,,0,0,0,,Nương theo luồng gió trái đó đi!
+Dialogue: 0,0:08:01.39,0:08:02.31,Default,,0,0,0,,Bay đi!
+Dialogue: 0,0:08:06.48,0:08:09.15,Default,,0,0,0,,Không! Dừng lại!
+Dialogue: 0,0:08:10.07,0:08:12.15,Default,,0,0,0,,Vẫn đủ gần để gạt vào lỗ mà.
+Dialogue: 0,0:08:12.45,0:08:14.11,Default,,0,0,0,,Sao lại hào hứng thế?
+Dialogue: 0,0:08:14.45,0:08:16.74,Default,,0,0,0,,Bóng mà vào thì sẽ thua đấy.
+Dialogue: 0,0:08:24.92,0:08:27.34,Default,,0,0,0,,Nếu Ema Kurisu gạt được birdie,
+Dialogue: 0,0:08:27.71,0:08:29.67,Default,,0,0,0,,sẽ vươn lên đồng hạng nhất với âm một.
+Dialogue: 0,0:08:30.17,0:08:33.76,Default,,0,0,0,,Nếu Tsubura Adaniya có thể\Ngạt vào trong một gậy,
+Dialogue: 0,0:08:34.09,0:08:36.01,Default,,0,0,0,,sẽ giữ vững vị trí dẫn đầu với âm một.
+Dialogue: 0,0:08:36.72,0:08:40.14,Default,,0,0,0,,Nếu Hinoki Otoha gạt vào trong một gậy,\Nsẽ giành chiến thắng với âm hai.
+Dialogue: 0,0:08:40.60,0:08:42.68,Default,,0,0,0,,Nếu trượt thì sẽ là âm một.
+Dialogue: 0,0:08:42.98,0:08:44.77,Default,,0,0,0,,Sẽ phải đấu play-off với Tonbo Oi.
+Dialogue: 0,0:08:45.10,0:08:47.69,Default,,0,0,0,,Ý là bốn người này\Nsẽ có trận play-off riêng hả?
+Dialogue: 0,0:08:50.11,0:08:51.03,Default,,0,0,0,,Đến lượt Tsubura.
+Dialogue: 0,0:08:52.95,0:08:55.24,Default,,0,0,0,,Điều kiện lúc này rất thích hợp\Nđể dễ dàng làm bóng dừng lại.
+Dialogue: 0,0:09:00.12,0:09:02.20,Default,,0,0,0,,Định chip bóng vào lỗ sao?
+Dialogue: 0,0:09:02.29,0:09:03.25,Default,,0,0,0,,Không.
+Dialogue: 0,0:09:03.37,0:09:07.46,Default,,0,0,0,,Đang đảm bảo để bóng không nảy\Nkhỏi cờ và lăn đi mất.
+Dialogue: 0,0:09:08.13,0:09:10.05,Default,,0,0,0,,Muốn bóng phải dừng lại.
+Dialogue: 0,0:09:10.42,0:09:11.96,Default,,0,0,0,,Nếu bóng đang xoáy,
+Dialogue: 0,0:09:12.26,0:09:15.55,Default,,0,0,0,,thì sẽ nảy bật ra ngay\Nnếu đập trúng cờ.
+Dialogue: 0,0:09:16.13,0:09:17.80,Default,,0,0,0,,Nếu đúng là đang nghĩ vậy,
+Dialogue: 0,0:09:18.14,0:09:21.35,Default,,0,0,0,,thì có nghĩa là đang định\Nđánh bóng bay thẳng tới cờ.
+Dialogue: 0,0:09:21.85,0:09:23.48,Default,,0,0,0,,Đúng vậy.
+Dialogue: 0,0:09:25.73,0:09:26.85,Default,,0,0,0,,Vung gậy mạnh quá rồi!
+Dialogue: 0,0:09:33.61,0:09:35.03,Default,,0,0,0,,Nếu không rút cờ ra,
+Dialogue: 0,0:09:35.15,0:09:36.95,Default,,0,0,0,,thì chắc chắn đã đập trúng cờ rồi.
+Dialogue: 0,0:09:37.36,0:09:40.95,Default,,0,0,0,,Biết rõ bóng sẽ dừng lại trong vòng hai bước\Nsau lần nảy đầu tiên hoặc thứ hai.
+Dialogue: 0,0:09:41.03,0:09:42.79,Default,,0,0,0,,Giờ thì phải trông cậy vào cú gạt thôi.
+Dialogue: 0,0:09:43.20,0:09:44.50,Default,,0,0,0,,Đó là chiến thuật đã định.
+Dialogue: 0,0:09:44.91,0:09:46.46,Default,,0,0,0,,Không chỉ là cú approach.
+Dialogue: 0,0:09:46.67,0:09:49.42,Default,,0,0,0,,Mà còn đang tính toán cách\Nđể giữ par ở cú gạt tiếp theo.
+Dialogue: 0,0:09:49.92,0:09:53.42,Default,,0,0,0,,{\i1}Ngay cả trong thời khắc quyết định này,{\i0}\N{\i1}vẫn có thể suy nghĩ rất thấu đáo.{\i0}
+Dialogue: 0,0:09:54.30,0:09:57.51,Default,,0,0,0,,{\i1}Tsubura quả thực là một đối thủ đáng gờm.{\i0}
+Dialogue: 0,0:10:00.89,0:10:03.93,Default,,0,0,0,,{\i1}Khoảng cách và đường bóng y hệt nhau.{\i0}
+Dialogue: 0,0:10:04.02,0:10:07.06,Default,,0,0,0,,{\i1}Cả hai sẽ hoàn thành hố{\i0}\N{\i1}với thành tích âm một nếu gạt vào.{\i0}
+Dialogue: 0,0:10:07.77,0:10:10.81,Default,,0,0,0,,{\i1}Người đánh sau{\i0}\N{\i1}sẽ có lợi thế rất lớn.{\i0}
+Dialogue: 0,0:10:11.27,0:10:13.78,Default,,0,0,0,,{\i1}Nếu người đánh trước thực hiện cú đánh,{\i0}
+Dialogue: 0,0:10:14.07,0:10:16.07,Default,,0,0,0,,{\i1}thì đường bóng của người đánh sau sẽ bị lộ.{\i0}
+Dialogue: 0,0:10:16.78,0:10:17.86,Default,,0,0,0,,Cứ rút cờ ra đi.
+Dialogue: 0,0:10:20.57,0:10:21.99,Default,,0,0,0,,Khác với Tsubura,
+Dialogue: 0,0:10:22.20,0:10:24.49,Default,,0,0,0,,rõ ràng là đang định chip thẳng vào lỗ.
+Dialogue: 0,0:10:25.95,0:10:29.12,Default,,0,0,0,,Nếu muốn đưa bóng vào lỗ,\Nthì phải dùng gậy wedge.
+Dialogue: 0,0:10:29.46,0:10:31.84,Default,,0,0,0,,Tuy nhiên, dưới áp lực thế này,
+Dialogue: 0,0:10:32.09,0:10:33.55,Default,,0,0,0,,cũng sẽ muốn dùng gậy gạt nữa.
+Dialogue: 0,0:10:33.63,0:10:35.05,Default,,0,0,0,,Nếu chọn gậy wedge,
+Dialogue: 0,0:10:35.17,0:10:38.68,Default,,0,0,0,,thì chứng tỏ đã chuẩn bị rất kỹ\Nvà đang vô cùng tự tin.
+Dialogue: 0,0:10:41.09,0:10:42.39,Default,,0,0,0,,Và đúng là thế thật.
+Dialogue: 0,0:10:42.72,0:10:44.14,Default,,0,0,0,,Rất đáng để kỳ vọng đấy.
+Dialogue: 0,0:10:44.35,0:10:45.89,Default,,0,0,0,,Hinoki luyện tập rất chăm chỉ.
+Dialogue: 0,0:10:46.60,0:10:48.81,Default,,0,0,0,,Dành nhiều thời gian hơn bất kỳ ai.
+Dialogue: 0,0:10:50.06,0:10:52.90,Default,,0,0,0,,Cho dù sự huấn luyện của cha\Ncó nghiêm khắc đến đâu,
+Dialogue: 0,0:10:53.23,0:10:54.82,Default,,0,0,0,,cũng không bao giờ bỏ cuộc.
+Dialogue: 0,0:10:56.32,0:10:58.53,Default,,0,0,0,,Và khi mọi chuyện suôn sẻ…
+Dialogue: 0,0:10:59.45,0:11:01.11,Default,,0,0,0,,Làm được rồi, Otou-san!
+Dialogue: 0,0:11:02.16,0:11:04.79,Default,,0,0,0,,{\i1}Cha của Hinoki đã nhồi nhét golf vào đầu con bé.{\i0}
+Dialogue: 0,0:11:04.99,0:11:06.20,Default,,0,0,0,,{\i1}Nhưng liệu có thật sự chỉ vậy thôi không?{\i0}
+Dialogue: 0,0:11:07.50,0:11:09.16,Default,,0,0,0,,{\i1}Khi nhìn thấy nụ cười lúc đó,{\i0}
+Dialogue: 0,0:11:09.37,0:11:11.46,Default,,0,0,0,,{\i1}đã biết rằng một tương lai tươi sáng đang chờ đợi.{\i0}
+Dialogue: 0,0:11:12.84,0:11:14.80,Default,,0,0,0,,{\i1}Thật sự muốn tự mình huấn luyện thêm nữa.{\i0}
+Dialogue: 0,0:11:18.34,0:11:19.88,Default,,0,0,0,,{\i1}Đằng kia.{\i0}
+Dialogue: 0,0:11:20.72,0:11:23.93,Default,,0,0,0,,{\i1}Đã tập approach từ khoảng cách này{\i0}\N{\i1}hàng ngàn lần rồi.{\i0}
+Dialogue: 0,0:11:24.05,0:11:26.06,Default,,0,0,0,,{\i1}Không, thậm chí còn nhiều hơn thế.{\i0}
+Dialogue: 0,0:11:26.52,0:11:28.85,Default,,0,0,0,,{\i1}Giờ tất cả đều phụ thuộc vào cú đánh này.{\i0}
+Dialogue: 0,0:11:29.60,0:11:31.40,Default,,0,0,0,,{\i1}Ema đã dạy rất nhiều điều.{\i0}
+Dialogue: 0,0:11:31.81,0:11:35.23,Default,,0,0,0,,{\i1}Cả Tsubura và Tonbo cũng vậy.{\i0}
+Dialogue: 0,0:11:36.61,0:11:38.94,Default,,0,0,0,,{\i1}Muốn trở thành một golfer giống như họ.{\i0}
+Dialogue: 0,0:11:39.15,0:11:42.28,Default,,0,0,0,,{\i1}Muốn chiến đấu{\i0}\N{\i1}vì mọi thứ đã nỗ lực đạt được.{\i0}
+Dialogue: 0,0:11:47.66,0:11:49.00,Default,,0,0,0,,Vào rồi.
+Dialogue: 0,0:12:02.43,0:12:03.43,Default,,0,0,0,,Đúng đường bóng rồi.
+Dialogue: 0,0:12:03.72,0:12:04.89,Default,,0,0,0,,Làm được rồi.
+Dialogue: 0,0:12:13.31,0:12:14.35,Default,,0,0,0,,{\i1}Làm được rồi.{\i0}
+Dialogue: 0,0:12:15.19,0:12:16.86,Default,,0,0,0,,{\i1}Đã dùng tất cả những gì học được.{\i0}
 Dialogue: 0,0:12:17.65,0:12:18.90,Default,,0,0,0,,{\i1}Hinoki.{\i0}
-Dialogue: 0,0:12:19.07,0:12:20.32,Default,,0,0,0,,{\i1}That was great.{\i0}
-Dialogue: 0,0:12:20.49,0:12:22.53,Default,,0,0,0,,{\i1}You showed us how confident you are.{\i0}
-Dialogue: 0,0:12:22.82,0:12:24.62,Default,,0,0,0,,{\i1}That was an incredible putt.{\i0}
-Dialogue: 0,0:12:24.91,0:12:27.33,Default,,0,0,0,,We'll have to see what happens next.
-Dialogue: 0,0:12:27.66,0:12:30.83,Default,,0,0,0,,This could come down\Nto a cut-throat final shot.
-Dialogue: 0,0:12:31.96,0:12:33.21,Default,,0,0,0,,I'm marking my ball.
-Dialogue: 0,0:12:34.79,0:12:37.75,Default,,0,0,0,,{\i1}I still have a chance to win.{\i0}
-Dialogue: 0,0:12:41.92,0:12:43.34,Default,,0,0,0,,I'll shoot first.
-Dialogue: 0,0:12:43.68,0:12:44.89,Default,,0,0,0,,But…
-Dialogue: 0,0:12:45.26,0:12:47.72,Default,,0,0,0,,I think I'm a hair farther back.
-Dialogue: 0,0:12:50.14,0:12:51.06,Default,,0,0,0,,{\i1}I see.{\i0}
-Dialogue: 0,0:12:51.35,0:12:52.85,Default,,0,0,0,,{\i1}This is because{\i0}
-Dialogue: 0,0:12:52.94,0:12:56.44,Default,,0,0,0,,{\i1}It was Ema's fault that{\i0}\N{\i1}Tsubura missed her tee shot.{\i0}
-Dialogue: 0,0:12:58.02,0:13:00.11,Default,,0,0,0,,{\i1}Now she's making up for it.{\i0}
-Dialogue: 0,0:13:03.86,0:13:05.41,Default,,0,0,0,,Which club will she use?
-Dialogue: 0,0:13:06.49,0:13:08.53,Default,,0,0,0,,Her putter is broken, after all.
-Dialogue: 0,0:13:08.87,0:13:10.54,Default,,0,0,0,,Her putter broke?
-Dialogue: 0,0:13:11.08,0:13:13.54,Default,,0,0,0,,So what will Ema do?
-Dialogue: 0,0:13:13.83,0:13:15.58,Default,,0,0,0,,She'll just have to use\None of her other clubs.
-Dialogue: 0,0:13:16.12,0:13:17.67,Default,,0,0,0,,I'll use this one.
-Dialogue: 0,0:13:18.63,0:13:19.92,Default,,0,0,0,,A wedge?
-Dialogue: 0,0:13:34.27,0:13:35.52,Default,,0,0,0,,{\i1}There are two cups.{\i0}
-Dialogue: 0,0:13:37.60,0:13:39.52,Default,,0,0,0,,{\i1}She's on the same line I shot from.{\i0}
-Dialogue: 0,0:13:41.90,0:13:44.15,Default,,0,0,0,,{\i1}I couldn't make it in at the very end.{\i0}
-Dialogue: 0,0:14:10.93,0:14:12.14,Default,,0,0,0,,{\i1}It's the same line as me!{\i0}
-Dialogue: 0,0:14:12.39,0:14:13.64,Default,,0,0,0,,{\i1}No! Go right!{\i0}
-Dialogue: 0,0:14:14.56,0:14:16.14,Default,,0,0,0,,{\i1}Yes! It's turning!{\i0}
-Dialogue: 0,0:14:16.81,0:14:18.65,Default,,0,0,0,,{\i1}More! More!{\i0}
-Dialogue: 0,0:14:20.27,0:14:21.15,Default,,0,0,0,,{\i1}Go!{\i0}
-Dialogue: 0,0:14:24.74,0:14:27.20,Default,,0,0,0,,This puts Ema out of the match.
+Dialogue: 0,0:12:19.07,0:12:20.32,Default,,0,0,0,,{\i1}Tuyệt lắm.{\i0}
+Dialogue: 0,0:12:20.49,0:12:22.53,Default,,0,0,0,,{\i1}Đã cho thấy bản thân tự tin đến mức nào.{\i0}
+Dialogue: 0,0:12:22.82,0:12:24.62,Default,,0,0,0,,{\i1}Quả là một cú gạt không tưởng.{\i0}
+Dialogue: 0,0:12:24.91,0:12:27.33,Default,,0,0,0,,Phải xem chuyện gì sẽ xảy ra tiếp theo đây.
+Dialogue: 0,0:12:27.66,0:12:30.83,Default,,0,0,0,,Có thể sẽ phải quyết định\Nbằng một cú đánh cuối cùng vô cùng khốc liệt.
+Dialogue: 0,0:12:31.96,0:12:33.21,Default,,0,0,0,,Đánh dấu bóng đây.
+Dialogue: 0,0:12:34.79,0:12:37.75,Default,,0,0,0,,{\i1}Vẫn còn cơ hội chiến thắng.{\i0}
+Dialogue: 0,0:12:41.92,0:12:43.34,Default,,0,0,0,,Sẽ đánh trước.
+Dialogue: 0,0:12:43.68,0:12:44.89,Default,,0,0,0,,Nhưng…
+Dialogue: 0,0:12:45.26,0:12:47.72,Default,,0,0,0,,Hình như bóng xa hơn một chút thì phải.
+Dialogue: 0,0:12:50.14,0:12:51.06,Default,,0,0,0,,{\i1}Ra vậy.{\i0}
+Dialogue: 0,0:12:51.35,0:12:52.85,Default,,0,0,0,,{\i1}Đó là vì{\i0}
+Dialogue: 0,0:12:52.94,0:12:56.44,Default,,0,0,0,,{\i1}Lỗi của Ema đã khiến{\i0}\N{\i1}Tsubura đánh hỏng cú tee shot.{\i0}
+Dialogue: 0,0:12:58.02,0:13:00.11,Default,,0,0,0,,{\i1}Nên giờ đang bù đắp lại.{\i0}
+Dialogue: 0,0:13:03.86,0:13:05.41,Default,,0,0,0,,Sẽ dùng gậy nào đây?
+Dialogue: 0,0:13:06.49,0:13:08.53,Default,,0,0,0,,Dù sao thì gậy gạt cũng gãy rồi.
+Dialogue: 0,0:13:08.87,0:13:10.54,Default,,0,0,0,,Gậy gạt gãy rồi á?
+Dialogue: 0,0:13:11.08,0:13:13.54,Default,,0,0,0,,Vậy Ema sẽ làm gì?
+Dialogue: 0,0:13:13.83,0:13:15.58,Default,,0,0,0,,Chỉ còn cách dùng\Nmột trong những cây gậy khác thôi.
+Dialogue: 0,0:13:16.12,0:13:17.67,Default,,0,0,0,,Sẽ dùng cây này.
+Dialogue: 0,0:13:18.63,0:13:19.92,Default,,0,0,0,,Gậy wedge sao?
+Dialogue: 0,0:13:34.27,0:13:35.52,Default,,0,0,0,,{\i1}Có hai lỗ lận.{\i0}
+Dialogue: 0,0:13:37.60,0:13:39.52,Default,,0,0,0,,{\i1}Đang đứng cùng đường bóng lúc nãy.{\i0}
+Dialogue: 0,0:13:41.90,0:13:44.15,Default,,0,0,0,,{\i1}Đến phút cuối lại không thể đánh vào.{\i0}
+Dialogue: 0,0:14:10.93,0:14:12.14,Default,,0,0,0,,{\i1}Cùng đường bóng luôn!{\i0}
+Dialogue: 0,0:14:12.39,0:14:13.64,Default,,0,0,0,,{\i1}Không! Sang phải đi!{\i0}
+Dialogue: 0,0:14:14.56,0:14:16.14,Default,,0,0,0,,{\i1}Đúng rồi! Đang ngoặt kìa!{\i0}
+Dialogue: 0,0:14:16.81,0:14:18.65,Default,,0,0,0,,{\i1}Nữa! Nữa đi!{\i0}
+Dialogue: 0,0:14:20.27,0:14:21.15,Default,,0,0,0,,{\i1}Vào đi!{\i0}
+Dialogue: 0,0:14:24.74,0:14:27.20,Default,,0,0,0,,Thế này là Ema bị loại khỏi trận đấu rồi.
 Dialogue: 0,0:14:27.49,0:14:28.95,Default,,0,0,0,,Ema.
-Dialogue: 0,0:14:34.87,0:14:36.33,Default,,0,0,0,,I did my best.
-Dialogue: 0,0:14:45.17,0:14:48.55,Default,,0,0,0,,{\i1}The ball went off course{\i0}\N{\i1}during Ema's wedge putt.{\i0}
-Dialogue: 0,0:14:48.97,0:14:51.55,Default,,0,0,0,,{\i1}Can I trust this line?{\i0}
-Dialogue: 0,0:14:52.35,0:14:55.14,Default,,0,0,0,,{\i1}Or should I find a new line completely?{\i0}
-Dialogue: 0,0:14:56.39,0:15:00.48,Default,,0,0,0,,{\i1}If the ball had stayed on track,{\i0}\N{\i1}she could have used that line.{\i0}
-Dialogue: 0,0:15:00.81,0:15:04.19,Default,,0,0,0,,{\i1}But it may have made{\i0}\N{\i1}things even tougher for her.{\i0}
-Dialogue: 0,0:15:04.98,0:15:06.53,Default,,0,0,0,,{\i1}Thinking before a shot.{\i0}
-Dialogue: 0,0:15:06.78,0:15:08.70,Default,,0,0,0,,{\i1}The most important part of golf.{\i0}
-Dialogue: 0,0:15:08.95,0:15:11.16,Default,,0,0,0,,{\i1}But also the most difficult.{\i0}
-Dialogue: 0,0:15:12.66,0:15:14.03,Default,,0,0,0,,{\i1}It's not as bad as it looks.{\i0}
-Dialogue: 0,0:15:14.12,0:15:16.95,Default,,0,0,0,,{\i1}Just stay slightly inside Ema's line.{\i0}
+Dialogue: 0,0:14:34.87,0:14:36.33,Default,,0,0,0,,Đã cố hết sức rồi.
+Dialogue: 0,0:14:45.17,0:14:48.55,Default,,0,0,0,,{\i1}Bóng đã đi chệch hướng{\i0}\N{\i1}trong cú gạt bằng gậy wedge của Ema.{\i0}
+Dialogue: 0,0:14:48.97,0:14:51.55,Default,,0,0,0,,{\i1}Liệu có tin được đường bóng này không?{\i0}
+Dialogue: 0,0:14:52.35,0:14:55.14,Default,,0,0,0,,{\i1}Hay là nên tìm một đường bóng hoàn toàn mới?{\i0}
+Dialogue: 0,0:14:56.39,0:15:00.48,Default,,0,0,0,,{\i1}Nếu bóng vẫn đi đúng hướng,{\i0}\N{\i1}thì đã có thể sử dụng đường bóng đó rồi.{\i0}
+Dialogue: 0,0:15:00.81,0:15:04.19,Default,,0,0,0,,{\i1}Nhưng có lẽ điều đó lại khiến{\i0}\N{\i1}mọi chuyện trở nên khó khăn hơn.{\i0}
+Dialogue: 0,0:15:04.98,0:15:06.53,Default,,0,0,0,,{\i1}Suy nghĩ trước khi đánh.{\i0}
+Dialogue: 0,0:15:06.78,0:15:08.70,Default,,0,0,0,,{\i1}Phần quan trọng nhất của golf.{\i0}
+Dialogue: 0,0:15:08.95,0:15:11.16,Default,,0,0,0,,{\i1}Nhưng cũng là phần khó nhất.{\i0}
+Dialogue: 0,0:15:12.66,0:15:14.03,Default,,0,0,0,,{\i1}Không tệ như vẻ bề ngoài đâu.{\i0}
+Dialogue: 0,0:15:14.12,0:15:16.95,Default,,0,0,0,,{\i1}Chỉ cần đi hơi lệch vào trong so với đường bóng của Ema.{\i0}
 Dialogue: 0,0:15:17.20,0:15:18.37,Default,,0,0,0,,{\i1}Tsubura!{\i0}
-Dialogue: 0,0:15:25.42,0:15:26.67,Default,,0,0,0,,{\i1}Just slightly inside the line!{\i0}
-Dialogue: 0,0:15:27.67,0:15:28.88,Default,,0,0,0,,{\i1}Did she hit it too hard?{\i0}
-Dialogue: 0,0:15:29.05,0:15:30.51,Default,,0,0,0,,G{\i1}o!{\i0}
-Dialogue: 0,0:15:42.69,0:15:44.86,Default,,0,0,0,,{\i1}She missed the comeback.{\i0}
-Dialogue: 0,0:15:57.24,0:16:00.54,Default,,0,0,0,,If she gets it in, it'll be\Na playoff against Tonbo Oi.
+Dialogue: 0,0:15:25.42,0:15:26.67,Default,,0,0,0,,{\i1}Hơi lệch vào trong một chút!{\i0}
+Dialogue: 0,0:15:27.67,0:15:28.88,Default,,0,0,0,,{\i1}Đánh mạnh quá rồi sao?{\i0}
+Dialogue: 0,0:15:29.05,0:15:30.51,Default,,0,0,0,,V{\i1}ào đi!{\i0}
+Dialogue: 0,0:15:42.69,0:15:44.86,Default,,0,0,0,,{\i1}Lỡ mất cơ hội lội ngược dòng rồi.{\i0}
+Dialogue: 0,0:15:57.24,0:16:00.54,Default,,0,0,0,,Nếu gạt vào, sẽ là\Nmột trận play-off với Tonbo Oi.
 Dialogue: 0,0:16:01.42,0:16:02.33,Default,,0,0,0,,Hinoki!
-Dialogue: 0,0:16:03.04,0:16:06.42,Default,,0,0,0,,You can make that shot\Nwith your eyes closed!
-Dialogue: 0,0:16:06.75,0:16:07.71,Default,,0,0,0,,Mr. Otoha!
+Dialogue: 0,0:16:03.04,0:16:06.42,Default,,0,0,0,,Nhắm mắt cũng đánh trúng được cú đó!\N
+Dialogue: 0,0:16:06.75,0:16:07.71,Default,,0,0,0,,Ngài Otoha!
 Dialogue: 0,0:16:13.84,0:16:15.18,Default,,0,0,0,,Yahoo!
-Dialogue: 0,0:16:19.39,0:16:20.23,Default,,0,0,0,,Alright!
-Dialogue: 0,0:16:20.43,0:16:22.23,Default,,0,0,0,,Now it's the playoffs Hinoki!
-Dialogue: 0,0:16:22.44,0:16:23.48,Default,,0,0,0,,You've got this!
-Dialogue: 0,0:16:26.94,0:16:28.23,Default,,0,0,0,,No. You're wrong.
-Dialogue: 0,0:16:33.07,0:16:34.28,Default,,0,0,0,,What?
+Dialogue: 0,0:16:19.39,0:16:20.23,Default,,0,0,0,,Tuyệt lắm!
+Dialogue: 0,0:16:20.43,0:16:22.23,Default,,0,0,0,,Giờ là vòng play-off rồi Hinoki!
+Dialogue: 0,0:16:22.44,0:16:23.48,Default,,0,0,0,,Làm được mà!
+Dialogue: 0,0:16:26.94,0:16:28.23,Default,,0,0,0,,Không. Sai rồi.
+Dialogue: 0,0:16:33.07,0:16:34.28,Default,,0,0,0,,Gì cơ?
 Dialogue: 0,0:16:38.45,0:16:39.79,Default,,0,0,0,,Hinoki.
-Dialogue: 0,0:16:42.62,0:16:45.04,Default,,0,0,0,,Yesterday, on the fifth hole.
-Dialogue: 0,0:16:45.58,0:16:46.88,Default,,0,0,0,,My ball moved!
-Dialogue: 0,0:16:47.09,0:16:48.75,Default,,0,0,0,,But I didn't report it!
-Dialogue: 0,0:16:49.71,0:16:51.01,Default,,0,0,0,,But I kept playing.
-Dialogue: 0,0:16:51.22,0:16:53.13,Default,,0,0,0,,I continued on!
-Dialogue: 0,0:16:55.76,0:16:56.68,Default,,0,0,0,,I…
-Dialogue: 0,0:16:58.97,0:17:00.27,Default,,0,0,0,,I…
-Dialogue: 0,0:17:01.81,0:17:05.77,Default,,0,0,0,,{\i1}I want to be like Tonbo, Ema, and Tsubura.{\i0}
-Dialogue: 0,0:17:06.52,0:17:07.98,Default,,0,0,0,,{\i1}I want to play like them!{\i0}
-Dialogue: 0,0:17:09.61,0:17:10.53,Default,,0,0,0,,I should...
-Dialogue: 0,0:17:10.86,0:17:12.28,Default,,0,0,0,,...be disqualified!
-Dialogue: 0,0:17:23.66,0:17:24.92,Default,,0,0,0,,That means…
-Dialogue: 0,0:17:26.88,0:17:27.96,Default,,0,0,0,,What?
-Dialogue: 0,0:17:28.09,0:17:30.71,Default,,0,0,0,,-Igaiga? Your face is scary.\N-You… you…
-Dialogue: 0,0:17:30.80,0:17:33.26,Default,,0,0,0,,Scary? Or should I say weird?\N-You…
-Dialogue: 0,0:17:33.59,0:17:34.93,Default,,0,0,0,,You… You…
+Dialogue: 0,0:16:42.62,0:16:45.04,Default,,0,0,0,,Hôm qua, ở hố số 5.
+Dialogue: 0,0:16:45.58,0:16:46.88,Default,,0,0,0,,Bóng đã bị xê dịch!
+Dialogue: 0,0:16:47.09,0:16:48.75,Default,,0,0,0,,Nhưng lại không báo cáo!
+Dialogue: 0,0:16:49.71,0:16:51.01,Default,,0,0,0,,Mà vẫn tiếp tục chơi.
+Dialogue: 0,0:16:51.22,0:16:53.13,Default,,0,0,0,,Vẫn đánh tiếp!
+Dialogue: 0,0:16:55.76,0:16:56.68,Default,,0,0,0,,...
+Dialogue: 0,0:16:58.97,0:17:00.27,Default,,0,0,0,,...
+Dialogue: 0,0:17:01.81,0:17:05.77,Default,,0,0,0,,{\i1}Muốn được như Tonbo, Ema và Tsubura.{\i0}
+Dialogue: 0,0:17:06.52,0:17:07.98,Default,,0,0,0,,{\i1}Muốn được chơi golf giống như họ!{\i0}
+Dialogue: 0,0:17:09.61,0:17:10.53,Default,,0,0,0,,Đáng lẽ ra...
+Dialogue: 0,0:17:10.86,0:17:12.28,Default,,0,0,0,,...phải bị truất quyền thi đấu!
+Dialogue: 0,0:17:23.66,0:17:24.92,Default,,0,0,0,,Vậy có nghĩa là…
+Dialogue: 0,0:17:26.88,0:17:27.96,Default,,0,0,0,,Sao cơ?
+Dialogue: 0,0:17:28.09,0:17:30.71,Default,,0,0,0,,-Igaiga? Mặt đáng sợ quá kìa.\N-Trời… trời ạ…
+Dialogue: 0,0:17:30.80,0:17:33.26,Default,,0,0,0,,-Đáng sợ á? Hay phải nói là kỳ lạ mới đúng?\N-Trời ạ…
+Dialogue: 0,0:17:33.59,0:17:34.93,Default,,0,0,0,,Thật là... Thật là...
 Dialogue: 0,0:17:35.47,0:17:36.39,Default,,0,0,0,,Tonbo!
-Dialogue: 0,0:17:36.72,0:17:37.93,Default,,0,0,0,,You…
-Dialogue: 0,0:17:38.10,0:17:39.39,Default,,0,0,0,,You won, Tonbo!
-Dialogue: 0,0:17:42.22,0:17:44.77,Default,,0,0,0,,I wanted to say it!
-Dialogue: 0,0:17:52.99,0:17:56.32,Default,,0,0,0,,Grandpa Gon! Grandpa Gon!
-Dialogue: 0,0:17:59.12,0:18:01.03,Default,,0,0,0,,It's Tonbo!
-Dialogue: 0,0:18:01.99,0:18:03.45,Default,,0,0,0,,Tonbo?
-Dialogue: 0,0:18:03.75,0:18:06.29,Default,,0,0,0,,She won the tournament!
-Dialogue: 0,0:18:14.38,0:18:15.51,Default,,0,0,0,,Is that so?
-Dialogue: 0,0:18:16.01,0:18:17.18,Default,,0,0,0,,She really did it.
+Dialogue: 0,0:17:36.72,0:17:37.93,Default,,0,0,0,,Đã…
+Dialogue: 0,0:17:38.10,0:17:39.39,Default,,0,0,0,,Vô địch rồi, Tonbo!
+Dialogue: 0,0:17:42.22,0:17:44.77,Default,,0,0,0,,Đang định nói cơ mà!
+Dialogue: 0,0:17:52.99,0:17:56.32,Default,,0,0,0,,Gon-jii ơi! Gon-jii ơi!
+Dialogue: 0,0:17:59.12,0:18:01.03,Default,,0,0,0,,Tonbo đây!
+Dialogue: 0,0:18:01.99,0:18:03.45,Default,,0,0,0,,Tonbo hả?
+Dialogue: 0,0:18:03.75,0:18:06.29,Default,,0,0,0,,Vô địch giải đấu rồi!
+Dialogue: 0,0:18:14.38,0:18:15.51,Default,,0,0,0,,Vậy sao?
+Dialogue: 0,0:18:16.01,0:18:17.18,Default,,0,0,0,,Thật sự làm được rồi.
 Dialogue: 0,0:18:19.14,0:18:19.97,Default,,0,0,0,,Tonbo.
-Dialogue: 0,0:18:24.06,0:18:25.35,Default,,0,0,0,,Congratulations!
-Dialogue: 0,0:18:25.73,0:18:27.19,Default,,0,0,0,,Thank you, Tsubura!
-Dialogue: 0,0:18:28.15,0:18:30.56,Default,,0,0,0,,This hurts! It really hurts!
-Dialogue: 0,0:18:30.90,0:18:33.32,Default,,0,0,0,,You're really a monster after all!
-Dialogue: 0,0:18:33.65,0:18:34.57,Default,,0,0,0,,A monster?
-Dialogue: 0,0:18:36.15,0:18:38.20,Default,,0,0,0,,You won't win the Japan Woman's Open!
-Dialogue: 0,0:18:38.32,0:18:39.28,Default,,0,0,0,,Just you wait!
-Dialogue: 0,0:18:41.58,0:18:42.49,Default,,0,0,0,,Got it?
-Dialogue: 0,0:18:42.78,0:18:44.08,Default,,0,0,0,,I won't lose next time!
+Dialogue: 0,0:18:24.06,0:18:25.35,Default,,0,0,0,,Chúc mừng nhé!
+Dialogue: 0,0:18:25.73,0:18:27.19,Default,,0,0,0,,Cảm ơn nhé, Tsubura!
+Dialogue: 0,0:18:28.15,0:18:30.56,Default,,0,0,0,,Đau đớn quá! Đau thật sự luôn đấy!
+Dialogue: 0,0:18:30.90,0:18:33.32,Default,,0,0,0,,Quả nhiên là một con quái vật mà!
+Dialogue: 0,0:18:33.65,0:18:34.57,Default,,0,0,0,,Quái vật á?
+Dialogue: 0,0:18:36.15,0:18:38.20,Default,,0,0,0,,Sẽ không thắng được ở giải Japan Woman's Open đâu!
+Dialogue: 0,0:18:38.32,0:18:39.28,Default,,0,0,0,,Cứ đợi đấy!
+Dialogue: 0,0:18:41.58,0:18:42.49,Default,,0,0,0,,Rõ chưa hả?
+Dialogue: 0,0:18:42.78,0:18:44.08,Default,,0,0,0,,Lần tới sẽ không thua đâu!
 Dialogue: 0,0:18:44.41,0:18:45.37,Default,,0,0,0,,Tsubura.
-Dialogue: 0,0:18:45.54,0:18:46.83,Default,,0,0,0,,The winner at the next one
-Dialogue: 0,0:18:46.91,0:18:48.71,Default,,0,0,0,,will be the real number one!
-Dialogue: 0,0:18:49.04,0:18:50.33,Default,,0,0,0,,What's the Japan Woman's Open?
-Dialogue: 0,0:18:51.67,0:18:54.71,Default,,0,0,0,,It's the tournament that decides\Nthe best amateur golfer.
-Dialogue: 0,0:18:55.67,0:18:58.97,Default,,0,0,0,,Can you believe we lost to this girl?
-Dialogue: 0,0:19:02.89,0:19:04.35,Default,,0,0,0,,Hey, what about Hinoki?
-Dialogue: 0,0:19:05.56,0:19:06.73,Default,,0,0,0,,Oh, Hinoki?
-Dialogue: 0,0:19:07.23,0:19:09.60,Default,,0,0,0,,She just went out that way.
-Dialogue: 0,0:19:12.98,0:19:14.61,Default,,0,0,0,,I'm sorry, father.
-Dialogue: 0,0:19:15.44,0:19:16.49,Default,,0,0,0,,I couldn't win.
-Dialogue: 0,0:19:17.44,0:19:20.49,Default,,0,0,0,,I told you to win, not to cheat.
+Dialogue: 0,0:18:45.54,0:18:46.83,Default,,0,0,0,,Người chiến thắng ở giải đấu tiếp theo
+Dialogue: 0,0:18:46.91,0:18:48.71,Default,,0,0,0,,sẽ là số một thực sự!
+Dialogue: 0,0:18:49.04,0:18:50.33,Default,,0,0,0,,Japan Woman's Open là giải gì vậy?
+Dialogue: 0,0:18:51.67,0:18:54.71,Default,,0,0,0,,Đó là giải đấu quyết định\Ngolfer nghiệp dư xuất sắc nhất.
+Dialogue: 0,0:18:55.67,0:18:58.97,Default,,0,0,0,,Có tin được là chúng ta lại thua cô nhóc này không?
+Dialogue: 0,0:19:02.89,0:19:04.35,Default,,0,0,0,,Này, còn Hinoki thì sao?
+Dialogue: 0,0:19:05.56,0:19:06.73,Default,,0,0,0,,À, Hinoki hả?
+Dialogue: 0,0:19:07.23,0:19:09.60,Default,,0,0,0,,Vừa mới đi ra hướng đó rồi.
+Dialogue: 0,0:19:12.98,0:19:14.61,Default,,0,0,0,,Xin lỗi, Otou-san.
+Dialogue: 0,0:19:15.44,0:19:16.49,Default,,0,0,0,,Đã không thể giành chiến thắng.
+Dialogue: 0,0:19:17.44,0:19:20.49,Default,,0,0,0,,Đã bảo là phải thắng, chứ không phải gian lận.
 Dialogue: 0,0:19:24.70,0:19:25.79,Default,,0,0,0,,Igaiga...
-Dialogue: 0,0:19:26.12,0:19:27.62,Default,,0,0,0,,When I was young,
-Dialogue: 0,0:19:27.87,0:19:29.96,Default,,0,0,0,,I experienced terrible lows.
-Dialogue: 0,0:19:30.25,0:19:32.96,Default,,0,0,0,,But I never stole from anyone.
-Dialogue: 0,0:19:34.46,0:19:36.63,Default,,0,0,0,,What you've done is theft.
-Dialogue: 0,0:19:37.09,0:19:39.51,Default,,0,0,0,,You stole a single golf stroke.
-Dialogue: 0,0:19:41.34,0:19:42.26,Default,,0,0,0,,I…
-Dialogue: 0,0:19:42.68,0:19:43.80,Default,,0,0,0,,I'm a thief.
-Dialogue: 0,0:19:46.64,0:19:47.52,Default,,0,0,0,,However…
-Dialogue: 0,0:19:48.48,0:19:50.73,Default,,0,0,0,,I'm the one who cornered and pressured you
-Dialogue: 0,0:19:50.98,0:19:53.11,Default,,0,0,0,,to the point that you considered stealing.
-Dialogue: 0,0:19:54.65,0:19:58.99,Default,,0,0,0,,Due to all that pressure,\NI couldn't teach you anything important.
-Dialogue: 0,0:19:59.36,0:20:02.36,Default,,0,0,0,,I weakened your spirit.
-Dialogue: 0,0:20:02.87,0:20:03.82,Default,,0,0,0,,I'm sorry.
-Dialogue: 0,0:20:06.12,0:20:07.33,Default,,0,0,0,,Father.
-Dialogue: 0,0:20:07.74,0:20:11.00,Default,,0,0,0,,You might not be able\Nto play golf for a while.
-Dialogue: 0,0:20:11.29,0:20:14.29,Default,,0,0,0,,You'll likely be suspended from competing.
-Dialogue: 0,0:20:16.13,0:20:17.34,Default,,0,0,0,,What have I done?
-Dialogue: 0,0:20:17.50,0:20:19.13,Default,,0,0,0,,By stealing one stroke,
-Dialogue: 0,0:20:19.42,0:20:21.97,Default,,0,0,0,,I betrayed Tonbo and the other players.
-Dialogue: 0,0:20:23.34,0:20:25.10,Default,,0,0,0,,I deserve the consequences.
-Dialogue: 0,0:20:25.76,0:20:28.06,Default,,0,0,0,,I think you've learned your lesson.
-Dialogue: 0,0:20:31.27,0:20:36.23,Default,,0,0,0,,I'm sure your heart was hurting\Nas you continued to play.
-Dialogue: 0,0:20:36.82,0:20:40.07,Default,,0,0,0,,I'm sure you wanted to go back\Nas soon as the ball moved.
-Dialogue: 0,0:20:41.03,0:20:45.57,Default,,0,0,0,,That's why you confessed\Nto everyone on the last hole.
-Dialogue: 0,0:20:46.03,0:20:48.66,Default,,0,0,0,,That must have taken a lot of courage.
-Dialogue: 0,0:20:51.04,0:20:52.62,Default,,0,0,0,,That's enough, Hinoki.
-Dialogue: 0,0:21:01.13,0:21:02.17,Default,,0,0,0,,Please.
-Dialogue: 0,0:21:02.88,0:21:04.30,Default,,0,0,0,,As a golfer,
-Dialogue: 0,0:21:04.89,0:21:06.93,Default,,0,0,0,,what Hinoki did was truly dishonest.
-Dialogue: 0,0:21:07.43,0:21:08.39,Default,,0,0,0,,Even so,
-Dialogue: 0,0:21:08.60,0:21:10.89,Default,,0,0,0,,please don't keep her from\Nhaving a second chance.
-Dialogue: 0,0:21:11.06,0:21:14.65,Default,,0,0,0,,Please continue to support her.\NPlease!
-Dialogue: 0,0:21:16.40,0:21:19.19,Default,,0,0,0,,It is said that golf is a game for\Nladies and gentlemen.
-Dialogue: 0,0:21:19.61,0:21:22.90,Default,,0,0,0,,However, that may not be accurate.
-Dialogue: 0,0:21:23.95,0:21:26.62,Default,,0,0,0,,Rather, it is the kind of game that\Ncreates ladies and gentlemen.
-Dialogue: 0,0:21:27.07,0:21:29.54,Default,,0,0,0,,This is the truth of the matter.
-Dialogue: 0,0:21:30.49,0:21:34.92,Default,,0,0,0,,No one enters the course initially\Nas a dignified person.
-Dialogue: 0,0:21:35.37,0:21:39.71,Default,,0,0,0,,I belive they become dignified only\Nby finishing a game.
-Dialogue: 0,0:21:42.34,0:21:43.63,Default,,0,0,0,,Mr. Nakase…
+Dialogue: 0,0:19:26.12,0:19:27.62,Default,,0,0,0,,Khi còn trẻ,
+Dialogue: 0,0:19:27.87,0:19:29.96,Default,,0,0,0,,đã trải qua những giai đoạn cực kỳ tồi tệ.
+Dialogue: 0,0:19:30.25,0:19:32.96,Default,,0,0,0,,Nhưng chưa bao giờ ăn cắp của ai cả.
+Dialogue: 0,0:19:34.46,0:19:36.63,Default,,0,0,0,,Hành động vừa rồi chính là ăn cắp.
+Dialogue: 0,0:19:37.09,0:19:39.51,Default,,0,0,0,,Đã ăn cắp một gậy golf.
+Dialogue: 0,0:19:41.34,0:19:42.26,Default,,0,0,0,,...
+Dialogue: 0,0:19:42.68,0:19:43.80,Default,,0,0,0,,Là một kẻ cắp.
+Dialogue: 0,0:19:46.64,0:19:47.52,Default,,0,0,0,,Tuy nhiên…
+Dialogue: 0,0:19:48.48,0:19:50.73,Default,,0,0,0,,Chính sự dồn ép và áp lực này
+Dialogue: 0,0:19:50.98,0:19:53.11,Default,,0,0,0,,đã dẫn đến ý định ăn cắp đó.
+Dialogue: 0,0:19:54.65,0:19:58.99,Default,,0,0,0,,Vì mọi áp lực đó,\Nmà đã không thể dạy được điều gì quan trọng.
+Dialogue: 0,0:19:59.36,0:20:02.36,Default,,0,0,0,,Đã làm thui chột tinh thần mất rồi.
+Dialogue: 0,0:20:02.87,0:20:03.82,Default,,0,0,0,,Xin lỗi.
+Dialogue: 0,0:20:06.12,0:20:07.33,Default,,0,0,0,,Otou-san.
+Dialogue: 0,0:20:07.74,0:20:11.00,Default,,0,0,0,,Có lẽ sẽ không được\Nchơi golf trong một thời gian đấy.
+Dialogue: 0,0:20:11.29,0:20:14.29,Default,,0,0,0,,Rất có thể sẽ bị đình chỉ thi đấu.
+Dialogue: 0,0:20:16.13,0:20:17.34,Default,,0,0,0,,Đã làm cái quái gì thế này?
+Dialogue: 0,0:20:17.50,0:20:19.13,Default,,0,0,0,,Chỉ vì ăn cắp một gậy,
+Dialogue: 0,0:20:19.42,0:20:21.97,Default,,0,0,0,,mà đã phản bội lại Tonbo và các tuyển thủ khác.
+Dialogue: 0,0:20:23.34,0:20:25.10,Default,,0,0,0,,Hoàn toàn xứng đáng chịu hậu quả.
+Dialogue: 0,0:20:25.76,0:20:28.06,Default,,0,0,0,,Chắc hẳn đã nhận ra bài học rồi.
+Dialogue: 0,0:20:31.27,0:20:36.23,Default,,0,0,0,,Chắc chắn trong lòng đã rất dằn vặt\Nkhi tiếp tục thi đấu.
+Dialogue: 0,0:20:36.82,0:20:40.07,Default,,0,0,0,,Hẳn là đã muốn quay lại\Nngay lúc quả bóng xê dịch.
+Dialogue: 0,0:20:41.03,0:20:45.57,Default,,0,0,0,,Đó là lý do lại thú nhận\Nvới mọi người ở hố cuối cùng.
+Dialogue: 0,0:20:46.03,0:20:48.66,Default,,0,0,0,,Chắc hẳn đã phải cần rất nhiều dũng khí.
+Dialogue: 0,0:20:51.04,0:20:52.62,Default,,0,0,0,,Thế là đủ rồi, Hinoki.
+Dialogue: 0,0:21:01.13,0:21:02.17,Default,,0,0,0,,Xin ngài.
+Dialogue: 0,0:21:02.88,0:21:04.30,Default,,0,0,0,,Với tư cách là một golfer,
+Dialogue: 0,0:21:04.89,0:21:06.93,Default,,0,0,0,,những gì Hinoki làm quả thực rất thiếu trung thực.
+Dialogue: 0,0:21:07.43,0:21:08.39,Default,,0,0,0,,Mặc dù vậy,
+Dialogue: 0,0:21:08.60,0:21:10.89,Default,,0,0,0,,xin đừng tước đi\Ncơ hội làm lại lần hai của con bé.
+Dialogue: 0,0:21:11.06,0:21:14.65,Default,,0,0,0,,Xin hãy tiếp tục hỗ trợ con bé.\NXin ngài đấy!
+Dialogue: 0,0:21:16.40,0:21:19.19,Default,,0,0,0,,Người ta nói rằng golf là môn thể thao dành cho\Nnhững quý bà và quý ông.
+Dialogue: 0,0:21:19.61,0:21:22.90,Default,,0,0,0,,Tuy nhiên, điều đó có thể không hoàn toàn chính xác.
+Dialogue: 0,0:21:23.95,0:21:26.62,Default,,0,0,0,,Đúng hơn, đây là môn thể thao\Ntạo ra những quý bà và quý ông.
+Dialogue: 0,0:21:27.07,0:21:29.54,Default,,0,0,0,,Đó mới là bản chất thực sự.
+Dialogue: 0,0:21:30.49,0:21:34.92,Default,,0,0,0,,Không ai bước vào sân ngay từ đầu\Nđã là một người cao quý.
+Dialogue: 0,0:21:35.37,0:21:39.71,Default,,0,0,0,,Tin rằng họ chỉ trở nên cao quý\Nsau khi hoàn thành một trận đấu.
+Dialogue: 0,0:21:42.34,0:21:43.63,Default,,0,0,0,,Ngài Nakase…
 Dialogue: 0,0:21:47.59,0:21:48.89,Default,,0,0,0,,Hinoki.
-Dialogue: 0,0:21:50.10,0:21:52.02,Default,,0,0,0,,You're not going to quit, are you?
+Dialogue: 0,0:21:50.10,0:21:52.02,Default,,0,0,0,,Sẽ không bỏ cuộc đâu nhỉ?
 Dialogue: 0,0:21:53.35,0:21:54.56,Default,,0,0,0,,Tonbo.
-Dialogue: 0,0:21:57.98,0:21:59.52,Default,,0,0,0,,I'm not quitting.
+Dialogue: 0,0:21:57.98,0:21:59.52,Default,,0,0,0,,Sẽ không bỏ cuộc đâu.
 Dialogue: 0,0:22:36.48,0:22:37.39,Default,,0,0,0,,Tonbo.
-Dialogue: 0,0:22:37.85,0:22:39.31,Default,,0,0,0,,She's coming home.
-Dialogue: 0,0:22:42.61,0:22:44.90,Default,,0,0,0,,I didn't expect to come home so soon.
-Dialogue: 0,0:22:45.24,0:22:47.40,Default,,0,0,0,,It's a bit embarrassing.
-Dialogue: 0,0:22:47.74,0:22:50.16,Default,,0,0,0,,You've got quite\Nthe souvenir to bring back.
-Dialogue: 0,0:22:50.37,0:22:52.83,Default,,0,0,0,,Everyone will be welcoming you.
-Dialogue: 0,0:22:54.87,0:22:56.83,Default,,0,0,0,,Thank you, Igaiga.
-Dialogue: 0,0:22:58.12,0:22:59.83,Default,,0,0,0,,What's gotten into you?
-Dialogue: 0,0:23:00.08,0:23:01.04,Default,,0,0,0,,You know,
-Dialogue: 0,0:23:01.13,0:23:02.59,Default,,0,0,0,,I'm glad I play golf.
-Dialogue: 0,0:23:02.88,0:23:04.67,Default,,0,0,0,,I'm really, really
-Dialogue: 0,0:23:05.13,0:23:06.80,Default,,0,0,0,,glad I play golf!
-Dialogue: 0,0:23:10.55,0:23:13.43,Default,,0,0,0,,{\i1}Your story is only just beginning.{\i0}
-Dialogue: 0,0:23:15.14,0:23:19.27,Default,,0,0,0,,{\i1}You're going to get{\i0}\N{\i1}bigger and stronger, Tonbo!{\i0}
-Dialogue: 0,0:23:20.40,0:23:24.73,Default,,0,0,0,,{\i1}I love golf!{\i0}
-Dialogue: 0,0:24:01.56,0:24:03.02,Default,,0,0,0,,{\i1}Hooray!{\i0}
+Dialogue: 0,0:22:37.85,0:22:39.31,Default,,0,0,0,,Đang về nhà rồi.
+Dialogue: 0,0:22:42.61,0:22:44.90,Default,,0,0,0,,Không ngờ lại về nhà sớm thế này.
+Dialogue: 0,0:22:45.24,0:22:47.40,Default,,0,0,0,,Hơi xấu hổ một chút.
+Dialogue: 0,0:22:47.74,0:22:50.16,Default,,0,0,0,,Mang về một món quà lưu niệm\Nkhá bự đấy chứ.
+Dialogue: 0,0:22:50.37,0:22:52.83,Default,,0,0,0,,Mọi người sẽ chào đón nồng nhiệt lắm đây.
+Dialogue: 0,0:22:54.87,0:22:56.83,Default,,0,0,0,,Cảm ơn nhé, Igaiga.
+Dialogue: 0,0:22:58.12,0:22:59.83,Default,,0,0,0,,Bị sao vậy trời?
+Dialogue: 0,0:23:00.08,0:23:01.04,Default,,0,0,0,,Biết không,
+Dialogue: 0,0:23:01.13,0:23:02.59,Default,,0,0,0,,Thật vui vì đã chơi golf.
+Dialogue: 0,0:23:02.88,0:23:04.67,Default,,0,0,0,,Thật sự, thật sự
+Dialogue: 0,0:23:05.13,0:23:06.80,Default,,0,0,0,,rất vui vì đã chơi golf!
+Dialogue: 0,0:23:10.55,0:23:13.43,Default,,0,0,0,,{\i1}Câu chuyện chỉ mới bắt đầu thôi.{\i0}
+Dialogue: 0,0:23:15.14,0:23:19.27,Default,,0,0,0,,{\i1}Sẽ còn tiến xa{\i0}\N{\i1}và mạnh mẽ hơn nữa, Tonbo!{\i0}
+Dialogue: 0,0:23:20.40,0:23:24.73,Default,,0,0,0,,{\i1}Yêu golf lắm!{\i0}
+Dialogue: 0,0:24:01.56,0:24:03.02,Default,,0,0,0,,{\i1}Muôn năm!{\i0}
