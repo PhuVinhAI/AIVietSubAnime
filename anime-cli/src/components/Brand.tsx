@@ -1,7 +1,7 @@
 import { Box, Text } from 'ink';
 import Gradient from 'ink-gradient';
 
-import { accentGradient, brandGradient, palette } from '../lib/theme.js';
+import { brandGradient, palette } from '../lib/theme.js';
 
 type Props = {
   /** Subtitle nhỏ dưới logo. */
@@ -19,10 +19,6 @@ export function Brand({ subtitle, compact = false }: Props) {
         <Box>
           <Gradient colors={brandGradient}>
             <Text bold>◆ AIVIETSUBANIME</Text>
-          </Gradient>
-          <Text color={palette.muted}>{'  '}</Text>
-          <Gradient colors={accentGradient}>
-            <Text>cli</Text>
           </Gradient>
           {subtitle && (
             <Text color={palette.muted}>{`   ·   ${subtitle}`}</Text>
@@ -48,10 +44,6 @@ export function Brand({ subtitle, compact = false }: Props) {
         </Gradient>
         <Gradient colors={brandGradient}>
           <Text bold>A I V I E T S U B A N I M E</Text>
-        </Gradient>
-        <Text color={palette.muted}>{'   '}</Text>
-        <Gradient colors={accentGradient}>
-          <Text bold>cli</Text>
         </Gradient>
       </Box>
 

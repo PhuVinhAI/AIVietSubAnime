@@ -38,6 +38,10 @@ export function StepHeader({ step, total, title, subtitle }: Props) {
 }
 
 function Dots({ step, total }: { step: number; total: number }) {
+  // ● ● ● ● ●  — cùng icon, khác màu:
+  //   done    → cyan accent
+  //   current → magenta brand (bold)
+  //   pending → gray muted
   return (
     <Box>
       {Array.from({ length: total }).map((_, i) => {
@@ -49,11 +53,9 @@ function Dots({ step, total }: { step: number; total: number }) {
           : isCurrent
           ? palette.brand
           : palette.muted;
-        const symbol = isCurrent ? sym.dotHalf : isDone ? sym.dotFilled : sym.dotEmpty;
         return (
           <Text key={i} color={color} bold={isCurrent}>
-            {symbol}
-            {i < total - 1 ? ' ' : ''}
+            ●{i < total - 1 ? ' ' : ''}
           </Text>
         );
       })}

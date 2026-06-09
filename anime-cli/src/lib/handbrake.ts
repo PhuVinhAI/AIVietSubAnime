@@ -59,6 +59,13 @@ export async function runHardsub(opts: HardsubOptions): Promise<void> {
   ]);
 
   if (onProgress) {
+    // HandBrake xen kẽ in 2 dạng dòng trong cùng 1 lần encode:
+    //   "Encoding: task 1 of 1, 12.34 %"                                   ← thiếu fps/ETA
+    //   "Encoding: task 1 of 1, 12.34 % (50.00 fps, avg ..., ETA 0h12m34s)" ← đầy đủ
+    // Giữ giá trị fps/ETA gần nhất để dòng thiếu không reset UI về null
+    // (gây hiệu ứng "giựt" — meta ẩn/hiện liên tục).
+    let lastEta: number | null = null;
+    let lastFps: number | null = null;
     const handleChunk = (chunk: Buffer | string) => {
       const text = typeof chunk === 'string' ? chunk : chunk.toString('utf-8');
       let last: HardsubProgress | null = null;
@@ -66,16 +73,14 @@ export async function runHardsub(opts: HardsubOptions): Promise<void> {
       HB_PROGRESS_RE.lastIndex = 0;
       while ((m = HB_PROGRESS_RE.exec(text)) !== null) {
         const percent = parseFloat(m[1]!);
-        let etaSeconds: number | null = null;
-        let fps: number | null = null;
         if (m[3] !== undefined && m[4] !== undefined && m[5] !== undefined) {
-          etaSeconds =
+          lastEta =
             parseInt(m[3], 10) * 3600 +
             parseInt(m[4], 10) * 60 +
             parseInt(m[5], 10);
         }
-        if (m[2] !== undefined) fps = parseFloat(m[2]);
-        last = { percent, etaSeconds, fps };
+        if (m[2] !== undefined) lastFps = parseFloat(m[2]);
+        last = { percent, etaSeconds: lastEta, fps: lastFps };
       }
       if (last) onProgress(last);
     };
