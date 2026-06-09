@@ -34,7 +34,12 @@ const HB_PROGRESS_RE =
  *  - Quality: ICQ 18
  *  - Encoder preset: quality (max right)
  *  - Audio: track 1, EAC3 passthru
- *  - Subtitle: track 1 (external ssa file), burn-in
+ *  - Subtitle: external ssa file (vietsub.ass), burn-in.
+ *    KHÔNG include bất kỳ internal subtitle track nào từ MKV gốc —
+ *    nếu `-s 1` được pass thì track English nội bộ sẽ bị burn vào video
+ *    (HandBrake merge internal trước external), còn vietsub.ass rớt thành
+ *    soft sub. Bỏ `-s` để subtitle list chỉ còn SSA → --subtitle-burned=1
+ *    burn đúng tiếng Việt.
  *  - Filters: all off (default)
  *
  * Nếu `onProgress` được cung cấp, parse các dòng "Encoding: ... NN.NN %"
@@ -54,7 +59,6 @@ export async function runHardsub(opts: HardsubOptions): Promise<void> {
     '--encoder-preset', 'quality',
     '-a', '1',
     '-E', 'eac3',
-    '-s', '1',
     '--subtitle-burned=1',
   ]);
 
