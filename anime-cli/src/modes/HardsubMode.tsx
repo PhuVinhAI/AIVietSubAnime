@@ -278,6 +278,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
           <PathInput
             label="Nhập folder anime:"
             hint="Vd. C:\Users\you\Anime\Oi Tonbo 2nd Season"
+            category="hardsub-anime"
             onSubmit={(path) => {
               setError(null);
               go({ kind: 'scanning', path });
@@ -311,6 +312,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
           <PathInput
             label="Path"
             hint="Folder chứa nhiều subfolder EpNN/"
+            category="hardsub-anime"
             onSubmit={(path) => go({ kind: 'scanning', path })}
           />
         </Box>

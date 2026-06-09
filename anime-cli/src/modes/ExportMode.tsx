@@ -243,6 +243,7 @@ export function ExportMode({ initialPath }: Props) {
           <PathInput
             label="Nhập folder anime:"
             hint="Folder anime có các Ep01/Ep02/... bên trong"
+            category="export-anime"
             onSubmit={(path) => {
               setError(null);
               go({ kind: 'scanning', path });
@@ -270,6 +271,7 @@ export function ExportMode({ initialPath }: Props) {
           <PathInput
             label="Path"
             hint="Vd. C:\Users\you\Docs\AIVietSubAnime\Anime\Oi Tonbo 2nd Season"
+            category="export-anime"
             onSubmit={(path) => go({ kind: 'scanning', path })}
           />
         </Box>
@@ -528,6 +530,7 @@ function DestUI({
       <PathInput
         label="Path đích"
         hint='Folder sẽ được tạo nếu chưa tồn tại (FS). MTP folder phải đã có sẵn trên thiết bị.'
+        category="export-dest"
         onSubmit={(path) => {
           const result = classifyDestPath(path);
           if (!result.ok) {

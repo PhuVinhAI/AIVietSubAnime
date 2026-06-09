@@ -333,6 +333,7 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
           <PathInput
             label="Nhập lại path"
             hint="Folder chứa .mkv (hoặc 1 file .mkv bất kỳ)"
+            category="prepare-raw"
             onSubmit={(path) => {
               setError(null);
               go({ kind: 'scanning', path });
@@ -365,6 +366,7 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
           <PathInput
             label="Path"
             hint="Vd. D:\Raw\Oi Tonbo"
+            category="prepare-raw"
             onSubmit={(path) => go({ kind: 'scanning', path })}
           />
         </Box>
@@ -528,16 +530,28 @@ function PickTrackUI({
   const group = step.groups[step.groupIdx]!;
   const isMulti = step.groups.length > 1;
 
-  const items = group.subTracks.map((t) => ({
-    label: `Track ${t.id}  ${sym.bullet}  ${t.langName} (${t.codec})${
-      t.isDefault ? '  [mặc định]' : ''
-    }`,
-    value: String(t.id),
-  }));
+  // Track đề xuất đẩy lên đầu list → 1 phát Enter là xong, không cần defaultValue.
+  // (Tránh bug @inkjs/ui Select v2: onChange không fire khi value === defaultValue.)
+  const suggestedId = step.choices[group.signature];
+  const orderedTracks =
+    suggestedId !== undefined
+      ? [
+          ...group.subTracks.filter((t) => t.id === suggestedId),
+          ...group.subTracks.filter((t) => t.id !== suggestedId),
+        ]
+      : group.subTracks;
 
-  const suggested = step.choices[group.signature];
-  const defaultValue =
-    suggested !== undefined ? String(suggested) : String(group.subTracks[0]?.id ?? '');
+  const items = orderedTracks.map((t) => {
+    const tags: string[] = [];
+    if (t.isDefault) tags.push('mkv default');
+    if (t.id === suggestedId) tags.push('đề xuất');
+    return {
+      label: `Track ${t.id}  ${sym.bullet}  ${t.langName} (${t.codec})${
+        tags.length > 0 ? `  [${tags.join(' · ')}]` : ''
+      }`,
+      value: String(t.id),
+    };
+  });
 
   return (
     <Box flexDirection="column">
@@ -572,7 +586,6 @@ function PickTrackUI({
       )}
       <Select
         options={items}
-        defaultValue={defaultValue}
         onChange={(value) => {
           const trackId = parseInt(value, 10);
           const nextChoices: Choices = { ...step.choices, [group.signature]: trackId };
