@@ -96,8 +96,17 @@ npm run dev -- hardsub "../Anime/Oi Tonbo 2nd Season"
 
 CLI sẽ:
 1. Quét tất cả `EpNN/`, check ep nào có cả `.mkv` + `vietsub.ass` → "ready"
-2. Liệt kê ready vs skipped, xác nhận
-3. Encode serial qua HandBrake CLI (mỗi ep ~10-40 phút), tự xuất `<tên>_vietsub.mp4` vào folder ep
+2. Liệt kê ready vs skipped
+3. **Hỏi tích hợp style** từ `Styles/` vào không:
+   - Có → liệt kê file style → user chọn → CLI replace block `[V4+ Styles]` trong TẤT CẢ `vietsub.ass` trước khi encode
+   - Không → giữ nguyên vietsub.ass hiện tại
+4. Xác nhận
+5. Encode **serial** qua HandBrake CLI (~10-40 phút/ep tuỳ CPU/GPU), tự xuất `<tên>_vietsub.mp4` vào folder ep
+
+**HandBrake config** (theo spec user):
+- Video: H.265 10-bit Intel QuickSync (`qsv_h265_10bit`), framerate Same as source + VFR, ICQ 18, encoder preset = quality
+- Audio: track 1, EAC3
+- Subtitle: track 1 burn-in (từ ssa-file)
 
 **Lưu ý font:** Cài font ghi trong `Styles/Default.ass` (mặc định Roboto) vào Windows trước khi encode, nếu không HandBrake sẽ thay bằng font hệ thống.
 

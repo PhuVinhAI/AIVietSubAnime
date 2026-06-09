@@ -7,25 +7,36 @@ import { ensureDir, isFile } from './fsx.js';
 export type HardsubOptions = {
   handbrakeCliPath: string;
   job: HardsubJob;
-  quality?: number; // RF, default 20
-  audioBitrate?: number; // kbps, default 192
+  /** ICQ (Intelligent Constant Quality) cho QuickSync. Mặc định 18 theo spec. */
+  quality?: number;
 };
 
+/**
+ * HandBrake CLI args theo cấu hình GUI user cung cấp:
+ *  - Video: H.265 10-bit Intel QuickSync (`qsv_h265_10bit`)
+ *  - Framerate: Same as source + VFR
+ *  - Quality: ICQ 18
+ *  - Encoder preset: quality (max right)
+ *  - Audio: track 1, EAC3 passthru
+ *  - Subtitle: track 1 (external ssa file), burn-in
+ *  - Filters: all off (default)
+ */
 export async function runHardsub(opts: HardsubOptions): Promise<void> {
-  const { handbrakeCliPath, job, quality = 20, audioBitrate = 192 } = opts;
+  const { handbrakeCliPath, job, quality = 18 } = opts;
   ensureDir(dirname(job.outputPath));
 
   await execa(handbrakeCliPath, [
     '-i', job.mkvPath,
     '-o', job.outputPath,
     '--ssa-file', job.assPath,
-    '--ssa-burn',
-    '-e', 'x264',
+    '-e', 'qsv_h265_10bit',
+    '--vfr',
     '-q', String(quality),
-    '-E', 'av_aac',
-    '-B', String(audioBitrate),
-    '--audio-lang-list', 'jpn',
-    '--first-audio',
+    '--encoder-preset', 'quality',
+    '-a', '1',
+    '-E', 'eac3',
+    '-s', '1',
+    '--subtitle-burned=1',
   ]);
 }
 

@@ -59,5 +59,5 @@ export function App({ initialMode, initialPath, projectRoot }: Props) {
     return <PrepareMode initialPath={initialPath} projectRoot={projectRoot} />;
   }
 
-  return <HardsubMode initialPath={initialPath} />;
+  return <HardsubMode initialPath={initialPath} projectRoot={projectRoot} />;
 }
