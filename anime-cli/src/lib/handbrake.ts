@@ -4,12 +4,28 @@ import { join, dirname, basename, extname } from 'node:path';
 import type { HardsubCandidate, HardsubJob } from '../types.js';
 import { ensureDir, isFile } from './fsx.js';
 
+export type HardsubProgress = {
+  /** 0..100 */
+  percent: number;
+  /** ETA (giây) hoặc null khi HandBrake chưa in. */
+  etaSeconds: number | null;
+  /** fps hiện tại hoặc null. */
+  fps: number | null;
+};
+
 export type HardsubOptions = {
   handbrakeCliPath: string;
   job: HardsubJob;
   /** ICQ (Intelligent Constant Quality) cho QuickSync. Mặc định 18 theo spec. */
   quality?: number;
+  /** Callback live progress parse từ HandBrakeCLI stdout/stderr. */
+  onProgress?: (p: HardsubProgress) => void;
 };
+
+// Vd: "Encoding: task 1 of 1, 12.34 %"
+// Hoặc: "Encoding: task 1 of 1, 12.34 % (50.00 fps, avg 60.00 fps, ETA 00h12m34s)"
+const HB_PROGRESS_RE =
+  /Encoding:[^,]*,\s*([\d.]+)\s*%(?:\s*\(\s*([\d.]+)\s*fps[^,]*,\s*avg\s*[\d.]+\s*fps,\s*ETA\s*(\d+)h(\d+)m(\d+)s\s*\))?/g;
 
 /**
  * HandBrake CLI args theo cấu hình GUI user cung cấp:
@@ -20,12 +36,15 @@ export type HardsubOptions = {
  *  - Audio: track 1, EAC3 passthru
  *  - Subtitle: track 1 (external ssa file), burn-in
  *  - Filters: all off (default)
+ *
+ * Nếu `onProgress` được cung cấp, parse các dòng "Encoding: ... NN.NN %"
+ * (HandBrake xuất qua \r) để báo % + ETA + fps theo thời gian thực.
  */
 export async function runHardsub(opts: HardsubOptions): Promise<void> {
-  const { handbrakeCliPath, job, quality = 18 } = opts;
+  const { handbrakeCliPath, job, quality = 18, onProgress } = opts;
   ensureDir(dirname(job.outputPath));
 
-  await execa(handbrakeCliPath, [
+  const sp = execa(handbrakeCliPath, [
     '-i', job.mkvPath,
     '-o', job.outputPath,
     '--ssa-file', job.assPath,
@@ -38,6 +57,34 @@ export async function runHardsub(opts: HardsubOptions): Promise<void> {
     '-s', '1',
     '--subtitle-burned=1',
   ]);
+
+  if (onProgress) {
+    const handleChunk = (chunk: Buffer | string) => {
+      const text = typeof chunk === 'string' ? chunk : chunk.toString('utf-8');
+      let last: HardsubProgress | null = null;
+      let m: RegExpExecArray | null;
+      HB_PROGRESS_RE.lastIndex = 0;
+      while ((m = HB_PROGRESS_RE.exec(text)) !== null) {
+        const percent = parseFloat(m[1]!);
+        let etaSeconds: number | null = null;
+        let fps: number | null = null;
+        if (m[3] !== undefined && m[4] !== undefined && m[5] !== undefined) {
+          etaSeconds =
+            parseInt(m[3], 10) * 3600 +
+            parseInt(m[4], 10) * 60 +
+            parseInt(m[5], 10);
+        }
+        if (m[2] !== undefined) fps = parseFloat(m[2]);
+        last = { percent, etaSeconds, fps };
+      }
+      if (last) onProgress(last);
+    };
+    sp.stdout?.on('data', handleChunk);
+    sp.stderr?.on('data', handleChunk);
+  }
+
+  await sp;
+  onProgress?.({ percent: 100, etaSeconds: 0, fps: null });
 }
 
 /**

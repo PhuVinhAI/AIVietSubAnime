@@ -1,4 +1,4 @@
-import { Box, Text, useApp } from 'ink';
+import { Box, Text, useApp, useInput } from 'ink';
 import SelectInput from 'ink-select-input';
 import Spinner from 'ink-spinner';
 import { existsSync, readdirSync, statSync } from 'node:fs';
@@ -13,9 +13,11 @@ import { ToolStatus } from '../components/ToolStatus.js';
 import { detectAnimeName } from '../lib/episode.js';
 import { prepareEpisode } from '../lib/extract.js';
 import { moveFile } from '../lib/fsx.js';
+import { renderBar } from '../lib/progress.js';
 import { probeVideo } from '../lib/probe.js';
 import { checkAllTools, type ToolCheck } from '../lib/tools.js';
 import { groupBySignature, suggestTrack } from '../lib/trackGroup.js';
+import { useStepNav } from '../lib/useStepNav.js';
 import type { TrackGroup, VideoProbe } from '../types.js';
 
 function hasExistingOutput(epFolder: string): boolean {
@@ -31,6 +33,11 @@ function hasExistingOutput(epFolder: string): boolean {
   } catch {
     return false;
   }
+}
+
+function formatPrepareDetail(audioPct: number, subPct: number): string {
+  const avg = (audioPct + subPct) / 2;
+  return `${renderBar(avg, 14)} ${avg.toFixed(0)}%  ·  audio ${audioPct.toFixed(0)}% · sub ${subPct.toFixed(0)}%`;
 }
 
 type Choices = Record<string, number>; // signature → trackId
@@ -71,6 +78,11 @@ type Step =
   | { kind: 'processing'; jobs: PrepareJob[]; statuses: StatusItem[]; current: number }
   | { kind: 'done'; statuses: StatusItem[] };
 
+type Nav = {
+  go: (next: Step) => void;
+  back: () => boolean;
+};
+
 type PrepareJob = {
   probe: VideoProbe;
   epFolder: string;
@@ -91,8 +103,25 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
     mkvextract: ToolCheck;
     handbrake: ToolCheck;
   } | null>(null);
-  const [step, setStep] = useState<Step>({ kind: 'tools' });
+  const nav = useStepNav<Step>({ kind: 'tools' });
+  const { step, setStep, go, back, canBack } = nav;
   const [error, setError] = useState<string | null>(null);
+
+  const isBackEnabled =
+    !error &&
+    canBack &&
+    step.kind !== 'tools' &&
+    step.kind !== 'scanning' &&
+    step.kind !== 'probing' &&
+    step.kind !== 'processing' &&
+    step.kind !== 'done' &&
+    step.kind !== 'pick-eps';
+  useInput(
+    (_input, key) => {
+      if (key.escape) back();
+    },
+    { isActive: isBackEnabled }
+  );
 
   useEffect(() => {
     if (step.kind !== 'tools') return;
@@ -113,6 +142,7 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
     return () => {
       cancelled = true;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step.kind, initialPath]);
 
   useEffect(() => {
@@ -151,6 +181,7 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
       setError(e instanceof Error ? e.message : String(e));
       setStep({ kind: 'path' });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   useEffect(() => {
@@ -199,6 +230,7 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
     const run = async () => {
       const statuses = [...step.statuses];
       let doneCount = 0;
+      const lastFlush = new Array<number>(step.jobs.length).fill(0);
 
       const flush = () => {
         setStep((s) =>
@@ -210,7 +242,11 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
 
       const processOne = async (job: PrepareJob, i: number) => {
         if (cancelled) return;
-        statuses[i] = { ...statuses[i]!, status: 'running' };
+        statuses[i] = {
+          ...statuses[i]!,
+          status: 'running',
+          detail: formatPrepareDetail(0, 0),
+        };
         flush();
 
         try {
@@ -223,6 +259,19 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
             epFolder: job.epFolder,
             baseName: job.probe.baseName,
             trackId: job.trackId,
+            durationSeconds: job.probe.durationSeconds,
+            onProgress: (audioPct, subPct) => {
+              // Throttle per-job: tránh re-render quá thường xuyên khi nhiều job song song
+              const now = performance.now();
+              if (audioPct < 100 && subPct < 100 && now - (lastFlush[i] ?? 0) < 250) return;
+              lastFlush[i] = now;
+              statuses[i] = {
+                ...statuses[i]!,
+                status: 'running',
+                detail: formatPrepareDetail(audioPct, subPct),
+              };
+              flush();
+            },
           });
           statuses[i] = {
             ...statuses[i]!,
@@ -283,7 +332,7 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
               hint="Folder chứa .mkv (hoặc 1 file .mkv bất kỳ)"
               onSubmit={(path) => {
                 setError(null);
-                setStep({ kind: 'scanning', path });
+                go({ kind: 'scanning', path });
               }}
             />
           </Box>
@@ -302,7 +351,7 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
           <PathInput
             label="Nhập path:"
             hint="Folder chứa .mkv, hoặc 1 file .mkv bất kỳ trong folder đó"
-            onSubmit={(path) => setStep({ kind: 'scanning', path })}
+            onSubmit={(path) => go({ kind: 'scanning', path })}
           />
         </Box>
       )}
@@ -338,7 +387,7 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
             defaultValue={step.suggested}
             onSubmit={(name) => {
               const animeName = (name || step.suggested).trim();
-              setStep({
+              go({
                 kind: 'probing',
                 mkvs: step.mkvs,
                 animeName,
@@ -366,14 +415,14 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
       )}
 
       {step.kind === 'pick-track' && (
-        <PickTrackUI step={step} setStep={setStep} projectRoot={projectRoot} />
+        <PickTrackUI step={step} nav={{ go, back }} projectRoot={projectRoot} />
       )}
 
-      {step.kind === 'select-mode' && <SelectModeUI step={step} setStep={setStep} />}
+      {step.kind === 'select-mode' && <SelectModeUI step={step} nav={{ go, back }} />}
 
-      {step.kind === 'pick-eps' && <PickEpsUI step={step} setStep={setStep} />}
+      {step.kind === 'pick-eps' && <PickEpsUI step={step} nav={{ go, back }} />}
 
-      {step.kind === 'confirm' && <ConfirmUI step={step} setStep={setStep} />}
+      {step.kind === 'confirm' && <ConfirmUI step={step} nav={{ go, back }} />}
 
       {step.kind === 'processing' && (
         <Box flexDirection="column">
@@ -398,17 +447,23 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
           </Box>
         </Box>
       )}
+
+      {isBackEnabled && (
+        <Box marginTop={1}>
+          <Text color="gray">[Esc] quay lại bước trước</Text>
+        </Box>
+      )}
     </Box>
   );
 }
 
 function PickTrackUI({
   step,
-  setStep,
+  nav,
   projectRoot,
 }: {
   step: Extract<Step, { kind: 'pick-track' }>;
-  setStep: (s: Step) => void;
+  nav: Nav;
   projectRoot: string;
 }) {
   const group = step.groups[step.groupIdx]!;
@@ -459,7 +514,7 @@ function PickTrackUI({
           const nextChoices: Choices = { ...step.choices, [group.signature]: item.value };
           const nextIdx = step.groupIdx + 1;
           if (nextIdx < step.groups.length) {
-            setStep({ ...step, choices: nextChoices, groupIdx: nextIdx });
+            nav.go({ ...step, choices: nextChoices, groupIdx: nextIdx });
           } else {
             const outputDir = join(projectRoot, 'Anime', step.animeName);
             const allJobs: PrepareJob[] = step.probes.map((p) => {
@@ -477,14 +532,14 @@ function PickTrackUI({
             });
             const hasAnyExisting = allJobs.some((j) => j.hasOutput);
             if (hasAnyExisting) {
-              setStep({
+              nav.go({
                 kind: 'select-mode',
                 allJobs,
                 animeName: step.animeName,
                 outputDir,
               });
             } else {
-              setStep({
+              nav.go({
                 kind: 'confirm',
                 jobs: allJobs,
                 animeName: step.animeName,
@@ -500,10 +555,10 @@ function PickTrackUI({
 
 function SelectModeUI({
   step,
-  setStep,
+  nav,
 }: {
   step: Extract<Step, { kind: 'select-mode' }>;
-  setStep: (s: Step) => void;
+  nav: Nav;
 }) {
   const newJobs = step.allJobs.filter((j) => !j.hasOutput);
   const existingJobs = step.allJobs.filter((j) => j.hasOutput);
@@ -568,7 +623,7 @@ function SelectModeUI({
             return;
           }
           if (it.value === 'pick') {
-            setStep({
+            nav.go({
               kind: 'pick-eps',
               allJobs: step.allJobs,
               animeName: step.animeName,
@@ -577,7 +632,7 @@ function SelectModeUI({
             return;
           }
           const jobs = it.value === 'only-new' ? newJobs : step.allJobs;
-          setStep({
+          nav.go({
             kind: 'confirm',
             jobs,
             animeName: step.animeName,
@@ -591,10 +646,10 @@ function SelectModeUI({
 
 function PickEpsUI({
   step,
-  setStep,
+  nav,
 }: {
   step: Extract<Step, { kind: 'pick-eps' }>;
-  setStep: (s: Step) => void;
+  nav: Nav;
 }) {
   const items = step.allJobs.map((j) => ({
     label: `${j.epName} — ${j.probe.fileName}`,
@@ -615,21 +670,14 @@ function PickEpsUI({
       </Box>
       <MultiSelect
         items={items}
-        onCancel={() =>
-          setStep({
-            kind: 'select-mode',
-            allJobs: step.allJobs,
-            animeName: step.animeName,
-            outputDir: step.outputDir,
-          })
-        }
+        onCancel={() => nav.back()}
         onSubmit={(folders) => {
           const jobs = step.allJobs.filter((j) => folders.includes(j.epFolder));
           if (jobs.length === 0) {
             process.exit(0);
             return;
           }
-          setStep({
+          nav.go({
             kind: 'confirm',
             jobs,
             animeName: step.animeName,
@@ -643,10 +691,10 @@ function PickEpsUI({
 
 function ConfirmUI({
   step,
-  setStep,
+  nav,
 }: {
   step: Extract<Step, { kind: 'confirm' }>;
-  setStep: (s: Step) => void;
+  nav: Nav;
 }) {
   const overwriteCount = step.jobs.filter((j) => j.hasOutput).length;
   const items = [
@@ -692,7 +740,7 @@ function ConfirmUI({
             label: `${j.epName} — ${j.probe.fileName}`,
             status: 'pending',
           }));
-          setStep({ kind: 'processing', jobs: step.jobs, statuses, current: 0 });
+          nav.go({ kind: 'processing', jobs: step.jobs, statuses, current: 0 });
         }}
       />
     </Box>

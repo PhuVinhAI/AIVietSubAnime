@@ -1,4 +1,4 @@
-import { Box, Text, useApp } from 'ink';
+import { Box, Text, useApp, useInput } from 'ink';
 import SelectInput from 'ink-select-input';
 import Spinner from 'ink-spinner';
 import { existsSync, statSync, unlinkSync } from 'node:fs';
@@ -11,6 +11,7 @@ import { StatusList, type StatusItem } from '../components/StatusList.js';
 import { StepHeader } from '../components/StepHeader.js';
 import { ToolStatus } from '../components/ToolStatus.js';
 import { runHardsub, scanHardsubCandidates } from '../lib/handbrake.js';
+import { formatDuration, renderBar } from '../lib/progress.js';
 import {
   applyStyleToAss,
   readStyleBlock,
@@ -18,6 +19,7 @@ import {
   type StyleEntry,
 } from '../lib/styles.js';
 import { checkAllTools, type ToolCheck } from '../lib/tools.js';
+import { useStepNav } from '../lib/useStepNav.js';
 import type { HardsubCandidate, HardsubJob } from '../types.js';
 
 type Step =
@@ -65,10 +67,31 @@ type Step =
     }
   | { kind: 'done'; statuses: StatusItem[] };
 
+type Nav = {
+  go: (next: Step) => void;
+  back: () => boolean;
+};
+
 type Props = {
   initialPath?: string;
   projectRoot: string;
 };
+
+function formatHardsubDetail(
+  percent: number,
+  etaSeconds: number | null,
+  fps: number | null
+): string {
+  const bar = renderBar(percent, 18);
+  const parts = [`${bar} ${percent.toFixed(1)}%`];
+  if (etaSeconds !== null && etaSeconds > 0) {
+    parts.push(`ETA ${formatDuration(etaSeconds)}`);
+  }
+  if (fps !== null && fps > 0) {
+    parts.push(`${fps.toFixed(0)} fps`);
+  }
+  return parts.join(' · ');
+}
 
 export function HardsubMode({ initialPath, projectRoot }: Props) {
   const { exit } = useApp();
@@ -77,8 +100,26 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
     mkvextract: ToolCheck;
     handbrake: ToolCheck;
   } | null>(null);
-  const [step, setStep] = useState<Step>({ kind: 'tools' });
+  const nav = useStepNav<Step>({ kind: 'tools' });
+  const { step, setStep, go, back, canBack } = nav;
   const [error, setError] = useState<string | null>(null);
+
+  // Esc → quay lại bước trước. Bỏ qua processing/done/auto-transitions và pick-eps
+  // (MultiSelect tự bind onCancel → back).
+  const isBackEnabled =
+    !error &&
+    canBack &&
+    step.kind !== 'tools' &&
+    step.kind !== 'scanning' &&
+    step.kind !== 'processing' &&
+    step.kind !== 'done' &&
+    step.kind !== 'pick-eps';
+  useInput(
+    (_input, key) => {
+      if (key.escape) back();
+    },
+    { isActive: isBackEnabled }
+  );
 
   useEffect(() => {
     if (step.kind !== 'tools') return;
@@ -101,6 +142,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
     return () => {
       cancelled = true;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step.kind, initialPath]);
 
   useEffect(() => {
@@ -118,6 +160,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
       setError(e instanceof Error ? e.message : String(e));
       setStep({ kind: 'path' });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   useEffect(() => {
@@ -152,7 +195,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
         statuses[i] = {
           ...statuses[i]!,
           status: 'running',
-          detail: 'Đang encode... (10-40 phút)',
+          detail: formatHardsubDetail(0, null, null),
         };
         setStep((s) =>
           s.kind === 'processing' ? { ...s, statuses: [...statuses], current: i } : s
@@ -165,7 +208,28 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
               unlinkSync(job.outputPath);
             } catch {}
           }
-          await runHardsub({ handbrakeCliPath: handbrakePath, job });
+
+          // Throttle: HandBrake spam stderr nhiều lần/giây → chỉ flush mỗi 250ms
+          let lastFlush = 0;
+          await runHardsub({
+            handbrakeCliPath: handbrakePath,
+            job,
+            onProgress: ({ percent, etaSeconds, fps }) => {
+              const now = performance.now();
+              if (percent < 100 && now - lastFlush < 250) return;
+              lastFlush = now;
+              statuses[i] = {
+                ...statuses[i]!,
+                status: 'running',
+                detail: formatHardsubDetail(percent, etaSeconds, fps),
+              };
+              setStep((s) =>
+                s.kind === 'processing'
+                  ? { ...s, statuses: [...statuses], current: i }
+                  : s
+              );
+            },
+          });
           statuses[i] = {
             ...statuses[i]!,
             status: 'done',
@@ -222,7 +286,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
               hint="Vd. C:\Users\you\Anime\Oi Tonbo 2nd Season"
               onSubmit={(path) => {
                 setError(null);
-                setStep({ kind: 'scanning', path });
+                go({ kind: 'scanning', path });
               }}
             />
           </Box>
@@ -246,7 +310,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
           <PathInput
             label="Path:"
             hint="Folder anime có các Ep01/Ep02/... bên trong"
-            onSubmit={(path) => setStep({ kind: 'scanning', path })}
+            onSubmit={(path) => go({ kind: 'scanning', path })}
           />
         </Box>
       )}
@@ -261,18 +325,24 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
       )}
 
       {step.kind === 'scan-result' && (
-        <ScanResultUI step={step} setStep={setStep} />
+        <ScanResultUI step={step} nav={{ go, back }} />
       )}
 
-      {step.kind === 'pick-eps' && <PickEpsUI step={step} setStep={setStep} />}
+      {step.kind === 'pick-eps' && (
+        <PickEpsUI step={step} nav={{ go, back }} />
+      )}
 
       {step.kind === 'ask-style' && (
-        <AskStyleUI step={step} setStep={setStep} projectRoot={projectRoot} />
+        <AskStyleUI step={step} nav={{ go, back }} projectRoot={projectRoot} />
       )}
 
-      {step.kind === 'pick-style' && <PickStyleUI step={step} setStep={setStep} />}
+      {step.kind === 'pick-style' && (
+        <PickStyleUI step={step} nav={{ go, back }} />
+      )}
 
-      {step.kind === 'confirm' && <ConfirmUI step={step} setStep={setStep} />}
+      {step.kind === 'confirm' && (
+        <ConfirmUI step={step} nav={{ go, back }} />
+      )}
 
       {step.kind === 'processing' && (
         <Box flexDirection="column">
@@ -303,6 +373,12 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
           </Box>
         </Box>
       )}
+
+      {isBackEnabled && (
+        <Box marginTop={1}>
+          <Text color="gray">[Esc] quay lại bước trước</Text>
+        </Box>
+      )}
     </Box>
   );
 }
@@ -318,10 +394,10 @@ function candidateToJob(c: HardsubCandidate): HardsubJob {
 
 function ScanResultUI({
   step,
-  setStep,
+  nav,
 }: {
   step: Extract<Step, { kind: 'scan-result' }>;
-  setStep: (s: Step) => void;
+  nav: Nav;
 }) {
   const ready = step.candidates.filter((c) => !c.missingAss && !c.hasOutput);
   const overwrite = step.candidates.filter((c) => !c.missingAss && c.hasOutput);
@@ -399,7 +475,7 @@ function ScanResultUI({
               return;
             }
             if (it.value === 'pick') {
-              setStep({
+              nav.go({
                 kind: 'pick-eps',
                 animeFolder: step.animeFolder,
                 candidates: step.candidates,
@@ -416,7 +492,7 @@ function ScanResultUI({
               chosen = overwrite;
             }
             const jobs = chosen.map(candidateToJob);
-            setStep({
+            nav.go({
               kind: 'ask-style',
               animeFolder: step.animeFolder,
               jobs,
@@ -431,10 +507,10 @@ function ScanResultUI({
 
 function PickEpsUI({
   step,
-  setStep,
+  nav,
 }: {
   step: Extract<Step, { kind: 'pick-eps' }>;
-  setStep: (s: Step) => void;
+  nav: Nav;
 }) {
   const items = step.candidates.map((c) => ({
     label: c.epName,
@@ -458,14 +534,7 @@ function PickEpsUI({
       </Box>
       <MultiSelect
         items={items}
-        onCancel={() =>
-          setStep({
-            kind: 'scan-result',
-            animeFolder: step.animeFolder,
-            candidates: step.candidates,
-            skipped: step.skipped,
-          })
-        }
+        onCancel={() => nav.back()}
         onSubmit={(epFolders) => {
           const chosen = step.candidates.filter((c) => epFolders.includes(c.epFolder));
           if (chosen.length === 0) {
@@ -473,7 +542,7 @@ function PickEpsUI({
             return;
           }
           const jobs = chosen.map(candidateToJob);
-          setStep({
+          nav.go({
             kind: 'ask-style',
             animeFolder: step.animeFolder,
             jobs,
@@ -487,11 +556,11 @@ function PickEpsUI({
 
 function AskStyleUI({
   step,
-  setStep,
+  nav,
   projectRoot,
 }: {
   step: Extract<Step, { kind: 'ask-style' }>;
-  setStep: (s: Step) => void;
+  nav: Nav;
   projectRoot: string;
 }) {
   return (
@@ -515,7 +584,7 @@ function AskStyleUI({
             return;
           }
           if (it.value === 'no') {
-            setStep({
+            nav.go({
               kind: 'confirm',
               animeFolder: step.animeFolder,
               jobs: step.jobs,
@@ -526,7 +595,7 @@ function AskStyleUI({
           }
           const styles = scanStyles(join(projectRoot, 'Styles'));
           if (styles.length === 0) {
-            setStep({
+            nav.go({
               kind: 'confirm',
               animeFolder: step.animeFolder,
               jobs: step.jobs,
@@ -535,7 +604,7 @@ function AskStyleUI({
             });
             return;
           }
-          setStep({
+          nav.go({
             kind: 'pick-style',
             animeFolder: step.animeFolder,
             jobs: step.jobs,
@@ -550,10 +619,10 @@ function AskStyleUI({
 
 function PickStyleUI({
   step,
-  setStep,
+  nav,
 }: {
   step: Extract<Step, { kind: 'pick-style' }>;
-  setStep: (s: Step) => void;
+  nav: Nav;
 }) {
   return (
     <Box flexDirection="column">
@@ -571,7 +640,7 @@ function PickStyleUI({
         onSelect={(it) => {
           const chosen = step.styles.find((s) => s.filePath === it.value);
           if (!chosen) return;
-          setStep({
+          nav.go({
             kind: 'confirm',
             animeFolder: step.animeFolder,
             jobs: step.jobs,
@@ -586,10 +655,10 @@ function PickStyleUI({
 
 function ConfirmUI({
   step,
-  setStep,
+  nav,
 }: {
   step: Extract<Step, { kind: 'confirm' }>;
-  setStep: (s: Step) => void;
+  nav: Nav;
 }) {
   return (
     <Box flexDirection="column">
@@ -630,7 +699,7 @@ function ConfirmUI({
             label: basename(j.epFolder),
             status: 'pending',
           }));
-          setStep({
+          nav.go({
             kind: 'processing',
             jobs: step.jobs,
             statuses,

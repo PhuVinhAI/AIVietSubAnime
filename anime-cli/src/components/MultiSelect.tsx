@@ -52,17 +52,19 @@ export function MultiSelect<T>({ items, onSubmit, onCancel, maxVisible = 20 }: P
       return;
     }
     if (input === 'a' || input === 'A') {
-      // toggle all (non-disabled)
-      setSelected((s) => {
-        const next = new Set(s);
-        const allOn = items.every((it, i) => it.disabled || next.has(i));
+      // select all (non-disabled)
+      setSelected(() => {
+        const next = new Set<number>();
         items.forEach((it, i) => {
-          if (it.disabled) return;
-          if (allOn) next.delete(i);
-          else next.add(i);
+          if (!it.disabled) next.add(i);
         });
         return next;
       });
+      return;
+    }
+    if (input === 'n' || input === 'N') {
+      // none — deselect all
+      setSelected(() => new Set<number>());
       return;
     }
     if (key.return) {
@@ -87,7 +89,7 @@ export function MultiSelect<T>({ items, onSubmit, onCancel, maxVisible = 20 }: P
         const i = start + idx;
         const isCursor = cursor === i;
         const isSel = selected.has(i);
-        const box = it.disabled ? '─' : isSel ? '[x]' : '[ ]';
+        const box = it.disabled ? '[─]' : isSel ? '[✓]' : '[ ]';
         const color = it.disabled ? 'gray' : isCursor ? 'cyan' : undefined;
         return (
           <Box key={i}>
@@ -104,8 +106,8 @@ export function MultiSelect<T>({ items, onSubmit, onCancel, maxVisible = 20 }: P
       {end < total && <Text color="gray"> ↓ ({total - end} item ẩn ở dưới)</Text>}
       <Box marginTop={1}>
         <Text color="gray">
-          ↑↓ di chuyển · Space chọn · A toggle all · Enter xác nhận
-          {onCancel ? ' · Esc huỷ' : ''}
+          ↑↓ di chuyển · Space chọn · A chọn tất cả · N bỏ tất cả · Enter xác nhận
+          {onCancel ? ' · Esc quay lại' : ''}
         </Text>
         <Text color="cyan"> · đã chọn {selected.size}/{items.filter((it) => !it.disabled).length}</Text>
       </Box>

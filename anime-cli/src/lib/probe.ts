@@ -15,8 +15,20 @@ export async function probeVideo(filePath: string): Promise<VideoProbe> {
 
   const subTracks: SubTrack[] = [];
   const audioTracks: AudioTrack[] = [];
+  let durationSeconds: number | null = null;
 
   for (const line of lines) {
+    // Pattern: "Duration: 00:24:01.07, start: 0.000000, bitrate: ..."
+    if (durationSeconds === null) {
+      const durMatch = line.match(/Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)/);
+      if (durMatch && durMatch[1] && durMatch[2] && durMatch[3]) {
+        durationSeconds =
+          parseInt(durMatch[1], 10) * 3600 +
+          parseInt(durMatch[2], 10) * 60 +
+          parseFloat(durMatch[3]);
+      }
+    }
+
     // Pattern: "Stream #0:2(eng): Subtitle: ass (default)"
     const subMatch = line.match(
       /Stream #0:(\d+)(?:\(([^)]+)\))?: Subtitle: (\w+)(?:\s*\(([^)]+)\))?/
@@ -63,6 +75,7 @@ export async function probeVideo(filePath: string): Promise<VideoProbe> {
     subTracks,
     audioTracks,
     signature,
+    durationSeconds,
   };
 }
 

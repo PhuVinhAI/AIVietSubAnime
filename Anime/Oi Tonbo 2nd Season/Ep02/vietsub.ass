@@ -15,366 +15,366 @@ Style: Default,Trebuchet MS,45,&H00FFFFFF,&H000000FF,&H00020713,&H00000000,-1,0,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:10.05,0:00:11.09,Default,,0,0,0,,Here you go!
-Dialogue: 0,0:00:23.60,0:00:24.44,Default,,0,0,0,,It's delicious!
-Dialogue: 0,0:00:24.52,0:00:26.86,Default,,0,0,0,,What is this?\NI've never had anything like it!
-Dialogue: 0,0:00:26.98,0:00:30.03,Default,,0,0,0,,You won't find a shop like this\Non Hinoshima Island.
-Dialogue: 0,0:00:30.40,0:00:31.69,Default,,0,0,0,,It's so good!
-Dialogue: 0,0:00:36.03,0:00:39.08,Default,,0,0,0,,The meat just melts in your mouth!
-Dialogue: 0,0:00:40.58,0:00:45.21,Default,,0,0,0,,You're very kind.\NI've never seen a customer look so happy.
-Dialogue: 0,0:00:45.96,0:00:47.79,Default,,0,0,0,,Have some more meat, on the house.
-Dialogue: 0,0:00:50.09,0:00:54.72,Default,,0,0,0,,{\i1}She couldn't stop crying on the ferry.{\i0}\N{\i1}It's great to see her finally smiling.{\i0}
-Dialogue: 0,0:02:28.06,0:02:30.81,Default,,0,0,0,,{\i1}The city at night looks like\Nit's been flooded with light.{\i0}
-Dialogue: 0,0:02:32.02,0:02:35.78,Default,,0,0,0,,{\i1}There are more people downtown{\i0}\N{\i1}than the island's entire population.{\i0}
-Dialogue: 0,0:02:36.57,0:02:37.90,Default,,0,0,0,,{\i1}And the transportation...{\i0}
-Dialogue: 0,0:02:38.70,0:02:42.62,Default,,0,0,0,,{\i1}It must all be so fresh{\i0}\N{\i1}and exciting for Tonbo.{\i0}
-Dialogue: 0,0:02:43.28,0:02:47.25,Default,,0,0,0,,You came to Kagoshima to get\Na cavity filled once, right?
-Dialogue: 0,0:02:48.04,0:02:48.96,Default,,0,0,0,,Back then,
-Dialogue: 0,0:02:49.04,0:02:52.84,Default,,0,0,0,,I stood behind Grandpa Gon\Nand barely noticed my surroundings.
-Dialogue: 0,0:02:58.55,0:03:00.88,Default,,0,0,0,,This is the bullet train? It's so long!
-Dialogue: 0,0:03:02.09,0:03:06.39,Default,,0,0,0,,{\i1}This is Kumamoto Station.{\i0}\N{\i1}Thank you for riding the bullet train.{\i0}
-Dialogue: 0,0:03:07.06,0:03:09.60,Default,,0,0,0,,{\i1}Watch your feet as you exit the train.{\i0}
-Dialogue: 0,0:03:10.89,0:03:14.27,Default,,0,0,0,,Mr. Udo runs a driving range, right?
-Dialogue: 0,0:03:14.40,0:03:15.23,Default,,0,0,0,,That's right.
-Dialogue: 0,0:03:15.32,0:03:18.61,Default,,0,0,0,,He let me use it a lot\Nwhen I was a pro golfer.
-Dialogue: 0,0:03:19.95,0:03:20.90,Default,,0,0,0,,What are they like?
-Dialogue: 0,0:03:20.99,0:03:22.78,Default,,0,0,0,,Well, how should I put it?
-Dialogue: 0,0:03:23.53,0:03:26.08,Default,,0,0,0,,The mother has a dirty mouth,\Nbut is strong-willed.
-Dialogue: 0,0:03:26.20,0:03:30.79,Default,,0,0,0,,The father is a passionate man\Nwho raised his kids to be pro golfers.
-Dialogue: 0,0:03:31.00,0:03:33.25,Default,,0,0,0,,They're a lively bunch. You'll see.
-Dialogue: 0,0:03:36.17,0:03:39.80,Default,,0,0,0,,Even at this hour, it's still so bright!
-Dialogue: 0,0:03:42.59,0:03:45.10,Default,,0,0,0,,So this is where I'll be practicing.
-Dialogue: 0,0:03:45.68,0:03:47.06,Default,,0,0,0,,Let's go.
-Dialogue: 0,0:03:54.10,0:03:55.15,Default,,0,0,0,,There you are.
-Dialogue: 0,0:03:55.40,0:03:56.40,Default,,0,0,0,,Sorry we're late.
-Dialogue: 0,0:03:56.98,0:03:58.23,Default,,0,0,0,,Is that her, then?
-Dialogue: 0,0:03:58.40,0:03:59.48,Default,,0,0,0,,I'm Tonbo Oi.
-Dialogue: 0,0:03:59.65,0:04:01.45,Default,,0,0,0,,It's a pleasure to meet you.
-Dialogue: 0,0:04:03.70,0:04:07.16,Default,,0,0,0,,So those are the eyes of someone\Nraised only looking at the horizon?
-Dialogue: 0,0:04:07.33,0:04:09.12,Default,,0,0,0,,Not bad.
-Dialogue: 0,0:04:09.41,0:04:11.50,Default,,0,0,0,,Where is your carry bag, dear?
-Dialogue: 0,0:04:12.21,0:04:13.33,Default,,0,0,0,,This is everything.
-Dialogue: 0,0:04:13.50,0:04:15.92,Default,,0,0,0,,-What? Only four clubs?\N-Huh?
-Dialogue: 0,0:04:16.17,0:04:17.04,Default,,0,0,0,,That's right.
-Dialogue: 0,0:04:19.30,0:04:21.26,Default,,0,0,0,,I bet you're eager to play.
-Dialogue: 0,0:04:24.38,0:04:27.01,Default,,0,0,0,,Everyone on the island\Nwould be sleeping by now,
-Dialogue: 0,0:04:27.30,0:04:29.43,Default,,0,0,0,,but people here are practicing golf!
-Dialogue: 0,0:04:30.31,0:04:32.23,Default,,0,0,0,,Are they training to be pros?
-Dialogue: 0,0:04:34.31,0:04:35.35,Default,,0,0,0,,I wonder?
-Dialogue: 0,0:04:35.60,0:04:36.90,Default,,0,0,0,,Mr. Igarashi!
-Dialogue: 0,0:04:37.44,0:04:38.36,Default,,0,0,0,,It's been a while!
-Dialogue: 0,0:04:38.57,0:04:39.98,Default,,0,0,0,,Hey, Hajime.
-Dialogue: 0,0:04:40.69,0:04:41.86,Default,,0,0,0,,He's their son.
-Dialogue: 0,0:04:42.19,0:04:44.20,Default,,0,0,0,,He's the lesson pro here.
-Dialogue: 0,0:04:44.45,0:04:45.74,Default,,0,0,0,,So you're Tonbo?
-Dialogue: 0,0:04:46.07,0:04:47.41,Default,,0,0,0,,Nice to meet ya.
-Dialogue: 0,0:04:48.08,0:04:49.49,Default,,0,0,0,,It's a pleasure to meet you, too.
-Dialogue: 0,0:04:52.87,0:04:54.25,Default,,0,0,0,,What a shot!
-Dialogue: 0,0:04:54.67,0:04:55.58,Default,,0,0,0,,Let's see what you've got.
-Dialogue: 0,0:04:56.38,0:04:57.21,Default,,0,0,0,,{\i1}A driver?{\i0}
-Dialogue: 0,0:04:57.29,0:05:00.05,Default,,0,0,0,,Igarashi was so eager to have you here.
-Dialogue: 0,0:05:00.38,0:05:02.05,Default,,0,0,0,,You must have some skill.
-Dialogue: 0,0:05:02.38,0:05:05.93,Default,,0,0,0,,But, I can't be sure\Nuntil I see it with my own eyes.
-Dialogue: 0,0:05:07.64,0:05:09.43,Default,,0,0,0,,If you don't have the skills,
-Dialogue: 0,0:05:09.76,0:05:12.68,Default,,0,0,0,,we'll have to forget about taking you in.
-Dialogue: 0,0:05:13.77,0:05:15.77,Default,,0,0,0,,Mr. Udo, wait just a second!
-Dialogue: 0,0:05:18.48,0:05:19.31,Default,,0,0,0,,Okay!
-Dialogue: 0,0:05:21.07,0:05:22.86,Default,,0,0,0,,It's huge! And long!
-Dialogue: 0,0:05:27.11,0:05:28.53,Default,,0,0,0,,It looks like real grass!
-Dialogue: 0,0:05:29.12,0:05:30.91,Default,,0,0,0,,But it feels totally different!
-Dialogue: 0,0:05:34.20,0:05:37.46,Default,,0,0,0,,{\i1}Tonbo has never hit a driver before.{\i0}
-Dialogue: 0,0:05:41.63,0:05:43.26,Default,,0,0,0,,{\i1}A baseball grip?{\i0}
-Dialogue: 0,0:05:51.85,0:05:55.52,Default,,0,0,0,,When she first used\Nan eight-iron at Kuta's place,
-Dialogue: 0,0:05:55.64,0:05:58.94,Default,,0,0,0,,she picked up on its characteristics\Nwith one practice swing.
-Dialogue: 0,0:06:00.73,0:06:02.19,Default,,0,0,0,,Thank you very much.
-Dialogue: 0,0:06:06.28,0:06:08.20,Default,,0,0,0,,It's automatic? Amazing!
-Dialogue: 0,0:06:11.24,0:06:12.91,Default,,0,0,0,,Where should I hit the ball?
-Dialogue: 0,0:06:14.87,0:06:16.29,Default,,0,0,0,,What direction should I aim?
-Dialogue: 0,0:06:17.16,0:06:18.08,Default,,0,0,0,,Well,
-Dialogue: 0,0:06:18.62,0:06:22.92,Default,,0,0,0,,how about aiming\Nright between those two steel towers?
-Dialogue: 0,0:06:24.00,0:06:25.17,Default,,0,0,0,,And what kind of ball?
-Dialogue: 0,0:06:25.59,0:06:27.09,Default,,0,0,0,,What kind?
-Dialogue: 0,0:06:27.63,0:06:30.76,Default,,0,0,0,,From here to there? Or more like this?
-Dialogue: 0,0:06:31.43,0:06:33.56,Default,,0,0,0,,Well, how about a draw?
-Dialogue: 0,0:06:33.76,0:06:35.52,Default,,0,0,0,,Okay!
-Dialogue: 0,0:06:36.14,0:06:38.81,Default,,0,0,0,,{\i1}When asked to demonstrate a shot,{\i0}
-Dialogue: 0,0:06:38.89,0:06:42.48,Default,,0,0,0,,{\i1}most people would aim for the tee.{\i0}
-Dialogue: 0,0:06:42.56,0:06:47.53,Default,,0,0,0,,{\i1}I've never been asked about{\i0}\N{\i1}a draw or a fade before.{\i0}
-Dialogue: 0,0:06:47.95,0:06:51.87,Default,,0,0,0,,{\i1}Having mastered the game{\i0}\N{\i1}on the course instead of a driving range,{\i0}
-Dialogue: 0,0:06:51.95,0:06:56.12,Default,,0,0,0,,{\i1}Tonbo only knows{\i0}\N{\i1}how to take shots based on direction.{\i0}
-Dialogue: 0,0:06:59.79,0:07:01.58,Default,,0,0,0,,What kind of stance is that?
-Dialogue: 0,0:07:01.92,0:07:04.25,Default,,0,0,0,,Does she have it confused with a fade?
-Dialogue: 0,0:07:04.96,0:07:05.80,Default,,0,0,0,,{\i1}No.{\i0}
-Dialogue: 0,0:07:06.59,0:07:08.59,Default,,0,0,0,,{\i1}With the ball slightly inside,{\i0}
-Dialogue: 0,0:07:08.92,0:07:12.76,Default,,0,0,0,,{\i1}left shoulder raised a bit{\i0}\N{\i1}and hands leading the setup,{\i0}
-Dialogue: 0,0:07:12.97,0:07:16.97,Default,,0,0,0,,{\i1}her upper body is ready to hit a draw.{\i0}
-Dialogue: 0,0:07:19.14,0:07:21.77,Default,,0,0,0,,{\i1}She moved her left hand{\i0}\N{\i1}to the closed position.{\i0}
-Dialogue: 0,0:07:23.15,0:07:25.32,Default,,0,0,0,,{\i1}Incredible looping.{\i0}
-Dialogue: 0,0:07:34.37,0:07:35.62,Default,,0,0,0,,Continue.
-Dialogue: 0,0:07:43.46,0:07:46.75,Default,,0,0,0,,Those are some nice sounding shots!
-Dialogue: 0,0:07:47.09,0:07:49.38,Default,,0,0,0,,But she's slicing it every time.
-Dialogue: 0,0:07:50.01,0:07:51.38,Default,,0,0,0,,Are you sure about this?
-Dialogue: 0,0:07:51.47,0:07:53.26,Default,,0,0,0,,Taking care of a kid like this.
-Dialogue: 0,0:07:56.01,0:07:58.35,Default,,0,0,0,,{\i1}All of Tonbo's clubs are old.{\i0}
-Dialogue: 0,0:07:58.56,0:08:02.44,Default,,0,0,0,,{\i1}Even among the latest drivers,{\i0}\N{\i1}this one stands out for its length{\i0}
-Dialogue: 0,0:08:02.56,0:08:04.19,Default,,0,0,0,,{\i1}and large head.{\i0}
-Dialogue: 0,0:08:04.56,0:08:07.94,Default,,0,0,0,,{\i1}Due to the enormous volume{\i0}\N{\i1}at the end of the shaft,{\i0}
-Dialogue: 0,0:08:08.07,0:08:10.90,Default,,0,0,0,,{\i1}there's a significant force{\i0}\N{\i1}when trying to open the face.{\i0}
-Dialogue: 0,0:08:11.03,0:08:13.78,Default,,0,0,0,,{\i1}The effect only intensifies{\i0}\N{\i1}when you swing.{\i0}
-Dialogue: 0,0:08:15.49,0:08:17.58,Default,,0,0,0,,I sliced it again.
-Dialogue: 0,0:08:17.83,0:08:20.91,Default,,0,0,0,,{\i1}Masterfully designed to minimize spin,{\i0}
-Dialogue: 0,0:08:21.08,0:08:24.92,Default,,0,0,0,,{\i1}This club ensures that even if you miss,{\i0}\N{\i1}the ball won't turn too much.{\i0}
-Dialogue: 0,0:08:25.75,0:08:29.25,Default,,0,0,0,,{\i1}For a player like Tonbo{\i0}\N{\i1}who intentionally curves the ball,{\i0}
-Dialogue: 0,0:08:29.42,0:08:30.71,Default,,0,0,0,,{\i1}this is a challenging club.{\i0}
-Dialogue: 0,0:08:31.26,0:08:34.34,Default,,0,0,0,,I never knew drivers\Nwere so difficult to use.
-Dialogue: 0,0:08:34.51,0:08:38.22,Default,,0,0,0,,She sounds like\Nshe's never hit a driver before.
-Dialogue: 0,0:08:38.39,0:08:42.02,Default,,0,0,0,,This is her first time at a driving range\Nand first time using a driver.
-Dialogue: 0,0:08:42.81,0:08:44.10,Default,,0,0,0,,Really?
-Dialogue: 0,0:08:44.27,0:08:45.35,Default,,0,0,0,,That's enough.
-Dialogue: 0,0:08:46.15,0:08:48.73,Default,,0,0,0,,I'll have you try again tomorrow.
-Dialogue: 0,0:08:49.44,0:08:51.32,Default,,0,0,0,,Okay.
-Dialogue: 0,0:08:55.16,0:08:56.70,Default,,0,0,0,,This will be your bedroom.
-Dialogue: 0,0:09:01.16,0:09:02.58,Default,,0,0,0,,It's getting late.
-Dialogue: 0,0:09:02.91,0:09:04.58,Default,,0,0,0,,Why don't you get some sleep?
-Dialogue: 0,0:09:05.54,0:09:07.13,Default,,0,0,0,,Thank you very much.
-Dialogue: 0,0:09:16.18,0:09:17.93,Default,,0,0,0,,Really? So,
-Dialogue: 0,0:09:18.05,0:09:19.81,Default,,0,0,0,,when will you return to the island?
-Dialogue: 0,0:09:20.06,0:09:23.02,Default,,0,0,0,,The next ferry to Tokara\Nis the day after tomorrow.
+Dialogue: 0,0:00:10.05,0:00:11.09,Default,,0,0,0,,Của quý khách đây ạ!
+Dialogue: 0,0:00:23.60,0:00:24.44,Default,,0,0,0,,Ngon quá!
+Dialogue: 0,0:00:24.52,0:00:26.86,Default,,0,0,0,,Cái gì đây?\NChưa ăn thứ gì ngon thế này bao giờ!
+Dialogue: 0,0:00:26.98,0:00:30.03,Default,,0,0,0,,Sẽ không tìm được quán nào như thế này\Ntrên đảo Hinoshima đâu.
+Dialogue: 0,0:00:30.40,0:00:31.69,Default,,0,0,0,,Ngon quá đi mất!
+Dialogue: 0,0:00:36.03,0:00:39.08,Default,,0,0,0,,Thịt như tan chảy trong miệng luôn!
+Dialogue: 0,0:00:40.58,0:00:45.21,Default,,0,0,0,,Quý khách quá khen.\NChưa từng thấy vị khách nào trông hạnh phúc đến vậy.
+Dialogue: 0,0:00:45.96,0:00:47.79,Default,,0,0,0,,Tặng thêm chút thịt này, quán mời nhé.
+Dialogue: 0,0:00:50.09,0:00:54.72,Default,,0,0,0,,{\i1}Khóc nức nở suốt trên phà.{\i0}\N{\i1}Thật tốt khi cuối cùng cũng chịu cười.{\i0}
+Dialogue: 0,0:02:28.06,0:02:30.81,Default,,0,0,0,,{\i1}Thành phố về đêm trông như\Nngập tràn ánh sáng vậy.{\i0}
+Dialogue: 0,0:02:32.02,0:02:35.78,Default,,0,0,0,,{\i1}Chỉ riêng khu trung tâm đã đông người hơn{\i0}\N{\i1}toàn bộ dân số trên đảo rồi.{\i0}
+Dialogue: 0,0:02:36.57,0:02:37.90,Default,,0,0,0,,{\i1}Và cả hệ thống giao thông nữa...{\i0}
+Dialogue: 0,0:02:38.70,0:02:42.62,Default,,0,0,0,,{\i1}Tất cả hẳn đều rất mới mẻ{\i0}\N{\i1}và thú vị với Tonbo.{\i0}
+Dialogue: 0,0:02:43.28,0:02:47.25,Default,,0,0,0,,Trước đây từng đến Kagoshima\Nđể trám răng sâu một lần rồi nhỉ?
+Dialogue: 0,0:02:48.04,0:02:48.96,Default,,0,0,0,,Lúc đó,
+Dialogue: 0,0:02:49.04,0:02:52.84,Default,,0,0,0,,chỉ biết đứng nép sau lưng ông Gon\Nvà chẳng màng để ý xung quanh.
+Dialogue: 0,0:02:58.55,0:03:00.88,Default,,0,0,0,,Đây là tàu siêu tốc sao? Dài quá!
+Dialogue: 0,0:03:02.09,0:03:06.39,Default,,0,0,0,,{\i1}Đây là ga Kumamoto.{\i0}\N{\i1}Cảm ơn quý khách đã sử dụng tàu siêu tốc.{\i0}
+Dialogue: 0,0:03:07.06,0:03:09.60,Default,,0,0,0,,{\i1}Xin chú ý bước chân khi xuống tàu.{\i0}
+Dialogue: 0,0:03:10.89,0:03:14.27,Default,,0,0,0,,Udo-san điều hành một sân tập golf nhỉ?
+Dialogue: 0,0:03:14.40,0:03:15.23,Default,,0,0,0,,Đúng vậy.
+Dialogue: 0,0:03:15.32,0:03:18.61,Default,,0,0,0,,Ông ấy đã cho tập nhờ rất nhiều\Nhồi còn làm tay golf chuyên nghiệp.
+Dialogue: 0,0:03:19.95,0:03:20.90,Default,,0,0,0,,Họ là người như thế nào?
+Dialogue: 0,0:03:20.99,0:03:22.78,Default,,0,0,0,,Chà, nói sao đây nhỉ?
+Dialogue: 0,0:03:23.53,0:03:26.08,Default,,0,0,0,,Người mẹ thì ăn nói hơi thô lỗ,\Nnhưng rất mạnh mẽ.
+Dialogue: 0,0:03:26.20,0:03:30.79,Default,,0,0,0,,Người bố thì rất nhiệt huyết\Nđã nuôi dạy các con thành tay golf chuyên nghiệp.
+Dialogue: 0,0:03:31.00,0:03:33.25,Default,,0,0,0,,Họ là một gia đình sôi nổi. Gặp rồi sẽ biết thôi.
+Dialogue: 0,0:03:36.17,0:03:39.80,Default,,0,0,0,,Giờ này rồi mà vẫn còn sáng rực!
+Dialogue: 0,0:03:42.59,0:03:45.10,Default,,0,0,0,,Vậy ra đây là nơi mình sẽ tập luyện.
+Dialogue: 0,0:03:45.68,0:03:47.06,Default,,0,0,0,,Đi thôi.
+Dialogue: 0,0:03:54.10,0:03:55.15,Default,,0,0,0,,Đến rồi à.
+Dialogue: 0,0:03:55.40,0:03:56.40,Default,,0,0,0,,Xin lỗi vì đến trễ nhé.
+Dialogue: 0,0:03:56.98,0:03:58.23,Default,,0,0,0,,Là nhóc này sao?
+Dialogue: 0,0:03:58.40,0:03:59.48,Default,,0,0,0,,Là Oi Tonbo ạ.
+Dialogue: 0,0:03:59.65,0:04:01.45,Default,,0,0,0,,Rất mong được giúp đỡ ạ.
+Dialogue: 0,0:04:03.70,0:04:07.16,Default,,0,0,0,,Vậy ra đó là ánh mắt của người\Nchỉ lớn lên bằng việc ngắm nhìn đường chân trời sao?
+Dialogue: 0,0:04:07.33,0:04:09.12,Default,,0,0,0,,Cũng không tệ.
+Dialogue: 0,0:04:09.41,0:04:11.50,Default,,0,0,0,,Túi gậy đâu rồi?
+Dialogue: 0,0:04:12.21,0:04:13.33,Default,,0,0,0,,Chỉ có chừng này thôi ạ.
+Dialogue: 0,0:04:13.50,0:04:15.92,Default,,0,0,0,,-Gì cơ? Chỉ có bốn gậy thôi á?\N-Hả?
+Dialogue: 0,0:04:16.17,0:04:17.04,Default,,0,0,0,,Đúng vậy.
+Dialogue: 0,0:04:19.30,0:04:21.26,Default,,0,0,0,,Chắc là đang nóng lòng muốn chơi lắm rồi nhỉ.
+Dialogue: 0,0:04:24.38,0:04:27.01,Default,,0,0,0,,Giờ này mọi người trên đảo\Nchắc đều đi ngủ hết rồi,
+Dialogue: 0,0:04:27.30,0:04:29.43,Default,,0,0,0,,nhưng mọi người ở đây vẫn đang tập golf!
+Dialogue: 0,0:04:30.31,0:04:32.23,Default,,0,0,0,,Đang tập luyện để lên chuyên nghiệp sao ạ?
+Dialogue: 0,0:04:34.31,0:04:35.35,Default,,0,0,0,,Ai biết được nhỉ?
+Dialogue: 0,0:04:35.60,0:04:36.90,Default,,0,0,0,,Igarashi-san!
+Dialogue: 0,0:04:37.44,0:04:38.36,Default,,0,0,0,,Lâu rồi không gặp!
+Dialogue: 0,0:04:38.57,0:04:39.98,Default,,0,0,0,,Chào, Hajime.
+Dialogue: 0,0:04:40.69,0:04:41.86,Default,,0,0,0,,Đây là con trai của họ.
+Dialogue: 0,0:04:42.19,0:04:44.20,Default,,0,0,0,,Là huấn luyện viên ở đây đấy.
+Dialogue: 0,0:04:44.45,0:04:45.74,Default,,0,0,0,,Vậy ra là Tonbo à?
+Dialogue: 0,0:04:46.07,0:04:47.41,Default,,0,0,0,,Rất vui được gặp nhé.
+Dialogue: 0,0:04:48.08,0:04:49.49,Default,,0,0,0,,Rất vui được gặp ạ.
+Dialogue: 0,0:04:52.87,0:04:54.25,Default,,0,0,0,,Cú đánh đẹp quá!
+Dialogue: 0,0:04:54.67,0:04:55.58,Default,,0,0,0,,Để xem trình độ thế nào nào.
+Dialogue: 0,0:04:56.38,0:04:57.21,Default,,0,0,0,,{\i1}Gậy driver sao?{\i0}
+Dialogue: 0,0:04:57.29,0:05:00.05,Default,,0,0,0,,Igarashi đã rất háo hức muốn đưa tới đây.
+Dialogue: 0,0:05:00.38,0:05:02.05,Default,,0,0,0,,Chắc hẳn phải có chút tài năng.
+Dialogue: 0,0:05:02.38,0:05:05.93,Default,,0,0,0,,Nhưng mà, không thể chắc chắn\Ncho đến khi tận mắt chứng kiến được.
+Dialogue: 0,0:05:07.64,0:05:09.43,Default,,0,0,0,,Nếu không có kỹ năng,
+Dialogue: 0,0:05:09.76,0:05:12.68,Default,,0,0,0,,thì đành phải quên chuyện thu nhận đi thôi.
+Dialogue: 0,0:05:13.77,0:05:15.77,Default,,0,0,0,,Udo-san, đợi một chút đã!
+Dialogue: 0,0:05:18.48,0:05:19.31,Default,,0,0,0,,Vâng ạ!
+Dialogue: 0,0:05:21.07,0:05:22.86,Default,,0,0,0,,To quá! Lại còn dài nữa!
+Dialogue: 0,0:05:27.11,0:05:28.53,Default,,0,0,0,,Trông như cỏ thật vậy!
+Dialogue: 0,0:05:29.12,0:05:30.91,Default,,0,0,0,,Nhưng cảm giác thì khác hoàn toàn!
+Dialogue: 0,0:05:34.20,0:05:37.46,Default,,0,0,0,,{\i1}Tonbo chưa từng đánh gậy driver bao giờ.{\i0}
+Dialogue: 0,0:05:41.63,0:05:43.26,Default,,0,0,0,,{\i1}Kiểu cầm gậy bóng chày sao?{\i0}
+Dialogue: 0,0:05:51.85,0:05:55.52,Default,,0,0,0,,Lần đầu tiên sử dụng\Ngậy sắt số 8 ở chỗ Kuta,
+Dialogue: 0,0:05:55.64,0:05:58.94,Default,,0,0,0,,đã nắm bắt được đặc điểm của nó\Nchỉ với một cú vung gậy nháp.
+Dialogue: 0,0:06:00.73,0:06:02.19,Default,,0,0,0,,Cảm ơn rất nhiều ạ.
+Dialogue: 0,0:06:06.28,0:06:08.20,Default,,0,0,0,,Là tự động sao? Tuyệt quá!
+Dialogue: 0,0:06:11.24,0:06:12.91,Default,,0,0,0,,Nên đánh bóng đi đâu đây ạ?
+Dialogue: 0,0:06:14.87,0:06:16.29,Default,,0,0,0,,Nên nhắm hướng nào ạ?
+Dialogue: 0,0:06:17.16,0:06:18.08,Default,,0,0,0,,Chà,
+Dialogue: 0,0:06:18.62,0:06:22.92,Default,,0,0,0,,thử nhắm thẳng vào\Ngiữa hai tháp thép kia xem sao?
+Dialogue: 0,0:06:24.00,0:06:25.17,Default,,0,0,0,,Và đánh kiểu bóng gì ạ?
+Dialogue: 0,0:06:25.59,0:06:27.09,Default,,0,0,0,,Kiểu gì ư?
+Dialogue: 0,0:06:27.63,0:06:30.76,Default,,0,0,0,,Từ đây đến đó ạ? Hay giống thế này hơn?
+Dialogue: 0,0:06:31.43,0:06:33.56,Default,,0,0,0,,Chà, một cú draw thì sao?
+Dialogue: 0,0:06:33.76,0:06:35.52,Default,,0,0,0,,Vâng ạ!
+Dialogue: 0,0:06:36.14,0:06:38.81,Default,,0,0,0,,{\i1}Khi được yêu cầu đánh thử một cú,{\i0}
+Dialogue: 0,0:06:38.89,0:06:42.48,Default,,0,0,0,,{\i1}hầu hết mọi người sẽ nhắm vào tee.{\i0}
+Dialogue: 0,0:06:42.56,0:06:47.53,Default,,0,0,0,,{\i1}Chưa từng bị hỏi về việc đánh\N{\i1}draw hay fade bao giờ.{\i0}
+Dialogue: 0,0:06:47.95,0:06:51.87,Default,,0,0,0,,{\i1}Vì đã thành thạo trò chơi{\i0}\N{\i1}trên sân thực tế thay vì sân tập,{\i0}
+Dialogue: 0,0:06:51.95,0:06:56.12,Default,,0,0,0,,{\i1}Tonbo chỉ biết cách{\i0}\N{\i1}thực hiện cú đánh dựa trên hướng đi.{\i0}
+Dialogue: 0,0:06:59.79,0:07:01.58,Default,,0,0,0,,Tư thế đứng kiểu gì vậy?
+Dialogue: 0,0:07:01.92,0:07:04.25,Default,,0,0,0,,Có phải đang nhầm với cú fade không?
+Dialogue: 0,0:07:04.96,0:07:05.80,Default,,0,0,0,,{\i1}Không.{\i0}
+Dialogue: 0,0:07:06.59,0:07:08.59,Default,,0,0,0,,{\i1}Với quả bóng nằm hơi lệch vào trong,{\i0}
+Dialogue: 0,0:07:08.92,0:07:12.76,Default,,0,0,0,,{\i1}vai trái hơi nhô cao{\i0}\N{\i1}và tay đưa ra trước khi setup,{\i0}
+Dialogue: 0,0:07:12.97,0:07:16.97,Default,,0,0,0,,{\i1}phần thân trên đã sẵn sàng để đánh một cú draw.{\i0}
+Dialogue: 0,0:07:19.14,0:07:21.77,Default,,0,0,0,,{\i1}Bàn tay trái đã chuyển{\i0}\N{\i1}sang vị trí đóng.{\i0}
+Dialogue: 0,0:07:23.15,0:07:25.32,Default,,0,0,0,,{\i1}Vòng swing thật khó tin.{\i0}
+Dialogue: 0,0:07:34.37,0:07:35.62,Default,,0,0,0,,Tiếp tục đi.
+Dialogue: 0,0:07:43.46,0:07:46.75,Default,,0,0,0,,Âm thanh khi đánh nghe hay đấy!
+Dialogue: 0,0:07:47.09,0:07:49.38,Default,,0,0,0,,Nhưng lần nào cũng bị slice.
+Dialogue: 0,0:07:50.01,0:07:51.38,Default,,0,0,0,,Có chắc về chuyện này không vậy?
+Dialogue: 0,0:07:51.47,0:07:53.26,Default,,0,0,0,,Nhận chăm sóc một đứa trẻ thế này.
+Dialogue: 0,0:07:56.01,0:07:58.35,Default,,0,0,0,,{\i1}Tất cả gậy của Tonbo đều là đồ cũ.{\i0}
+Dialogue: 0,0:07:58.56,0:08:02.44,Default,,0,0,0,,{\i1}Ngay cả trong số những gậy driver mới nhất,{\i0}\N{\i1}cây này vẫn nổi bật nhờ độ dài{\i0}
+Dialogue: 0,0:08:02.56,0:08:04.19,Default,,0,0,0,,{\i1}và phần đầu gậy lớn.{\i0}
+Dialogue: 0,0:08:04.56,0:08:07.94,Default,,0,0,0,,{\i1}Do thể tích khổng lồ{\i0}\N{\i1}ở phần đầu trục gậy,{\i0}
+Dialogue: 0,0:08:08.07,0:08:10.90,Default,,0,0,0,,{\i1}sẽ tạo ra một lực cản đáng kể{\i0}\N{\i1}khi cố mở mặt gậy.{\i0}
+Dialogue: 0,0:08:11.03,0:08:13.78,Default,,0,0,0,,{\i1}Hiệu ứng này càng tăng mạnh hơn{\i0}\N{\i1}khi vung gậy.{\i0}
+Dialogue: 0,0:08:15.49,0:08:17.58,Default,,0,0,0,,Lại bị slice rồi.
+Dialogue: 0,0:08:17.83,0:08:20.91,Default,,0,0,0,,{\i1}Được thiết kế điêu luyện để giảm thiểu độ xoáy,{\i0}
+Dialogue: 0,0:08:21.08,0:08:24.92,Default,,0,0,0,,{\i1}cây gậy này đảm bảo dù đánh hỏng,{\i0}\N{\i1}bóng cũng không bị lệch quá nhiều.{\i0}
+Dialogue: 0,0:08:25.75,0:08:29.25,Default,,0,0,0,,{\i1}Với một người chơi như Tonbo,{\i0}\N{\i1}người cố tình làm cong đường bóng,{\i0}
+Dialogue: 0,0:08:29.42,0:08:30.71,Default,,0,0,0,,{\i1}đây là một cây gậy đầy thử thách.{\i0}
+Dialogue: 0,0:08:31.26,0:08:34.34,Default,,0,0,0,,Không ngờ gậy driver\Nlại khó dùng đến thế.
+Dialogue: 0,0:08:34.51,0:08:38.22,Default,,0,0,0,,Nghe cứ như thể\Nchưa từng đánh gậy driver bao giờ vậy.
+Dialogue: 0,0:08:38.39,0:08:42.02,Default,,0,0,0,,Đây là lần đầu tiên đến sân tập\Nvà cũng là lần đầu tiên dùng gậy driver đấy.
+Dialogue: 0,0:08:42.81,0:08:44.10,Default,,0,0,0,,Thật sao?
+Dialogue: 0,0:08:44.27,0:08:45.35,Default,,0,0,0,,Đủ rồi.
+Dialogue: 0,0:08:46.15,0:08:48.73,Default,,0,0,0,,Ngày mai sẽ cho thử lại.
+Dialogue: 0,0:08:49.44,0:08:51.32,Default,,0,0,0,,Vâng ạ.
+Dialogue: 0,0:08:55.16,0:08:56.70,Default,,0,0,0,,Đây sẽ là phòng ngủ nhé.
+Dialogue: 0,0:09:01.16,0:09:02.58,Default,,0,0,0,,Cũng muộn rồi.
+Dialogue: 0,0:09:02.91,0:09:04.58,Default,,0,0,0,,Ngủ một giấc đi nhé?
+Dialogue: 0,0:09:05.54,0:09:07.13,Default,,0,0,0,,Cảm ơn rất nhiều ạ.
+Dialogue: 0,0:09:16.18,0:09:17.93,Default,,0,0,0,,Thật sao? Vậy,
+Dialogue: 0,0:09:18.05,0:09:19.81,Default,,0,0,0,,khi nào sẽ quay lại đảo?
+Dialogue: 0,0:09:20.06,0:09:23.02,Default,,0,0,0,,Chuyến phà tiếp theo đến Tokara\Nlà vào ngày mốt.
 Dialogue: 0,0:09:23.27,0:09:24.10,Default,,0,0,0,,Hajime.
-Dialogue: 0,0:09:24.18,0:09:25.85,Default,,0,0,0,,What was your impression of the girl?
-Dialogue: 0,0:09:26.19,0:09:27.02,Default,,0,0,0,,Of Tonbo?
-Dialogue: 0,0:09:27.19,0:09:29.48,Default,,0,0,0,,It's true my father loves golf,
-Dialogue: 0,0:09:29.82,0:09:32.40,Default,,0,0,0,,but he doesn't know\Na thing about swinging.
-Dialogue: 0,0:09:32.86,0:09:37.99,Default,,0,0,0,,He raised his kids to be pro\Nwith passion more than theory.
-Dialogue: 0,0:09:38.91,0:09:39.91,Default,,0,0,0,,Mr. Igarashi.
-Dialogue: 0,0:09:40.20,0:09:43.50,Default,,0,0,0,,Did you make her practice\Nhitting low balls from a high tee?
-Dialogue: 0,0:09:43.62,0:09:44.96,Default,,0,0,0,,I'm curious.
-Dialogue: 0,0:09:46.37,0:09:50.13,Default,,0,0,0,,Tonbo's swing has a tendency\Nto either have horizontal head motion,
-Dialogue: 0,0:09:50.25,0:09:53.13,Default,,0,0,0,,or somewhat of a down swing.
-Dialogue: 0,0:09:53.26,0:09:56.80,Default,,0,0,0,,Her swing doesn't have a scooping motion.
+Dialogue: 0,0:09:24.18,0:09:25.85,Default,,0,0,0,,Thấy Tonbo thế nào?
+Dialogue: 0,0:09:26.19,0:09:27.02,Default,,0,0,0,,Tonbo sao?
+Dialogue: 0,0:09:27.19,0:09:29.48,Default,,0,0,0,,Đúng là bố rất yêu golf,
+Dialogue: 0,0:09:29.82,0:09:32.40,Default,,0,0,0,,nhưng ông ấy chẳng biết\Nmột chút gì về cách swing cả.
+Dialogue: 0,0:09:32.86,0:09:37.99,Default,,0,0,0,,Ông ấy nuôi dạy các con thành chuyên nghiệp\Nbằng đam mê nhiều hơn là lý thuyết.
+Dialogue: 0,0:09:38.91,0:09:39.91,Default,,0,0,0,,Igarashi-san.
+Dialogue: 0,0:09:40.20,0:09:43.50,Default,,0,0,0,,Có phải anh đã bắt con bé tập\Nđánh bóng thấp từ tee cao không?
+Dialogue: 0,0:09:43.62,0:09:44.96,Default,,0,0,0,,Chỉ tò mò thôi.
+Dialogue: 0,0:09:46.37,0:09:50.13,Default,,0,0,0,,Cú swing của Tonbo có xu hướng\Nchuyển động đầu gậy theo chiều ngang,
+Dialogue: 0,0:09:50.25,0:09:53.13,Default,,0,0,0,,hoặc hơi hướng xuống.
+Dialogue: 0,0:09:53.26,0:09:56.80,Default,,0,0,0,,Cú swing không có động tác xúc bóng.
 Dialogue: 0,0:09:58.30,0:09:59.14,Default,,0,0,0,,Hajime.
-Dialogue: 0,0:09:59.22,0:10:00.89,Default,,0,0,0,,I'm relieved you're here.
-Dialogue: 0,0:10:01.35,0:10:02.43,Default,,0,0,0,,Take care of Tonbo.
-Dialogue: 0,0:10:04.98,0:10:07.48,Default,,0,0,0,,{\i1}Tonbo must be so disappointed.{\i0}
-Dialogue: 0,0:10:08.85,0:10:10.23,Default,,0,0,0,,What is this?
-Dialogue: 0,0:10:10.65,0:10:13.53,Default,,0,0,0,,The mattress is so thick! This is so fun!
-Dialogue: 0,0:10:25.58,0:10:26.91,Default,,0,0,0,,This is delicious!
-Dialogue: 0,0:10:27.21,0:10:30.79,Default,,0,0,0,,It all looks incredible!
-Dialogue: 0,0:10:31.21,0:10:33.75,Default,,0,0,0,,So this is what a pancake looks like?
-Dialogue: 0,0:10:34.17,0:10:35.80,Default,,0,0,0,,Very good.
-Dialogue: 0,0:10:35.92,0:10:40.30,Default,,0,0,0,,Those who smile and savor delicious food,\Nand those who eat most will thrive.
-Dialogue: 0,0:10:41.22,0:10:42.26,Default,,0,0,0,,It's so good!
-Dialogue: 0,0:10:42.35,0:10:45.52,Default,,0,0,0,,Our driving range\Nis open to junior players.
-Dialogue: 0,0:10:45.85,0:10:48.81,Default,,0,0,0,,There's a group of youngsters\Naround the same age as you.
-Dialogue: 0,0:10:48.98,0:10:52.27,Default,,0,0,0,,I'll be taking them\Nto a nearby course this afternoon.
-Dialogue: 0,0:10:52.98,0:10:54.44,Default,,0,0,0,,They let us play nine holes
-Dialogue: 0,0:10:54.53,0:10:56.78,Default,,0,0,0,,after the usual players\Nare done for the day.
-Dialogue: 0,0:10:58.07,0:10:59.15,Default,,0,0,0,,A course?
-Dialogue: 0,0:10:59.32,0:11:02.62,Default,,0,0,0,,I hear you've never\Nbeen on a real course before.
-Dialogue: 0,0:11:02.95,0:11:04.24,Default,,0,0,0,,Mr. Igarashi told me.
-Dialogue: 0,0:11:05.20,0:11:06.54,Default,,0,0,0,,Wanna come with us?
-Dialogue: 0,0:11:06.83,0:11:08.16,Default,,0,0,0,,Yes, please!
-Dialogue: 0,0:11:14.34,0:11:17.05,Default,,0,0,0,,There are already so many people here.
-Dialogue: 0,0:11:19.22,0:11:21.01,Default,,0,0,0,,Who could have done this?
-Dialogue: 0,0:11:21.97,0:11:25.18,Default,,0,0,0,,There's no way\Nit was the men in this house.
-Dialogue: 0,0:11:42.82,0:11:47.08,Default,,0,0,0,,That's pretty impressive!\NAlternating between draws and fades.
-Dialogue: 0,0:11:47.58,0:11:49.04,Default,,0,0,0,,How about this one?
-Dialogue: 0,0:11:49.54,0:11:50.79,Default,,0,0,0,,Think you could give it a try?
-Dialogue: 0,0:11:52.08,0:11:53.75,Default,,0,0,0,,Is that a driver?
-Dialogue: 0,0:11:55.46,0:11:57.30,Default,,0,0,0,,Try a draw first, would you?
-Dialogue: 0,0:11:58.46,0:12:02.59,Default,,0,0,0,,{\i1}When I try to hit it like my three iron,{\i0}\N{\i1}I slice it every time.{\i0}
-Dialogue: 0,0:12:04.05,0:12:06.10,Default,,0,0,0,,{\i1}To hit a draw with this club,{\i0}
-Dialogue: 0,0:12:06.22,0:12:09.10,Default,,0,0,0,,{\i1}I'll have to make contact like this,{\i0}\N{\i1}and release like this.{\i0}
-Dialogue: 0,0:12:15.11,0:12:16.19,Default,,0,0,0,,Well done!
-Dialogue: 0,0:12:16.61,0:12:20.07,Default,,0,0,0,,{\i1}So she can hit a draw if she tries?{\i0}
-Dialogue: 0,0:12:20.61,0:12:25.62,Default,,0,0,0,,{\i1}So I really do have to have to aim{\i0}\N{\i1}for a strong hook to get it just right.{\i0}
-Dialogue: 0,0:12:25.74,0:12:29.83,Default,,0,0,0,,{\i1}It's so different from all my clubs.{\i0}\N{\i1}It feels so weird!{\i0}
-Dialogue: 0,0:12:35.08,0:12:37.54,Default,,0,0,0,,No good.
-Dialogue: 0,0:12:38.05,0:12:39.76,Default,,0,0,0,,{\i1}When the head is easy to rotate,{\i0}
-Dialogue: 0,0:12:39.88,0:12:43.59,Default,,0,0,0,,{\i1}you can move it during your swing{\i0}\N{\i1}and make better contact with the ball.{\i0}
-Dialogue: 0,0:12:44.09,0:12:49.10,Default,,0,0,0,,{\i1}The perfect driver for someone like Tonbo{\i0}\N{\i1}who uses the face to direct the ball.{\i0}
-Dialogue: 0,0:12:50.18,0:12:52.06,Default,,0,0,0,,Over here, everyone!
-Dialogue: 0,0:12:52.27,0:12:53.81,Default,,0,0,0,,Meet your new friend.
-Dialogue: 0,0:12:54.27,0:12:55.77,Default,,0,0,0,,From Tokara--
-Dialogue: 0,0:12:56.52,0:12:57.56,Default,,0,0,0,,I'm Tonbo Oi!
-Dialogue: 0,0:12:57.90,0:12:59.07,Default,,0,0,0,,It's a pleasure to meet y--
-Dialogue: 0,0:13:00.32,0:13:01.36,Default,,0,0,0,,Try this one!
-Dialogue: 0,0:13:02.49,0:13:04.57,Default,,0,0,0,,More drivers? Why?
-Dialogue: 0,0:13:05.20,0:13:06.62,Default,,0,0,0,,That's what the boss taught us.
-Dialogue: 0,0:13:06.74,0:13:07.78,Default,,0,0,0,,The boss?
-Dialogue: 0,0:13:07.87,0:13:08.95,Default,,0,0,0,,Mr. Udo, of course!
-Dialogue: 0,0:13:09.91,0:13:14.71,Default,,0,0,0,,It's normal to start with a wedge\Nand work your way up to longer clubs,
-Dialogue: 0,0:13:15.04,0:13:18.59,Default,,0,0,0,,but the boss always asks,\N"What's the first club you always use?"
-Dialogue: 0,0:13:18.67,0:13:19.84,Default,,0,0,0,,"Your driver!"
-Dialogue: 0,0:13:19.92,0:13:22.92,Default,,0,0,0,,That's why he starts\Nour practice with drivers.
-Dialogue: 0,0:13:23.05,0:13:27.59,Default,,0,0,0,,"To be a good golfer,\Nyou've got to change the way you think."
-Dialogue: 0,0:13:29.93,0:13:32.77,Default,,0,0,0,,Not bad, right? Sounds like him.
-Dialogue: 0,0:13:47.11,0:13:48.12,Default,,0,0,0,,{\i1}This one, too.{\i0}
-Dialogue: 0,0:13:53.95,0:13:55.58,Default,,0,0,0,,Thank you.
-Dialogue: 0,0:13:57.42,0:13:59.96,Default,,0,0,0,,{\i1}Kids are brutally honest{\i0}\N{\i1}when it comes to skill.{\i0}
-Dialogue: 0,0:14:00.13,0:14:02.84,Default,,0,0,0,,{\i1}Always judging who's better or worse,{\i0}
-Dialogue: 0,0:14:02.96,0:14:06.09,Default,,0,0,0,,{\i1}and openly dismissing{\i0}\N{\i1}anyone they consider inferior.{\i0}
-Dialogue: 0,0:14:06.26,0:14:08.01,Default,,0,0,0,,Alright!
-Dialogue: 0,0:14:09.14,0:14:11.93,Default,,0,0,0,,{\i1}But she isn't fazed at all.{\i0}
-Dialogue: 0,0:14:12.60,0:14:14.27,Default,,0,0,0,,{\i1}That's the stance. Alright!{\i0}
-Dialogue: 0,0:14:23.15,0:14:25.57,Default,,0,0,0,,The sakura have already fallen in Tokara,
-Dialogue: 0,0:14:26.15,0:14:28.70,Default,,0,0,0,,but here in Kumamoto\Nthey're in full bloom!
-Dialogue: 0,0:14:29.03,0:14:30.99,Default,,0,0,0,,Where's your carry bag?
-Dialogue: 0,0:14:31.83,0:14:34.29,Default,,0,0,0,,This is all my stuff right here.
-Dialogue: 0,0:14:34.95,0:14:35.83,Default,,0,0,0,,For real?
-Dialogue: 0,0:14:35.91,0:14:38.21,Default,,0,0,0,,How do you plan on playing the course?
+Dialogue: 0,0:09:59.22,0:10:00.89,Default,,0,0,0,,Thật nhẹ nhõm khi có cậu ở đây.
+Dialogue: 0,0:10:01.35,0:10:02.43,Default,,0,0,0,,Nhờ chăm sóc Tonbo nhé.
+Dialogue: 0,0:10:04.98,0:10:07.48,Default,,0,0,0,,{\i1}Tonbo chắc hẳn đang rất thất vọng.{\i0}
+Dialogue: 0,0:10:08.85,0:10:10.23,Default,,0,0,0,,Cái gì đây?
+Dialogue: 0,0:10:10.65,0:10:13.53,Default,,0,0,0,,Nệm dày quá! Vui thật đấy!
+Dialogue: 0,0:10:25.58,0:10:26.91,Default,,0,0,0,,Ngon quá!
+Dialogue: 0,0:10:27.21,0:10:30.79,Default,,0,0,0,,Trông tuyệt quá đi mất!
+Dialogue: 0,0:10:31.21,0:10:33.75,Default,,0,0,0,,Vậy ra đây là bánh pancake sao?
+Dialogue: 0,0:10:34.17,0:10:35.80,Default,,0,0,0,,Tốt lắm.
+Dialogue: 0,0:10:35.92,0:10:40.30,Default,,0,0,0,,Những ai biết mỉm cười thưởng thức đồ ăn ngon,\Nvà ăn thật nhiều thì sẽ phát triển tốt.
+Dialogue: 0,0:10:41.22,0:10:42.26,Default,,0,0,0,,Ngon quá đi mất!
+Dialogue: 0,0:10:42.35,0:10:45.52,Default,,0,0,0,,Sân tập của chúng ta\Nmở cửa cho người chơi trẻ tuổi.
+Dialogue: 0,0:10:45.85,0:10:48.81,Default,,0,0,0,,Có một nhóm các bạn trẻ\Ntrạc tuổi cháu đấy.
+Dialogue: 0,0:10:48.98,0:10:52.27,Default,,0,0,0,,Chiều nay sẽ dẫn bọn trẻ\Nđến một sân golf gần đây.
+Dialogue: 0,0:10:52.98,0:10:54.44,Default,,0,0,0,,Họ cho phép chơi chín lỗ
+Dialogue: 0,0:10:54.53,0:10:56.78,Default,,0,0,0,,sau khi những người chơi bình thường\Nđã chơi xong trong ngày.
+Dialogue: 0,0:10:58.07,0:10:59.15,Default,,0,0,0,,Sân golf sao?
+Dialogue: 0,0:10:59.32,0:11:02.62,Default,,0,0,0,,Nghe nói cháu chưa từng\Nchơi trên sân thực tế bao giờ.
+Dialogue: 0,0:11:02.95,0:11:04.24,Default,,0,0,0,,Igarashi-san đã kể lại rồi.
+Dialogue: 0,0:11:05.20,0:11:06.54,Default,,0,0,0,,Có muốn đi cùng không?
+Dialogue: 0,0:11:06.83,0:11:08.16,Default,,0,0,0,,Vâng ạ!
+Dialogue: 0,0:11:14.34,0:11:17.05,Default,,0,0,0,,Đã có đông người ở đây rồi.
+Dialogue: 0,0:11:19.22,0:11:21.01,Default,,0,0,0,,Ai có thể làm ra chuyện này được nhỉ?
+Dialogue: 0,0:11:21.97,0:11:25.18,Default,,0,0,0,,Chắc chắn không phải là\Nđàn ông trong cái nhà này rồi.
+Dialogue: 0,0:11:42.82,0:11:47.08,Default,,0,0,0,,Khá ấn tượng đấy!\NThay đổi luân phiên giữa draw và fade.
+Dialogue: 0,0:11:47.58,0:11:49.04,Default,,0,0,0,,Thế còn cây này thì sao?
+Dialogue: 0,0:11:49.54,0:11:50.79,Default,,0,0,0,,Nghĩ là có thể thử một chút không?
+Dialogue: 0,0:11:52.08,0:11:53.75,Default,,0,0,0,,Đó là gậy driver sao?
+Dialogue: 0,0:11:55.46,0:11:57.30,Default,,0,0,0,,Thử đánh một cú draw trước xem nào?
+Dialogue: 0,0:11:58.46,0:12:02.59,Default,,0,0,0,,{\i1}Khi cố đánh giống như gậy sắt số 3,{\i0}\N{\i1}lần nào cũng bị slice.{\i0}
+Dialogue: 0,0:12:04.05,0:12:06.10,Default,,0,0,0,,{\i1}Để đánh draw bằng cây gậy này,{\i0}
+Dialogue: 0,0:12:06.22,0:12:09.10,Default,,0,0,0,,{\i1}sẽ phải tiếp xúc bóng thế này,{\i0}\N{\i1}và thả gậy thế này.{\i0}
+Dialogue: 0,0:12:15.11,0:12:16.19,Default,,0,0,0,,Làm tốt lắm!
+Dialogue: 0,0:12:16.61,0:12:20.07,Default,,0,0,0,,{\i1}Vậy là con bé có thể đánh draw nếu cố gắng sao?{\i0}
+Dialogue: 0,0:12:20.61,0:12:25.62,Default,,0,0,0,,{\i1}Vậy ra thực sự phải nhắm{\i0}\N{\i1}đánh hook thật mạnh thì mới chuẩn được.{\i0}
+Dialogue: 0,0:12:25.74,0:12:29.83,Default,,0,0,0,,{\i1}Khác biệt hoàn toàn so với mọi cây gậy trước đây.{\i0}\N{\i1}Cảm giác lạ quá!{\i0}
+Dialogue: 0,0:12:35.08,0:12:37.54,Default,,0,0,0,,Không ổn rồi.
+Dialogue: 0,0:12:38.05,0:12:39.76,Default,,0,0,0,,{\i1}Khi đầu gậy dễ xoay,{\i0}
+Dialogue: 0,0:12:39.88,0:12:43.59,Default,,0,0,0,,{\i1}có thể di chuyển nó trong lúc swing{\i0}\N{\i1}và tiếp xúc bóng tốt hơn.{\i0}
+Dialogue: 0,0:12:44.09,0:12:49.10,Default,,0,0,0,,{\i1}Cây gậy driver hoàn hảo cho người như Tonbo{\i0}\N{\i1}vốn dùng mặt gậy để điều hướng bóng.{\i0}
+Dialogue: 0,0:12:50.18,0:12:52.06,Default,,0,0,0,,Mọi người lại đây nào!
+Dialogue: 0,0:12:52.27,0:12:53.81,Default,,0,0,0,,Làm quen với bạn mới đi.
+Dialogue: 0,0:12:54.27,0:12:55.77,Default,,0,0,0,,Đến từ Tokara--
+Dialogue: 0,0:12:56.52,0:12:57.56,Default,,0,0,0,,Là Oi Tonbo ạ!
+Dialogue: 0,0:12:57.90,0:12:59.07,Default,,0,0,0,,Rất vui được gặp mọ--
+Dialogue: 0,0:13:00.32,0:13:01.36,Default,,0,0,0,,Thử cây này đi!
+Dialogue: 0,0:13:02.49,0:13:04.57,Default,,0,0,0,,Lại gậy driver nữa sao? Tại sao vậy?
+Dialogue: 0,0:13:05.20,0:13:06.62,Default,,0,0,0,,Đó là những gì ông chủ dạy đấy.
+Dialogue: 0,0:13:06.74,0:13:07.78,Default,,0,0,0,,Ông chủ sao?
+Dialogue: 0,0:13:07.87,0:13:08.95,Default,,0,0,0,,Tất nhiên là Udo-san rồi!
+Dialogue: 0,0:13:09.91,0:13:14.71,Default,,0,0,0,,Bình thường sẽ bắt đầu với gậy wedge\Nvà chuyển dần sang các gậy dài hơn,
+Dialogue: 0,0:13:15.04,0:13:18.59,Default,,0,0,0,,nhưng ông chủ luôn hỏi,\N"Cây gậy đầu tiên luôn dùng là gì?"
+Dialogue: 0,0:13:18.67,0:13:19.84,Default,,0,0,0,,"Là gậy driver!"
+Dialogue: 0,0:13:19.92,0:13:22.92,Default,,0,0,0,,Đó là lý do bọn này bắt đầu\Nbuổi tập bằng gậy driver.
+Dialogue: 0,0:13:23.05,0:13:27.59,Default,,0,0,0,,"Để trở thành tay golf giỏi,\Nphải thay đổi cách tư duy."
+Dialogue: 0,0:13:29.93,0:13:32.77,Default,,0,0,0,,Không tệ nhỉ? Nghe giống phong cách của ông ấy đấy.
+Dialogue: 0,0:13:47.11,0:13:48.12,Default,,0,0,0,,{\i1}Cả cây này nữa.{\i0}
+Dialogue: 0,0:13:53.95,0:13:55.58,Default,,0,0,0,,Cảm ơn nhé.
+Dialogue: 0,0:13:57.42,0:13:59.96,Default,,0,0,0,,{\i1}Trẻ con cực kỳ thành thật{\i0}\N{\i1}khi đánh giá kỹ năng.{\i0}
+Dialogue: 0,0:14:00.13,0:14:02.84,Default,,0,0,0,,{\i1}Luôn phán xét xem ai giỏi hơn hay kém hơn,{\i0}
+Dialogue: 0,0:14:02.96,0:14:06.09,Default,,0,0,0,,{\i1}và công khai gạt bỏ{\i0}\N{\i1}bất kỳ ai mà chúng coi là kém cỏi.{\i0}
+Dialogue: 0,0:14:06.26,0:14:08.01,Default,,0,0,0,,Được rồi!
+Dialogue: 0,0:14:09.14,0:14:11.93,Default,,0,0,0,,{\i1}Nhưng con bé không hề nao núng chút nào.{\i0}
+Dialogue: 0,0:14:12.60,0:14:14.27,Default,,0,0,0,,{\i1}Tư thế đó. Được rồi!{\i0}
+Dialogue: 0,0:14:23.15,0:14:25.57,Default,,0,0,0,,Hoa anh đào ở Tokara đã rụng hết rồi,
+Dialogue: 0,0:14:26.15,0:14:28.70,Default,,0,0,0,,nhưng ở Kumamoto\Nthì đang nở rộ!
+Dialogue: 0,0:14:29.03,0:14:30.99,Default,,0,0,0,,Túi gậy đâu rồi?
+Dialogue: 0,0:14:31.83,0:14:34.29,Default,,0,0,0,,Chỉ có chừng này đồ thôi.
+Dialogue: 0,0:14:34.95,0:14:35.83,Default,,0,0,0,,Thật á?
+Dialogue: 0,0:14:35.91,0:14:38.21,Default,,0,0,0,,Định chơi trên sân kiểu gì vậy?
 Dialogue: 0,0:14:46.30,0:14:47.38,Default,,0,0,0,,Hinoki!
 Dialogue: 0,0:15:00.19,0:15:01.06,Default,,0,0,0,,Hinoki.
-Dialogue: 0,0:15:01.61,0:15:05.07,Default,,0,0,0,,Don't forget what I told you\Nabout keeping your hands near your body.
-Dialogue: 0,0:15:05.32,0:15:07.74,Default,,0,0,0,,I don't want you\Ngetting more than one over today.
-Dialogue: 0,0:15:07.82,0:15:08.74,Default,,0,0,0,,Got it?
-Dialogue: 0,0:15:09.32,0:15:10.28,Default,,0,0,0,,Yes, sir.
-Dialogue: 0,0:15:10.45,0:15:13.49,Default,,0,0,0,,Adaniya Tsubura will be\Nstarting high school this spring.
-Dialogue: 0,0:15:13.83,0:15:16.62,Default,,0,0,0,,We can't let a freshman\Ntake the Kyuushuu Junior title.
-Dialogue: 0,0:15:16.95,0:15:18.04,Default,,0,0,0,,Yes, sir.
-Dialogue: 0,0:15:18.21,0:15:20.75,Default,,0,0,0,,Tsubura sure is famous!
-Dialogue: 0,0:15:21.79,0:15:23.04,Default,,0,0,0,,Hello, Hinoki!
-Dialogue: 0,0:15:23.50,0:15:24.50,Default,,0,0,0,,Hello.
-Dialogue: 0,0:15:24.63,0:15:26.92,Default,,0,0,0,,Your outfit is so cute, Hinoki!
-Dialogue: 0,0:15:27.21,0:15:28.22,Default,,0,0,0,,Thank you.
-Dialogue: 0,0:15:28.72,0:15:30.30,Default,,0,0,0,,I've never seen you before.
-Dialogue: 0,0:15:31.09,0:15:31.97,Default,,0,0,0,,Yes, right.
-Dialogue: 0,0:15:32.47,0:15:33.39,Default,,0,0,0,,I'm Hinoki Otoha.
-Dialogue: 0,0:15:33.72,0:15:34.76,Default,,0,0,0,,A sophomore in high school.
-Dialogue: 0,0:15:35.10,0:15:35.93,Default,,0,0,0,,Nice to meet you.
-Dialogue: 0,0:15:36.27,0:15:37.14,Default,,0,0,0,,I'm Tonbo Oi.
-Dialogue: 0,0:15:37.35,0:15:38.39,Default,,0,0,0,,Last year,
-Dialogue: 0,0:15:38.73,0:15:41.65,Default,,0,0,0,,Hinoki won the Kyuushuu Junior Open!
-Dialogue: 0,0:15:41.90,0:15:44.48,Default,,0,0,0,,She's the best junior player\Nin the whole prefecture.
-Dialogue: 0,0:15:44.86,0:15:45.90,Default,,0,0,0,,Okay! Let's go!
-Dialogue: 0,0:15:46.28,0:15:48.44,Default,,0,0,0,,Let's go greet the caddy master.
-Dialogue: 0,0:15:48.57,0:15:50.11,Default,,0,0,0,,START ROOM
-Dialogue: 0,0:15:50.57,0:15:52.82,Default,,0,0,0,,Alright. Be sure to fix your divots.
-Dialogue: 0,0:15:53.12,0:15:54.53,Default,,0,0,0,,Yes, sir!
-Dialogue: 0,0:15:55.16,0:15:56.08,Default,,0,0,0,,S-sir!
-Dialogue: 0,0:15:56.24,0:15:57.20,Default,,0,0,0,,Hey, you.
-Dialogue: 0,0:15:57.37,0:15:58.25,Default,,0,0,0,,Where's your cap?
-Dialogue: 0,0:15:59.25,0:16:00.46,Default,,0,0,0,,I don't have one.
-Dialogue: 0,0:16:00.87,0:16:02.37,Default,,0,0,0,,She doesn't have one?
-Dialogue: 0,0:16:03.04,0:16:05.59,Default,,0,0,0,,Wearing a hat is proper manners.
-Dialogue: 0,0:16:05.75,0:16:06.67,Default,,0,0,0,,I didn't know that.
-Dialogue: 0,0:16:07.00,0:16:10.80,Default,,0,0,0,,I've never played golf\Nwith a hat on before.
-Dialogue: 0,0:16:11.13,0:16:12.76,Default,,0,0,0,,I have an extra one.
-Dialogue: 0,0:16:14.55,0:16:15.60,Default,,0,0,0,,You can keep it.
-Dialogue: 0,0:16:16.39,0:16:18.06,Default,,0,0,0,,You don't have to do that.
-Dialogue: 0,0:16:18.35,0:16:19.18,Default,,0,0,0,,It's fine.
-Dialogue: 0,0:16:19.27,0:16:20.43,Default,,0,0,0,,I have plenty of them.
-Dialogue: 0,0:16:20.89,0:16:22.69,Default,,0,0,0,,Thank you so much.
-Dialogue: 0,0:16:25.98,0:16:28.11,Default,,0,0,0,,So that's how you wear it!
-Dialogue: 0,0:16:30.19,0:16:32.49,Default,,0,0,0,,What a beautiful green!
-Dialogue: 0,0:16:37.45,0:16:38.58,Default,,0,0,0,,Look at her!
-Dialogue: 0,0:16:39.87,0:16:40.87,Default,,0,0,0,,What's wrong?
-Dialogue: 0,0:16:42.04,0:16:45.21,Default,,0,0,0,,Maybe I should give you my visor instead.
-Dialogue: 0,0:16:46.04,0:16:47.21,Default,,0,0,0,,Thanks.
-Dialogue: 0,0:16:47.92,0:16:50.21,Default,,0,0,0,,Alright! Let's start!
-Dialogue: 0,0:16:56.55,0:16:58.22,Default,,0,0,0,,Wow!
-Dialogue: 0,0:16:58.64,0:17:00.06,Default,,0,0,0,,It's huge! And green!
-Dialogue: 0,0:17:00.14,0:17:01.27,Default,,0,0,0,,And beautiful!
-Dialogue: 0,0:17:01.35,0:17:02.18,Default,,0,0,0,,Alright!
-Dialogue: 0,0:17:02.27,0:17:03.52,Default,,0,0,0,,Let's start in order!
-Dialogue: 0,0:17:05.52,0:17:06.56,Default,,0,0,0,,This isn't good.
-Dialogue: 0,0:17:10.15,0:17:12.07,Default,,0,0,0,,The wind carried the ball away.
-Dialogue: 0,0:17:16.91,0:17:18.58,Default,,0,0,0,,It's really blowing out there.
-Dialogue: 0,0:17:19.79,0:17:21.54,Default,,0,0,0,,A gentle breeze.
-Dialogue: 0,0:17:25.92,0:17:29.13,Default,,0,0,0,,I don't want you\Ngetting more than one over today.
-Dialogue: 0,0:17:41.10,0:17:42.27,Default,,0,0,0,,Nice shot!
-Dialogue: 0,0:17:46.14,0:17:47.31,Default,,0,0,0,,Way to go, Hinoki!
-Dialogue: 0,0:17:48.02,0:17:50.15,Default,,0,0,0,,Rather than trying to battle the wind,
-Dialogue: 0,0:17:50.65,0:17:51.69,Default,,0,0,0,,she hit it gently!
-Dialogue: 0,0:17:52.28,0:17:53.19,Default,,0,0,0,,Okay, Tonbo!
-Dialogue: 0,0:17:53.40,0:17:54.32,Default,,0,0,0,,It's your course debut!
-Dialogue: 0,0:17:55.24,0:17:56.11,Default,,0,0,0,,Okay!
-Dialogue: 0,0:17:56.41,0:17:57.32,Default,,0,0,0,,Her course debut?
-Dialogue: 0,0:17:57.66,0:17:59.45,Default,,0,0,0,,She's never played a course before?
-Dialogue: 0,0:17:59.99,0:18:02.29,Default,,0,0,0,,Everyone has to start somewhere.
+Dialogue: 0,0:15:01.61,0:15:05.07,Default,,0,0,0,,Đừng quên những gì đã dặn\Nvề việc giữ tay sát thân người đấy.
+Dialogue: 0,0:15:05.32,0:15:07.74,Default,,0,0,0,,Không muốn thấy\Nđánh quá 1 gậy (one over) hôm nay đâu.
+Dialogue: 0,0:15:07.82,0:15:08.74,Default,,0,0,0,,Hiểu chưa?
+Dialogue: 0,0:15:09.32,0:15:10.28,Default,,0,0,0,,Vâng ạ.
+Dialogue: 0,0:15:10.45,0:15:13.49,Default,,0,0,0,,Adaniya Tsubura sẽ\Nbắt đầu lên trung học vào mùa xuân này.
+Dialogue: 0,0:15:13.83,0:15:16.62,Default,,0,0,0,,Không thể để một học sinh năm nhất\Nlấy mất danh hiệu Kyuushuu Junior được.
+Dialogue: 0,0:15:16.95,0:15:18.04,Default,,0,0,0,,Vâng ạ.
+Dialogue: 0,0:15:18.21,0:15:20.75,Default,,0,0,0,,Tsubura đúng là nổi tiếng thật!
+Dialogue: 0,0:15:21.79,0:15:23.04,Default,,0,0,0,,Chào, Hinoki!
+Dialogue: 0,0:15:23.50,0:15:24.50,Default,,0,0,0,,Chào.
+Dialogue: 0,0:15:24.63,0:15:26.92,Default,,0,0,0,,Trang phục dễ thương quá, Hinoki!
+Dialogue: 0,0:15:27.21,0:15:28.22,Default,,0,0,0,,Cảm ơn nhé.
+Dialogue: 0,0:15:28.72,0:15:30.30,Default,,0,0,0,,Chưa gặp bao giờ nhỉ.
+Dialogue: 0,0:15:31.09,0:15:31.97,Default,,0,0,0,,Vâng ạ.
+Dialogue: 0,0:15:32.47,0:15:33.39,Default,,0,0,0,,Là Hinoki Otoha.
+Dialogue: 0,0:15:33.72,0:15:34.76,Default,,0,0,0,,Học sinh năm hai trung học.
+Dialogue: 0,0:15:35.10,0:15:35.93,Default,,0,0,0,,Rất vui được gặp.
+Dialogue: 0,0:15:36.27,0:15:37.14,Default,,0,0,0,,Là Oi Tonbo ạ.
+Dialogue: 0,0:15:37.35,0:15:38.39,Default,,0,0,0,,Năm ngoái,
+Dialogue: 0,0:15:38.73,0:15:41.65,Default,,0,0,0,,Hinoki đã vô địch giải Kyuushuu Junior Open đấy!
+Dialogue: 0,0:15:41.90,0:15:44.48,Default,,0,0,0,,Là tay golf trẻ xuất sắc nhất\Ntrong toàn tỉnh đấy.
+Dialogue: 0,0:15:44.86,0:15:45.90,Default,,0,0,0,,Được rồi! Đi thôi!
+Dialogue: 0,0:15:46.28,0:15:48.44,Default,,0,0,0,,Đi chào hỏi quản lý caddie nào.
+Dialogue: 0,0:15:48.57,0:15:50.11,Default,,0,0,0,,PHÒNG XUẤT PHÁT
+Dialogue: 0,0:15:50.57,0:15:52.82,Default,,0,0,0,,Được rồi. Nhớ lấp lại các vết divot đấy.
+Dialogue: 0,0:15:53.12,0:15:54.53,Default,,0,0,0,,Vâng ạ!
+Dialogue: 0,0:15:55.16,0:15:56.08,Default,,0,0,0,,Dạ!
+Dialogue: 0,0:15:56.24,0:15:57.20,Default,,0,0,0,,Này.
+Dialogue: 0,0:15:57.37,0:15:58.25,Default,,0,0,0,,Mũ đâu rồi?
+Dialogue: 0,0:15:59.25,0:16:00.46,Default,,0,0,0,,Không có ạ.
+Dialogue: 0,0:16:00.87,0:16:02.37,Default,,0,0,0,,Không có sao?
+Dialogue: 0,0:16:03.04,0:16:05.59,Default,,0,0,0,,Đội mũ là phép lịch sự cơ bản đấy.
+Dialogue: 0,0:16:05.75,0:16:06.67,Default,,0,0,0,,Không biết chuyện đó ạ.
+Dialogue: 0,0:16:07.00,0:16:10.80,Default,,0,0,0,,Chưa từng đội mũ\Nkhi chơi golf bao giờ.
+Dialogue: 0,0:16:11.13,0:16:12.76,Default,,0,0,0,,Vẫn còn dư một cái này.
+Dialogue: 0,0:16:14.55,0:16:15.60,Default,,0,0,0,,Cứ giữ lấy đi.
+Dialogue: 0,0:16:16.39,0:16:18.06,Default,,0,0,0,,Không cần phải làm vậy đâu.
+Dialogue: 0,0:16:18.35,0:16:19.18,Default,,0,0,0,,Không sao đâu.
+Dialogue: 0,0:16:19.27,0:16:20.43,Default,,0,0,0,,Vẫn còn nhiều lắm.
+Dialogue: 0,0:16:20.89,0:16:22.69,Default,,0,0,0,,Cảm ơn rất nhiều ạ.
+Dialogue: 0,0:16:25.98,0:16:28.11,Default,,0,0,0,,Vậy ra đây là cách đội sao!
+Dialogue: 0,0:16:30.19,0:16:32.49,Default,,0,0,0,,Khu vực green đẹp quá!
+Dialogue: 0,0:16:37.45,0:16:38.58,Default,,0,0,0,,Nhìn kìa!
+Dialogue: 0,0:16:39.87,0:16:40.87,Default,,0,0,0,,Có chuyện gì vậy?
+Dialogue: 0,0:16:42.04,0:16:45.21,Default,,0,0,0,,Có lẽ nên đưa cái mũ lưỡi trai này thay thế.
+Dialogue: 0,0:16:46.04,0:16:47.21,Default,,0,0,0,,Cảm ơn nhé.
+Dialogue: 0,0:16:47.92,0:16:50.21,Default,,0,0,0,,Được rồi! Bắt đầu thôi!
+Dialogue: 0,0:16:56.55,0:16:58.22,Default,,0,0,0,,Oa!
+Dialogue: 0,0:16:58.64,0:17:00.06,Default,,0,0,0,,Rộng quá! Lại còn xanh mướt nữa!
+Dialogue: 0,0:17:00.14,0:17:01.27,Default,,0,0,0,,Và thật đẹp!
+Dialogue: 0,0:17:01.35,0:17:02.18,Default,,0,0,0,,Được rồi!
+Dialogue: 0,0:17:02.27,0:17:03.52,Default,,0,0,0,,Hãy bắt đầu theo thứ tự nào!
+Dialogue: 0,0:17:05.52,0:17:06.56,Default,,0,0,0,,Không ổn rồi.
+Dialogue: 0,0:17:10.15,0:17:12.07,Default,,0,0,0,,Gió đã cuốn bóng đi mất.
+Dialogue: 0,0:17:16.91,0:17:18.58,Default,,0,0,0,,Ngoài kia gió thổi mạnh thật.
+Dialogue: 0,0:17:19.79,0:17:21.54,Default,,0,0,0,,Một cơn gió nhẹ.
+Dialogue: 0,0:17:25.92,0:17:29.13,Default,,0,0,0,,Không muốn thấy\Nđánh quá 1 gậy (one over) hôm nay đâu.
+Dialogue: 0,0:17:41.10,0:17:42.27,Default,,0,0,0,,Cú đánh đẹp quá!
+Dialogue: 0,0:17:46.14,0:17:47.31,Default,,0,0,0,,Tuyệt lắm, Hinoki!
+Dialogue: 0,0:17:48.02,0:17:50.15,Default,,0,0,0,,Thay vì cố gắng chống lại gió,
+Dialogue: 0,0:17:50.65,0:17:51.69,Default,,0,0,0,,đã đánh một cú thật nhẹ nhàng!
+Dialogue: 0,0:17:52.28,0:17:53.19,Default,,0,0,0,,Được rồi, Tonbo!
+Dialogue: 0,0:17:53.40,0:17:54.32,Default,,0,0,0,,Màn ra mắt trên sân thực tế đấy!
+Dialogue: 0,0:17:55.24,0:17:56.11,Default,,0,0,0,,Vâng ạ!
+Dialogue: 0,0:17:56.41,0:17:57.32,Default,,0,0,0,,Màn ra mắt trên sân sao?
+Dialogue: 0,0:17:57.66,0:17:59.45,Default,,0,0,0,,Chưa từng chơi trên sân thực tế bao giờ à?
+Dialogue: 0,0:17:59.99,0:18:02.29,Default,,0,0,0,,Ai cũng phải có lúc bắt đầu mà.
 Dialogue: 0,0:18:03.87,0:18:05.54,Default,,0,0,0,,{\i1}Poi!{\i0}
-Dialogue: 0,0:18:05.79,0:18:07.00,Default,,0,0,0,,What's she doing?
-Dialogue: 0,0:18:07.29,0:18:08.63,Default,,0,0,0,,Isn't she going to tee up?
-Dialogue: 0,0:18:13.42,0:18:14.46,Default,,0,0,0,,She's using a three iron?
-Dialogue: 0,0:18:14.67,0:18:16.26,Default,,0,0,0,,There's no way she can hit it like that!
-Dialogue: 0,0:18:20.43,0:18:21.76,Default,,0,0,0,,There it is.
-Dialogue: 0,0:18:25.14,0:18:27.64,Default,,0,0,0,,She's pushing the ball\Ninto the ground? Why?
-Dialogue: 0,0:18:28.40,0:18:30.69,Default,,0,0,0,,Hitting a three iron will be hard enough.
-Dialogue: 0,0:18:31.11,0:18:33.11,Default,,0,0,0,,And now she's pushing the ball down?
-Dialogue: 0,0:18:38.61,0:18:40.41,Default,,0,0,0,,The left side is out of bounds.
-Dialogue: 0,0:18:40.74,0:18:43.04,Default,,0,0,0,,But her stance is totally pointed left!
-Dialogue: 0,0:18:43.49,0:18:45.83,Default,,0,0,0,,She's going to slice it\Nif she hits like that.
-Dialogue: 0,0:18:46.37,0:18:47.33,Default,,0,0,0,,{\i1}No...{\i0}
-Dialogue: 0,0:18:47.75,0:18:49.96,Default,,0,0,0,,Her shoulder line is closed.
-Dialogue: 0,0:18:50.13,0:18:53.96,Default,,0,0,0,,She's aiming for the right edge\Nof the fairway. Or even the rough.
-Dialogue: 0,0:18:54.17,0:18:56.30,Default,,0,0,0,,She's pointed at that sakura tree.
-Dialogue: 0,0:18:57.72,0:19:00.59,Default,,0,0,0,,{\i1}Both shoulders parallel to the horizon.{\i0}
-Dialogue: 0,0:19:01.09,0:19:04.39,Default,,0,0,0,,{\i1}If I can hit it out to that tree,{\i0}\N{\i1}I'll be protected from the wind.{\i0}
-Dialogue: 0,0:19:04.77,0:19:06.10,Default,,0,0,0,,Here I go!
-Dialogue: 0,0:19:12.23,0:19:13.65,Default,,0,0,0,,It's so low!
-Dialogue: 0,0:19:13.90,0:19:15.23,Default,,0,0,0,,The swallow maneuver!
-Dialogue: 0,0:19:21.07,0:19:22.87,Default,,0,0,0,,Keep rolling! Keep rolling!
-Dialogue: 0,0:19:26.08,0:19:26.91,Default,,0,0,0,,What?
-Dialogue: 0,0:19:27.00,0:19:29.54,Default,,0,0,0,,It doesn't roll\Nlike on the island course.
-Dialogue: 0,0:19:29.71,0:19:31.50,Default,,0,0,0,,How'd she make it roll like that?
-Dialogue: 0,0:19:31.63,0:19:33.71,Default,,0,0,0,,That's why she dug\Nthe ball into the ground.
-Dialogue: 0,0:19:33.79,0:19:34.63,Default,,0,0,0,,What?
-Dialogue: 0,0:19:34.80,0:19:36.84,Default,,0,0,0,,{\i1}By positioning the ball lower,{\i0}
-Dialogue: 0,0:19:36.96,0:19:40.47,Default,,0,0,0,,{\i1}grass gets between the club{\i0}\N{\i1}and ball on impact.{\i0}
-Dialogue: 0,0:19:40.72,0:19:43.35,Default,,0,0,0,,{\i1}This helps reduce some of the backspin.{\i0}
-Dialogue: 0,0:19:44.89,0:19:47.77,Default,,0,0,0,,{\i1}Is she really able to calculate that?{\i0}
-Dialogue: 0,0:19:48.68,0:19:51.60,Default,,0,0,0,,I thought she was going to\Ntop that shot for sure.
-Dialogue: 0,0:19:51.81,0:19:54.98,Default,,0,0,0,,A top shot\Nwouldn't make a divot, obviously.
-Dialogue: 0,0:19:56.15,0:20:00.65,Default,,0,0,0,,How did she hit her three iron\Nfarther than my drive?
-Dialogue: 0,0:20:01.07,0:20:03.12,Default,,0,0,0,,My ball is behind hers, too.
-Dialogue: 0,0:20:04.87,0:20:08.00,Default,,0,0,0,,{\i1}The wind is getting stronger.{\i0}\N{\i1}It's like the cherry winds!{\i0}
-Dialogue: 0,0:20:09.25,0:20:10.46,Default,,0,0,0,,The cherry winds?
-Dialogue: 0,0:20:10.54,0:20:14.08,Default,,0,0,0,,On this island, there's an east wind\Nthat blows during sakura season.
-Dialogue: 0,0:20:14.17,0:20:15.71,Default,,0,0,0,,We call it the "cherry wind"!
-Dialogue: 0,0:20:16.04,0:20:18.34,Default,,0,0,0,,No matter how hard it blows,
-Dialogue: 0,0:20:18.42,0:20:20.17,Default,,0,0,0,,it always feels so nice and smooth.
-Dialogue: 0,0:20:20.26,0:20:21.38,Default,,0,0,0,,I just love it!
-Dialogue: 0,0:20:22.01,0:20:23.89,Default,,0,0,0,,First Tokara and now Kumamoto.
-Dialogue: 0,0:20:23.97,0:20:26.39,Default,,0,0,0,,I get to experience it twice this year!
-Dialogue: 0,0:20:26.56,0:20:28.72,Default,,0,0,0,,How did you know these were east winds?
-Dialogue: 0,0:20:28.97,0:20:32.19,Default,,0,0,0,,It's your first time here.\NHow could you know the direction?
-Dialogue: 0,0:20:32.44,0:20:34.77,Default,,0,0,0,,Everyone knows that!
-Dialogue: 0,0:20:34.90,0:20:36.77,Default,,0,0,0,,The direction the sun comes up,
-Dialogue: 0,0:20:36.94,0:20:39.03,Default,,0,0,0,,even shadows on the ground!
-Dialogue: 0,0:20:39.74,0:20:41.49,Default,,0,0,0,,Anyone can do it?
-Dialogue: 0,0:20:41.82,0:20:45.95,Default,,0,0,0,,I have heard that golfers who are good\Nwith directions can also read the wind.
-Dialogue: 0,0:20:51.83,0:20:53.00,Default,,0,0,0,,It's an acorn.
-Dialogue: 0,0:20:53.46,0:20:55.50,Default,,0,0,0,,The ball might move if you pick it up.
-Dialogue: 0,0:20:56.00,0:20:58.55,Default,,0,0,0,,There's an acorn\Nright where my club will land.
-Dialogue: 0,0:20:59.25,0:21:01.67,Default,,0,0,0,,There's no telling\Nwhere the ball will go.
-Dialogue: 0,0:21:03.34,0:21:06.30,Default,,0,0,0,,There's a headwind.\NIt'll make the ball turn.
-Dialogue: 0,0:21:10.97,0:21:12.56,Default,,0,0,0,,I know what to do!
-Dialogue: 0,0:21:14.35,0:21:15.27,Default,,0,0,0,,A five wood?
-Dialogue: 0,0:21:15.35,0:21:16.77,Default,,0,0,0,,I've never seen one before.
-Dialogue: 0,0:21:17.23,0:21:19.15,Default,,0,0,0,,Just how old is that thing?
-Dialogue: 0,0:21:20.11,0:21:22.82,Default,,0,0,0,,{\i1}If I hit it like this,{\i0}\N{\i1}the acorn will get in the way.{\i0}
-Dialogue: 0,0:21:24.36,0:21:27.32,Default,,0,0,0,,{\i1}I should position the ball towards{\i0}\N{\i1}the toe of the club face,{\i0}
-Dialogue: 0,0:21:27.41,0:21:29.12,Default,,0,0,0,,{\i1}and just slightly cover it.{\i0}
-Dialogue: 0,0:21:29.33,0:21:30.29,Default,,0,0,0,,{\i1}Alright.{\i0}
-Dialogue: 0,0:21:30.70,0:21:34.08,Default,,0,0,0,,{\i1}Where is she aiming?{\i0}\N{\i1}What does she plan on doing?{\i0}
-Dialogue: 0,0:21:36.17,0:21:37.79,Default,,0,0,0,,{\i1}Here we go, Tsubura!{\i0}
-Dialogue: 0,0:21:49.89,0:21:50.81,Default,,0,0,0,,She's aiming for the tree?
-Dialogue: 0,0:21:51.39,0:21:52.81,Default,,0,0,0,,Make it over!
-Dialogue: 0,0:21:55.39,0:21:56.31,Default,,0,0,0,,It went over!
-Dialogue: 0,0:21:57.86,0:21:58.90,Default,,0,0,0,,Alright!
-Dialogue: 0,0:21:59.11,0:22:00.27,Default,,0,0,0,,Keep on rolling!
-Dialogue: 0,0:22:05.99,0:22:08.41,Default,,0,0,0,,Alright! This is too fun!
-Dialogue: 0,0:22:08.74,0:22:10.41,Default,,0,0,0,,What kind of golf is this?
-Dialogue: 0,0:22:11.87,0:22:12.87,Default,,0,0,0,,What the?
-Dialogue: 0,0:22:13.50,0:22:14.66,Default,,0,0,0,,How did she do that?
-Dialogue: 0,0:23:48.63,0:23:51.18,Default,,0,0,0,,{\i1}Igaiga, what's a "parting gift?"{\i0}
-Dialogue: 0,0:23:51.26,0:23:53.55,Default,,0,0,0,,{\i1}It's a present we give someone{\i0}\N{\i1}to see them off.{\i0}
-Dialogue: 0,0:23:53.64,0:23:55.06,Default,,0,0,0,,{\i1}See them off? I see.{\i0}
-Dialogue: 0,0:23:55.18,0:23:56.93,Default,,0,0,0,,{\i1}Do your best, Tonbo.{\i0}
-Dialogue: 0,0:23:57.43,0:23:58.81,Default,,0,0,0,,{\i1}On the next episode of {\i0}Tonbo!
-Dialogue: 0,0:23:59.10,0:24:00.56,Default,,0,0,0,,{\i1}"Igaiga's Parting Gift".{\i0}
+Dialogue: 0,0:18:05.79,0:18:07.00,Default,,0,0,0,,Đang làm gì vậy?
+Dialogue: 0,0:18:07.29,0:18:08.63,Default,,0,0,0,,Không định đặt bóng lên tee sao?
+Dialogue: 0,0:18:13.42,0:18:14.46,Default,,0,0,0,,Đang dùng gậy sắt số 3 kìa?
+Dialogue: 0,0:18:14.67,0:18:16.26,Default,,0,0,0,,Làm sao mà đánh được như thế chứ!
+Dialogue: 0,0:18:20.43,0:18:21.76,Default,,0,0,0,,Tới rồi.
+Dialogue: 0,0:18:25.14,0:18:27.64,Default,,0,0,0,,Đang ấn quả bóng\Nxuống đất sao? Tại sao chứ?
+Dialogue: 0,0:18:28.40,0:18:30.69,Default,,0,0,0,,Đánh gậy sắt số 3 đã đủ khó rồi.
+Dialogue: 0,0:18:31.11,0:18:33.11,Default,,0,0,0,,Giờ lại còn ấn quả bóng xuống nữa?
+Dialogue: 0,0:18:38.61,0:18:40.41,Default,,0,0,0,,Bên trái là ngoài biên.
+Dialogue: 0,0:18:40.74,0:18:43.04,Default,,0,0,0,,Nhưng tư thế đứng lại hoàn toàn hướng sang trái!
+Dialogue: 0,0:18:43.49,0:18:45.83,Default,,0,0,0,,Sẽ bị slice\Nnếu đánh như thế đấy.
+Dialogue: 0,0:18:46.37,0:18:47.33,Default,,0,0,0,,{\i1}Không...{\i0}
+Dialogue: 0,0:18:47.75,0:18:49.96,Default,,0,0,0,,Đường vai đang đóng.
+Dialogue: 0,0:18:50.13,0:18:53.96,Default,,0,0,0,,Đang nhắm vào mép phải\Ncủa fairway. Hay thậm chí là khu rough.
+Dialogue: 0,0:18:54.17,0:18:56.30,Default,,0,0,0,,Đang hướng về phía cây anh đào kia.
+Dialogue: 0,0:18:57.72,0:19:00.59,Default,,0,0,0,,{\i1}Hai vai song song với đường chân trời.{\i0}
+Dialogue: 0,0:19:01.09,0:19:04.39,Default,,0,0,0,,{\i1}Nếu có thể đánh ra chỗ cái cây đó,{\i0}\N{\i1}sẽ được che chắn khỏi gió.{\i0}
+Dialogue: 0,0:19:04.77,0:19:06.10,Default,,0,0,0,,Đi đây!
+Dialogue: 0,0:19:12.23,0:19:13.65,Default,,0,0,0,,Thấp quá!
+Dialogue: 0,0:19:13.90,0:19:15.23,Default,,0,0,0,,Chiêu chim én!
+Dialogue: 0,0:19:21.07,0:19:22.87,Default,,0,0,0,,Lăn tiếp đi! Lăn tiếp đi!
+Dialogue: 0,0:19:26.08,0:19:26.91,Default,,0,0,0,,Cái gì?
+Dialogue: 0,0:19:27.00,0:19:29.54,Default,,0,0,0,,Bóng không lăn\Nnhư trên sân ở đảo.
+Dialogue: 0,0:19:29.71,0:19:31.50,Default,,0,0,0,,Làm sao có thể khiến bóng lăn như vậy?
+Dialogue: 0,0:19:31.63,0:19:33.71,Default,,0,0,0,,Đó là lý do lại ấn\Nquả bóng xuống đất.
+Dialogue: 0,0:19:33.79,0:19:34.63,Default,,0,0,0,,Gì cơ?
+Dialogue: 0,0:19:34.80,0:19:36.84,Default,,0,0,0,,{\i1}Bằng cách đặt bóng thấp hơn,{\i0}
+Dialogue: 0,0:19:36.96,0:19:40.47,Default,,0,0,0,,{\i1}cỏ sẽ lọt vào giữa gậy{\i0}\N{\i1}và bóng khi tiếp xúc.{\i0}
+Dialogue: 0,0:19:40.72,0:19:43.35,Default,,0,0,0,,{\i1}Điều này giúp giảm bớt độ xoáy ngược.{\i0}
+Dialogue: 0,0:19:44.89,0:19:47.77,Default,,0,0,0,,{\i1}Thực sự có thể tính toán được đến mức đó sao?{\i0}
+Dialogue: 0,0:19:48.68,0:19:51.60,Default,,0,0,0,,Cứ tưởng chắc chắn\Nsẽ đánh trúng phần trên của bóng (top shot) rồi.
+Dialogue: 0,0:19:51.81,0:19:54.98,Default,,0,0,0,,Một cú top shot\Nhiển nhiên sẽ không tạo ra vết divot.
+Dialogue: 0,0:19:56.15,0:20:00.65,Default,,0,0,0,,Làm sao có thể đánh gậy sắt số 3\Nxa hơn cả cú drive của mình được?
+Dialogue: 0,0:20:01.07,0:20:03.12,Default,,0,0,0,,Bóng của mình cũng nằm sau bóng của con bé nữa.
+Dialogue: 0,0:20:04.87,0:20:08.00,Default,,0,0,0,,{\i1}Gió đang thổi mạnh hơn.{\i0}\N{\i1}Cứ như ngọn gió anh đào vậy!{\i0}
+Dialogue: 0,0:20:09.25,0:20:10.46,Default,,0,0,0,,Gió anh đào sao?
+Dialogue: 0,0:20:10.54,0:20:14.08,Default,,0,0,0,,Trên đảo, có một cơn gió đông\Nthổi vào mùa hoa anh đào.
+Dialogue: 0,0:20:14.17,0:20:15.71,Default,,0,0,0,,Mọi người gọi nó là "gió anh đào"!
+Dialogue: 0,0:20:16.04,0:20:18.34,Default,,0,0,0,,Dù thổi mạnh đến đâu,
+Dialogue: 0,0:20:18.42,0:20:20.17,Default,,0,0,0,,vẫn luôn mang lại cảm giác dễ chịu và mượt mà.
+Dialogue: 0,0:20:20.26,0:20:21.38,Default,,0,0,0,,Thích lắm luôn!
+Dialogue: 0,0:20:22.01,0:20:23.89,Default,,0,0,0,,Đầu tiên là Tokara và giờ là Kumamoto.
+Dialogue: 0,0:20:23.97,0:20:26.39,Default,,0,0,0,,Năm nay được trải nghiệm đến hai lần lận!
+Dialogue: 0,0:20:26.56,0:20:28.72,Default,,0,0,0,,Làm sao biết đây là gió đông?
+Dialogue: 0,0:20:28.97,0:20:32.19,Default,,0,0,0,,Đây là lần đầu tiên đến đây mà.\NLàm sao biết được hướng chứ?
+Dialogue: 0,0:20:32.44,0:20:34.77,Default,,0,0,0,,Ai mà chẳng biết điều đó!
+Dialogue: 0,0:20:34.90,0:20:36.77,Default,,0,0,0,,Hướng mặt trời mọc,
+Dialogue: 0,0:20:36.94,0:20:39.03,Default,,0,0,0,,thậm chí cả bóng đổ trên mặt đất nữa!
+Dialogue: 0,0:20:39.74,0:20:41.49,Default,,0,0,0,,Ai cũng làm được sao?
+Dialogue: 0,0:20:41.82,0:20:45.95,Default,,0,0,0,,Đã từng nghe nói những tay golf giỏi\Nxác định phương hướng cũng có thể đọc được hướng gió.
+Dialogue: 0,0:20:51.83,0:20:53.00,Default,,0,0,0,,Là một quả sồi.
+Dialogue: 0,0:20:53.46,0:20:55.50,Default,,0,0,0,,Bóng có thể di chuyển nếu nhặt nó lên đấy.
+Dialogue: 0,0:20:56.00,0:20:58.55,Default,,0,0,0,,Có một quả sồi\Nnằm ngay chỗ gậy sẽ đáp xuống.
+Dialogue: 0,0:20:59.25,0:21:01.67,Default,,0,0,0,,Không thể biết trước\Nbóng sẽ bay đi đâu.
+Dialogue: 0,0:21:03.34,0:21:06.30,Default,,0,0,0,,Có gió ngược.\NSẽ làm bóng bị lệch hướng.
+Dialogue: 0,0:21:10.97,0:21:12.56,Default,,0,0,0,,Biết phải làm gì rồi!
+Dialogue: 0,0:21:14.35,0:21:15.27,Default,,0,0,0,,Gậy gỗ số 5 sao?
+Dialogue: 0,0:21:15.35,0:21:16.77,Default,,0,0,0,,Chưa từng thấy bao giờ.
+Dialogue: 0,0:21:17.23,0:21:19.15,Default,,0,0,0,,Thứ đó cũ đến mức nào rồi vậy?
+Dialogue: 0,0:21:20.11,0:21:22.82,Default,,0,0,0,,{\i1}Nếu đánh thế này,{\i0}\N{\i1}quả sồi sẽ cản trở.{\i0}
+Dialogue: 0,0:21:24.36,0:21:27.32,Default,,0,0,0,,{\i1}Nên đặt bóng hướng về phía{\i0}\N{\i1}mũi gậy,{\i0}
+Dialogue: 0,0:21:27.41,0:21:29.12,Default,,0,0,0,,{\i1}và hơi úp mặt gậy lại.{\i0}
+Dialogue: 0,0:21:29.33,0:21:30.29,Default,,0,0,0,,{\i1}Được rồi.{\i0}
+Dialogue: 0,0:21:30.70,0:21:34.08,Default,,0,0,0,,{\i1}Đang nhắm đi đâu vậy?{\i0}\N{\i1}Định làm gì cơ chứ?{\i0}
+Dialogue: 0,0:21:36.17,0:21:37.79,Default,,0,0,0,,{\i1}Lên nào, Tsubura!{\i0}
+Dialogue: 0,0:21:49.89,0:21:50.81,Default,,0,0,0,,Đang nhắm vào cái cây sao?
+Dialogue: 0,0:21:51.39,0:21:52.81,Default,,0,0,0,,Vượt qua đi!
+Dialogue: 0,0:21:55.39,0:21:56.31,Default,,0,0,0,,Vượt qua rồi!
+Dialogue: 0,0:21:57.86,0:21:58.90,Default,,0,0,0,,Được lắm!
+Dialogue: 0,0:21:59.11,0:22:00.27,Default,,0,0,0,,Tiếp tục lăn đi!
+Dialogue: 0,0:22:05.99,0:22:08.41,Default,,0,0,0,,Tuyệt quá! Vui quá đi mất!
+Dialogue: 0,0:22:08.74,0:22:10.41,Default,,0,0,0,,Đây là kiểu chơi golf gì vậy?
+Dialogue: 0,0:22:11.87,0:22:12.87,Default,,0,0,0,,Cái quái?
+Dialogue: 0,0:22:13.50,0:22:14.66,Default,,0,0,0,,Làm sao có thể làm được thế chứ?
+Dialogue: 0,0:23:48.63,0:23:51.18,Default,,0,0,0,,{\i1}Igaiga, "quà chia tay" là gì vậy?{\i0}
+Dialogue: 0,0:23:51.26,0:23:53.55,Default,,0,0,0,,{\i1}Là món quà tặng cho ai đó{\i0}\N{\i1}khi tiễn họ đi.{\i0}
+Dialogue: 0,0:23:53.64,0:23:55.06,Default,,0,0,0,,{\i1}Tiễn đi sao? Ra là vậy.{\i0}
+Dialogue: 0,0:23:55.18,0:23:56.93,Default,,0,0,0,,{\i1}Cố gắng hết sức nhé, Tonbo.{\i0}
+Dialogue: 0,0:23:57.43,0:23:58.81,Default,,0,0,0,,{\i1}Tập tiếp theo của {\i0}Tonbo!
+Dialogue: 0,0:23:59.10,0:24:00.56,Default,,0,0,0,,{\i1}"Quà chia tay của Igaiga".{\i0}
 Dialogue: 0,0:24:00.94,0:24:01.77,Default,,0,0,0,,{\i1}Igaiga!{\i0}
-Dialogue: 0,0:24:01.85,0:24:03.11,Default,,0,0,0,,{\i1}Don't say a thing, Tonbo.{\i0}
-Dialogue: 0,0:24:03.19,0:24:04.27,Default,,0,0,0,,{\i1}It's hard for me, too.{\i0}
-Dialogue: 0,0:24:04.48,0:24:06.07,Default,,0,0,0,,{\i1}I want my parting gift now!{\i0}
+Dialogue: 0,0:24:01.85,0:24:03.11,Default,,0,0,0,,{\i1}Đừng nói gì cả, Tonbo.{\i0}
+Dialogue: 0,0:24:03.19,0:24:04.27,Default,,0,0,0,,{\i1}Cũng thấy khó khăn lắm.{\i0}
+Dialogue: 0,0:24:04.48,0:24:06.07,Default,,0,0,0,,{\i1}Muốn có quà chia tay ngay bây giờ!{\i0}
 Dialogue: 0,0:24:06.15,0:24:07.03,Default,,0,0,0,,{\i1}Tonbo!{\i0}

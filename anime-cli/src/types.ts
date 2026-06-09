@@ -20,6 +20,8 @@ export type VideoProbe = {
   subTracks: SubTrack[];
   audioTracks: AudioTrack[];
   signature: string;
+  /** Tổng thời lượng (giây). Null nếu ffmpeg không in `Duration:`. */
+  durationSeconds: number | null;
 };
 
 export type TrackGroup = {
