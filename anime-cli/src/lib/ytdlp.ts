@@ -42,6 +42,22 @@ export type YoutubeProbe = {
   subtitles: YtSubtitle[];
 };
 
+export type PlaylistEntry = {
+  id: string;
+  title: string;
+  /** Index 1-based trong playlist gốc (vd 1, 2, 3...). */
+  index: number;
+  /** URL watch?v=<id> dùng để probe chi tiết / download từng video. */
+  url: string;
+};
+
+export type PlaylistProbe = {
+  playlistId: string;
+  title: string;
+  uploader: string | null;
+  entries: PlaylistEntry[];
+};
+
 const SAFE_FOLDER_RE = /[\\/:*?"<>|]/g;
 
 export function sanitizeFolderName(raw: string): string {
@@ -67,6 +83,57 @@ function asNum(v: unknown): number | null {
 
 function asStr(v: unknown): string | null {
   return typeof v === 'string' && v.length > 0 ? v : null;
+}
+
+/**
+ * Detect playlist URL bằng cách kiểm tra query param `list=`.
+ * URL dạng `watch?v=X&list=Y` được coi là playlist (yt-dlp sẽ liệt kê toàn bộ).
+ * Edge case: nếu user chỉ muốn 1 video trong playlist, họ phải xoá `&list=...` thủ công.
+ */
+export function isPlaylistUrl(url: string): boolean {
+  try {
+    const u = new URL(url);
+    return u.searchParams.has('list') || /\/playlist\b/i.test(u.pathname);
+  } catch {
+    return false;
+  }
+}
+
+export async function probeYoutubePlaylist(url: string): Promise<PlaylistProbe> {
+  if (!resolvedTools.ytdlp) {
+    throw new Error('yt-dlp chưa được resolve. Đặt yt-dlp.exe trong Tools/.');
+  }
+  const { stdout } = await execa(
+    resolvedTools.ytdlp,
+    ['-J', '--flat-playlist', '--no-warnings', url],
+    { reject: true, timeout: 120_000 }
+  );
+
+  const firstLine = stdout.split(/\r?\n/).find((l) => l.trim().startsWith('{'));
+  if (!firstLine) throw new Error('yt-dlp không trả về JSON metadata playlist.');
+  const data = JSON.parse(firstLine) as Record<string, unknown>;
+
+  const rawEntries = Array.isArray(data['entries']) ? (data['entries'] as unknown[]) : [];
+  const entries: PlaylistEntry[] = [];
+  rawEntries.forEach((raw, i) => {
+    if (!raw || typeof raw !== 'object') return;
+    const e = raw as Record<string, unknown>;
+    const id = asStr(e['id']);
+    if (!id) return;
+    entries.push({
+      id,
+      title: String(e['title'] ?? id),
+      index: i + 1,
+      url: `https://www.youtube.com/watch?v=${id}`,
+    });
+  });
+
+  return {
+    playlistId: String(data['id'] ?? ''),
+    title: String(data['title'] ?? 'Playlist'),
+    uploader: asStr(data['uploader']) ?? asStr(data['channel']),
+    entries,
+  };
 }
 
 export async function probeYoutube(url: string): Promise<YoutubeProbe> {

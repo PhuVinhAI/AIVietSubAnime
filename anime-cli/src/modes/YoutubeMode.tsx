@@ -1,5 +1,6 @@
-import { Alert, Select, Spinner as UiSpinner } from '@inkjs/ui';
+import { Alert, ProgressBar, Select, Spinner as UiSpinner } from '@inkjs/ui';
 import { Box, Text, useApp, useInput } from 'ink';
+import { existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { useEffect, useState } from 'react';
 
@@ -20,69 +21,126 @@ import {
   downloadYoutube,
   extractMp3FromMedia,
   findDownloadedMedia,
+  isPlaylistUrl,
   pickAndCopyVietsubAss,
   pickAudioFormats,
   pickVideoFormats,
   probeYoutube,
+  probeYoutubePlaylist,
   sanitizeFolderName,
   suggestAudio,
   suggestVideo,
+  type PlaylistEntry,
   type YoutubeProbe,
   type YtFormat,
 } from '../lib/ytdlp.js';
 
-const TOTAL_STEPS = 6;
+const TOTAL_STEPS = 8;
+
+type EpisodeJob = {
+  index: number;
+  epName: string;
+  url: string;
+  title: string;
+  probe: YoutubeProbe;
+  epFolder: string;
+  /** Đã có file output từ lần trước (mp4 / mp3 / vietsub.ass). */
+  hasOutput: boolean;
+};
 
 type Step =
   | { kind: 'tools' }
   | { kind: 'url' }
-  | { kind: 'probing'; url: string }
-  | { kind: 'name'; url: string; probe: YoutubeProbe; suggested: string }
+  | { kind: 'discovering'; url: string }
+  | {
+      kind: 'anime-name';
+      url: string;
+      entries: PlaylistEntry[];
+      suggested: string;
+      isSingle: boolean;
+    }
+  | {
+      kind: 'probing-eps';
+      url: string;
+      animeName: string;
+      entries: PlaylistEntry[];
+      done: number;
+      probes: YoutubeProbe[];
+      skipped: { entry: PlaylistEntry; reason: string }[];
+    }
   | {
       kind: 'pick-video';
-      url: string;
-      probe: YoutubeProbe;
-      folderName: string;
+      animeName: string;
+      probes: YoutubeProbe[];
+      entries: PlaylistEntry[];
+      skippedCount: number;
     }
   | {
       kind: 'pick-audio';
-      url: string;
-      probe: YoutubeProbe;
-      folderName: string;
+      animeName: string;
+      probes: YoutubeProbe[];
+      entries: PlaylistEntry[];
       videoFormat: YtFormat | null;
     }
   | {
       kind: 'pick-subs';
-      url: string;
-      probe: YoutubeProbe;
-      folderName: string;
+      animeName: string;
+      probes: YoutubeProbe[];
+      entries: PlaylistEntry[];
       videoFormat: YtFormat | null;
       audioFormat: YtFormat | null;
     }
   | {
-      kind: 'confirm';
-      url: string;
-      probe: YoutubeProbe;
-      folderName: string;
+      kind: 'select-mode';
+      animeName: string;
       outputDir: string;
+      allJobs: EpisodeJob[];
       videoFormat: YtFormat | null;
       audioFormat: YtFormat | null;
       subLangs: string[];
       includeAuto: boolean;
     }
   | {
-      kind: 'downloading';
-      url: string;
-      probe: YoutubeProbe;
-      folderName: string;
+      kind: 'pick-eps';
+      animeName: string;
       outputDir: string;
+      allJobs: EpisodeJob[];
+      videoFormat: YtFormat | null;
+      audioFormat: YtFormat | null;
+      subLangs: string[];
+      includeAuto: boolean;
+    }
+  | {
+      kind: 'confirm';
+      animeName: string;
+      outputDir: string;
+      jobs: EpisodeJob[];
+      videoFormat: YtFormat | null;
+      audioFormat: YtFormat | null;
+      subLangs: string[];
+      includeAuto: boolean;
+    }
+  | {
+      kind: 'processing';
+      animeName: string;
+      outputDir: string;
+      jobs: EpisodeJob[];
       videoFormat: YtFormat | null;
       audioFormat: YtFormat | null;
       subLangs: string[];
       includeAuto: boolean;
       statuses: StatusItem[];
+      perEpProgress: PerEpProgress[];
+      current: number;
     }
   | { kind: 'done'; outputDir: string; statuses: StatusItem[] };
+
+type PerEpProgress = {
+  /** Stage hiện tại: download / mp3 / sub. */
+  stage: string;
+  speed: string | null;
+  eta: string | null;
+};
 
 type Nav = { go: (next: Step) => void; back: () => boolean };
 
@@ -93,14 +151,17 @@ type Props = {
 
 const STEP_NUMBER: Partial<Record<Step['kind'], number>> = {
   url: 1,
-  probing: 1,
-  name: 2,
-  'pick-video': 3,
-  'pick-audio': 4,
-  'pick-subs': 5,
-  confirm: 5,
-  downloading: 6,
-  done: 6,
+  discovering: 1,
+  'anime-name': 2,
+  'probing-eps': 3,
+  'pick-video': 4,
+  'pick-audio': 5,
+  'pick-subs': 6,
+  'select-mode': 7,
+  'pick-eps': 7,
+  confirm: 7,
+  processing: 8,
+  done: 8,
 };
 
 function humanSize(n: number | null): string {
@@ -124,6 +185,10 @@ function humanDuration(seconds: number | null): string {
   return `${m}m ${s}s`;
 }
 
+function stripCodec(c: string): string {
+  return c.split('.')[0] ?? c;
+}
+
 function formatLabel(f: YtFormat): string {
   const parts: string[] = [];
   if (f.kind === 'video' || f.kind === 'av') {
@@ -140,16 +205,76 @@ function formatLabel(f: YtFormat): string {
   return parts.join('  ' + sym.bullet + '  ');
 }
 
-function stripCodec(c: string): string {
-  return c.split('.')[0] ?? c;
+function epHasOutput(epFolder: string): boolean {
+  if (!existsSync(epFolder)) return false;
+  try {
+    const entries = readdirSync(epFolder);
+    return entries.some((f) => {
+      const lf = f.toLowerCase();
+      return lf.endsWith('.mp4') || lf.endsWith('.mp3') || lf.endsWith('.ass');
+    });
+  } catch {
+    return false;
+  }
+}
+
+/** Gộp format khả dụng theo height — chỉ giữ height có ở MỌI probe (để 1 lựa chọn cho toàn series). */
+function commonVideoFormats(probes: YoutubeProbe[]): YtFormat[] {
+  if (probes.length === 0) return [];
+  const heightSets = probes.map(
+    (p) => new Set(pickVideoFormats(p).map((f) => f.height).filter((h): h is number => !!h))
+  );
+  const first = heightSets[0]!;
+  const common = [...first].filter((h) => heightSets.every((s) => s.has(h)));
+  // Lấy format của probe đầu tiên làm representative — download sẽ map lại theo từng probe.
+  return pickVideoFormats(probes[0]!).filter((f) => f.height && common.includes(f.height));
+}
+
+function commonAudioFormats(probes: YoutubeProbe[]): YtFormat[] {
+  // Audio thường giống nhau giữa các video — lấy của probe đầu tiên.
+  return probes.length > 0 ? pickAudioFormats(probes[0]!) : [];
+}
+
+function commonSubLangs(probes: YoutubeProbe[]): { code: string; name: string; automatic: boolean }[] {
+  if (probes.length === 0) return [];
+  // Manual subs phải có ở MỌI probe để hiển thị là "manual".
+  // Auto-caption thì lấy union (YouTube cung cấp auto cho hầu hết langs).
+  const manualSets = probes.map((p) => new Set(p.subtitles.filter((s) => !s.automatic).map((s) => s.langCode)));
+  const firstManual = manualSets[0] ?? new Set<string>();
+  const commonManual = [...firstManual].filter((c) => manualSets.every((s) => s.has(c)));
+  const nameMap = new Map<string, string>();
+  for (const p of probes) for (const s of p.subtitles) nameMap.set(s.langCode, s.langName);
+
+  const out: { code: string; name: string; automatic: boolean }[] = [];
+  for (const c of commonManual) out.push({ code: c, name: nameMap.get(c) ?? c, automatic: false });
+
+  const autoUnion = new Set<string>();
+  for (const p of probes) for (const s of p.subtitles) if (s.automatic) autoUnion.add(s.langCode);
+  for (const c of autoUnion) if (!commonManual.includes(c)) {
+    out.push({ code: c, name: nameMap.get(c) ?? c, automatic: true });
+  }
+  return out;
+}
+
+function findFormatByHeight(probe: YoutubeProbe, height: number | null): YtFormat | null {
+  if (!height) return null;
+  const list = pickVideoFormats(probe);
+  return list.find((f) => f.height === height) ?? list[0] ?? null;
+}
+
+function findAudioByExtAbr(probe: YoutubeProbe, ref: YtFormat | null): YtFormat | null {
+  if (!ref) return null;
+  const list = pickAudioFormats(probe);
+  return (
+    list.find((f) => f.ext === ref.ext && Math.abs((f.abr ?? 0) - (ref.abr ?? 0)) < 10) ??
+    list[0] ??
+    null
+  );
 }
 
 export function YoutubeMode({ initialUrl, projectRoot }: Props) {
   const { exit } = useApp();
-  const [tools, setTools] = useState<{
-    ffmpeg: ToolCheck;
-    ytdlp: ToolCheck;
-  } | null>(null);
+  const [tools, setTools] = useState<{ ffmpeg: ToolCheck; ytdlp: ToolCheck } | null>(null);
   const nav = useStepNav<Step>({ kind: 'tools' });
   const { step, setStep, go, back, canBack } = nav;
   const [error, setError] = useState<string | null>(null);
@@ -158,8 +283,9 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
     !error &&
     canBack &&
     step.kind !== 'tools' &&
-    step.kind !== 'probing' &&
-    step.kind !== 'downloading' &&
+    step.kind !== 'discovering' &&
+    step.kind !== 'probing-eps' &&
+    step.kind !== 'processing' &&
     step.kind !== 'done';
 
   useInput(
@@ -183,11 +309,8 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
         setError('Thiếu ffmpeg trong PATH. yt-dlp cần ffmpeg để merge audio + video.');
         return;
       }
-      if (initialUrl) {
-        setStep({ kind: 'probing', url: initialUrl });
-      } else {
-        setStep({ kind: 'url' });
-      }
+      if (initialUrl) setStep({ kind: 'discovering', url: initialUrl });
+      else setStep({ kind: 'url' });
     });
     return () => {
       cancelled = true;
@@ -196,22 +319,53 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
   }, [step.kind, initialUrl]);
 
   useEffect(() => {
-    if (step.kind !== 'probing') return;
+    if (step.kind !== 'discovering') return;
     let cancelled = false;
-    probeYoutube(step.url)
-      .then((probe) => {
-        if (cancelled) return;
-        if (probe.isLive) {
-          setError('Đây là livestream — chế độ này không hỗ trợ live.');
-          return;
+    const run = async () => {
+      try {
+        if (isPlaylistUrl(step.url)) {
+          const pl = await probeYoutubePlaylist(step.url);
+          if (cancelled) return;
+          if (pl.entries.length === 0) {
+            setError('Playlist rỗng hoặc không truy cập được.');
+            return;
+          }
+          setStep({
+            kind: 'anime-name',
+            url: step.url,
+            entries: pl.entries,
+            suggested: sanitizeFolderName(pl.title) || pl.playlistId,
+            isSingle: false,
+          });
+        } else {
+          // Single video → giả lập playlist 1 phần tử.
+          const single = await probeYoutube(step.url);
+          if (cancelled) return;
+          if (single.isLive) {
+            setError('Đây là livestream — chế độ này không hỗ trợ live.');
+            return;
+          }
+          setStep({
+            kind: 'anime-name',
+            url: step.url,
+            entries: [
+              {
+                id: single.id,
+                title: single.title,
+                index: 1,
+                url: step.url,
+              },
+            ],
+            suggested: sanitizeFolderName(single.title) || single.id,
+            isSingle: true,
+          });
         }
-        const suggested = sanitizeFolderName(probe.title);
-        setStep({ kind: 'name', url: step.url, probe, suggested });
-      })
-      .catch((e) => {
+      } catch (e) {
         if (cancelled) return;
         setError(e instanceof Error ? e.message : String(e));
-      });
+      }
+    };
+    run();
     return () => {
       cancelled = true;
     };
@@ -219,170 +373,177 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
   }, [step.kind]);
 
   useEffect(() => {
-    if (step.kind !== 'downloading') return;
+    if (step.kind !== 'probing-eps') return;
+    let cancelled = false;
+    const run = async () => {
+      const probes: YoutubeProbe[] = [];
+      const okEntries: PlaylistEntry[] = [];
+      const skipped: { entry: PlaylistEntry; reason: string }[] = [];
+      for (let i = 0; i < step.entries.length; i++) {
+        if (cancelled) return;
+        const ent = step.entries[i]!;
+        try {
+          const p = await probeYoutube(ent.url);
+          probes.push(p);
+          okEntries.push(ent);
+        } catch (e) {
+          const msg = e instanceof Error ? e.message : String(e);
+          const reason = /Private video/i.test(msg)
+            ? 'Video private'
+            : /unavailable|removed|deleted/i.test(msg)
+              ? 'Video unavailable / đã gỡ'
+              : /members-only|members only/i.test(msg)
+                ? 'Members-only'
+                : /age|sign in/i.test(msg)
+                  ? 'Yêu cầu đăng nhập (age-gated)'
+                  : msg.split('\n').find((l) => /ERROR/i.test(l))?.replace(/^\s*ERROR:\s*/i, '') ?? 'Lỗi không xác định';
+          skipped.push({ entry: ent, reason });
+        }
+        setStep((s) =>
+          s.kind === 'probing-eps'
+            ? { ...s, done: i + 1, probes: [...probes], skipped: [...skipped] }
+            : s
+        );
+      }
+      if (cancelled) return;
+      if (probes.length === 0) {
+        setError(
+          `Toàn bộ ${step.entries.length} video đều không probe được. Xem skipped list để biết lý do.`
+        );
+        return;
+      }
+      setStep({
+        kind: 'pick-video',
+        animeName: step.animeName,
+        probes,
+        entries: okEntries,
+        skippedCount: skipped.length,
+      });
+    };
+    run();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step.kind]);
+
+  useEffect(() => {
+    if (step.kind !== 'processing') return;
     let cancelled = false;
 
     const run = async () => {
       const statuses = [...step.statuses];
+      const perEp = [...step.perEpProgress];
+      let doneCount = 0;
+      const lastFlush = new Array<number>(step.jobs.length).fill(0);
+
       const flush = () => {
-        setStep((s) => (s.kind === 'downloading' ? { ...s, statuses: [...statuses] } : s));
+        setStep((s) =>
+          s.kind === 'processing'
+            ? { ...s, statuses: [...statuses], perEpProgress: [...perEp], current: doneCount }
+            : s
+        );
       };
 
-      const baseName = sanitizeFolderName(step.probe.title) || step.probe.id;
-      const idx = {
-        download: 0,
-        mp3: -1,
-        vietsub: -1,
-        backup: -1,
-      };
-      let cursor = 1;
-      const hasAudio = !!step.audioFormat || !!step.videoFormat;
-      if (hasAudio) idx.mp3 = cursor++;
-      if (step.subLangs.length > 0) {
-        idx.vietsub = cursor++;
-        idx.backup = cursor++;
-      }
+      const processOne = async (job: EpisodeJob, i: number) => {
+        if (cancelled) return;
+        statuses[i] = {
+          ...statuses[i]!,
+          status: 'running',
+          progress: 0,
+          meta: 'khởi động yt-dlp',
+        };
+        flush();
 
-      statuses[idx.download] = {
-        ...statuses[idx.download]!,
-        status: 'running',
-        progress: 0,
-        meta: 'đang khởi động yt-dlp',
-      };
-      flush();
+        const baseName = sanitizeFolderName(job.title) || job.probe.id;
+        const v = step.videoFormat ? findFormatByHeight(job.probe, step.videoFormat.height) : null;
+        const a = step.audioFormat ? findAudioByExtAbr(job.probe, step.audioFormat) : null;
 
-      try {
-        await downloadYoutube({
-          url: step.url,
-          outputDir: step.outputDir,
-          baseName,
-          videoFormatId: step.videoFormat?.formatId,
-          audioFormatId: step.audioFormat?.formatId,
-          subLangs: step.subLangs,
-          includeAutoSubs: step.includeAuto,
-          onProgress: (p) => {
-            if (cancelled) return;
-            const stageLabel: Record<typeof p.stage, string> = {
-              video: 'Đang tải video track',
-              audio: 'Đang tải audio track',
-              merge: 'Đang merge bằng ffmpeg',
-              subs: 'Đang tải sub track',
-              done: 'Hoàn tất',
-            };
-            const speed = p.speed ? `  ${sym.bullet}  ${p.speed}` : '';
-            const eta = p.eta ? `  ${sym.bullet}  ETA ${p.eta}` : '';
-            statuses[idx.download] = {
-              ...statuses[idx.download]!,
+        try {
+          ensureDir(job.epFolder);
+          await downloadYoutube({
+            url: job.url,
+            outputDir: job.epFolder,
+            baseName,
+            videoFormatId: v?.formatId,
+            audioFormatId: a?.formatId,
+            subLangs: step.subLangs,
+            includeAutoSubs: step.includeAuto,
+            onProgress: (p) => {
+              const now = performance.now();
+              if (p.percent < 100 && now - (lastFlush[i] ?? 0) < 200) return;
+              lastFlush[i] = now;
+              perEp[i] = {
+                stage: p.stage,
+                speed: p.speed,
+                eta: p.eta,
+              };
+              const speed = p.speed ? `  ${sym.bullet}  ${p.speed}` : '';
+              const eta = p.eta ? `  ${sym.bullet}  ETA ${p.eta}` : '';
+              statuses[i] = {
+                ...statuses[i]!,
+                status: 'running',
+                progress: p.percent,
+                meta: `[${p.stage.toUpperCase()}]${speed}${eta}`,
+              };
+              flush();
+            },
+          });
+          if (cancelled) return;
+
+          const media = findDownloadedMedia(job.epFolder, baseName);
+          if (media) {
+            perEp[i] = { stage: 'mp3', speed: null, eta: null };
+            statuses[i] = {
+              ...statuses[i]!,
               status: 'running',
-              progress: p.percent,
-              label: `[${p.stage.toUpperCase()}]  ${stageLabel[p.stage]}`,
-              meta: `${speed}${eta}`.trim(),
+              progress: 0,
+              meta: '[MP3] tách audio thuần bằng ffmpeg',
             };
             flush();
-          },
-        });
-        if (cancelled) return;
-
-        const mediaPath = findDownloadedMedia(step.outputDir, baseName);
-        statuses[idx.download] = {
-          ...statuses[idx.download]!,
-          status: 'done',
-          progress: undefined,
-          label: 'Tải video + audio + merge',
-          meta: undefined,
-          detail: mediaPath ? `${sym.arrowRight} ${mediaPath}` : undefined,
-        };
-        flush();
-
-        if (idx.mp3 >= 0 && mediaPath) {
-          statuses[idx.mp3] = {
-            ...statuses[idx.mp3]!,
-            status: 'running',
-            progress: 0,
-            meta: 'ffmpeg -vn -c:a libmp3lame',
-          };
-          flush();
-          try {
-            const mp3 = await extractMp3FromMedia(
-              mediaPath,
-              step.outputDir,
-              baseName,
-              step.probe.durationSeconds,
-              (pct) => {
-                if (cancelled) return;
-                statuses[idx.mp3] = {
-                  ...statuses[idx.mp3]!,
-                  status: 'running',
-                  progress: pct,
-                  meta: 'ffmpeg -vn -c:a libmp3lame',
-                };
-                flush();
-              }
-            );
-            statuses[idx.mp3] = {
-              ...statuses[idx.mp3]!,
-              status: 'done',
-              progress: undefined,
-              meta: undefined,
-              detail: `${sym.arrowRight} ${mp3}`,
-            };
-          } catch (e) {
-            statuses[idx.mp3] = {
-              ...statuses[idx.mp3]!,
-              status: 'error',
-              progress: undefined,
-              meta: undefined,
-              detail: e instanceof Error ? e.message : String(e),
-            };
+            await extractMp3FromMedia(media, job.epFolder, baseName, job.probe.durationSeconds, (pct) => {
+              const now = performance.now();
+              if (pct < 100 && now - (lastFlush[i] ?? 0) < 200) return;
+              lastFlush[i] = now;
+              statuses[i] = {
+                ...statuses[i]!,
+                status: 'running',
+                progress: pct,
+                meta: '[MP3] tách audio thuần',
+              };
+              flush();
+            });
           }
-          flush();
-        }
 
-        if (idx.vietsub >= 0) {
-          statuses[idx.vietsub] = {
-            ...statuses[idx.vietsub]!,
-            status: 'running',
-            meta: 'tìm và copy sang vietsub.ass',
-          };
-          flush();
-          const out = pickAndCopyVietsubAss(step.outputDir, baseName, step.subLangs);
-          statuses[idx.vietsub] = {
-            ...statuses[idx.vietsub]!,
-            status: out ? 'done' : 'skip',
-            meta: undefined,
-            detail: out
-              ? `${sym.arrowRight} ${out.vietsub}`
-              : 'Không tìm thấy .ass — sub có thể không khả dụng cho video này',
-          };
-          flush();
+          if (step.subLangs.length > 0) {
+            pickAndCopyVietsubAss(job.epFolder, baseName, step.subLangs);
+            createAssTextBackups(job.epFolder, baseName);
+          }
 
-          statuses[idx.backup] = {
-            ...statuses[idx.backup]!,
-            status: 'running',
-            meta: 'tạo .ass.txt để dán vào AI',
-          };
-          flush();
-          const backups = createAssTextBackups(step.outputDir, baseName);
-          statuses[idx.backup] = {
-            ...statuses[idx.backup]!,
-            status: backups.length > 0 ? 'done' : 'skip',
+          statuses[i] = {
+            ...statuses[i]!,
+            status: 'done',
+            progress: undefined,
             meta: undefined,
-            detail:
-              backups.length > 0
-                ? `${sym.arrowRight} ${backups.length} file .ass.txt`
-                : 'Không có .ass để backup',
+            detail: `${sym.arrowRight} ${job.epFolder}`,
           };
-          flush();
+        } catch (e) {
+          statuses[i] = {
+            ...statuses[i]!,
+            status: 'error',
+            progress: undefined,
+            meta: undefined,
+            detail: e instanceof Error ? e.message : String(e),
+          };
         }
-      } catch (e) {
-        statuses[idx.download] = {
-          ...statuses[idx.download]!,
-          status: 'error',
-          progress: undefined,
-          meta: undefined,
-          detail: e instanceof Error ? e.message : String(e),
-        };
+        doneCount++;
         flush();
+      };
+
+      // Tải tuần tự để không nghẽn băng thông và parsing yt-dlp progress giữ ổn định.
+      for (let i = 0; i < step.jobs.length; i++) {
+        if (cancelled) return;
+        await processOne(step.jobs[i]!, i);
       }
 
       if (cancelled) return;
@@ -424,10 +585,10 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
         {step.kind === 'url' && (
           <PathInput
             label="Nhập lại link"
-            hint="Link YouTube hợp lệ (watch / youtu.be / shorts)"
+            hint="Link YouTube hợp lệ (watch / playlist / youtu.be / shorts)"
             onSubmit={(url) => {
               setError(null);
-              go({ kind: 'probing', url });
+              go({ kind: 'discovering', url });
             }}
           />
         )}
@@ -454,30 +615,66 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
             step={stepNumber}
             total={TOTAL_STEPS}
             title="Dán link YouTube"
-            subtitle="Một link video duy nhất. Playlist sẽ bị giới hạn ở video đầu."
+            subtitle="Một video hoặc một playlist. Có ?list=... = playlist."
           />
           <PathInput
             label="URL"
-            hint="Vd. https://www.youtube.com/watch?v=..."
-            onSubmit={(url) => go({ kind: 'probing', url: url.trim() })}
+            hint="Vd. https://www.youtube.com/watch?v=...  hoặc  /playlist?list=..."
+            onSubmit={(url) => go({ kind: 'discovering', url: url.trim() })}
           />
         </Box>
       )}
 
-      {step.kind === 'probing' && (
+      {step.kind === 'discovering' && (
         <Box flexDirection="column">
           <StepHeader
             step={stepNumber}
             total={TOTAL_STEPS}
-            title="Đang phân tích video"
+            title="Đang phân tích URL"
             subtitle={step.url}
           />
-          <UiSpinner label=" yt-dlp đang lấy metadata + danh sách format..." />
+          <UiSpinner label=" yt-dlp đang detect single-video / playlist..." />
         </Box>
       )}
 
-      {step.kind === 'name' && (
-        <NameUI step={step} nav={{ go, back }} projectRoot={projectRoot} stepNumber={stepNumber} />
+      {step.kind === 'anime-name' && (
+        <AnimeNameUI step={step} nav={{ go, back }} stepNumber={stepNumber} />
+      )}
+
+      {step.kind === 'probing-eps' && (
+        <Box flexDirection="column">
+          <StepHeader
+            step={stepNumber}
+            total={TOTAL_STEPS}
+            title="Phân tích từng video"
+            subtitle="yt-dlp lấy formats + subs cho mỗi ep. Video private / unavailable sẽ tự skip."
+          />
+          <Box paddingLeft={1} flexDirection="column">
+            <Box width={36}>
+              <ProgressBar value={(step.done / step.entries.length) * 100} />
+            </Box>
+            <Box marginTop={0}>
+              <Text color={palette.accent} bold>
+                {`${step.done}/${step.entries.length}`}
+              </Text>
+              <Text color={palette.muted}>{` video đã probe`}</Text>
+              {step.skipped.length > 0 && (
+                <Text color={palette.warn}>
+                  {`  ${sym.bullet}  ${step.skipped.length} skip`}
+                </Text>
+              )}
+            </Box>
+            {step.skipped.length > 0 && (
+              <Box marginTop={1} flexDirection="column">
+                {step.skipped.slice(-3).map((s, i) => (
+                  <Text key={i} color={palette.warn}>
+                    {`  ${sym.warning} Ep${String(s.entry.index).padStart(2, '0')}: ${s.reason}`}
+                  </Text>
+                ))}
+              </Box>
+            )}
+          </Box>
+        </Box>
       )}
 
       {step.kind === 'pick-video' && (
@@ -492,17 +689,25 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
         <PickSubsUI step={step} nav={{ go, back }} projectRoot={projectRoot} stepNumber={stepNumber} />
       )}
 
+      {step.kind === 'select-mode' && (
+        <SelectModeUI step={step} nav={{ go, back }} stepNumber={stepNumber} />
+      )}
+
+      {step.kind === 'pick-eps' && (
+        <PickEpsUI step={step} nav={{ go, back }} stepNumber={stepNumber} />
+      )}
+
       {step.kind === 'confirm' && (
         <ConfirmUI step={step} nav={{ go, back }} stepNumber={stepNumber} />
       )}
 
-      {step.kind === 'downloading' && (
+      {step.kind === 'processing' && (
         <Box flexDirection="column">
           <StepHeader
             step={TOTAL_STEPS}
             total={TOTAL_STEPS}
-            title="Đang tải xuống"
-            subtitle="yt-dlp + ffmpeg đang chạy. Video → audio → merge → sub → ass."
+            title={`Tải tuần tự  ${sym.bullet}  ${step.current}/${step.jobs.length} hoàn thành`}
+            subtitle="yt-dlp + ffmpeg cho từng ep. Stage hiện trong meta."
           />
           <StatusList items={step.statuses} />
         </Box>
@@ -533,61 +738,55 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
   );
 }
 
-function NameUI({
+function AnimeNameUI({
   step,
   nav,
-  projectRoot,
   stepNumber,
 }: {
-  step: Extract<Step, { kind: 'name' }>;
+  step: Extract<Step, { kind: 'anime-name' }>;
   nav: Nav;
-  projectRoot: string;
   stepNumber: number;
 }) {
-  const subCount = step.probe.subtitles.filter((s) => !s.automatic).length;
-  const autoCount = step.probe.subtitles.filter((s) => s.automatic).length;
-  const videoCount = step.probe.formats.filter((f) => f.kind === 'video').length;
-  const audioCount = step.probe.formats.filter((f) => f.kind === 'audio').length;
+  const showCount = step.isSingle ? 1 : step.entries.length;
 
   return (
     <Box flexDirection="column">
       <StepHeader
         step={stepNumber}
         total={TOTAL_STEPS}
-        title="Đặt tên thư mục"
-        subtitle={`Folder Anime/<tên> sẽ được tạo trong ${projectRoot}.`}
+        title={
+          step.isSingle
+            ? 'Đặt tên cho video'
+            : `Playlist gồm ${showCount} video`
+        }
+        subtitle="Folder Anime/<tên>/Ep01, Ep02... sẽ được tạo trong project."
       />
-      <Box flexDirection="column" marginBottom={1}>
-        <KeyValue
-          rows={[
-            { key: 'Tiêu đề', value: step.probe.title, color: palette.text, highlight: true },
-            { key: 'Kênh', value: step.probe.uploader ?? '—', color: palette.muted },
-            {
-              key: 'Thời lượng',
-              value: humanDuration(step.probe.durationSeconds),
-              color: palette.accent,
-            },
-            {
-              key: 'Track có sẵn',
-              value: `${videoCount} video  ${sym.bullet}  ${audioCount} audio  ${sym.bullet}  ${subCount} sub${
-                autoCount > 0 ? ` (+${autoCount} auto)` : ''
-              }`,
-              color: palette.muted,
-            },
-          ]}
-        />
+      <Box marginBottom={1} flexDirection="column">
+        {step.entries.slice(0, 5).map((e, i) => (
+          <Text key={i} color={palette.muted}>
+            {`  ${sym.triangleRight} Ep${String(e.index).padStart(2, '0')}  ${sym.bullet}  ${e.title}`}
+          </Text>
+        ))}
+        {step.entries.length > 5 && (
+          <Text color={palette.muted}>
+            {`  ${sym.ellipsis} +${step.entries.length - 5} video nữa…`}
+          </Text>
+        )}
       </Box>
       <PathInput
-        label="Tên thư mục"
+        label="Tên anime / series"
         hint={`Auto-detect: "${step.suggested}". Enter để chấp nhận, hoặc gõ tên khác.`}
         defaultValue={step.suggested}
         onSubmit={(name) => {
-          const cleaned = sanitizeFolderName(name) || step.suggested || step.probe.id;
+          const animeName = (sanitizeFolderName(name) || step.suggested).trim();
           nav.go({
-            kind: 'pick-video',
+            kind: 'probing-eps',
             url: step.url,
-            probe: step.probe,
-            folderName: cleaned,
+            animeName,
+            entries: step.entries,
+            done: 0,
+            probes: [],
+            skipped: [],
           });
         }}
       />
@@ -604,7 +803,7 @@ function PickVideoUI({
   nav: Nav;
   stepNumber: number;
 }) {
-  const videos = pickVideoFormats(step.probe);
+  const videos = commonVideoFormats(step.probes);
   const suggested = suggestVideo(videos);
 
   const ordered =
@@ -615,7 +814,7 @@ function PickVideoUI({
   const options = [
     ...ordered.map((f) => ({
       label: `${formatLabel(f)}${f.formatId === suggested?.formatId ? '  [đề xuất]' : ''}`,
-      value: f.formatId,
+      value: String(f.height ?? f.formatId),
     })),
     { label: 'Chỉ tải audio (skip video)', value: '__audio_only__' },
   ];
@@ -626,27 +825,39 @@ function PickVideoUI({
         step={stepNumber}
         total={TOTAL_STEPS}
         title="Chọn độ phân giải video"
-        subtitle={`${videos.length} mức chất lượng khả dụng. yt-dlp sẽ merge với track audio chọn ở bước sau.`}
+        subtitle={
+          step.probes.length > 1
+            ? `${videos.length} mức chất lượng có ở MỌI ${step.probes.length} video. Lựa chọn áp dụng cho toàn series.`
+            : `${videos.length} mức chất lượng khả dụng.`
+        }
       />
+      {step.skippedCount > 0 && (
+        <Box marginBottom={1}>
+          <Alert variant="warning" title={`Đã skip ${step.skippedCount} video`}>
+            {`${step.probes.length} video probe thành công sẽ được tải tiếp. Các video private / unavailable / members-only bị loại khỏi danh sách.`}
+          </Alert>
+        </Box>
+      )}
       <Select
         options={options}
         onChange={(value) => {
           if (value === '__audio_only__') {
             nav.go({
               kind: 'pick-audio',
-              url: step.url,
-              probe: step.probe,
-              folderName: step.folderName,
+              animeName: step.animeName,
+              probes: step.probes,
+              entries: step.entries,
               videoFormat: null,
             });
             return;
           }
-          const chosen = videos.find((f) => f.formatId === value) ?? null;
+          const height = parseInt(value, 10);
+          const chosen = videos.find((f) => f.height === height) ?? null;
           nav.go({
             kind: 'pick-audio',
-            url: step.url,
-            probe: step.probe,
-            folderName: step.folderName,
+            animeName: step.animeName,
+            probes: step.probes,
+            entries: step.entries,
             videoFormat: chosen,
           });
         }}
@@ -664,7 +875,7 @@ function PickAudioUI({
   nav: Nav;
   stepNumber: number;
 }) {
-  const audios = pickAudioFormats(step.probe);
+  const audios = commonAudioFormats(step.probes);
   const suggested = suggestAudio(audios);
 
   const ordered =
@@ -691,11 +902,15 @@ function PickAudioUI({
         subtitle={
           step.videoFormat
             ? `${audios.length} track audio khả dụng để ghép vào video ${step.videoFormat.height}p.`
-            : `${audios.length} track audio khả dụng (audio-only download).`
+            : `${audios.length} track audio (audio-only download).`
         }
       />
       <Select
-        options={options.length > 0 ? options : [{ label: 'Không có audio (chỉ video)', value: '__none__' }]}
+        options={
+          options.length > 0
+            ? options
+            : [{ label: 'Không có audio (chỉ video)', value: '__none__' }]
+        }
         onChange={(value) => {
           let chosen: YtFormat | null = null;
           if (value !== '__auto__' && value !== '__none__') {
@@ -703,9 +918,9 @@ function PickAudioUI({
           }
           nav.go({
             kind: 'pick-subs',
-            url: step.url,
-            probe: step.probe,
-            folderName: step.folderName,
+            animeName: step.animeName,
+            probes: step.probes,
+            entries: step.entries,
             videoFormat: step.videoFormat,
             audioFormat: chosen,
           });
@@ -726,24 +941,57 @@ function PickSubsUI({
   projectRoot: string;
   stepNumber: number;
 }) {
-  const manual = step.probe.subtitles.filter((s) => !s.automatic);
-  const auto = step.probe.subtitles.filter((s) => s.automatic);
-  const noSubs = manual.length === 0 && auto.length === 0;
+  const langs = commonSubLangs(step.probes);
+  const manual = langs.filter((l) => !l.automatic);
+  const auto = langs.filter((l) => l.automatic);
+  const noSubs = langs.length === 0;
+
+  const buildJobs = (subLangs: string[], includeAuto: boolean) => {
+    const outputDir = join(projectRoot, 'Anime', step.animeName);
+    const jobs: EpisodeJob[] = step.probes.map((probe, i) => {
+      const ent = step.entries[i]!;
+      const epName = `Ep${String(ent.index).padStart(2, '0')}`;
+      const epFolder = join(outputDir, epName);
+      return {
+        index: ent.index,
+        epName,
+        url: ent.url,
+        title: probe.title,
+        probe,
+        epFolder,
+        hasOutput: epHasOutput(epFolder),
+      };
+    });
+    return { outputDir, jobs, subLangs, includeAuto };
+  };
 
   useEffect(() => {
     if (!noSubs) return;
-    const outputDir = join(projectRoot, 'Anime', step.folderName);
-    nav.go({
-      kind: 'confirm',
-      url: step.url,
-      probe: step.probe,
-      folderName: step.folderName,
-      outputDir,
-      videoFormat: step.videoFormat,
-      audioFormat: step.audioFormat,
-      subLangs: [],
-      includeAuto: false,
-    });
+    const { outputDir, jobs, subLangs, includeAuto } = buildJobs([], false);
+    const next = jobs.some((j) => j.hasOutput) ? 'select-mode' : 'confirm';
+    if (next === 'select-mode') {
+      nav.go({
+        kind: 'select-mode',
+        animeName: step.animeName,
+        outputDir,
+        allJobs: jobs,
+        videoFormat: step.videoFormat,
+        audioFormat: step.audioFormat,
+        subLangs,
+        includeAuto,
+      });
+    } else {
+      nav.go({
+        kind: 'confirm',
+        animeName: step.animeName,
+        outputDir,
+        jobs,
+        videoFormat: step.videoFormat,
+        audioFormat: step.audioFormat,
+        subLangs,
+        includeAuto,
+      });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [noSubs]);
 
@@ -766,14 +1014,14 @@ function PickSubsUI({
 
   const items = [
     ...manual.map((s) => ({
-      label: `${s.langName}`,
-      value: `m:${s.langCode}`,
-      preselected: enLike(s.langCode),
+      label: s.name,
+      value: `m:${s.code}`,
+      preselected: enLike(s.code),
       tag: { text: 'manual', color: palette.success },
     })),
     ...auto.map((s) => ({
-      label: `${s.langName}`,
-      value: `a:${s.langCode}`,
+      label: s.name,
+      value: `a:${s.code}`,
       preselected: false,
       tag: { text: 'auto', color: palette.warn },
     })),
@@ -785,7 +1033,7 @@ function PickSubsUI({
         step={stepNumber}
         total={TOTAL_STEPS}
         title="Chọn phụ đề để tải"
-        subtitle="yt-dlp sẽ tải các sub được chọn, convert sang .ass và copy thành vietsub.ass."
+        subtitle="Áp dụng cho mọi ep. yt-dlp tải → convert .ass → copy vietsub.ass + backup .ass.txt."
       />
       <Box marginBottom={1}>
         <Text color={palette.muted}>
@@ -804,17 +1052,178 @@ function PickSubsUI({
             subLangs.push(code);
             if (prefix === 'a') includeAuto = true;
           }
-          const outputDir = join(projectRoot, 'Anime', step.folderName);
+          const { outputDir, jobs } = buildJobs(subLangs, includeAuto);
+          const hasAnyExisting = jobs.some((j) => j.hasOutput);
+          if (hasAnyExisting) {
+            nav.go({
+              kind: 'select-mode',
+              animeName: step.animeName,
+              outputDir,
+              allJobs: jobs,
+              videoFormat: step.videoFormat,
+              audioFormat: step.audioFormat,
+              subLangs,
+              includeAuto,
+            });
+          } else {
+            nav.go({
+              kind: 'confirm',
+              animeName: step.animeName,
+              outputDir,
+              jobs,
+              videoFormat: step.videoFormat,
+              audioFormat: step.audioFormat,
+              subLangs,
+              includeAuto,
+            });
+          }
+        }}
+      />
+    </Box>
+  );
+}
+
+function SelectModeUI({
+  step,
+  nav,
+  stepNumber,
+}: {
+  step: Extract<Step, { kind: 'select-mode' }>;
+  nav: Nav;
+  stepNumber: number;
+}) {
+  const newJobs = step.allJobs.filter((j) => !j.hasOutput);
+  const existingJobs = step.allJobs.filter((j) => j.hasOutput);
+
+  const choices: { label: string; value: string }[] = [];
+  if (newJobs.length > 0 && existingJobs.length > 0) {
+    choices.push({
+      label: `Tải tất cả  (${newJobs.length} mới + ${existingJobs.length} ghi đè)`,
+      value: 'all',
+    });
+    choices.push({ label: `Chỉ tải mới  (${newJobs.length} ep)`, value: 'only-new' });
+  } else if (newJobs.length > 0) {
+    choices.push({ label: `Tải tất cả ${newJobs.length} ep`, value: 'all' });
+  } else if (existingJobs.length > 0) {
+    choices.push({ label: `Ghi đè tất cả ${existingJobs.length} ep`, value: 'all' });
+  }
+  choices.push({ label: 'Pick chọn riêng (multiselect)', value: 'pick' });
+  choices.push({ label: 'Huỷ', value: 'cancel' });
+
+  return (
+    <Box flexDirection="column">
+      <StepHeader
+        step={stepNumber}
+        total={TOTAL_STEPS}
+        title="Phát hiện ep đã tải trước đó"
+      />
+      <Box flexDirection="column" marginBottom={1}>
+        <KeyValue
+          rows={[
+            { key: 'Anime', value: step.animeName, color: palette.text, highlight: true },
+            { key: 'Output', value: step.outputDir, color: palette.muted },
+          ]}
+        />
+        <Box flexDirection="column" marginTop={1}>
+          {step.allJobs.map((j, i) => (
+            <Box key={i}>
+              <Text color={j.hasOutput ? palette.warn : palette.success}>
+                {`  ${j.hasOutput ? sym.warning : sym.tick} `}
+              </Text>
+              <Text color={j.hasOutput ? palette.warn : palette.text}>{j.epName}</Text>
+              <Text color={palette.muted}>
+                {`  ${sym.bullet} ${j.hasOutput ? 'đã có output cũ' : 'mới'}  ${sym.bullet} ${j.title}`}
+              </Text>
+            </Box>
+          ))}
+        </Box>
+        <Box marginTop={1}>
+          <Text color={palette.muted}>
+            {`Tổng: ${step.allJobs.length} ep  ${sym.bullet}  ${newJobs.length} mới  ${sym.bullet}  ${existingJobs.length} đã tải trước`}
+          </Text>
+        </Box>
+      </Box>
+      <Select
+        options={choices}
+        onChange={(value) => {
+          if (value === 'cancel') {
+            process.exit(0);
+            return;
+          }
+          if (value === 'pick') {
+            nav.go({
+              kind: 'pick-eps',
+              animeName: step.animeName,
+              outputDir: step.outputDir,
+              allJobs: step.allJobs,
+              videoFormat: step.videoFormat,
+              audioFormat: step.audioFormat,
+              subLangs: step.subLangs,
+              includeAuto: step.includeAuto,
+            });
+            return;
+          }
+          const jobs = value === 'only-new' ? newJobs : step.allJobs;
           nav.go({
             kind: 'confirm',
-            url: step.url,
-            probe: step.probe,
-            folderName: step.folderName,
-            outputDir,
+            animeName: step.animeName,
+            outputDir: step.outputDir,
+            jobs,
             videoFormat: step.videoFormat,
             audioFormat: step.audioFormat,
-            subLangs,
-            includeAuto,
+            subLangs: step.subLangs,
+            includeAuto: step.includeAuto,
+          });
+        }}
+      />
+    </Box>
+  );
+}
+
+function PickEpsUI({
+  step,
+  nav,
+  stepNumber,
+}: {
+  step: Extract<Step, { kind: 'pick-eps' }>;
+  nav: Nav;
+  stepNumber: number;
+}) {
+  const items = step.allJobs.map((j) => ({
+    label: `${j.epName}  ${sym.bullet}  ${j.title}`,
+    value: j.epFolder,
+    preselected: !j.hasOutput,
+    tag: j.hasOutput
+      ? { text: 'ghi đè', color: palette.warn }
+      : { text: 'mới', color: palette.success },
+  }));
+
+  return (
+    <Box flexDirection="column">
+      <StepHeader
+        step={stepNumber}
+        total={TOTAL_STEPS}
+        title="Pick ep để tải"
+        subtitle="Mặc định tick các ep mới. Tick thêm ⚠ ghi đè nếu muốn re-download."
+      />
+      <MultiSelect
+        items={items}
+        onCancel={() => nav.back()}
+        onSubmit={(folders) => {
+          const jobs = step.allJobs.filter((j) => folders.includes(j.epFolder));
+          if (jobs.length === 0) {
+            process.exit(0);
+            return;
+          }
+          nav.go({
+            kind: 'confirm',
+            animeName: step.animeName,
+            outputDir: step.outputDir,
+            jobs,
+            videoFormat: step.videoFormat,
+            audioFormat: step.audioFormat,
+            subLangs: step.subLangs,
+            includeAuto: step.includeAuto,
           });
         }}
       />
@@ -831,24 +1240,34 @@ function ConfirmUI({
   nav: Nav;
   stepNumber: number;
 }) {
-  const totalBytes =
+  const overwriteCount = step.jobs.filter((j) => j.hasOutput).length;
+  const perEpBytes =
     (step.videoFormat?.filesize ?? 0) + (step.audioFormat?.filesize ?? 0);
+  const totalBytes = perEpBytes * step.jobs.length;
 
   const rows = [
-    { key: 'Anime', value: step.folderName, color: palette.text, highlight: true },
-    { key: 'Tiêu đề', value: step.probe.title, color: palette.muted },
+    { key: 'Anime', value: step.animeName, color: palette.text, highlight: true },
+    {
+      key: 'Số ep',
+      value:
+        overwriteCount > 0
+          ? `${step.jobs.length}  (${overwriteCount} ghi đè)`
+          : String(step.jobs.length),
+      color: palette.accent,
+      highlight: true,
+    },
     { key: 'Output', value: step.outputDir, color: palette.muted },
     {
       key: 'Video',
       value: step.videoFormat
-        ? `${formatLabel(step.videoFormat)}  (id ${step.videoFormat.formatId})`
+        ? `${formatLabel(step.videoFormat)}`
         : 'skip',
       color: step.videoFormat ? palette.accent : palette.muted,
     },
     {
       key: 'Audio',
       value: step.audioFormat
-        ? `${formatLabel(step.audioFormat)}  (id ${step.audioFormat.formatId})`
+        ? `${formatLabel(step.audioFormat)}`
         : step.videoFormat
           ? 'auto'
           : 'skip',
@@ -862,18 +1281,28 @@ function ConfirmUI({
           : 'skip',
       color: step.subLangs.length > 0 ? palette.accent : palette.muted,
     },
-    {
-      key: 'Ước tính',
-      value: humanSize(totalBytes),
-      color: palette.muted,
-    },
+    { key: 'Ước tính', value: `~${humanSize(totalBytes)} (mỗi ep ~${humanSize(perEpBytes)})`, color: palette.muted },
   ];
 
   return (
     <Box flexDirection="column">
-      <StepHeader step={stepNumber} total={TOTAL_STEPS} title="Xác nhận tải xuống" />
+      <StepHeader step={stepNumber} total={TOTAL_STEPS} title="Xác nhận pipeline" />
       <Box flexDirection="column" marginBottom={1}>
         <KeyValue rows={rows} />
+        <Box flexDirection="column" marginTop={1}>
+          {step.jobs.slice(0, 8).map((j, i) => (
+            <Text key={i} color={j.hasOutput ? palette.warn : palette.muted}>
+              {`  ${sym.triangleRight} ${j.epName}  ${sym.arrowRight}  ${j.title}${
+                j.hasOutput ? '  (ghi đè)' : ''
+              }`}
+            </Text>
+          ))}
+          {step.jobs.length > 8 && (
+            <Text color={palette.muted}>
+              {`  ${sym.ellipsis} +${step.jobs.length - 8} ep nữa…`}
+            </Text>
+          )}
+        </Box>
       </Box>
       <Select
         options={[
@@ -886,28 +1315,27 @@ function ConfirmUI({
             return;
           }
           ensureDir(step.outputDir);
-          const hasAudio = !!step.audioFormat || !!step.videoFormat;
-          const statuses: StatusItem[] = [
-            { label: 'Tải video + audio + merge', status: 'pending' },
-          ];
-          if (hasAudio) {
-            statuses.push({ label: 'Tách audio thuần (.mp3)', status: 'pending' });
-          }
-          if (step.subLangs.length > 0) {
-            statuses.push({ label: 'Copy sub → vietsub.ass', status: 'pending' });
-            statuses.push({ label: 'Backup .ass.txt cho AI dịch', status: 'pending' });
-          }
+          const statuses: StatusItem[] = step.jobs.map((j) => ({
+            label: `${j.epName}  ${sym.bullet}  ${j.title}`,
+            status: 'pending',
+          }));
+          const perEpProgress: PerEpProgress[] = step.jobs.map(() => ({
+            stage: 'pending',
+            speed: null,
+            eta: null,
+          }));
           nav.go({
-            kind: 'downloading',
-            url: step.url,
-            probe: step.probe,
-            folderName: step.folderName,
+            kind: 'processing',
+            animeName: step.animeName,
             outputDir: step.outputDir,
+            jobs: step.jobs,
             videoFormat: step.videoFormat,
             audioFormat: step.audioFormat,
             subLangs: step.subLangs,
             includeAuto: step.includeAuto,
             statuses,
+            perEpProgress,
+            current: 0,
           });
         }}
       />
@@ -915,7 +1343,7 @@ function ConfirmUI({
       {step.videoFormat && step.videoFormat.height && step.videoFormat.height >= 1440 && (
         <Box marginTop={1}>
           <Alert variant="warning" title="Lưu ý chất lượng cao">
-            {`File ${step.videoFormat.height}p có thể nặng (≈${humanSize(step.videoFormat.filesize)}). Đảm bảo ổ đĩa đủ dung lượng.`}
+            {`File ${step.videoFormat.height}p có thể nặng (≈${humanSize(step.videoFormat.filesize)}/ep). Đảm bảo ổ đĩa đủ dung lượng.`}
           </Alert>
         </Box>
       )}

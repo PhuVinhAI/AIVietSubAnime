@@ -124,23 +124,29 @@ export function scanHardsubCandidates(animeFolder: string): {
     if (!/^Ep\d+$/i.test(entry)) continue;
 
     const inner = readdirSync(full);
-    const mkv = inner.find((f) => f.toLowerCase().endsWith('.mkv'));
     const ass = inner.find((f) => f.toLowerCase() === 'vietsub.ass');
+    // Ưu tiên .mkv (Prepare path). Nếu không có thì lấy .mp4 nguồn từ YouTube
+    // mode — loại trừ file output `_vietsub.mp4` để tránh hardsub-on-hardsub.
+    const mkv = inner.find((f) => f.toLowerCase().endsWith('.mkv'));
+    const mp4Source = inner.find(
+      (f) => f.toLowerCase().endsWith('.mp4') && !f.toLowerCase().endsWith('_vietsub.mp4')
+    );
+    const source = mkv ?? mp4Source;
 
-    if (!mkv) {
-      skipped.push({ epName: entry, reason: 'Không có file .mkv' });
+    if (!source) {
+      skipped.push({ epName: entry, reason: 'Không có file .mkv / .mp4 nguồn' });
       continue;
     }
 
-    const mkvPath = join(full, mkv);
+    const sourcePath = join(full, source);
     const assPath = ass ? join(full, ass) : '';
-    const outName = `${basename(mkv, extname(mkv))}_vietsub.mp4`;
+    const outName = `${basename(source, extname(source))}_vietsub.mp4`;
     const outputPath = join(full, outName);
 
     candidates.push({
       epFolder: full,
       epName: entry,
-      mkvPath,
+      mkvPath: sourcePath,
       assPath,
       outputPath,
       hasOutput: isFile(outputPath),
