@@ -1,15 +1,16 @@
 import { Box, Text, useApp } from 'ink';
 import SelectInput from 'ink-select-input';
 import Spinner from 'ink-spinner';
-import { existsSync, statSync } from 'node:fs';
+import { existsSync, statSync, unlinkSync } from 'node:fs';
 import { basename, join, resolve } from 'node:path';
 import { useEffect, useState } from 'react';
 
+import { MultiSelect } from '../components/MultiSelect.js';
 import { PathInput } from '../components/PathInput.js';
 import { StatusList, type StatusItem } from '../components/StatusList.js';
 import { StepHeader } from '../components/StepHeader.js';
 import { ToolStatus } from '../components/ToolStatus.js';
-import { runHardsub, scanHardsubJobs } from '../lib/handbrake.js';
+import { runHardsub, scanHardsubCandidates } from '../lib/handbrake.js';
 import {
   applyStyleToAss,
   readStyleBlock,
@@ -17,7 +18,7 @@ import {
   type StyleEntry,
 } from '../lib/styles.js';
 import { checkAllTools, type ToolCheck } from '../lib/tools.js';
-import type { HardsubJob } from '../types.js';
+import type { HardsubCandidate, HardsubJob } from '../types.js';
 
 type Step =
   | { kind: 'tools' }
@@ -26,21 +27,33 @@ type Step =
   | {
       kind: 'scan-result';
       animeFolder: string;
-      ready: HardsubJob[];
-      skipped: { epFolder: string; reason: string }[];
+      candidates: HardsubCandidate[];
+      skipped: { epName: string; reason: string }[];
+    }
+  | {
+      kind: 'pick-eps';
+      animeFolder: string;
+      candidates: HardsubCandidate[];
+      skipped: { epName: string; reason: string }[];
+    }
+  | {
+      kind: 'ask-style';
+      animeFolder: string;
+      jobs: HardsubJob[];
+      skipped: { epName: string; reason: string }[];
     }
   | {
       kind: 'pick-style';
       animeFolder: string;
-      ready: HardsubJob[];
-      skipped: { epFolder: string; reason: string }[];
+      jobs: HardsubJob[];
+      skipped: { epName: string; reason: string }[];
       styles: StyleEntry[];
     }
   | {
       kind: 'confirm';
       animeFolder: string;
-      ready: HardsubJob[];
-      skipped: { epFolder: string; reason: string }[];
+      jobs: HardsubJob[];
+      skipped: { epName: string; reason: string }[];
       style: StyleEntry | null;
     }
   | {
@@ -49,7 +62,6 @@ type Step =
       statuses: StatusItem[];
       current: number;
       style: StyleEntry | null;
-      stylesApplied: boolean;
     }
   | { kind: 'done'; statuses: StatusItem[] };
 
@@ -100,8 +112,8 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
         setStep({ kind: 'path' });
         return;
       }
-      const { ready, skipped } = scanHardsubJobs(abs);
-      setStep({ kind: 'scan-result', animeFolder: abs, ready, skipped });
+      const { candidates, skipped } = scanHardsubCandidates(abs);
+      setStep({ kind: 'scan-result', animeFolder: abs, candidates, skipped });
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
       setStep({ kind: 'path' });
@@ -117,8 +129,8 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
     const run = async () => {
       const statuses = [...step.statuses];
 
-      // 1. Áp style trước (nhanh — chỉ là replace block trong text file)
-      if (step.style && !step.stylesApplied) {
+      // 1. Áp style trước (rất nhanh)
+      if (step.style) {
         try {
           const block = readStyleBlock(step.style.filePath);
           for (const job of step.jobs) {
@@ -131,7 +143,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
         }
       }
 
-      // 2. Encode queue — SERIAL (x264/QSV ăn 100% CPU/GPU mỗi instance)
+      // 2. Encode queue serial — QSV cũng ăn 100% GPU/iGPU per instance
       for (let i = 0; i < step.jobs.length; i++) {
         if (cancelled) return;
         const job = step.jobs[i];
@@ -147,6 +159,12 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
         );
 
         try {
+          // Nếu output đã có thì xoá trước (overwrite case)
+          if (existsSync(job.outputPath)) {
+            try {
+              unlinkSync(job.outputPath);
+            } catch {}
+          }
           await runHardsub({ handbrakeCliPath: handbrakePath, job });
           statuses[i] = {
             ...statuses[i]!,
@@ -224,7 +242,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
 
       {step.kind === 'path' && (
         <Box flexDirection="column">
-          <StepHeader step={1} total={4} title="Folder anime cần hardsub" />
+          <StepHeader step={1} total={5} title="Folder anime cần hardsub" />
           <PathInput
             label="Path:"
             hint="Folder anime có các Ep01/Ep02/... bên trong"
@@ -243,7 +261,13 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
       )}
 
       {step.kind === 'scan-result' && (
-        <ScanResultUI step={step} setStep={setStep} projectRoot={projectRoot} />
+        <ScanResultUI step={step} setStep={setStep} />
+      )}
+
+      {step.kind === 'pick-eps' && <PickEpsUI step={step} setStep={setStep} />}
+
+      {step.kind === 'ask-style' && (
+        <AskStyleUI step={step} setStep={setStep} projectRoot={projectRoot} />
       )}
 
       {step.kind === 'pick-style' && <PickStyleUI step={step} setStep={setStep} />}
@@ -253,8 +277,8 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
       {step.kind === 'processing' && (
         <Box flexDirection="column">
           <StepHeader
-            step={4}
-            total={4}
+            step={5}
+            total={5}
             title={`Hardsub ${step.current + 1}/${step.jobs.length} (serial)`}
           />
           {step.style && (
@@ -269,7 +293,7 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
 
       {step.kind === 'done' && (
         <Box flexDirection="column">
-          <StepHeader step={4} total={4} title="HARDSUB HOÀN THÀNH" />
+          <StepHeader step={5} total={5} title="HARDSUB HOÀN THÀNH" />
           <StatusList items={step.statuses} />
           <Box marginTop={1}>
             <Text color="green" bold>
@@ -283,102 +307,243 @@ export function HardsubMode({ initialPath, projectRoot }: Props) {
   );
 }
 
+function candidateToJob(c: HardsubCandidate): HardsubJob {
+  return {
+    epFolder: c.epFolder,
+    mkvPath: c.mkvPath,
+    assPath: c.assPath,
+    outputPath: c.outputPath,
+  };
+}
+
 function ScanResultUI({
   step,
   setStep,
-  projectRoot,
 }: {
   step: Extract<Step, { kind: 'scan-result' }>;
   setStep: (s: Step) => void;
-  projectRoot: string;
 }) {
+  const ready = step.candidates.filter((c) => !c.missingAss && !c.hasOutput);
+  const overwrite = step.candidates.filter((c) => !c.missingAss && c.hasOutput);
+  const missingAss = step.candidates.filter((c) => c.missingAss);
+
+  const choices: { label: string; value: string }[] = [];
+  if (ready.length > 0 && overwrite.length > 0) {
+    choices.push({
+      label: `Encode tất cả (${ready.length} mới + ${overwrite.length} ghi đè)`,
+      value: 'all-with-overwrite',
+    });
+    choices.push({ label: `Chỉ encode mới (${ready.length} file)`, value: 'only-new' });
+  } else if (ready.length > 0) {
+    choices.push({ label: `Encode tất cả (${ready.length} file)`, value: 'all-new' });
+  } else if (overwrite.length > 0) {
+    choices.push({
+      label: `Ghi đè tất cả (${overwrite.length} file)`,
+      value: 'all-overwrite',
+    });
+  }
+  choices.push({ label: 'Pick chọn riêng (multiselect)', value: 'pick' });
+  choices.push({ label: 'Huỷ', value: 'cancel' });
+
   return (
     <Box flexDirection="column">
-      <StepHeader step={2} total={4} title="Hàng đợi hardsub" />
+      <StepHeader step={2} total={5} title="Hàng đợi hardsub" />
       <Box flexDirection="column" marginBottom={1}>
         <Text>
           <Text color="cyan">Folder: </Text>
           {step.animeFolder}
         </Text>
-        <Text>
-          <Text color="green">Sẵn sàng: </Text>
-          {step.ready.length} ep
-        </Text>
-        {step.skipped.length > 0 && (
-          <Text>
-            <Text color="yellow">Bỏ qua: </Text>
-            {step.skipped.length} ep
-          </Text>
-        )}
         <Box flexDirection="column" marginTop={1}>
-          {step.ready.map((j, i) => (
-            <Text key={i} color="green">
-              {'  ✓ '}
-              {basename(j.epFolder)}
-            </Text>
+          {step.candidates.map((c, i) => (
+            <Box key={i}>
+              <Text
+                color={
+                  c.missingAss ? 'red' : c.hasOutput ? 'yellow' : 'green'
+                }
+              >
+                {c.missingAss ? '  ✗ ' : c.hasOutput ? '  ⚠ ' : '  ✓ '}
+                {c.epName}
+              </Text>
+              <Text color="gray">
+                {c.missingAss
+                  ? ' — thiếu vietsub.ass'
+                  : c.hasOutput
+                  ? ' — đã có _vietsub.mp4'
+                  : ' — sẵn sàng'}
+              </Text>
+            </Box>
           ))}
           {step.skipped.map((s, i) => (
-            <Text key={i} color="yellow">
+            <Text key={`s${i}`} color="gray">
               {'  ⊘ '}
-              {s.epFolder} — {s.reason}
+              {s.epName} — {s.reason}
             </Text>
           ))}
+        </Box>
+        <Box marginTop={1}>
+          <Text>
+            Tổng: {step.candidates.length} ep ({ready.length} mới, {overwrite.length} đã có
+            output, {missingAss.length} thiếu sub)
+          </Text>
         </Box>
       </Box>
 
-      {step.ready.length === 0 ? (
-        <Text color="red">Không có ep nào sẵn sàng. Thoát.</Text>
+      {ready.length + overwrite.length === 0 ? (
+        <Text color="red">Không có ep nào encode được. Thoát.</Text>
       ) : (
-        <Box flexDirection="column">
-          <Text bold color="cyan">
-            Tích hợp style từ Styles/ vào vietsub.ass?
-          </Text>
-          <Text color="gray">
-            (Sẽ replace block [V4+ Styles] trong tất cả vietsub.ass trước khi encode)
-          </Text>
-          <SelectInput
-            items={[
-              { label: 'Có — chọn style từ Styles/', value: 'yes' },
-              { label: 'Không — giữ nguyên vietsub.ass', value: 'no' },
-              { label: 'Huỷ', value: 'cancel' },
-            ]}
-            onSelect={(it) => {
-              if (it.value === 'cancel') {
-                process.exit(0);
-                return;
-              }
-              if (it.value === 'no') {
-                setStep({
-                  kind: 'confirm',
-                  animeFolder: step.animeFolder,
-                  ready: step.ready,
-                  skipped: step.skipped,
-                  style: null,
-                });
-                return;
-              }
-              const styles = scanStyles(join(projectRoot, 'Styles'));
-              if (styles.length === 0) {
-                setStep({
-                  kind: 'confirm',
-                  animeFolder: step.animeFolder,
-                  ready: step.ready,
-                  skipped: step.skipped,
-                  style: null,
-                });
-                return;
-              }
+        <SelectInput
+          items={choices}
+          onSelect={(it) => {
+            if (it.value === 'cancel') {
+              process.exit(0);
+              return;
+            }
+            if (it.value === 'pick') {
               setStep({
-                kind: 'pick-style',
+                kind: 'pick-eps',
                 animeFolder: step.animeFolder,
-                ready: step.ready,
+                candidates: step.candidates,
                 skipped: step.skipped,
-                styles,
               });
-            }}
-          />
-        </Box>
+              return;
+            }
+            let chosen: HardsubCandidate[] = [];
+            if (it.value === 'all-with-overwrite' || it.value === 'all-new') {
+              chosen = [...ready, ...overwrite];
+            } else if (it.value === 'only-new') {
+              chosen = ready;
+            } else if (it.value === 'all-overwrite') {
+              chosen = overwrite;
+            }
+            const jobs = chosen.map(candidateToJob);
+            setStep({
+              kind: 'ask-style',
+              animeFolder: step.animeFolder,
+              jobs,
+              skipped: step.skipped,
+            });
+          }}
+        />
       )}
+    </Box>
+  );
+}
+
+function PickEpsUI({
+  step,
+  setStep,
+}: {
+  step: Extract<Step, { kind: 'pick-eps' }>;
+  setStep: (s: Step) => void;
+}) {
+  const items = step.candidates.map((c) => ({
+    label: c.epName,
+    value: c.epFolder,
+    disabled: c.missingAss,
+    preselected: !c.missingAss && !c.hasOutput,
+    tag: c.missingAss
+      ? { text: 'thiếu sub', color: 'red' }
+      : c.hasOutput
+      ? { text: 'ghi đè', color: 'yellow' }
+      : { text: 'mới', color: 'green' },
+  }));
+
+  return (
+    <Box flexDirection="column">
+      <StepHeader step={3} total={5} title="Chọn ep để hardsub" />
+      <Box marginBottom={1}>
+        <Text color="gray">
+          Mặc định tick các ep mới. Tick thêm các ⚠ "ghi đè" nếu muốn encode lại.
+        </Text>
+      </Box>
+      <MultiSelect
+        items={items}
+        onCancel={() =>
+          setStep({
+            kind: 'scan-result',
+            animeFolder: step.animeFolder,
+            candidates: step.candidates,
+            skipped: step.skipped,
+          })
+        }
+        onSubmit={(epFolders) => {
+          const chosen = step.candidates.filter((c) => epFolders.includes(c.epFolder));
+          if (chosen.length === 0) {
+            process.exit(0);
+            return;
+          }
+          const jobs = chosen.map(candidateToJob);
+          setStep({
+            kind: 'ask-style',
+            animeFolder: step.animeFolder,
+            jobs,
+            skipped: step.skipped,
+          });
+        }}
+      />
+    </Box>
+  );
+}
+
+function AskStyleUI({
+  step,
+  setStep,
+  projectRoot,
+}: {
+  step: Extract<Step, { kind: 'ask-style' }>;
+  setStep: (s: Step) => void;
+  projectRoot: string;
+}) {
+  return (
+    <Box flexDirection="column">
+      <StepHeader step={4} total={5} title="Tích hợp style?" />
+      <Box marginBottom={1} flexDirection="column">
+        <Text color="cyan">
+          Áp style vào {step.jobs.length} vietsub.ass trước khi encode?
+        </Text>
+        <Text color="gray">(Replace block [V4+ Styles] với style đã chọn)</Text>
+      </Box>
+      <SelectInput
+        items={[
+          { label: 'Có — chọn style từ Styles/', value: 'yes' },
+          { label: 'Không — giữ nguyên', value: 'no' },
+          { label: 'Huỷ', value: 'cancel' },
+        ]}
+        onSelect={(it) => {
+          if (it.value === 'cancel') {
+            process.exit(0);
+            return;
+          }
+          if (it.value === 'no') {
+            setStep({
+              kind: 'confirm',
+              animeFolder: step.animeFolder,
+              jobs: step.jobs,
+              skipped: step.skipped,
+              style: null,
+            });
+            return;
+          }
+          const styles = scanStyles(join(projectRoot, 'Styles'));
+          if (styles.length === 0) {
+            setStep({
+              kind: 'confirm',
+              animeFolder: step.animeFolder,
+              jobs: step.jobs,
+              skipped: step.skipped,
+              style: null,
+            });
+            return;
+          }
+          setStep({
+            kind: 'pick-style',
+            animeFolder: step.animeFolder,
+            jobs: step.jobs,
+            skipped: step.skipped,
+            styles,
+          });
+        }}
+      />
     </Box>
   );
 }
@@ -392,11 +557,10 @@ function PickStyleUI({
 }) {
   return (
     <Box flexDirection="column">
-      <StepHeader step={3} total={4} title="Chọn style" />
+      <StepHeader step={4} total={5} title="Chọn style" />
       <Box marginBottom={1}>
         <Text color="gray">
-          Tìm thấy {step.styles.length} file trong Styles/. Style được chọn sẽ inject block
-          [V4+ Styles] vào TẤT CẢ vietsub.ass.
+          Tìm thấy {step.styles.length} file trong Styles/.
         </Text>
       </Box>
       <SelectInput
@@ -410,7 +574,7 @@ function PickStyleUI({
           setStep({
             kind: 'confirm',
             animeFolder: step.animeFolder,
-            ready: step.ready,
+            jobs: step.jobs,
             skipped: step.skipped,
             style: chosen,
           });
@@ -429,7 +593,7 @@ function ConfirmUI({
 }) {
   return (
     <Box flexDirection="column">
-      <StepHeader step={3} total={4} title="Xác nhận hardsub queue" />
+      <StepHeader step={4} total={5} title="Xác nhận hardsub queue" />
       <Box flexDirection="column" marginBottom={1}>
         <Text>
           <Text color="cyan">Folder: </Text>
@@ -437,7 +601,7 @@ function ConfirmUI({
         </Text>
         <Text>
           <Text color="cyan">Số ep: </Text>
-          {step.ready.length}
+          {step.jobs.length}
         </Text>
         <Text>
           <Text color="cyan">Style: </Text>
@@ -454,7 +618,7 @@ function ConfirmUI({
       </Box>
       <SelectInput
         items={[
-          { label: `Bắt đầu encode ${step.ready.length} ep (serial)`, value: 'go' },
+          { label: `Bắt đầu encode ${step.jobs.length} ep (serial)`, value: 'go' },
           { label: 'Huỷ', value: 'cancel' },
         ]}
         onSelect={(it) => {
@@ -462,17 +626,16 @@ function ConfirmUI({
             process.exit(0);
             return;
           }
-          const statuses: StatusItem[] = step.ready.map((j) => ({
+          const statuses: StatusItem[] = step.jobs.map((j) => ({
             label: basename(j.epFolder),
             status: 'pending',
           }));
           setStep({
             kind: 'processing',
-            jobs: step.ready,
+            jobs: step.jobs,
             statuses,
             current: 0,
             style: step.style,
-            stylesApplied: false,
           });
         }}
       />

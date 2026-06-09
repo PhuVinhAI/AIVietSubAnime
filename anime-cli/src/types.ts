@@ -43,3 +43,12 @@ export type HardsubJob = {
   assPath: string;
   outputPath: string;
 };
+
+export type HardsubCandidate = HardsubJob & {
+  /** Folder Ep ngắn gọn (vd "Ep01"). */
+  epName: string;
+  /** Đã có file output _vietsub.mp4 từ lần encode trước. */
+  hasOutput: boolean;
+  /** Thiếu vietsub.ass → không thể hardsub. */
+  missingAss: boolean;
+};

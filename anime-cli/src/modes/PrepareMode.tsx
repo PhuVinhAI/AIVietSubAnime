@@ -5,6 +5,7 @@ import { existsSync, readdirSync, statSync } from 'node:fs';
 import { basename, join, resolve } from 'node:path';
 import { useEffect, useState } from 'react';
 
+import { MultiSelect } from '../components/MultiSelect.js';
 import { PathInput } from '../components/PathInput.js';
 import { StatusList, type StatusItem } from '../components/StatusList.js';
 import { StepHeader } from '../components/StepHeader.js';
@@ -16,6 +17,21 @@ import { probeVideo } from '../lib/probe.js';
 import { checkAllTools, type ToolCheck } from '../lib/tools.js';
 import { groupBySignature, suggestTrack } from '../lib/trackGroup.js';
 import type { TrackGroup, VideoProbe } from '../types.js';
+
+function hasExistingOutput(epFolder: string): boolean {
+  if (!existsSync(epFolder)) return false;
+  try {
+    const entries = readdirSync(epFolder);
+    return entries.some(
+      (f) =>
+        f.toLowerCase().endsWith('.mp3') ||
+        f.toLowerCase().endsWith('.ass') ||
+        f.toLowerCase().endsWith('.ass.txt')
+    );
+  } catch {
+    return false;
+  }
+}
 
 type Choices = Record<string, number>; // signature → trackId
 
@@ -35,12 +51,22 @@ type Step =
       groupIdx: number;
     }
   | {
-      kind: 'confirm';
-      probes: VideoProbe[];
-      groups: TrackGroup[];
+      kind: 'select-mode';
+      allJobs: PrepareJob[];
       animeName: string;
       outputDir: string;
-      choices: Choices;
+    }
+  | {
+      kind: 'pick-eps';
+      allJobs: PrepareJob[];
+      animeName: string;
+      outputDir: string;
+    }
+  | {
+      kind: 'confirm';
+      jobs: PrepareJob[];
+      animeName: string;
+      outputDir: string;
     }
   | { kind: 'processing'; jobs: PrepareJob[]; statuses: StatusItem[]; current: number }
   | { kind: 'done'; statuses: StatusItem[] };
@@ -48,7 +74,9 @@ type Step =
 type PrepareJob = {
   probe: VideoProbe;
   epFolder: string;
+  epName: string;
   trackId: number;
+  hasOutput: boolean;
 };
 
 type Props = {
@@ -341,6 +369,10 @@ export function PrepareMode({ initialPath, projectRoot }: Props) {
         <PickTrackUI step={step} setStep={setStep} projectRoot={projectRoot} />
       )}
 
+      {step.kind === 'select-mode' && <SelectModeUI step={step} setStep={setStep} />}
+
+      {step.kind === 'pick-eps' && <PickEpsUI step={step} setStep={setStep} />}
+
       {step.kind === 'confirm' && <ConfirmUI step={step} setStep={setStep} />}
 
       {step.kind === 'processing' && (
@@ -430,15 +462,179 @@ function PickTrackUI({
             setStep({ ...step, choices: nextChoices, groupIdx: nextIdx });
           } else {
             const outputDir = join(projectRoot, 'Anime', step.animeName);
-            setStep({
-              kind: 'confirm',
-              probes: step.probes,
-              groups: step.groups,
-              animeName: step.animeName,
-              outputDir,
-              choices: nextChoices,
+            const allJobs: PrepareJob[] = step.probes.map((p) => {
+              const ep = p.episodeNumber ?? '00';
+              const epFolder = join(outputDir, `Ep${ep}`);
+              const trackId =
+                nextChoices[p.signature] ?? p.subTracks[0]?.id ?? 0;
+              return {
+                probe: p,
+                epFolder,
+                epName: `Ep${ep}`,
+                trackId,
+                hasOutput: hasExistingOutput(epFolder),
+              };
             });
+            const hasAnyExisting = allJobs.some((j) => j.hasOutput);
+            if (hasAnyExisting) {
+              setStep({
+                kind: 'select-mode',
+                allJobs,
+                animeName: step.animeName,
+                outputDir,
+              });
+            } else {
+              setStep({
+                kind: 'confirm',
+                jobs: allJobs,
+                animeName: step.animeName,
+                outputDir,
+              });
+            }
           }
+        }}
+      />
+    </Box>
+  );
+}
+
+function SelectModeUI({
+  step,
+  setStep,
+}: {
+  step: Extract<Step, { kind: 'select-mode' }>;
+  setStep: (s: Step) => void;
+}) {
+  const newJobs = step.allJobs.filter((j) => !j.hasOutput);
+  const existingJobs = step.allJobs.filter((j) => j.hasOutput);
+
+  const choices: { label: string; value: string }[] = [];
+  if (newJobs.length > 0 && existingJobs.length > 0) {
+    choices.push({
+      label: `Xử lý tất cả (${newJobs.length} mới + ${existingJobs.length} ghi đè)`,
+      value: 'all',
+    });
+    choices.push({
+      label: `Chỉ xử lý mới (${newJobs.length} file)`,
+      value: 'only-new',
+    });
+  } else if (newJobs.length > 0) {
+    choices.push({ label: `Xử lý tất cả ${newJobs.length} file`, value: 'all' });
+  } else if (existingJobs.length > 0) {
+    choices.push({
+      label: `Ghi đè tất cả ${existingJobs.length} file`,
+      value: 'all',
+    });
+  }
+  choices.push({ label: 'Pick chọn riêng (multiselect)', value: 'pick' });
+  choices.push({ label: 'Huỷ', value: 'cancel' });
+
+  return (
+    <Box flexDirection="column">
+      <StepHeader step={4} total={5} title="Phát hiện file đã xử lý trước đó" />
+      <Box flexDirection="column" marginBottom={1}>
+        <Text color="cyan">Anime: </Text>
+        <Text>{step.animeName}</Text>
+        <Text color="cyan">Output: </Text>
+        <Text>{step.outputDir}</Text>
+        <Box flexDirection="column" marginTop={1}>
+          {step.allJobs.map((j, i) => (
+            <Box key={i}>
+              <Text color={j.hasOutput ? 'yellow' : 'green'}>
+                {j.hasOutput ? '  ⚠ ' : '  ✓ '}
+                {j.epName}
+              </Text>
+              <Text color="gray">
+                {' — '}
+                {j.hasOutput ? 'đã có .mp3/.ass cũ' : 'mới'}
+                {' · '}
+                {basename(j.probe.fileName)}
+              </Text>
+            </Box>
+          ))}
+        </Box>
+        <Box marginTop={1}>
+          <Text>
+            Tổng: {step.allJobs.length} ep ({newJobs.length} mới, {existingJobs.length}{' '}
+            đã xử lý trước)
+          </Text>
+        </Box>
+      </Box>
+      <SelectInput
+        items={choices}
+        onSelect={(it) => {
+          if (it.value === 'cancel') {
+            process.exit(0);
+            return;
+          }
+          if (it.value === 'pick') {
+            setStep({
+              kind: 'pick-eps',
+              allJobs: step.allJobs,
+              animeName: step.animeName,
+              outputDir: step.outputDir,
+            });
+            return;
+          }
+          const jobs = it.value === 'only-new' ? newJobs : step.allJobs;
+          setStep({
+            kind: 'confirm',
+            jobs,
+            animeName: step.animeName,
+            outputDir: step.outputDir,
+          });
+        }}
+      />
+    </Box>
+  );
+}
+
+function PickEpsUI({
+  step,
+  setStep,
+}: {
+  step: Extract<Step, { kind: 'pick-eps' }>;
+  setStep: (s: Step) => void;
+}) {
+  const items = step.allJobs.map((j) => ({
+    label: `${j.epName} — ${j.probe.fileName}`,
+    value: j.epFolder,
+    preselected: !j.hasOutput,
+    tag: j.hasOutput
+      ? { text: 'ghi đè', color: 'yellow' }
+      : { text: 'mới', color: 'green' },
+  }));
+
+  return (
+    <Box flexDirection="column">
+      <StepHeader step={4} total={5} title="Pick ep để xử lý" />
+      <Box marginBottom={1}>
+        <Text color="gray">
+          Mặc định tick các ep mới. Tick thêm ⚠ "ghi đè" nếu muốn re-extract.
+        </Text>
+      </Box>
+      <MultiSelect
+        items={items}
+        onCancel={() =>
+          setStep({
+            kind: 'select-mode',
+            allJobs: step.allJobs,
+            animeName: step.animeName,
+            outputDir: step.outputDir,
+          })
+        }
+        onSubmit={(folders) => {
+          const jobs = step.allJobs.filter((j) => folders.includes(j.epFolder));
+          if (jobs.length === 0) {
+            process.exit(0);
+            return;
+          }
+          setStep({
+            kind: 'confirm',
+            jobs,
+            animeName: step.animeName,
+            outputDir: step.outputDir,
+          });
         }}
       />
     </Box>
@@ -452,6 +648,7 @@ function ConfirmUI({
   step: Extract<Step, { kind: 'confirm' }>;
   setStep: (s: Step) => void;
 }) {
+  const overwriteCount = step.jobs.filter((j) => j.hasOutput).length;
   const items = [
     { label: 'Bắt đầu xử lý', value: 'go' },
     { label: 'Huỷ', value: 'cancel' },
@@ -466,25 +663,22 @@ function ConfirmUI({
           {step.animeName}
         </Text>
         <Text>
-          <Text color="cyan">Tổng file: </Text>
-          {step.probes.length}
+          <Text color="cyan">Tổng file sẽ xử lý: </Text>
+          {step.jobs.length}
+          {overwriteCount > 0 && (
+            <Text color="yellow"> ({overwriteCount} ghi đè)</Text>
+          )}
         </Text>
         <Text>
           <Text color="cyan">Output: </Text>
           {step.outputDir}
         </Text>
         <Box flexDirection="column" marginTop={1}>
-          {step.groups.map((g, i) => {
-            const trackId = step.choices[g.signature];
-            const track = g.subTracks.find((t) => t.id === trackId);
-            return (
-              <Text key={i} color="gray">
-                {`  Nhóm ${i + 1}: ${g.videos.length} file → Track ${trackId} (${
-                  track?.langName ?? '?'
-                })`}
-              </Text>
-            );
-          })}
+          {step.jobs.map((j, i) => (
+            <Text key={i} color={j.hasOutput ? 'yellow' : 'gray'}>
+              {`  · ${j.epName} → Track ${j.trackId}${j.hasOutput ? ' (ghi đè)' : ''}`}
+            </Text>
+          ))}
         </Box>
       </Box>
       <SelectInput
@@ -494,18 +688,11 @@ function ConfirmUI({
             process.exit(0);
             return;
           }
-          const jobs: PrepareJob[] = step.probes.map((p) => {
-            const ep = p.episodeNumber ?? '00';
-            const epFolder = join(step.outputDir, `Ep${ep}`);
-            const trackId =
-              step.choices[p.signature] ?? p.subTracks[0]?.id ?? 0;
-            return { probe: p, epFolder, trackId };
-          });
-          const statuses: StatusItem[] = jobs.map((j) => ({
-            label: `Ep${j.probe.episodeNumber ?? '??'} — ${j.probe.fileName}`,
+          const statuses: StatusItem[] = step.jobs.map((j) => ({
+            label: `${j.epName} — ${j.probe.fileName}`,
             status: 'pending',
           }));
-          setStep({ kind: 'processing', jobs, statuses, current: 0 });
+          setStep({ kind: 'processing', jobs: step.jobs, statuses, current: 0 });
         }}
       />
     </Box>

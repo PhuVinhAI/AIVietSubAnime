@@ -1,7 +1,7 @@
 import { execa } from 'execa';
 import { existsSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname, basename, extname } from 'node:path';
-import type { HardsubJob } from '../types.js';
+import type { HardsubCandidate, HardsubJob } from '../types.js';
 import { ensureDir, isFile } from './fsx.js';
 
 export type HardsubOptions = {
@@ -41,21 +41,22 @@ export async function runHardsub(opts: HardsubOptions): Promise<void> {
 }
 
 /**
- * Scan an anime folder for Ep* subfolders that have both .mkv and vietsub.ass.
- * Returns ready-to-run hardsub jobs.
+ * Quét Ep* subfolders trong anime folder, trả về tất cả candidate kèm flag
+ * hasOutput (đã encode trước) và missingAss (chưa có vietsub.ass).
+ * Caller (UI) quyết định lọc / hỏi ghi đè.
  */
-export function scanHardsubJobs(animeFolder: string): {
-  ready: HardsubJob[];
-  skipped: { epFolder: string; reason: string }[];
+export function scanHardsubCandidates(animeFolder: string): {
+  candidates: HardsubCandidate[];
+  skipped: { epName: string; reason: string }[];
 } {
-  const ready: HardsubJob[] = [];
-  const skipped: { epFolder: string; reason: string }[] = [];
+  const candidates: HardsubCandidate[] = [];
+  const skipped: { epName: string; reason: string }[] = [];
 
   let entries: string[];
   try {
     entries = readdirSync(animeFolder);
   } catch {
-    return { ready, skipped };
+    return { candidates, skipped };
   }
 
   for (const entry of entries.sort()) {
@@ -68,28 +69,27 @@ export function scanHardsubJobs(animeFolder: string): {
     const ass = inner.find((f) => f.toLowerCase() === 'vietsub.ass');
 
     if (!mkv) {
-      skipped.push({ epFolder: entry, reason: 'Không có file .mkv' });
-      continue;
-    }
-    if (!ass) {
-      skipped.push({ epFolder: entry, reason: 'Không có vietsub.ass' });
+      skipped.push({ epName: entry, reason: 'Không có file .mkv' });
       continue;
     }
 
     const mkvPath = join(full, mkv);
-    const assPath = join(full, ass);
+    const assPath = ass ? join(full, ass) : '';
     const outName = `${basename(mkv, extname(mkv))}_vietsub.mp4`;
     const outputPath = join(full, outName);
 
-    if (isFile(outputPath)) {
-      skipped.push({ epFolder: entry, reason: `Đã có ${outName}` });
-      continue;
-    }
-
-    ready.push({ epFolder: full, mkvPath, assPath, outputPath });
+    candidates.push({
+      epFolder: full,
+      epName: entry,
+      mkvPath,
+      assPath,
+      outputPath,
+      hasOutput: isFile(outputPath),
+      missingAss: !ass,
+    });
   }
 
-  return { ready, skipped };
+  return { candidates, skipped };
 }
 
 export function checkHandBrakeCliExists(path: string): boolean {
