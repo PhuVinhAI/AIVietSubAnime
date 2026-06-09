@@ -1,11 +1,45 @@
 ---
 name: anime-vi-translator-safe-fansub
-description: Translate anime subtitle files (.ass / .srt) from English to Vietnamese with a strict "Safety-First / Audio-Driven" protocol. Rule 1: Preserve Japanese honorifics (-san, -chan). Rule 2: If Japanese pronouns (ore, watashi, omae) are explicitly spoken, translate them into Vietnamese kinship terms BASED ON AUDIO AGE/STATUS CUES (e.g., deep adult voice to child = chú/cháu; peers = tôi/cậu). Rule 3: If no explicit pronoun is spoken, strictly OMIT the subject (pro-drop) to prevent AI misgendering.
+description: Translate anime subtitle files (.ass / .srt) from English to Vietnamese with a strict "Safety-First / Audio-Driven" protocol. OUTPUT REQUIREMENT — return ONLY the entire translated file inside a single ```ass code block (full file including Script Info / Styles / Events headers), no commentary. Rule 1 Preserve Japanese honorifics. Rule 2 Adapt pronouns from audio age/status cues. Rule 3 Pro-drop when no pronoun spoken.
 ---
 
 # Anime EN → VI translator (Safe Fansub Style / Audio-Driven)
 
 Translate anime subtitle files from English to Vietnamese using a strict **Safety-First** approach. AI models often fail at EN→VI translation by guessing wrong pronouns because they cannot see the video. This skill eliminates that error by strictly relying on **Japanese AUDIO cues (voice age, tone, explicit words)**, preserving Japanese honorifics, and utilizing Vietnamese pro-drop (subject omission) grammar.
+
+---
+
+## 🚨 OUTPUT FORMAT — ABSOLUTE REQUIREMENT (read first)
+
+Your **ONLY** output is the **entire translated `.ass` file** wrapped in a single fenced code block tagged `ass`. Nothing before, nothing after.
+
+```
+```ass
+[Script Info]
+… (full file content with ALL sections kept exactly as in source) …
+
+[V4+ Styles]
+…
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.00,0:00:03.00,Default,,0,0,0,,<VIETNAMESE TRANSLATION>
+… (every Dialogue line translated) …
+```
+```
+
+**HARD RULES — violating any = immediate failure:**
+
+1. **WHOLE FILE.** Include `[Script Info]`, `[V4+ Styles]`, `[Fonts]`, `[Graphics]`, `[Events]` headers and `Format:` lines **byte-identical** to source. Never omit them, never abbreviate with `...`, never replace with a placeholder.
+2. **ONE code block.** Exactly one fenced block tagged ` ```ass `. No second block. No diff. No "before/after".
+3. **NO PROSE.** Do NOT write "Here is the translation:", "I translated…", "Note that…", "Let me know if…", any preamble, any postamble, any summary, any todo list. Do NOT explain pronoun choices in chat — your reasoning happens before output, the output is **just the file**.
+4. **NO PARTIAL OUTPUT.** Do not return only the `[Events]` section. Do not return only changed lines. Do not return a patch. Return the **complete file from line 1 to last Dialogue line**.
+5. **PRESERVE EVERYTHING EXCEPT TEXT FIELD.** Comments, blank lines, `Comment:` lines, unused styles, override tags inside Text — all stay verbatim. Translate ONLY the Text field (everything after the 9th comma in `Dialogue:` lines).
+6. **NO BACKTICKS INSIDE.** ASS files never contain ` ``` `; if you somehow encounter one, do not invent escaping — that file is malformed and not your concern.
+
+If you cannot translate a line (audio unclear, ambiguous), output the **original English Text** for that line — never leave a line blank, never insert a comment, never break the format.
+
+---
 
 ## Output target — Safe Fansub Style
 
@@ -73,12 +107,14 @@ Inside the `Text` field, **preserve verbatim**:
 
 ## Workflow when invoked
 
-1. **Locate the source text & audio.**
-2. **Translate line-by-line** directly. For every line, listen to the audio context:
-   - If a name/honorific is spoken -> Keep it.
-   - If an explicit pronoun is spoken -> Translate to VI kinship term based on the **vocal age gap**.
-   - If neither is spoken -> **Omit the subject entirely.**
-3. **Self-check before reporting done:**
-   - Verify ASS format (9 commas).
-   - Spot-check: Did you invent a kinship term ("anh/chị/cô/chú") when NO explicit Japanese pronoun was spoken? If yes, delete it and rewrite the sentence to omit the subject.
-4. **Save and Report** to the user.
+1. **Locate the source text & audio.** Read the source `.ass` end-to-end before writing anything.
+2. **Translate line-by-line** internally. For every line, listen to the audio context:
+   - If a name/honorific is spoken → Keep it.
+   - If an explicit pronoun is spoken → Translate to VI kinship term based on the **vocal age gap**.
+   - If neither is spoken → **Omit the subject entirely.**
+3. **Self-check silently before emitting output:**
+   - Every `Dialogue:` line still has exactly 9 commas before the Text field.
+   - No line is missing. No line is duplicated.
+   - You did not invent kinship terms ("anh/chị/cô/chú") on pro-drop lines.
+   - All non-`Events` sections (Script Info / V4+ Styles / Fonts / Graphics) are present and byte-identical.
+4. **Emit the file.** Your response is **exactly** one ` ```ass ` fenced code block containing the **entire translated file**. No greeting, no explanation, no "Done!", no follow-up question. The block IS the deliverable — the user pipes it straight to disk.
