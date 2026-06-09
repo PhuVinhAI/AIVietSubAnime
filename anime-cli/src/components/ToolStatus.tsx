@@ -5,10 +5,14 @@ import type { ToolCheck } from '../lib/tools.js';
 import { palette, sym } from '../lib/theme.js';
 
 type Props = {
-  ffmpeg: ToolCheck;
-  mkvextract: ToolCheck;
+  ffmpeg?: ToolCheck;
+  mkvextract?: ToolCheck;
   handbrake?: ToolCheck;
-  showHandbrake: boolean;
+  ytdlp?: ToolCheck;
+  showFfmpeg?: boolean;
+  showMkvextract?: boolean;
+  showHandbrake?: boolean;
+  showYtdlp?: boolean;
 };
 
 function Row({ name, check }: { name: string; check: ToolCheck }) {
@@ -37,7 +41,16 @@ function Row({ name, check }: { name: string; check: ToolCheck }) {
   );
 }
 
-export function ToolStatus({ ffmpeg, mkvextract, handbrake, showHandbrake }: Props) {
+export function ToolStatus({
+  ffmpeg,
+  mkvextract,
+  handbrake,
+  ytdlp,
+  showFfmpeg = true,
+  showMkvextract = true,
+  showHandbrake = false,
+  showYtdlp = false,
+}: Props) {
   return (
     <Box flexDirection="column" marginBottom={1}>
       <Box marginBottom={0}>
@@ -45,11 +58,10 @@ export function ToolStatus({ ffmpeg, mkvextract, handbrake, showHandbrake }: Pro
           SYSTEM CHECK
         </Text>
       </Box>
-      <Row name="ffmpeg" check={ffmpeg} />
-      <Row name="mkvextract" check={mkvextract} />
-      {showHandbrake && handbrake && (
-        <Row name="HandBrake CLI" check={handbrake} />
-      )}
+      {showFfmpeg && ffmpeg && <Row name="ffmpeg" check={ffmpeg} />}
+      {showMkvextract && mkvextract && <Row name="mkvextract" check={mkvextract} />}
+      {showHandbrake && handbrake && <Row name="HandBrake CLI" check={handbrake} />}
+      {showYtdlp && ytdlp && <Row name="yt-dlp" check={ytdlp} />}
     </Box>
   );
 }

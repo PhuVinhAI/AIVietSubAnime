@@ -23,10 +23,15 @@ function findProjectRoot(): string {
 const args = process.argv.slice(2);
 const cmd = args[0]?.toLowerCase();
 
-let initialMode: 'prepare' | 'hardsub' | 'export' | undefined;
+let initialMode: 'prepare' | 'hardsub' | 'export' | 'youtube' | undefined;
 let initialPath: string | undefined;
 
-if (cmd === 'prepare' || cmd === 'hardsub' || cmd === 'export') {
+if (
+  cmd === 'prepare' ||
+  cmd === 'hardsub' ||
+  cmd === 'export' ||
+  cmd === 'youtube'
+) {
   initialMode = cmd;
   initialPath = args[1];
 } else if (cmd === '--help' || cmd === '-h') {
@@ -36,11 +41,13 @@ AIVietSubAnime CLI
 Usage:
   anime-cli                          # Menu chọn chế độ
   anime-cli prepare [path]           # Quét + extract audio/sub
+  anime-cli youtube [url]            # Tải video YouTube + sub → .ass
   anime-cli hardsub [anime-folder]   # Hardsub queue
   anime-cli export  [anime-folder]   # Copy *_vietsub.mp4 ra USB / điện thoại
 
 Examples:
   anime-cli prepare "D:\\Raw\\Oi Tonbo"
+  anime-cli youtube "https://www.youtube.com/watch?v=..."
   anime-cli hardsub "./Anime/Oi Tonbo 2nd Season"
   anime-cli export  "./Anime/Oi Tonbo 2nd Season"
 `);

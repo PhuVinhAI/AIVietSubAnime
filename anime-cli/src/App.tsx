@@ -8,11 +8,12 @@ import { palette, sym } from './lib/theme.js';
 import { ExportMode } from './modes/ExportMode.js';
 import { HardsubMode } from './modes/HardsubMode.js';
 import { PrepareMode } from './modes/PrepareMode.js';
+import { YoutubeMode } from './modes/YoutubeMode.js';
 
-type Mode = 'menu' | 'prepare' | 'hardsub' | 'export';
+type Mode = 'menu' | 'prepare' | 'hardsub' | 'export' | 'youtube';
 
 type Props = {
-  initialMode?: 'prepare' | 'hardsub' | 'export';
+  initialMode?: 'prepare' | 'hardsub' | 'export' | 'youtube';
   initialPath?: string;
   projectRoot: string;
 };
@@ -36,6 +37,10 @@ export function App({ initialMode, initialPath, projectRoot }: Props) {
             {
               label: 'Prepare    ·  Quét raw + tách audio/sub cho toàn series',
               value: 'prepare',
+            },
+            {
+              label: 'YouTube    ·  Tải video + audio + sub từ link, convert sang .ass',
+              value: 'youtube',
             },
             {
               label: 'Hardsub    ·  Burn-in vietsub.ass vào video qua HandBrake',
@@ -69,6 +74,10 @@ export function App({ initialMode, initialPath, projectRoot }: Props) {
 
   if (mode === 'prepare') {
     return <PrepareMode initialPath={initialPath} projectRoot={projectRoot} />;
+  }
+
+  if (mode === 'youtube') {
+    return <YoutubeMode initialUrl={initialPath} projectRoot={projectRoot} />;
   }
 
   if (mode === 'export') {

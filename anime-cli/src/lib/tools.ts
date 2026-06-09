@@ -29,6 +29,7 @@ export const resolvedTools = {
   ffmpeg: 'ffmpeg',
   mkvextract: 'mkvextract',
   handbrake: '',
+  ytdlp: '',
 };
 
 async function whereCmd(name: string): Promise<string | null> {
@@ -88,29 +89,36 @@ export async function checkMkvextract(): Promise<ToolCheck> {
   return findToolFlexible('mkvextract', '--version', 'mkvextract');
 }
 
-// Find HandBrakeCLI.exe under <project-root>/Tools/HandBrakeCLI-{ver}-win-{arch}/
-// Project root is detected by walking up from the CLI script.
-export function findHandBrakeCLI(): ToolCheck {
+// Find a binary under <project-root>/Tools/ (top-level or 1 dir deep).
+// Walks up from the CLI script. Returns ToolCheck.
+function findToolInProjectTools(
+  binNames: string[],
+  matchDir?: (entry: string) => boolean,
+  innerFile?: string
+): ToolCheck {
   const here = dirname(fileURLToPath(import.meta.url));
   let dir = here;
   for (let i = 0; i < 8; i++) {
     const toolsDir = join(dir, 'Tools');
     if (existsSync(toolsDir) && statSync(toolsDir).isDirectory()) {
-      const entries = readdirSync(toolsDir);
-      const hbDir = entries.find(
-        (e) => e.startsWith('HandBrakeCLI-') && statSync(join(toolsDir, e)).isDirectory()
-      );
-      if (hbDir) {
-        const exe = join(toolsDir, hbDir, 'HandBrakeCLI.exe');
-        if (existsSync(exe)) return { ok: true, path: exe };
-        return {
-          ok: false,
-          error: `HandBrakeCLI.exe không có trong ${join(toolsDir, hbDir)}`,
-        };
+      for (const name of binNames) {
+        const direct = join(toolsDir, name);
+        if (existsSync(direct)) return { ok: true, path: direct };
+      }
+      if (matchDir && innerFile) {
+        const entries = readdirSync(toolsDir);
+        const subDir = entries.find(
+          (e) => matchDir(e) && statSync(join(toolsDir, e)).isDirectory()
+        );
+        if (subDir) {
+          const exe = join(toolsDir, subDir, innerFile);
+          if (existsSync(exe)) return { ok: true, path: exe };
+          return { ok: false, error: `${innerFile} không có trong ${join(toolsDir, subDir)}` };
+        }
       }
       return {
         ok: false,
-        error: `Không tìm thấy folder HandBrakeCLI-*-win-* trong ${toolsDir}`,
+        error: `Không tìm thấy ${binNames.join(' / ')} trong ${toolsDir}`,
       };
     }
     const parent = resolve(dir, '..');
@@ -120,17 +128,34 @@ export function findHandBrakeCLI(): ToolCheck {
   return { ok: false, error: 'Không tìm thấy folder Tools/ ngược lên từ vị trí script' };
 }
 
+// Find HandBrakeCLI.exe under <project-root>/Tools/HandBrakeCLI-{ver}-win-{arch}/
+// Project root is detected by walking up from the CLI script.
+export function findHandBrakeCLI(): ToolCheck {
+  return findToolInProjectTools(
+    [],
+    (e) => e.startsWith('HandBrakeCLI-'),
+    'HandBrakeCLI.exe'
+  );
+}
+
+export function findYtDlp(): ToolCheck {
+  return findToolInProjectTools(['yt-dlp.exe', 'yt-dlp']);
+}
+
 export async function checkAllTools(): Promise<{
   ffmpeg: ToolCheck;
   mkvextract: ToolCheck;
   handbrake: ToolCheck;
+  ytdlp: ToolCheck;
 }> {
   const [ffmpeg, mkvextract] = await Promise.all([checkFfmpeg(), checkMkvextract()]);
   const handbrake = findHandBrakeCLI();
+  const ytdlp = findYtDlp();
 
   if (ffmpeg.ok && ffmpeg.path) resolvedTools.ffmpeg = ffmpeg.path;
   if (mkvextract.ok && mkvextract.path) resolvedTools.mkvextract = mkvextract.path;
   if (handbrake.ok && handbrake.path) resolvedTools.handbrake = handbrake.path;
+  if (ytdlp.ok && ytdlp.path) resolvedTools.ytdlp = ytdlp.path;
 
-  return { ffmpeg, mkvextract, handbrake };
+  return { ffmpeg, mkvextract, handbrake, ytdlp };
 }
