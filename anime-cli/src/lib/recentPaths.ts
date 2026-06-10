@@ -10,7 +10,8 @@ export type RecentCategory =
   | 'prepare-raw'
   | 'hardsub-anime'
   | 'export-anime'
-  | 'export-dest';
+  | 'export-dest'
+  | 'youtube-url';
 
 type Store = Partial<Record<RecentCategory, string[]>>;
 
@@ -43,12 +44,12 @@ function writeStore(store: Store): void {
 
 /**
  * Lấy danh sách path gần đây cho 1 category. Path filesystem không tồn tại
- * sẽ bị lọc; MTP shell path ("This PC\...") không kiểm tra (giữ nguyên).
+ * sẽ bị lọc; MTP shell path ("This PC\...") và URL (http/https) không kiểm tra.
  */
 export function getRecent(category: RecentCategory): string[] {
   const store = readStore();
   const list = store[category] ?? [];
-  return list.filter((p) => isLikelyMtp(p) || existsSync(p));
+  return list.filter((p) => isLikelyMtp(p) || isUrl(p) || existsSync(p));
 }
 
 /**
@@ -71,4 +72,8 @@ export function addRecent(category: RecentCategory, path: string): void {
 function isLikelyMtp(p: string): boolean {
   // MTP path từ classifyDestPath bắt đầu bằng "This PC\" hoặc "::{...}\"
   return /^(This PC|::\{)/i.test(p);
+}
+
+function isUrl(p: string): boolean {
+  return /^https?:\/\//i.test(p);
 }

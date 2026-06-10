@@ -620,6 +620,7 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
           <PathInput
             label="Nhập lại link"
             hint="Link YouTube hợp lệ (watch / playlist / youtu.be / shorts)"
+            category="youtube-url"
             onSubmit={(url) => {
               setError(null);
               go({ kind: 'discovering', url });
@@ -654,6 +655,7 @@ export function YoutubeMode({ initialUrl, projectRoot }: Props) {
           <PathInput
             label="URL"
             hint="Vd. https://www.youtube.com/watch?v=...  hoặc  /playlist?list=..."
+            category="youtube-url"
             onSubmit={(url) => go({ kind: 'discovering', url: url.trim() })}
           />
         </Box>
